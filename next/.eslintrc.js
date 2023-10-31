@@ -1,4 +1,5 @@
 module.exports = {
+  project: "wunder.io/next/tsconfig.json",
   root: true,
   parserOptions: {
     ecmaVersion: "latest",
