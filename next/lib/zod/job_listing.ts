@@ -13,7 +13,7 @@ import {
   VideoSchema,
 } from "@/lib/zod/paragraph";
 
-const JobElementsSchema = z.discriminatedUnion("type", [
+const Job_listingElementsSchema = z.discriminatedUnion("type", [
   FormattedTextSchema,
   ImageSchema,
   VideoSchema,
@@ -24,33 +24,33 @@ const JobElementsSchema = z.discriminatedUnion("type", [
   FileAttachmentsSchema,
 ]);
 
-export const JobSchema = z.object({
-  type: z.literal("node--job"),
+export const Job_listingSchema = z.object({
+  type: z.literal("node--job_listing"),
   id: z.string(),
   title: z.string(),
-  field_content_elements: z.array(JobElementsSchema),
+  field_content_elements: z.array(Job_listingElementsSchema),
   metatag: MetatagsSchema.optional(),
 });
 
-export function validateAndCleanupJob(job: DrupalNode): Job | null {
+export function validateAndCleanupJob_listing(job_listing: DrupalNode): Job_listing | null {
   try {
     // Validate the top level fields first.
-    const topLevelJobData = JobSchema.omit({
+    const topLevelJob_listingData = Job_listingSchema.omit({
       field_content_elements: true,
-    }).parse(job);
+    }).parse(job_listing);
 
     // Validate the field_content_elements separately, one by one.
-    // This way, if one of them is invalid, we can still return the rest of the job contents.
-    const validatedParagraphs = job.field_content_elements
+    // This way, if one of them is invalid, we can still return the rest of the job_listing contents.
+    const validatedParagraphs = job_listing.field_content_elements
       .map((paragraph: any) => {
-        const result = JobElementsSchema.safeParse(paragraph);
+        const result = Job_listingElementsSchema.safeParse(paragraph);
 
         switch (result.success) {
           case true:
             return result.data;
           case false:
             console.log(
-              `Error validating job paragraph ${paragraph.type}: `,
+              `Error validating job_listing paragraph ${paragraph.type}: `,
               JSON.stringify(result.error, null, 2),
             );
             return null;
@@ -59,14 +59,14 @@ export function validateAndCleanupJob(job: DrupalNode): Job | null {
       .filter(Boolean);
 
     return {
-      ...topLevelJobData,
+      ...topLevelJob_listingData,
       field_content_elements: validatedParagraphs,
     };
   } catch (error) {
     const { name = "ZodError", issues = [] } = error;
-    console.log(JSON.stringify({ name, issues, job }, null, 2));
+    console.log(JSON.stringify({ name, issues, job_listing }, null, 2));
     return null;
   }
 }
 
-export type Job = z.infer<typeof JobSchema>;
+export type Job_listing = z.infer<typeof Job_listingSchema>;

@@ -2,7 +2,7 @@ import { DrupalJsonApiParams } from "drupal-jsonapi-params";
 
 import { env } from "@/env";
 
-export type ResourceType = "node--frontpage" | "node--page" | "node--article" | "node--job";
+export type ResourceType = "node--frontpage" | "node--page" | "node--article" | "node--job_listing";
 
 export function getNodePageJsonApiParams(resourceType: ResourceType) {
   const apiParams = new DrupalJsonApiParams().addFilter(
@@ -67,7 +67,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "sticky",
     ]);
   }
-  if (resourceType === "node--job") {
+  if (resourceType === "node--job_listing") {
     apiParams
       .addInclude([
         "field_content_elements",
@@ -78,7 +78,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
         "field_content_elements.field_accordion_items.field_content_elements.field_image.field_media_image",
         "field_content_elements.field_accordion_items.field_content_elements.field_video",
       ])
-      .addFields("node--job", [
+      .addFields("node--job_listing", [
         "title",
         "field_content_elements",
         "path",
