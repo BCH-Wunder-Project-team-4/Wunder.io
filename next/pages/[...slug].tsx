@@ -4,6 +4,7 @@ import { DrupalNode, DrupalTranslatedPath } from "next-drupal";
 import { Article } from "@/components/article";
 import { Meta } from "@/components/meta";
 import { Page } from "@/components/page";
+import { Job_listing } from "@/components/job_listing";
 import {
   createLanguageLinks,
   LanguageLinks,
@@ -21,8 +22,9 @@ import {
   validateAndCleanupArticle,
 } from "@/lib/zod/article";
 import { Page as PageType, validateAndCleanupPage } from "@/lib/zod/page";
+import { Job_listing as Job_listingType, validateAndCleanupJob_listing } from "@/lib/zod/job_listing";
 
-const RESOURCE_TYPES = ["node--article", "node--page"];
+const RESOURCE_TYPES = ["node--article", "node--page", "node--job_listing"];
 
 export default function CustomPage({
   resource,
@@ -34,6 +36,7 @@ export default function CustomPage({
       <Meta title={resource.title} metatags={resource.metatag} />
       {resource.type === "node--article" && <Article article={resource} />}
       {resource.type === "node--page" && <Page page={resource} />}
+      {resource.type === "node--job_listing" && <Job_listing job_listing={resource} />}
     </>
   );
 }
@@ -47,7 +50,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 };
 
 interface PageProps extends CommonPageProps {
-  resource: PageType | ArticleType;
+  resource: PageType | ArticleType | Job_listingType;
   languageLinks: LanguageLinks;
 }
 
@@ -122,6 +125,8 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
       ? validateAndCleanupArticle(resource)
       : type === "node--page"
       ? validateAndCleanupPage(resource)
+      : type === "node--job_listing"
+      ? validateAndCleanupJob_listing(resource)
       : null;
 
   return {
