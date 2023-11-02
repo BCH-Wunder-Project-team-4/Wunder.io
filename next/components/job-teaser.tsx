@@ -5,35 +5,35 @@ import { useTranslation } from "next-i18next";
 
 import { absoluteUrl } from "@/lib/drupal/absolute-url";
 import { formatDate } from "@/lib/utils";
-import { ArticleTeaser } from "@/lib/zod/article-teaser";
+import { JobTeaser } from "@/lib/zod/job-teaser";
 
-interface ArticleTeaserProps {
-  article: ArticleTeaser;
+interface JobTeaserProps {
+  job: JobTeaser;
 }
 
-export function ArticleTeaser({ article }: ArticleTeaserProps) {
+export function JobTeaser({ job }: JobTeaserProps) {
   const { t } = useTranslation();
-  const author = article.uid?.display_name;
+  const author = job.uid?.display_name;
   const router = useRouter();
-  const date = formatDate(article.created, router.locale);
+  const date = formatDate(job.created, router.locale);
   return (
     <Link
-      href={article.path.alias}
+      href={job.path.alias}
       className="relative grid h-full rounded border border-finnishwinter bg-white p-4 transition-all hover:shadow-md"
     >
       <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold">
-        {article.title}
+        {job.title}
       </h3>
       <div className="mb-4 line-clamp-2 text-md text-scapaflow">
         {author && <>{t("posted-by", { author })} - </>}
         {date}
       </div>
-      {article.field_image && (
+      {job.field_image && (
         <Image
-          src={absoluteUrl(article.field_image.uri.url)}
+          src={absoluteUrl(job.field_image.uri.url)}
           width={384}
           height={240}
-          alt={article.field_image.resourceIdObjMeta.alt}
+          alt={job.field_image.resourceIdObjMeta.alt}
           className="max-w-full object-cover"
         />
       )}

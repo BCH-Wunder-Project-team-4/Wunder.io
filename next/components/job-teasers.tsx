@@ -2,18 +2,18 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import clsx from "clsx";
 
-import { ArticleTeaser } from "@/components/article-teaser";
-import { ArticleTeaser as ArticleTeaserType } from "@/lib/zod/article-teaser";
+import { JobTeaser } from "@/components/job-teaser";
+import { JobTeaser as JobTeaserType } from "@/lib/zod/job-teaser";
 import ArrowIcon from "@/styles/icons/arrow-down.svg";
 
 import { buttonVariants } from "@/ui/button";
 
-interface LatestArticlesProps {
-  articles?: ArticleTeaserType[];
+interface LatestJobsProps {
+  jobs?: JobTeaserType[];
   heading: string;
 }
 
-export function ArticleTeasers({ articles, heading }: LatestArticlesProps) {
+export function JobTeasers({ jobs, heading }: LatestJobsProps) {
   const { t } = useTranslation();
   return (
     <>
@@ -21,23 +21,23 @@ export function ArticleTeasers({ articles, heading }: LatestArticlesProps) {
         {heading}
       </h2>
       <ul className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-        {articles?.map((article) => (
-          <li key={article.id}>
-            <ArticleTeaser article={article} />
+        {jobs?.map((job) => (
+          <li key={job.id}>
+            <JobTeaser job={job} />
           </li>
         ))}
       </ul>
       <div className="flex items-center justify-center">
-        {!articles?.length && <p className="py-4">{t("no-content-found")}</p>}
-        {articles?.length && (
+        {!jobs?.length && <p className="py-4">{t("no-content-found")}</p>}
+        {jobs?.length && (
           <Link
-            href="/all-articles"
+            href="/all-jobs"
             className={clsx(
               buttonVariants({ variant: "primary" }),
               "text-base mr-4 mt-4 inline-flex px-5 py-3",
             )}
           >
-            {t("all-articles")}
+            {t("all-jobs")}
             <ArrowIcon aria-hidden className="ml-3 h-6 w-6 -rotate-90" />
           </Link>
         )}

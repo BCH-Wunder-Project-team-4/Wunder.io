@@ -2,11 +2,11 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { useQuery } from "@tanstack/react-query";
 
-import { ArticleTeaser } from "@/components/article-teaser";
+import { JobTeaser } from "@/components/job-teaser";
 import { LoadingSpinner } from "@/components/loading-spinner";
-import { ArticleTeaser as ArticleTeaserType } from "@/lib/zod/article-teaser";
+import { JobTeaser as JobTeaserType } from "@/lib/zod/job-teaser";
 
-export function ArticlesListing({
+export function JobsListing({
   listingId,
   limit,
 }: {
@@ -16,10 +16,10 @@ export function ArticlesListing({
   const { t } = useTranslation();
   const router = useRouter();
   const { data, isLoading } = useQuery(
-    [`articles-${router.locale}-${listingId}`],
+    [`jobs-${router.locale}-${listingId}`],
     async () => {
       const response = await fetch(
-        `/api/articles-listing/${router.locale}?limit=${limit}`,
+        `/api/jobs-listing/${router.locale}?limit=${limit}`,
         {
           headers: {
             "accept-language": router.locale,
@@ -36,9 +36,9 @@ export function ArticlesListing({
       {isLoading && <LoadingSpinner />}
       <ul className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
         {!isLoading &&
-          data?.map((article: ArticleTeaserType) => (
-            <li key={article.id}>
-              <ArticleTeaser article={article} />
+          data?.map((job: JobTeaserType) => (
+            <li key={job.id}>
+              <JobTeaser job={job} />
             </li>
           ))}
       </ul>

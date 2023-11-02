@@ -16,6 +16,13 @@ export const ListingArticlesSchema = z.object({
   field_limit: z.number(),
 });
 
+export const ListingJobsSchema = z.object({
+  type: z.literal("paragraph--listing_jobs"),
+  id: z.string(),
+  field_heading: z.string().nullable(),
+  field_limit: z.number(),
+});
+
 export const ImageShape = z.object({
   type: z.literal("file--file"),
   id: z.string(),
@@ -157,6 +164,7 @@ export type Accordion = z.infer<typeof AccordionSchema>;
 export type AccordionItem = z.infer<typeof AccordionItemSchema>;
 export type Hero = z.infer<typeof HeroSchema>;
 export type ListingArticles = z.infer<typeof ListingArticlesSchema>;
+export type ListingJobs = z.infer<typeof ListingJobsSchema>;
 export type FileAttachments = z.infer<typeof FileAttachmentsSchema>;
 
 export type Paragraph =
@@ -168,4 +176,5 @@ export type Paragraph =
   | AccordionItem
   | Hero
   | ListingArticles
+  | ListingJobs
   | FileAttachments;

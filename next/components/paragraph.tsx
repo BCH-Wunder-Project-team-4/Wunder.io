@@ -5,6 +5,7 @@ import { ParagraphHero } from "@/components/paragraph--hero";
 import { ParagraphImage } from "@/components/paragraph--image";
 import { ParagraphLinks } from "@/components/paragraph--links";
 import { ParagraphListingArticles } from "@/components/paragraph--listing-articles";
+import { ParagraphListingJobs } from "@/components/paragraph--listing-jobs";
 import { ParagraphText } from "@/components/paragraph--text";
 import { Paragraph } from "@/lib/zod/paragraph";
 
@@ -43,6 +44,9 @@ export function Paragraph({ paragraph }: { paragraph: Paragraph }) {
     }
     case "paragraph--listing_articles": {
       return <ParagraphListingArticles paragraph={paragraph} />;
+    }
+    case "paragraph--listing_jobs": {
+      return <ParagraphListingJobs paragraph={paragraph} />;
     }
     case "paragraph--file_attachments": {
       return <ParagraphFileAttachments paragraph={paragraph} />;

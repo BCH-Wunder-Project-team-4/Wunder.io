@@ -2,7 +2,7 @@ import { DrupalJsonApiParams } from "drupal-jsonapi-params";
 
 import { env } from "@/env";
 
-export type ResourceType = "node--frontpage" | "node--page" | "node--article" | "node--job_listing";
+export type ResourceType = "node--frontpage" | "node--page" | "node--article" | "node--job_listing" | "node--job";
 
 export function getNodePageJsonApiParams(resourceType: ResourceType) {
   const apiParams = new DrupalJsonApiParams().addFilter(
@@ -53,6 +53,21 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
 
   // The article content type has an image field, and author information:
   if (resourceType === "node--article") {
+    apiParams.addInclude(["field_image", "uid"]);
+    apiParams.addFields(resourceType, [
+      "title",
+      "body",
+      "uid",
+      "created",
+      "field_image",
+      "status",
+      "metatag",
+      "field_excerpt",
+      "path",
+      "sticky",
+    ]);
+  }
+  if (resourceType === "node--job") {
     apiParams.addInclude(["field_image", "uid"]);
     apiParams.addFields(resourceType, [
       "title",
