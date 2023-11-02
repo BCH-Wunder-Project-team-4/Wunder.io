@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: listing_jobs
-label: 'Listing: Jobs'
+label: 'Listing: jobs'
 icon_uuid: null
 icon_default: null
 description: 'Renders the list of open positions in the frontend.'

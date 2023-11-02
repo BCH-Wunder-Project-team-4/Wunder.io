@@ -10,4 +10,4 @@ configuration:
 revalidator: path
 revalidator_configuration:
   revalidate_page: true
-  additional_paths: ''
+  additional_paths: /careers

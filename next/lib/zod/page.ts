@@ -10,6 +10,7 @@ import {
   ImageSchema,
   LinksSchema,
   ListingArticlesSchema,
+  ListingJobsSchema,
   VideoSchema,
 } from "@/lib/zod/paragraph";
 
@@ -21,6 +22,7 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   AccordionSchema,
   HeroSchema,
   ListingArticlesSchema,
+  ListingJobsSchema,
   FileAttachmentsSchema,
 ]);
 
