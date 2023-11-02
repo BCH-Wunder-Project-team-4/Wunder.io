@@ -1,0 +1,31 @@
+uuid: f3d1877e-7f2f-4629-838b-476335eb9e72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.listing_jobs.field_heading
+    - field.field.paragraph.listing_jobs.field_limit
+    - paragraphs.paragraphs_type.listing_jobs
+id: paragraph.listing_jobs.default
+targetEntityType: paragraph
+bundle: listing_jobs
+mode: default
+content:
+  field_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_limit:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

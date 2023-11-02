@@ -1,0 +1,13 @@
+uuid: 2fca2006-92d9-4c19-ae06-5519eb421dae
+langcode: en
+status: true
+dependencies: {  }
+id: node.job
+site_resolver: site_selector
+configuration:
+  sites:
+    frontend: frontend
+revalidator: path
+revalidator_configuration:
+  revalidate_page: true
+  additional_paths: ''
