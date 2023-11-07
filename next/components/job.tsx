@@ -5,7 +5,6 @@ import { useTranslation } from "next-i18next";
 import { FormattedText } from "@/components/formatted-text";
 import { HeadingPage } from "@/components/heading--page";
 import { absoluteUrl } from "@/lib/drupal/absolute-url";
-import { formatDate } from "@/lib/utils";
 import { Job } from "@/lib/zod/job";
 
 interface JobProps {
@@ -21,14 +20,6 @@ export function Job({ job, ...props }: JobProps) {
       {job.field_excerpt && (
         <div className="my-4 text-xl">{job.field_excerpt}</div>
       )}
-      <div className="mb-4 text-scapaflow">
-        {job.uid?.display_name && (
-          <span>
-            {t("posted-by", { author: job.uid?.display_name })} -{" "}
-          </span>
-        )}
-        <span>{formatDate(job.created, router.locale)}</span>
-      </div>
       {job.field_image && (
         <figure>
           <Image

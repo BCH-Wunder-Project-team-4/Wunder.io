@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.job.body
+    - field.field.node.job.field_country
     - field.field.node.job.field_excerpt
     - field.field.node.job.field_image
     - field.field.node.job.field_tags
@@ -24,6 +25,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_country:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_excerpt:
     type: basic_string
