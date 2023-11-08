@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { DrupalNode, DrupalTranslatedPath } from "next-drupal";
 
 import { Article } from "@/components/article";
-import { Job } from "@/components/job";
+import { Job } from "@/components/job/job";
 import { Meta } from "@/components/meta";
 import { Page } from "@/components/page";
 import {
