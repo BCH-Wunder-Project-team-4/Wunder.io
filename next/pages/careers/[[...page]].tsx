@@ -32,9 +32,9 @@ export default function AllJobsPage({
   const focusRef = useRef<HTMLDivElement>(null);
   return (
     <>
-      <Meta title={t("all-jobs")} metatags={[]} />
+      <Meta title={t("Careers")} metatags={[]} />
       <div ref={focusRef} tabIndex={-1} />
-      <HeadingPage>{t("all-jobs")}</HeadingPage>
+      <HeadingPage>{t("Join us!")}</HeadingPage>
       <ul className="mt-4">
         {jobTeasers?.map((job) => (
           <li key={job.id}>
@@ -42,10 +42,6 @@ export default function AllJobsPage({
           </li>
         ))}
       </ul>
-      <Pagination
-        focusRestoreRef={focusRef}
-        paginationProps={paginationProps}
-      />
     </>
   );
 }
@@ -81,7 +77,7 @@ export const getStaticProps: GetStaticProps<AllJobsPageProps> = async (
   const nextEnabled = currentPage < totalPages;
 
   // Create links for prev/next pages.
-  const pageRoot = "/all-jobs";
+  const pageRoot = "/careers";
   const prevPage = currentPage - 1;
   const nextPage = currentPage + 1;
   const prevPageHref =
