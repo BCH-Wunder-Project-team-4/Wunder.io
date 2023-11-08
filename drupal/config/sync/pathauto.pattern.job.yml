@@ -1,0 +1,24 @@
+uuid: 7143e30f-03e3-4497-8931-453e94513cea
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 7ImqDwO6Ewsen7abW6KP-vbGKcUZnqQkv-ayAU_yr2Y
+id: job
+label: Job
+type: 'canonical_entities:node'
+pattern: 'jobs/[node:title]'
+selection_criteria:
+  7fbbc158-509d-4414-99bc-38df5f32aa62:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 7fbbc158-509d-4414-99bc-38df5f32aa62
+    context_mapping:
+      node: node
+    bundles:
+      job: job
+selection_logic: and
+weight: -5
+relationships: {  }
