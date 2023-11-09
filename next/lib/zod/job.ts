@@ -16,6 +16,7 @@ export const JobBaseSchema = z.object({
   title: z.string(),
   field_image: ImageShape.nullable(),
   field_excerpt: z.string().optional().nullable(),
+  field_country: z.string().optional().nullable(),
 });
 
 const JobSchema = JobBaseSchema.extend({

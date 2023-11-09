@@ -31,4 +31,3 @@ export function JobListItem({ job }: JobListItemProps) {
     </Link>
   );
 }
-

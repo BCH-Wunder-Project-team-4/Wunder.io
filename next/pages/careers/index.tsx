@@ -29,8 +29,8 @@ export default function AllJobsPage({
     <>
       <Meta title={t("Careers")} metatags={[]} />
       <div ref={focusRef} tabIndex={-1} />
-      <HeadingPage>{t("Become a part of our team")}</HeadingPage>
-      <FormattedText html={t("We're on the lookout for dynamic individuals like you to join our team. Explore exciting career prospects and be a part of a collaborative environment that values innovation, growth and creativity. Embrace the opportunity to contribute your unique talents and expertise to our collective success.")} className="text-stone"/>
+      <HeadingPage>{t("careers-title")}</HeadingPage>
+      <FormattedText html={t("careers-intro")} className="text-stone"/>
       <HeadingPage>{t("Open Positions")}</HeadingPage>
       <ul className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
           {jobTeasers?.map((job) => (
