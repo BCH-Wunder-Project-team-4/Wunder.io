@@ -3,6 +3,9 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 /** @type {import("tailwindcss").Config} */
 module.exports = {
   content: ["./{components,lib,pages,stories,styles,ui}/**/*"],
+  variants: {
+    display: ['responsive', 'group-hover', 'group-focus'],
+   },
   theme: {
     colors: {
       transparent: "transparent",
