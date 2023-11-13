@@ -23,6 +23,8 @@ interface PageProps extends CommonPageProps {
 function App({ Component, pageProps }: AppProps<PageProps>) {
   const [queryClient] = useState(() => new QueryClient());
   const { menus, languageLinks, session, ...restPageProps } = pageProps;
+  
+  
   return (
     <SessionProvider session={session}>
       <QueryClientProvider client={queryClient}>
