@@ -26,18 +26,19 @@ export default function AllJobsPage({
   const { t } = useTranslation();
   const focusRef = useRef<HTMLDivElement>(null);
   return (
-    <>
+    <div>
       <Meta title={t("Careers")} metatags={[]} />
-      <div ref={focusRef} tabIndex={-1} />
-      <HeadingPage>{t("careers-title")}</HeadingPage>
-      <FormattedText html={t("careers-intro")} className="text-stone"/>
-      <HeadingPage>{t("Open Positions")}</HeadingPage>
-      <ul className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-          {jobTeasers?.map((job) => (
-              <JobListItem job={job} />
+      <div className="w-full max-w-screen-lg p-4 space-y-4">
+        <HeadingPage>{t("careers-title")}</HeadingPage>
+        <FormattedText html={t("careers-intro")} className="text-stone" />
+        <HeadingPage>{t("careers-positions")}</HeadingPage>
+        <ul className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+          {jobTeasers?.map((job, index) => (
+            <JobListItem key={index} job={job} />
           ))}
-      </ul>    
-    </>
+        </ul>
+      </div>
+    </div>
   );
 }
 

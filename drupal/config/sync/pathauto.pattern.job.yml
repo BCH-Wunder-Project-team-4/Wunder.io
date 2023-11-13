@@ -9,12 +9,12 @@ _core:
 id: job
 label: Job
 type: 'canonical_entities:node'
-pattern: 'jobs/[node:title]'
+pattern: 'careers/[node:title]'
 selection_criteria:
-  7fbbc158-509d-4414-99bc-38df5f32aa62:
+  46c1a8bf-b4e4-4341-a2b5-7cbb074590a9:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 7fbbc158-509d-4414-99bc-38df5f32aa62
+    uuid: 46c1a8bf-b4e4-4341-a2b5-7cbb074590a9
     context_mapping:
       node: node
     bundles:

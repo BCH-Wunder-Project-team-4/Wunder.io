@@ -13,9 +13,6 @@ export function JobListItem({ job }: JobListItemProps) {
   return (
     <Link href={job.path.alias}>
         <div className={classNames("relative grid h-full rounded border border-finnishwinter bg-white p-4 transition-all hover:shadow-md", job.sticky ? "border-primary-100 bg-primary-50" : "border-finnishwinter bg-white")}>
-          <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold">
-            {job.title}
-          </h3>
           <div className="flex flex-col items-start gap-4 sm:flex-row">
             {job.field_image && (
               <Image
@@ -28,6 +25,9 @@ export function JobListItem({ job }: JobListItemProps) {
             )}
           </div>
         </div>
+          <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold">
+            {job.title}
+          </h3>
     </Link>
   );
 }
