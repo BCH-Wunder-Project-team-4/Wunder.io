@@ -1,0 +1,29 @@
+uuid: 024bf08a-dc69-48fa-9bd7-ef1cab732ca1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_country
+    - node.type.job
+    - taxonomy.vocabulary.country
+id: node.job.field_country
+field_name: field_country
+entity_type: node
+bundle: job
+label: Country
+description: 'The country locations of the job.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      country: country
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

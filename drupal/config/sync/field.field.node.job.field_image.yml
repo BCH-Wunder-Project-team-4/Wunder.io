@@ -1,18 +1,18 @@
-uuid: a159d091-226a-4b73-9d34-570b806af3d9
-langcode: fi
+uuid: e8aad986-485d-44e9-b44a-3a99eed65d41
+langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_image
-    - node.type.job_listing
+    - node.type.job
   module:
     - image
-id: node.job_listing.field_image
+id: node.job.field_image
 field_name: field_image
 entity_type: node
-bundle: job_listing
-label: 'Search/Meta image'
-description: 'Image used in the search results and for Open Graph HTML meta tags, so that sharing the content looks good.'
+bundle: job
+label: Image
+description: ''
 required: false
 translatable: true
 default_value: {  }

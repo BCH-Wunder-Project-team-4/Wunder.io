@@ -1,8 +1,8 @@
-uuid: 3ab07e26-a543-4252-bd5b-33c61a2f9dd0
-langcode: fi
+uuid: a29b47c8-97c7-472e-a634-6199633f213e
+langcode: en
 status: true
 dependencies: {  }
-id: node.job_listing
+id: node.job
 site_resolver: site_selector
 configuration:
   sites:
@@ -10,4 +10,4 @@ configuration:
 revalidator: path
 revalidator_configuration:
   revalidate_page: true
-  additional_paths: ''
+  additional_paths: "/fi\r\n/en\r\n/sv\r\n/careers\r\n/fi/careers\r\n/sv/careers"

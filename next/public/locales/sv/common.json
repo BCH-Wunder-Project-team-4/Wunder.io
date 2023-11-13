@@ -79,5 +79,8 @@
   "password-updated-login-below": "Ditt lösenord har uppdaterats. Du kan logga in med formuläret nedan.",
   "password-reset-check-your-email": "Om {{email}} var associerad med ett faktiskt konto, kontrollera din e-post efter en länk för att återställa ditt lösenord.",
   "reset-your-password": "Återställ ditt lösenord",
-  "field-is-required": "{{field}} är obligatoriskt."
+  "field-is-required": "{{field}} är obligatoriskt.",
+  "careers-title": "Bli en del av vårt team",
+  "careers-intro": "Vi letar efter dynamiska individer som dig för att gå med i vårt team. Utforska spännande karriärmöjligheter och bli en del av en samarbetsmiljö som värdesätter innovation, tillväxt och kreativitet. Omfamna möjligheten att bidra med dina unika talanger och expertis till vår kollektiva framgång.",
+  "careers-positions": "Lediga tjänster"
 }

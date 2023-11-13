@@ -2,9 +2,9 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { DrupalNode, DrupalTranslatedPath } from "next-drupal";
 
 import { Article } from "@/components/article";
+import { Job } from "@/components/job/job";
 import { Meta } from "@/components/meta";
 import { Page } from "@/components/page";
-import { Job_listing } from "@/components/job_listing";
 import {
   createLanguageLinks,
   LanguageLinks,
@@ -21,10 +21,13 @@ import {
   Article as ArticleType,
   validateAndCleanupArticle,
 } from "@/lib/zod/article";
+import {
+  Job as JobType,
+  validateAndCleanupJob,
+} from "@/lib/zod/job";
 import { Page as PageType, validateAndCleanupPage } from "@/lib/zod/page";
-import { Job_listing as Job_listingType, validateAndCleanupJob_listing } from "@/lib/zod/job_listing";
 
-const RESOURCE_TYPES = ["node--article", "node--page", "node--job_listing"];
+const RESOURCE_TYPES = ["node--article", "node--page", "node--job"];
 
 export default function CustomPage({
   resource,
@@ -35,8 +38,8 @@ export default function CustomPage({
     <>
       <Meta title={resource.title} metatags={resource.metatag} />
       {resource.type === "node--article" && <Article article={resource} />}
+      {resource.type === "node--job" && <Job job={resource} />}
       {resource.type === "node--page" && <Page page={resource} />}
-      {resource.type === "node--job_listing" && <Job_listing job_listing={resource} />}
     </>
   );
 }
@@ -50,7 +53,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 };
 
 interface PageProps extends CommonPageProps {
-  resource: PageType | ArticleType | Job_listingType;
+  resource: PageType | ArticleType | JobType;
   languageLinks: LanguageLinks;
 }
 
@@ -125,8 +128,8 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
       ? validateAndCleanupArticle(resource)
       : type === "node--page"
       ? validateAndCleanupPage(resource)
-      : type === "node--job_listing"
-      ? validateAndCleanupJob_listing(resource)
+      : type === "node--job"
+      ? validateAndCleanupJob(resource)
       : null;
 
   return {

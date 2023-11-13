@@ -1,30 +1,37 @@
-uuid: 955e1f85-c8ca-4986-8d91-72e0716117ce
-langcode: fi
+uuid: a8ab6056-7c30-4e4e-80de-18f8fe8d47e4
+langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.job_listing.field_content_elements
-    - field.field.node.job_listing.field_excerpt
-    - field.field.node.job_listing.field_image
+    - field.field.node.job.body
+    - field.field.node.job.field_country
+    - field.field.node.job.field_excerpt
+    - field.field.node.job.field_image
     - image.style.wide
-    - node.type.job_listing
+    - node.type.job
   module:
-    - entity_reference_revisions
     - image
+    - text
     - user
-id: node.job_listing.default
+id: node.job.default
 targetEntityType: node
-bundle: job_listing
+bundle: job
 mode: default
 content:
-  field_content_elements:
-    type: entity_reference_revisions_entity_view
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_country:
+    type: entity_reference_label
     label: above
     settings:
-      view_mode: default
-      link: ''
+      link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 102
     region: content
   field_excerpt:
     type: basic_string

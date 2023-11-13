@@ -1,0 +1,8 @@
+uuid: 8a4cfeb8-f476-4526-a540-5cdb25c02340
+langcode: en
+status: true
+dependencies: {  }
+name: Country
+vid: country
+description: 'Possible country location for the open position'
+weight: 0
