@@ -1,0 +1,68 @@
+uuid: 7d8d2301-ca1b-4364-a734-b8ecdaee9567
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.employee.field_employee_email
+    - field.field.node.employee.field_employee_image
+    - field.field.node.employee.field_employee_phone
+    - field.field.node.employee.field_employee_position
+    - field.field.node.employee.field_name
+    - node.type.employee
+  module:
+    - image
+    - user
+id: node.employee.default
+targetEntityType: node
+bundle: employee
+mode: default
+content:
+  field_employee_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_employee_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_employee_phone:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_employee_position:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
