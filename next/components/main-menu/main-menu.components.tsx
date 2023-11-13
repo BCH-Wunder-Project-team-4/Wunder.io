@@ -33,6 +33,7 @@ export function MenuContainer({
   );
 }
 
+
 type MenuProps = NavigationMenu.NavigationMenuProps & {
   isOpen: boolean;
 };
@@ -46,7 +47,7 @@ export const MenuRoot = forwardRef<
       ref={ref}
       {...props}
       className={clsx(
-        "absolute inset-0 z-40 overflow-y-auto overflow-x-hidden border-finnishwinter lg:bottom-auto lg:min-h-[75vh]",
+        "absolute inset-0 z-4 overflow-y-auto overflow-x-hidden border-finnishwinter lg:bottom-auto lg:min-h-[75vh]",
         isOpen && "border-t bg-white lg:border",
         isOpen &&
           "after:absolute after:left-[calc(66.67%+1px)] after:h-full after:border-r",
@@ -81,9 +82,9 @@ export function MenuList({ children, level }) {
   return (
     <NavigationMenu.List
       className={clsx(
-        "fixed inset-0 top-[72px] overflow-scroll border-b border-l border-r border-white bg-white lg:absolute lg:top-0 lg:w-[min(33.334vw,384px)] lg:overflow-visible",
+        "fixed inset-0 top-[72px] overflow-scroll border-b border-l border-r border-white bg-white lg:absolute lg:top-0 lg:w-[min(33.334vw,384px)] lg:overflow-visible ",
         level === 0 &&
-          "z-10 h-full lg:left-0 lg:z-auto lg:border-primary-600 lg:bg-primary-600",
+          "z-10 h-full lg:left-0 lg:z-auto lg:border-primary-600 lg:bg-primary-500",
         level === 1 && "z-20 lg:left-[min(33.334vw,383px)] lg:z-auto",
         level === 2 && "z-30 lg:left-[min(33.334vw,383px)] lg:z-auto",
       )}
