@@ -9,11 +9,11 @@ export function MainMenuFull({ menu }) {
       >
         {menu.map((item) => (
           <div className="relative group" key={item.id}>
-            <button className="flex flex-row items-center w-full px-4 py-4 mt-2 text-base text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 focus:outline-none font-montserrat hover:underline">
-              <Link href={item.url}>
+            <Link href={item.url}>
+              <button className="flex flex-row items-center w-full px-4 py-4 mt-2 text-base text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 focus:outline-none hover:underline">
                 <span>{item.title}</span>
-              </Link>
-            </button>
+              </button>
+            </Link>
             {item.items && item.items.length > 0 && (
               <div className="absolute z-10 hidden bg-primary-500 group-hover:block">
                 <div className="px-4 pt-2 pb-4 bg-white shadow-lg w-60">
