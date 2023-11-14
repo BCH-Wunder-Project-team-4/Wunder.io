@@ -12,22 +12,21 @@ interface JobListItemProps {
 export function JobListItem({ job }: JobListItemProps) {
   return (
     <Link href={job.path.alias}>
-        <div className={classNames("relative grid h-full rounded border border-finnishwinter bg-white p-4 transition-all hover:shadow-md", job.sticky ? "border-primary-100 bg-primary-50" : "border-finnishwinter bg-white")}>
-          <div className="flex flex-col items-start gap-4 sm:flex-row">
-            {job.field_image && (
-              <Image
-                src={absoluteUrl(job.field_image.uri.url)}
-                width={500}
-                height={300}
-                className="w-full sm:w-40"
-                alt={job.field_image.resourceIdObjMeta.alt}
-              />
-            )}
+      <div className={classNames("relative grid h-full rounded border border-finnishwinter bg-white p-4 transition-all hover:shadow-md")}>
+        {job.field_image && (
+          <div className="w-full h-48 mb-4">
+            <Image
+              src={absoluteUrl(job.field_image.uri.url)}
+              layout="fill"
+              objectFit="cover"
+              alt={job.field_image.resourceIdObjMeta.alt}
+            />
           </div>
-        </div>
-          <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold">
-            {job.title}
-          </h3>
+        )}
+      </div>
+        <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold">
+          {job.title}
+        </h3>
     </Link>
   );
 }
