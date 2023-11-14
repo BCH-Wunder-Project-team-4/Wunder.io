@@ -6,13 +6,11 @@ import { AuthGate } from "@/components/auth-gate";
 
 import { Button } from "@/ui/button";
 import { Input } from "@/ui/input";
-import { Label } from "@/ui/label";
 import { StatusMessage } from "@/ui/status-message";
 
 type Inputs = {
   name: string;
   email: string;
-  subject: string;
 };
 
 export function CareersNewsletterForm() {
@@ -21,14 +19,14 @@ export function CareersNewsletterForm() {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { isSubmitSuccessful },
   } = useForm<Inputs>();
 
   const onSubmit = async (data: Inputs) => {   
-    const response = await fetch(`/api/careers`, {
+    const response = await fetch(`/api/careers-newsletter`, {
       method: "POST",
       body: JSON.stringify({
+        webform_id: "careers_newsletter",
         name: data.name,
         email: data.email,
       }),
@@ -57,28 +55,24 @@ export function CareersNewsletterForm() {
     
     <form
       onSubmit={handleSubmit(onSubmit, onErrors)}
-      className="mx-auto mb-4 flex max-w-3xl flex-col gap-5 rounded border border-finnishwinter bg-white p-4 shadow-md transition-all hover:shadow-md"
+      className="mx-auto mb-4 flex max-w-3xl flex-col gap-5 p-4"
     >
-      <h2 className="text-heading-sm font-bold md:text-heading-md">
-        {t("form-title")}
-      </h2>
         <>
-          <p>{t("form-description")}</p>
           <div>
-            <Label htmlFor="name">{t("form-label-name")}</Label>
             <Input
               type="text"
               id="name"
+              placeholder="Your name"
               {...register("name", {
                 required: true,
               })}
             />
           </div>
           <div>
-            <Label htmlFor="email">{t("form-label-email")}</Label>
             <Input
               type="email"
               id="email"
+              placeholder="Email"
               {...register("email", {
                 required: true,
               })}

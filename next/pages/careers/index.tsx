@@ -46,7 +46,7 @@ export default function AllJobsPage({
           <FormattedText html={t("Don't miss out on the latest opportunities and industry insights. Subscribe now to stay ahead of the curve and receive exclusive updates directly in your inbox. Join our ever-growing community of passionate professionals and unlock the door to endless career possibilities. Fill in the form below and be part of our vibrant network today!")} className="text-stone" />
         </div>
         <div className="flex-1">
-          <CareersNewsletterForm></CareersNewsletterForm>
+          <CareersNewsletterForm/>
         </div>
       </div>
     </div>
