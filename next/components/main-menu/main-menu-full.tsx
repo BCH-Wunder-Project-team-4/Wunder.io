@@ -16,11 +16,13 @@ export function MainMenuFull({ menu }) {
             </button>
             {item.items && item.items.length > 0 && (
               <div className="absolute z-10 hidden bg-primary-500 group-hover:block">
-                <div className="px-4 pt-2 pb-4 bg-white shadow-lg w-40">
+                <div className="px-4 pt-2 pb-4 bg-white shadow-lg w-60">
                   <div className="grid grid-cols-1 gap-4">
                     {item.items.map((subitem) => (
                       <Link href={subitem.url} key={subitem.id}>
-                        <li className="hover:underline">{subitem.title}</li>
+                        <li className="hover:underline list-none">
+                          {subitem.title}
+                        </li>
                       </Link>
                     ))}
                   </div>
