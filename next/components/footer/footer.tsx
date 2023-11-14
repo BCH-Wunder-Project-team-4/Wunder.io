@@ -1,12 +1,14 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-
-import { SocialShare } from "@/components/footer/social-share";
 import type { Menu, MenuItem, MenuItemOptions } from "@/lib/zod/menu";
+
 import Facebook from "@/styles/icons/facebook.svg";
+import Instagram from "@/styles/icons/instagram.svg";
+import Link from "next/link";
 import LinkedIn from "@/styles/icons/linkedin.svg";
+import { SocialShare } from "@/components/footer/social-share";
 import Twitter from "@/styles/icons/twitter.svg";
 import WunderCarrot from "@/styles/icons/wunder-carrot.svg";
+import YouTube from "@/styles/icons/youtube.svg";
+import { useRouter } from "next/router";
 
 interface FooterProps {
   menu: Menu;
@@ -35,9 +37,6 @@ export function Footer({ menu }: FooterProps) {
             })}
           </ul>
           <SocialShare />
-          <FooterLink href="https://next-drupal.org" newTab>
-            Next.js for Drupal
-          </FooterLink>
         </nav>
       </div>
     </footer>
@@ -58,6 +57,8 @@ function FooterLink({ href, icon, newTab = false, children }: FooterLinkProps) {
     facebook: Facebook,
     linkedin: LinkedIn,
     twitter: Twitter,
+    instagram: Instagram,
+    youtube: YouTube,
     wunder: WunderCarrot,
   }[icon];
 
