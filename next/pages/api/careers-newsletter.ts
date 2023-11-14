@@ -27,6 +27,7 @@ export default async function handler(
           webform_id: body.webform_id,
           name: body.name,
           email: body.email,
+          policy_checkbox: body.policy_checkbox
         }),
         headers: {
           "Content-Type": "application/json",

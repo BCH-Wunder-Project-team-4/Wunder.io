@@ -7,10 +7,12 @@ import { AuthGate } from "@/components/auth-gate";
 import { Button } from "@/ui/button";
 import { Input } from "@/ui/input";
 import { StatusMessage } from "@/ui/status-message";
+import { Label } from "@/ui/label";
 
 type Inputs = {
   name: string;
   email: string;
+  policy_checkbox: boolean;
 };
 
 export function CareersNewsletterForm() {
@@ -29,6 +31,7 @@ export function CareersNewsletterForm() {
         webform_id: "careers_newsletter",
         name: data.name,
         email: data.email,
+        policy_checkbox: data.policy_checkbox,
       }),
       // This will record the submission with the right language:
       headers: {
@@ -77,6 +80,18 @@ export function CareersNewsletterForm() {
                 required: true,
               })}
             />
+          </div>
+          <div className="flex items-center">
+            <Input
+              type="checkbox"
+              id="policy_checkbox"
+              {...register("policy_checkbox", {
+                required: true,
+              })}
+            />
+            <Label htmlFor="policy_checkbox" className="ml-2">
+              {t("I agree to the policy")}
+            </Label>
           </div>
 
           <Button type="submit">{t("form-submit")}</Button>
