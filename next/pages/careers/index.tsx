@@ -31,7 +31,7 @@ export default function AllJobsPage({
       <Meta title={t("Careers")} metatags={[]} />
       <div className="w-full max-w-screen-lg p-4 space-y-4">
         <HeadingPage className="pt-1">{t("careers-title")}</HeadingPage>
-        <FormattedText html={t("careers-intro")} className="text-stone" />
+        <FormattedText html={t("careers-intro")} className="text-stone text-center" />
         <HeadingPage>{t("careers-positions")}</HeadingPage>
         <ul className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
           {jobTeasers?.map((job, index) => (
@@ -39,7 +39,7 @@ export default function AllJobsPage({
           ))}
         </ul>
       </div>
-      <HeadingPage>{t("Subscribe to our Careers-newsletter")}</HeadingPage>
+      <HeadingPage>{t("Subscribe to our careers newsletter")}</HeadingPage>
       <div className="flex">
         <div className="flex-1">
           <FormattedText html={t("Welcome to our careers newsletter!")} className="text-xl" />
