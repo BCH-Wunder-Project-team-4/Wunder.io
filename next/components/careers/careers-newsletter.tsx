@@ -5,7 +5,8 @@ import { useForm } from "react-hook-form";
 import { AuthGate } from "@/components/auth-gate";
 
 import { Button } from "@/ui/button";
-import { Input } from "@/ui/input";
+import { Checkbox } from "@/ui/checkbox";
+import { Input } from "@/ui/careers-form-input";
 import { StatusMessage } from "@/ui/status-message";
 import { Label } from "@/ui/label";
 
@@ -81,19 +82,18 @@ export function CareersNewsletterForm() {
               })}
             />
           </div>
-          <div className="flex items-center">
-            <Input
-              type="checkbox"
+          <div className="flex items-center gap-2">
+            <Checkbox
               id="policy_checkbox"
               {...register("policy_checkbox", {
                 required: true,
               })}
             />
-            <Label htmlFor="policy_checkbox" className="ml-2">
+            <Label htmlFor="policy_checkbox" className="mb-0">
               {t("I agree to the policy")}
+              
             </Label>
           </div>
-
           <Button type="submit">{t("form-submit")}</Button>
         </>
     </form>

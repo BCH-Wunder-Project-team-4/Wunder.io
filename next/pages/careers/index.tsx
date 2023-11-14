@@ -3,7 +3,7 @@ import { useTranslation } from "next-i18next";
 import { useRef } from "react";
 
 import { JobListItem } from "@/components/careers/job-list-item";
-import { HeadingPage } from "@/components/heading--page";
+import { HeadingPage } from "@/components/heading--page-centered";
 import { LayoutProps } from "@/components/layout";
 import { Meta } from "@/components/meta";
 import {
@@ -30,7 +30,7 @@ export default function AllJobsPage({
     <div>
       <Meta title={t("Careers")} metatags={[]} />
       <div className="w-full max-w-screen-lg p-4 space-y-4">
-        <HeadingPage>{t("careers-title")}</HeadingPage>
+        <HeadingPage className="pt-1">{t("careers-title")}</HeadingPage>
         <FormattedText html={t("careers-intro")} className="text-stone" />
         <HeadingPage>{t("careers-positions")}</HeadingPage>
         <ul className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
@@ -42,8 +42,8 @@ export default function AllJobsPage({
       <HeadingPage>{t("Subscribe to our Careers-newsletter")}</HeadingPage>
       <div className="flex">
         <div className="flex-1">
-          <h2>Welcome to our Careers Newsletter!</h2>
-          <FormattedText html={t("Don't miss out on the latest opportunities and industry insights. Subscribe now to stay ahead of the curve and receive exclusive updates directly in your inbox. Join our ever-growing community of passionate professionals and unlock the door to endless career possibilities. Fill in the form below and be part of our vibrant network today!")} className="text-stone" />
+          <FormattedText html={t("Welcome to our careers newsletter!")} className="text-xl" />
+          <FormattedText html={t("Don't miss out on the latest opportunities and industry insights. Subscribe now to stay ahead of the curve and receive exclusive updates directly in your inbox. Join our ever-growing community of passionate professionals and unlock the door to endless career possibilities. Fill in the form and be part of our vibrant network today!")} className="text-stone" />
         </div>
         <div className="flex-1">
           <CareersNewsletterForm/>
