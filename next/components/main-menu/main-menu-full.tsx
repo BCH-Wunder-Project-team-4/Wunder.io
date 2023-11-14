@@ -1,36 +1,65 @@
+import { Menu } from "@/lib/zod/menu";
 import Link from "next/link";
+import { useState } from "react";
 
-export function MainMenuFull({ menu }) {
+interface MainMenuFullProps {
+  menu: Menu;
+}
+
+// Main menu with dropdowns for larger screens
+export function MainMenuFull({ menu }: MainMenuFullProps) {
+  // State to track the visibility of submenus
+  const [visibleSubmenu, setVisibleSubmenu] = useState<string | null>(null);
+
+  const handleMouseEnter = (itemId: string) => {
+    setVisibleSubmenu(itemId);
+  };
+
+  const handleMouseLeave = () => {
+    setVisibleSubmenu(null);
+  };
+
   return (
     <div>
       <nav
         aria-label="primary"
         className="relative z-20 flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row"
       >
-        {menu.map((item) => (
-          <div className="relative group" key={item.id}>
-            <Link href={item.url}>
-              <button className="flex flex-row items-center w-full px-4 py-4 mt-2 text-base text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 focus:outline-none hover:underline">
-                <span>{item.title}</span>
-              </button>
-            </Link>
-            {item.items && item.items.length > 0 && (
-              <div className="absolute z-10 hidden bg-primary-500 group-hover:block">
-                <div className="px-4 pt-2 pb-4 bg-white shadow-lg w-60">
-                  <div className="grid grid-cols-1 gap-4">
-                    {item.items.map((subitem) => (
-                      <Link href={subitem.url} key={subitem.id}>
-                        <li className="hover:underline list-none">
-                          {subitem.title}
+        <ul className="flex flex-col md:flex-row">
+          {menu.map((item) => (
+            <li
+              className="relative group"
+              key={item.id}
+              onMouseEnter={() => handleMouseEnter(item.id)}
+              onMouseLeave={handleMouseLeave}
+            >
+              <Link href={item.url}>
+                <div className="flex flex-row items-center w-min mt-2 text-base text-left bg-transparent rounded-lg md:w-auto md:block md:mt-0 md:ml-4 focus:outline-none hover:underline">
+                  <span>{item.title}</span>
+                </div>
+              </Link>
+              {item.items && item.items.length > 0 && (
+                <div
+                  className={`absolute z-10 ${
+                    visibleSubmenu === item.id ? "block" : "hidden"
+                  } bg-primary-500`}
+                >
+                  <div className="px-4 pt-2 pb-4 bg-white shadow-lg w-60">
+                    <ul className="grid grid-cols-1 gap-4">
+                      {item.items.map((subitem) => (
+                        <li key={subitem.id}>
+                          <Link href={subitem.url} className="hover:underline">
+                            {subitem.title}
+                          </Link>
                         </li>
-                      </Link>
-                    ))}
+                      ))}
+                    </ul>
                   </div>
                 </div>
-              </div>
-            )}
-          </div>
-        ))}
+              )}
+            </li>
+          ))}
+        </ul>
       </nav>
     </div>
   );
