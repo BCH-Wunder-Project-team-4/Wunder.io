@@ -35,7 +35,13 @@ export function MainMenuFull({ menu }: MainMenuFullProps) {
               aria-haspopup={
                 item.items && item.items.length > 0 ? "true" : "false"
               }
-              aria-expanded={visibleSubmenu === item.id ? "true" : "false"}
+              aria-expanded={
+                item.items &&
+                item.items.length > 0 &&
+                visibleSubmenu === item.id
+                  ? "true"
+                  : "false"
+              }
             >
               <Link href={item.url}>
                 <div className="flex flex-row items-center w-min mt-2 text-base text-left bg-transparent rounded-lg md:w-auto md:block md:mt-0 md:ml-4 focus:outline-none hover:underline">
