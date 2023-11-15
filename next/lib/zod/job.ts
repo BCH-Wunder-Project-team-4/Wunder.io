@@ -9,6 +9,11 @@ export const CountrySchema = z.object({
   id: z.string(),
   name: z.string()
 });
+export const OfficeSchema = z.object({
+  type: z.string(),
+  id: z.string(),
+  name: z.string()
+});
 
 export const JobBaseSchema = z.object({
   type: z.literal("node--job"),
@@ -23,6 +28,7 @@ export const JobBaseSchema = z.object({
   field_image: ImageShape.nullable(),
   field_excerpt: z.string().optional().nullable(),
   field_country: z.array(CountrySchema).optional().nullable(),
+  field_office: z.array(OfficeSchema).optional().nullable(),
 });
 
 const JobSchema = JobBaseSchema.extend({

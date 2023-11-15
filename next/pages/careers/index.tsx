@@ -1,3 +1,4 @@
+import React, { useMemo, useState } from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { useTranslation } from "next-i18next";
 import { useRef } from "react";
@@ -30,7 +31,20 @@ export default function AllJobsPage({
   const { t } = useTranslation();
   const focusRef = useRef<HTMLDivElement>(null);
 
-  
+  const [countries, setCountries] = useState<string[]>([]);
+  const [chosenCountry, setChosenCountry] = useState<string>("all");
+
+  useMemo(() => {
+    const countries = jobTeasers.flatMap((job) => job.field_country.map((country) => country.name));
+    setCountries(Array.from(new Set(countries)));
+  }, [jobTeasers]);
+
+  const filteredJobs = jobTeasers.filter((job) => {
+    if (chosenCountry === "all") return true;
+    return job.field_country.some((country) => country.name === chosenCountry);
+  });
+
+
   return (
     <div>
       <Meta title={t("Careers")} metatags={[]} />
@@ -38,8 +52,14 @@ export default function AllJobsPage({
         <HeadingPage className="pt-2">{t("careers-title")}</HeadingPage>
         <FormattedText html={t("careers-intro")} className="text-stone text-center" />
         <HeadingPage>{t("careers-positions")}</HeadingPage>
+        <select onChange={e => setChosenCountry(e.target.value)}>
+        <option value="all">All</option>
+        {countries.map((country) => (
+          <option key={country} value={country}>{country}</option>
+        ))}
+      </select>
         <ul className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-          {jobTeasers?.map((job, index) => (
+          {filteredJobs.map((job, index) => (
             <JobListItem key={index} job={job} />
           ))}
         </ul>

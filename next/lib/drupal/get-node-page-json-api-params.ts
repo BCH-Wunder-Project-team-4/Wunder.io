@@ -71,7 +71,8 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
     apiParams.addInclude([
       "field_image",
       "uid",
-      "field_country"]);
+      "field_country",
+      "field_office",]);
 /*     apiParams.addFields(resourceType, [
       "title",
       "body",
