@@ -4,6 +4,12 @@ import { z } from "zod";
 import { MetatagsSchema } from "@/lib/zod/metatag";
 import { ImageShape } from "@/lib/zod/paragraph";
 
+export const CountrySchema = z.object({
+  type: z.string(),
+  id: z.string(),
+  name: z.string()
+});
+
 export const JobBaseSchema = z.object({
   type: z.literal("node--job"),
   id: z.string(),
@@ -16,10 +22,10 @@ export const JobBaseSchema = z.object({
   title: z.string(),
   field_image: ImageShape.nullable(),
   field_excerpt: z.string().optional().nullable(),
+  field_country: z.array(CountrySchema).optional().nullable(),
 });
 
 const JobSchema = JobBaseSchema.extend({
-  field_country: z.array(z.string()).optional().nullable(),
   metatag: MetatagsSchema.optional(),
   body: z.object({
     processed: z.string(),

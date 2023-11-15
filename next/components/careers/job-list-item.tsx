@@ -25,6 +25,9 @@ export function JobListItem({ job }: JobListItemProps) {
           </div>
         )}
       </div>
+        <div>
+          {job.field_country && job.field_country.map((country) => country.name).join(', ')}
+        </div>
         <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold">
           {job.title}
         </h3>

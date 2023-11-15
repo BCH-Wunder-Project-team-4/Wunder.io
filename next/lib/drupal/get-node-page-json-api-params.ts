@@ -68,8 +68,11 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
     ]);
   }
   if (resourceType === "node--job") {
-    apiParams.addInclude(["field_image", "uid", "field_country"]);
-    apiParams.addFields(resourceType, [
+    apiParams.addInclude([
+      "field_image",
+      "uid",
+      "field_country"]);
+/*     apiParams.addFields(resourceType, [
       "title",
       "body",
       "uid",
@@ -80,7 +83,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "field_excerpt",
       "path",
       "sticky",
-    ]);
+    ]); */
   }
 
   return apiParams;
