@@ -12,14 +12,15 @@ interface JobListItemProps {
 export function JobListItem({ job }: JobListItemProps) {
   return (
     <Link href={job.path.alias}>
-      <div className={classNames("relative grid h-full rounded border border-finnishwinter bg-white p-4 transition-all hover:shadow-md")}>
+      <div className={classNames("relative grid rounded bg-white transition-all hover:shadow-md")}>
         {job.field_image && (
-          <div className="w-full h-48 mb-4">
+          <div className="w-full h-38">
             <Image
               src={absoluteUrl(job.field_image.uri.url)}
-              layout="fill"
-              objectFit="cover"
+              className="object-cover"
               alt={job.field_image.resourceIdObjMeta.alt}
+              width={500}
+              height={500}
             />
           </div>
         )}

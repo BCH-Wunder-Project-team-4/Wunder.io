@@ -64,7 +64,7 @@ export function CareersNewsletterForm() {
             <Input
               type="email"
               id="email"
-              placeholder="Email"
+              placeholder={t("email")}
               {...register("email", {
                 required: true,
               })}

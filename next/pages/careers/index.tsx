@@ -39,11 +39,11 @@ export default function AllJobsPage({
           ))}
         </ul>
       </div>
-      <HeadingPage>{t("Subscribe to our careers newsletter")}</HeadingPage>
+      <HeadingPage>{t("careers-subscribe")}</HeadingPage>
       <div className="flex flex-col sm:flex-row">
         <div className="flex-1">
-          <FormattedText html={t("Welcome to our careers newsletter!")} className="text-xl" />
-          <FormattedText html={t("Don't miss out on the latest opportunities and industry insights. Subscribe now to stay ahead of the curve and receive exclusive updates directly in your inbox. Join our ever-growing community of passionate professionals and unlock the door to endless career possibilities. Fill in the form and be part of our vibrant network today!")} className="text-stone" />
+          <FormattedText html={t("careers-newsletter-title")} className="text-xl" />
+          <FormattedText html={t("careers-newsletter-info")} className="text-stone" />
         </div>
         <div className="flex-1">
           <CareersNewsletterForm/>
