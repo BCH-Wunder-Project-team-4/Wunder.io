@@ -52,23 +52,21 @@ export function MainMenuFull({ menu }: MainMenuFullProps) {
                 <div
                   className={`absolute z-10 ${
                     visibleSubmenu === item.id ? "block" : "hidden"
-                  } bg-primary-500`}
+                  } px-4 pt-2 pb-4 bg-white shadow-lg w-50`}
                 >
-                  <div className="px-4 pt-2 pb-4 bg-white shadow-lg w-60">
-                    <ul className="grid grid-cols-1 gap-4">
-                      {item.items.map((subitem) => (
-                        <li key={subitem.id}>
-                          <Link
-                            href={subitem.url}
-                            className="hover:underline"
-                            onClick={() => setVisibleSubmenu(null)}
-                          >
-                            {subitem.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <ul className="grid grid-cols-1 gap-4">
+                    {item.items.map((subitem) => (
+                      <li key={subitem.id}>
+                        <Link
+                          href={subitem.url}
+                          className="hover:underline block"
+                          onClick={() => setVisibleSubmenu(null)}
+                        >
+                          {subitem.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
             </li>
