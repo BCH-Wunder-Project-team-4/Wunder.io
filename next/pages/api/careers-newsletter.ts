@@ -25,7 +25,6 @@ export default async function handler(
         method: "POST",
         body: JSON.stringify({
           webform_id: body.webform_id,
-          name: body.name,
           email: body.email,
           policy_checkbox: body.policy_checkbox
         }),

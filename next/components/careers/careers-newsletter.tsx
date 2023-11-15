@@ -11,7 +11,6 @@ import { StatusMessage } from "@/ui/status-message";
 import { Label } from "@/ui/label";
 
 type Inputs = {
-  name: string;
   email: string;
   policy_checkbox: boolean;
 };
@@ -30,7 +29,6 @@ export function CareersNewsletterForm() {
       method: "POST",
       body: JSON.stringify({
         webform_id: "careers_newsletter",
-        name: data.name,
         email: data.email,
         policy_checkbox: data.policy_checkbox,
       }),
@@ -62,16 +60,6 @@ export function CareersNewsletterForm() {
       className="mx-auto mb-4 flex max-w-3xl flex-col gap-5 p-4"
     >
         <>
-          <div>
-            <Input
-              type="text"
-              id="name"
-              placeholder="Your name"
-              {...register("name", {
-                required: true,
-              })}
-            />
-          </div>
           <div>
             <Input
               type="email"
