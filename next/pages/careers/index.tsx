@@ -32,16 +32,25 @@ export default function AllJobsPage({
   const focusRef = useRef<HTMLDivElement>(null);
 
   const [countries, setCountries] = useState<string[]>([]);
+  const [offices, setOffices] = useState<string[]>([]);
   const [chosenCountry, setChosenCountry] = useState<string>("all");
+  const [chosenOffice, setChosenOffice] = useState<string>("all");
 
   useMemo(() => {
     const countries = jobTeasers.flatMap((job) => job.field_country.map((country) => country.name));
+    const offices = jobTeasers.flatMap((job) => job.field_office.map((office) => office.name));
     setCountries(Array.from(new Set(countries)));
+    setOffices(Array.from(new Set(offices)));
   }, [jobTeasers]);
 
   const filteredJobs = jobTeasers.filter((job) => {
-    if (chosenCountry === "all") return true;
-    return job.field_country.some((country) => country.name === chosenCountry);
+    if (chosenCountry !== "all" && !job.field_country.some((country) => country.name === chosenCountry)) {
+      return false;
+    }
+    if (chosenOffice !== "all" && !job.field_office.some((office) => office.name === chosenOffice)) {
+      return false;
+    }
+    return true;
   });
 
 
@@ -53,11 +62,17 @@ export default function AllJobsPage({
         <FormattedText html={t("careers-intro")} className="text-stone text-center" />
         <HeadingPage>{t("careers-positions")}</HeadingPage>
         <select onChange={e => setChosenCountry(e.target.value)}>
-        <option value="all">All</option>
+        <option value="all">All Countries</option>
         {countries.map((country) => (
           <option key={country} value={country}>{country}</option>
         ))}
-      </select>
+        </select>
+        <select onChange={e => setChosenOffice(e.target.value)}>
+          <option value="all">All Offices</option>
+          {offices.map((office) => (
+            <option key={office} value={office}>{office}</option>
+          ))}
+        </select>
         <ul className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
           {filteredJobs.map((job, index) => (
             <JobListItem key={index} job={job} />
@@ -88,6 +103,8 @@ export const getStaticProps: GetStaticProps<AllJobsPageProps> = async (context) 
   const openPositions = await drupal.getResourceCollectionFromContext<DrupalNode[]>("node--job", context, {
     params: getNodePageJsonApiParams("node--job").getQueryObject(),
   });
+
+  console.log(openPositions[0]);
 
   return {
     props: {
