@@ -58,7 +58,11 @@ export function MainMenuFull({ menu }: MainMenuFullProps) {
                     <ul className="grid grid-cols-1 gap-4">
                       {item.items.map((subitem) => (
                         <li key={subitem.id}>
-                          <Link href={subitem.url} className="hover:underline">
+                          <Link
+                            href={subitem.url}
+                            className="hover:underline"
+                            onClick={() => setVisibleSubmenu(null)}
+                          >
                             {subitem.title}
                           </Link>
                         </li>
