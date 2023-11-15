@@ -11,6 +11,7 @@ interface MainMenuFullProps {
 export function MainMenuFull({ menu }: MainMenuFullProps) {
   // State to track the visibility of submenus
   const [visibleSubmenu, setVisibleSubmenu] = useState<string | null>(null);
+  const [activeSubitemId, setActiveSubitemId] = useState<string | null>(null);
 
   const handleMouseEnter = (itemId: string) => {
     setVisibleSubmenu(itemId);
@@ -44,7 +45,13 @@ export function MainMenuFull({ menu }: MainMenuFullProps) {
                   : "false"
               }
             >
-              <Link href={item.url} onClick={() => setVisibleSubmenu(null)}>
+              <Link
+                href={item.url}
+                onClick={() => {
+                  setVisibleSubmenu(item.id);
+                  setActiveSubitemId(null);
+                }}
+              >
                 <div className="flex flex-row items-center w-full mt-2 text-base text-left bg-transparent rounded-lg md:w-auto md:block md:mt-0 md:ml-4 focus:outline-none hover:underline">
                   <span>
                     {item.title}{" "}
@@ -72,8 +79,13 @@ export function MainMenuFull({ menu }: MainMenuFullProps) {
                         <li key={subitem.id}>
                           <Link
                             href={subitem.url}
-                            className="hover:underline block"
-                            onClick={() => setVisibleSubmenu(null)}
+                            className={`hover:underline block pb-1 ${
+                              activeSubitemId === subitem.id ? "underline" : ""
+                            }`}
+                            onClick={() => {
+                              setVisibleSubmenu(null);
+                              setActiveSubitemId(subitem.id);
+                            }}
                           >
                             {subitem.title}
                           </Link>
