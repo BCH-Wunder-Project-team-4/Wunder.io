@@ -29,7 +29,7 @@ export const getJobs = async (
       {
         deserialize: false,
         params: {
-          ...apiParams.getQueryObject(),
+          ...getNodePageJsonApiParams("node--job").getQueryObject(),
           "filter[langcode]": locale,
           "filter[status]": "1",
           page: {

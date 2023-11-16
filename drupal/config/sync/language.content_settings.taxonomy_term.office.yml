@@ -1,0 +1,11 @@
+uuid: 18509b43-0eda-4010-a161-51e1f5db7a19
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.office
+id: taxonomy_term.office
+target_entity_type_id: taxonomy_term
+target_bundle: office
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,8 @@
+uuid: 4586e57c-7a2c-491e-90d3-0ac79b9d277e
+langcode: en
+status: true
+dependencies: {  }
+name: Office
+vid: office
+description: 'Select in which offices is the job available at'
+weight: 0
