@@ -1,22 +1,17 @@
-import { useEffect, useState } from "react";
-
 import FacebookIcon from "@/styles/icons/facebook.svg";
 import IstagramIcon from "@/styles/icons/instagram.svg";
 import LinkedInIcon from "@/styles/icons/linkedin.svg";
 import TwitterIcon from "@/styles/icons/twitter.svg";
 import YouTubeIcon from "@/styles/icons/youtube.svg";
-import { inter } from "@/styles/fonts";
+import { useState } from "react";
 import { useTranslation } from "next-i18next";
 
 export function SocialShare() {
   const [pageUrl, setPageUrl] = useState<string>("wunder.io");
   const { t } = useTranslation();
 
-  useEffect(() => {
-    const currentUrl = encodeURIComponent(window.location.href);
-    /* setPageUrl(currentUrl); */ //hardcoded url for developing
-  }, []);
-  
+
+
   interface socialMedia {
     id: number;
     location: string;
@@ -24,7 +19,7 @@ export function SocialShare() {
     icon: JSX.Element;
   }
 
-  const data : socialMedia[] = [
+  const data: socialMedia[] = [
     {
       id: 1,
       location: "Facebook",

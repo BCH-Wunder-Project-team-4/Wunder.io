@@ -5,6 +5,7 @@ import { Label } from "@/ui/label"
 import Link from "next/link";
 import { StatusMessage } from "@/ui/status-message";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 
 type Inputs = {
@@ -17,6 +18,7 @@ type Inputs = {
 
 export const NewsletterForm = () => {
   const { t } = useTranslation()
+  const router = useRouter();
 
   const {
     register,
@@ -26,22 +28,25 @@ export const NewsletterForm = () => {
   } = useForm<Inputs>();
 
   const onSubmit = async (data: Inputs) => {
-    if (data.news || data.careers || data.events) {
-      const response = await fetch(`/api/newsletter`, {
-        method: "POST",
-        body: JSON.stringify({
-          news: data.news,
-          careers: data.careers,
-          events: data.events,
-          email: data.email,
-          terms: data.terms,
-        }),
-      });
+    /*     if (data.news || data.careers || data.events) { */
+    const response = await fetch(`/api/footerNewsletter`, {
+      method: "POST",
+      body: JSON.stringify({
+        news: data.news,
+        careers: data.careers,
+        events: data.events,
+        email: data.email,
+        terms: data.terms,
+      }),
+      headers: {
+        "accept-language": router.locale,
+      },
+    });
 
-      if (!response.ok) {
-        alert("Error!");
-      }
+    if (!response.ok) {
+      alert("Error!");
     }
+    /*     } */
   };
 
   const onErrors = (errors) => console.error(errors);
@@ -64,7 +69,8 @@ export const NewsletterForm = () => {
       <p className="py-3">{t('footer-newsletter-interest')}</p>
       <form
         onSubmit={handleSubmit(onSubmit, onErrors)}
-        className="flex flex-col ">
+        className="flex flex-col"
+        name="newsletter">
         <div className="flex flex-row py-2">
           <Checkbox id="news" value={"news"} {...register("news", {
             required: false,
