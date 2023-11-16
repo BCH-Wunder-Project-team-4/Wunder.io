@@ -1,0 +1,8 @@
+uuid: d67c7b9a-b65e-4643-b75b-eadd48767613
+langcode: en
+status: true
+dependencies: {  }
+name: Industry
+vid: industry
+description: 'What is the related industry'
+weight: 0
