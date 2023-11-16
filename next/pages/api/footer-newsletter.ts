@@ -7,33 +7,29 @@ export default async function handler(
   res: NextApiResponse,
 ) {
 
-  // The locale is passed in this header:
   const languagePrefix = req.headers["accept-language"];
+
+
 
   try {
     if (req.method === "POST") {
       const url = drupal.buildUrl(`/${languagePrefix}/webform_rest/submit`);
       const body = JSON.parse(req.body);
-      console.log("url", url);
-
-
 
 
       // Submit to Drupal.
       const result = await drupal.fetch(url.toString(), {
         method: "POST",
         body: JSON.stringify({
-          webform_id: "newsletter1",
+          webform_id: body.webform_id,
           news: body.news,
           careers: body.careers,
           events: body.events,
           email: body.email,
-          terms: body.terms,
+          policy_checkbox: body.terms,
         }),
         headers: {
           "Content-Type": "application/json",
-          // Pass the token to authenticate the request:
-
         },
       });
 

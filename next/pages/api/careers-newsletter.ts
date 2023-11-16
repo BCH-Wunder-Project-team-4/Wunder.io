@@ -1,8 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-
 import { drupal } from "@/lib/drupal/drupal-client";
-
 
 export default async function handler(
   req: NextApiRequest,
@@ -11,14 +9,16 @@ export default async function handler(
 
   const languagePrefix = req.headers["accept-language"];
 
-  
+
+
 
   try {
     if (req.method === "POST") {
       const url = drupal.buildUrl(`/${languagePrefix}/webform_rest/submit`);
       const body = JSON.parse(req.body);
-      
-      
+
+
+
 
       // Submit to Drupal.
       const result = await drupal.fetch(url.toString(), {
@@ -30,7 +30,7 @@ export default async function handler(
         }),
         headers: {
           "Content-Type": "application/json",
-          
+
         },
       });
 

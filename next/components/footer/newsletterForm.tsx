@@ -19,34 +19,40 @@ type Inputs = {
 export const NewsletterForm = () => {
   const { t } = useTranslation()
   const router = useRouter();
-
   const {
     register,
     handleSubmit,
-    reset,
     formState: { isSubmitSuccessful },
   } = useForm<Inputs>();
 
   const onSubmit = async (data: Inputs) => {
-    /*     if (data.news || data.careers || data.events) { */
-    const response = await fetch(`/api/footerNewsletter`, {
-      method: "POST",
-      body: JSON.stringify({
-        news: data.news,
-        careers: data.careers,
-        events: data.events,
-        email: data.email,
-        terms: data.terms,
-      }),
-      headers: {
-        "accept-language": router.locale,
-      },
-    });
+    console.log(data);
 
-    if (!response.ok) {
-      alert("Error!");
+    if (data.news || data.careers || data.events) {
+      const response = await fetch(`/api/footer-newsletter`, {
+        method: "POST",
+        body: JSON.stringify({
+          webform_id: "footer_newsletter",
+          news: data.news,
+          careers: data.careers,
+          events: data.events,
+          email: data.email,
+          terms: data.terms,
+        }),
+        headers: {
+          "accept-language": router.locale,
+        },
+      });
+
+      if (!response.ok) {
+        alert("Error!");
+      }
     }
-    /*     } */
+    else {
+      return (
+        alert("Error. Choose at least one option.")
+      )
+    }
   };
 
   const onErrors = (errors) => console.error(errors);
@@ -54,10 +60,8 @@ export const NewsletterForm = () => {
   if (isSubmitSuccessful) {
     return (
       <StatusMessage level="success" className="mx-auto w-full max-w-3xl">
-        <p className="mb-4">{t("form-thank-you-message")}</p>
-        <Button type="button" onClick={() => reset()}>
-          {t("form-send-another-message")}
-        </Button>
+        <p className="mb-4">{t("Thank you for subscribing to our newsletter!")}</p>
+
       </StatusMessage>
     );
   }
@@ -72,21 +76,33 @@ export const NewsletterForm = () => {
         className="flex flex-col"
         name="newsletter">
         <div className="flex flex-row py-2">
-          <Checkbox id="news" value={"news"} {...register("news", {
+          <Checkbox id="news"  {...register("news", {
             required: false,
           })} />
           <Label htmlFor="news" className="px-2 flex align-text-top ">Wunder News</Label>
-          <Checkbox id="careers" value={"careers"} />
+
+          <Checkbox id="careers" defaultChecked {...register("careers", {
+
+            required: false,
+          })} />
           <Label htmlFor="careers" className="px-2 flex align-text-top ">Careers</Label>
-          <Checkbox id="events" value={"events"} />
+
+          <Checkbox id="events" {...register("events", {
+            required: false,
+          })} />
           <Label htmlFor="events" className="px-2 flex align-text-top ">Events</Label>
+
         </div>
         <div className="flex flex-row gap-4">
-          <Input placeholder="Enter your email" required type={"email"} className="max-w-[400px]" />
-          <Button variant={"primary"} size="md" type={"submit"} >Subscribe</Button>
+          <Input placeholder="Enter your email" required type={"email"} className="max-w-[400px]" {...register("email", {
+            required: true,
+          })} />
+          <Button variant={"primary"} size="md" type={"submit"} >{t("form-submit")}</Button>
         </div>
         <div className="flex flex-row gap-4 pt-4">
-          <Checkbox id="terms" value={"terms"} required />
+          <Checkbox id="terms" required {...register("terms", {
+            required: true,
+          })} />
           <Label htmlFor="terms" className="px-2  max-w-sm">
             {t('footer-newsletter-terms',)} <Link href='/privacy-policy' className='text-primary-600'> Privacy Policy </Link>.*
           </Label>
