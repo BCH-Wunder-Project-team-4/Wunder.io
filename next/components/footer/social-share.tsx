@@ -5,6 +5,7 @@ import IstagramIcon from "@/styles/icons/instagram.svg";
 import LinkedInIcon from "@/styles/icons/linkedin.svg";
 import TwitterIcon from "@/styles/icons/twitter.svg";
 import YouTubeIcon from "@/styles/icons/youtube.svg";
+import { inter } from "@/styles/fonts";
 import { useTranslation } from "next-i18next";
 
 export function SocialShare() {
@@ -15,8 +16,15 @@ export function SocialShare() {
     const currentUrl = encodeURIComponent(window.location.href);
     /* setPageUrl(currentUrl); */ //hardcoded url for developing
   }, []);
+  
+  interface socialMedia {
+    id: number;
+    location: string;
+    url: string;
+    icon: JSX.Element;
+  }
 
-  const data = [
+  const data : socialMedia[] = [
     {
       id: 1,
       location: "Facebook",
@@ -52,7 +60,6 @@ export function SocialShare() {
 
   return (
     <div>
-      <p className="text-center">{t("share-page")}</p>
       <ul className="flex flex-wrap justify-center">
         {data?.map(({ id, url, icon, location }) => (
           <li className="m-4" key={id}>

@@ -1,10 +1,12 @@
-import React from "react";
 import * as LabelPrimitive from "@radix-ui/react-label";
+
+import { VariantProps, cva } from "cva";
+
+import React from "react";
 import clsx from "clsx";
-import { cva, VariantProps } from "cva";
 
 const labelVariants = cva(
-  "mb-1 block text-sm font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
+  "mb-1 block text-sm font-regular leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
 );
 
 export const Label = React.forwardRef<
