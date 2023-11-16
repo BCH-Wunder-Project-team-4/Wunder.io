@@ -64,6 +64,15 @@ export function MainMenu({ menu, isOpen, setIsOpen }: MainMenuProps) {
   });
 
   useEffect(() => {
+    // Close menu when viewport is >= 1024px
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
     // Prevent body scroll when menu is open
     document.body.style.overflow = isOpen ? "hidden" : "auto";
 
@@ -107,6 +116,10 @@ export function MainMenu({ menu, isOpen, setIsOpen }: MainMenuProps) {
 
       setDidInit(true);
     }
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, [isOpen, menu, router]);
 
   const activeMenuTitle = menu.find((i) => i.id === activeMenu)?.title;
