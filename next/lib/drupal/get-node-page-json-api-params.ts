@@ -90,6 +90,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
   if (resourceType === "node--case") {
     apiParams
       .addInclude([
+        "field_image",
         "field_content_elements",
         "field_content_elements.field_image.field_media_image",
         "field_content_elements.field_video",
@@ -100,6 +101,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       ])
       .addFields("node--case", [
         "title",
+        "field_image",
         "field_content_elements",
         "path",
         "status",

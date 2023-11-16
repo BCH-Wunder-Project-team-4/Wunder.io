@@ -8,6 +8,7 @@ import {
   FormattedTextSchema,
   HeroSchema,
   ImageSchema,
+  ImageShape,
   LinksSchema,
   ListingArticlesSchema,
   VideoSchema,
@@ -28,6 +29,7 @@ export const CaseSchema = z.object({
   type: z.literal("node--case"),
   id: z.string(),
   title: z.string(),
+  field_image: ImageShape.nullable().default(null),
   field_content_elements: z.array(CaseElementsSchema),
   metatag: MetatagsSchema.optional(),
 });
