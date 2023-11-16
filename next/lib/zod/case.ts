@@ -30,15 +30,15 @@ export const CaseSchema = z.object({
   title: z.string(),
   field_image: ImageShape.nullable().default(null),
   field_date: z.string(),
-  field_industry: z.object({
+  field_industry: z.array(z.object({
     name: z.string(),
-  }),
-  field_solution: z.object({
+  })),
+  field_solution: z.array(z.object({
     name: z.string(),
-  }),
-  field_technology: z.object({
+  })),
+  field_technology: z.array(z.object({
     name: z.string(),
-  }),
+  })),
   field_content_elements: z.array(CaseElementsSchema),
   metatag: MetatagsSchema.optional(),
 });
