@@ -14,7 +14,7 @@ export function CaseTeaser({ caseItem }: CaseTeaserProps) {
     <Link href={caseItem.path.alias}>
       <div className={classNames("relative grid rounded bg-white transition-all hover:shadow-md")}>
         {caseItem.field_image && (
-        <div className="aspect-w-4 aspect-h-3">
+        <div className="aspect-w-4 aspect-h-3 rounded-sm overflow-hidden">
           <Image
             src={absoluteUrl(caseItem.field_image.uri.url)}
             width={384}
@@ -25,6 +25,7 @@ export function CaseTeaser({ caseItem }: CaseTeaserProps) {
         </div>
         )}
       </div>
+        <p className="text-stone">{caseItem.field_date}</p>
         <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold">
           {caseItem.title}
         </h3>

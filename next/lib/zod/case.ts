@@ -10,7 +10,6 @@ import {
   ImageSchema,
   ImageShape,
   LinksSchema,
-  ListingArticlesSchema,
   VideoSchema,
 } from "@/lib/zod/paragraph";
 
@@ -21,15 +20,25 @@ const CaseElementsSchema = z.discriminatedUnion("type", [
   LinksSchema,
   AccordionSchema,
   HeroSchema,
-  ListingArticlesSchema,
   FileAttachmentsSchema,
 ]);
+
 
 export const CaseSchema = z.object({
   type: z.literal("node--case"),
   id: z.string(),
   title: z.string(),
   field_image: ImageShape.nullable().default(null),
+  field_date: z.string(),
+  field_industry: z.object({
+    name: z.string(),
+  }),
+  field_solution: z.object({
+    name: z.string(),
+  }),
+  field_technology: z.object({
+    name: z.string(),
+  }),
   field_content_elements: z.array(CaseElementsSchema),
   metatag: MetatagsSchema.optional(),
 });

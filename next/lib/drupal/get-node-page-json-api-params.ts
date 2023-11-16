@@ -97,10 +97,14 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
         "field_content_elements.field_file_attachments.field_media_document",
         "field_content_elements.field_accordion_items",
         "field_content_elements.field_accordion_items.field_content_elements.field_image.field_media_image",
-        "field_content_elements.field_accordion_items.field_content_elements.field_video",
+        "field_content_elements.field_accordion_items.field_content_elements.field_video"
       ])
       .addFields("node--case", [
         "title",
+        "field_industry",
+        "field_solution",
+        "field_technology",
+        "field_date",
         "field_image",
         "field_content_elements",
         "path",
