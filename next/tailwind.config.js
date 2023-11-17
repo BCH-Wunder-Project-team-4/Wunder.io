@@ -4,8 +4,8 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   content: ["./{components,lib,pages,stories,styles,ui}/**/*"],
   variants: {
-    display: ['responsive', 'group-hover', 'group-focus'],
-   },
+    display: ["responsive", "group-hover", "group-focus"],
+  },
   theme: {
     colors: {
       transparent: "transparent",
@@ -51,8 +51,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      inter: ["--font-inter", ...defaultTheme.fontFamily.sans],
-      overpass: ["--font-overpass", ...defaultTheme.fontFamily.sans],
+      inter: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
+      overpass: ["var(--font-overpass)", ...defaultTheme.fontFamily.sans],
     },
     fontSize: {
       xs: ["0.813rem", { lineHeight: "1.5" }],
