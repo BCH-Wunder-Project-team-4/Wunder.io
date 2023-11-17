@@ -2,7 +2,7 @@ import { DrupalJsonApiParams } from "drupal-jsonapi-params";
 
 import { env } from "@/env";
 
-export type ResourceType = "node--frontpage" | "node--page" | "node--article" | "node--job";
+export type ResourceType = "node--frontpage" | "node--page" | "node--article" | "node--job" | "node--employee";
 
 export function getNodePageJsonApiParams(resourceType: ResourceType) {
   const apiParams = new DrupalJsonApiParams().addFilter(
@@ -75,6 +75,25 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "uid",
       "created",
       "field_image",
+      "status",
+      "metatag",
+      "field_excerpt",
+      "path",
+      "sticky",
+    ]);
+  }
+  if (resourceType === "node--employee") {
+    apiParams.addInclude(["field_employee_image", "uid"]);
+    apiParams.addFields(resourceType, [
+      "title",
+      "body",
+      "uid",
+      "created",
+      "field_name",
+      "field_employee_image",
+      "field_employee_email",
+      "field_employee_phone",
+      "field_employee_position",
       "status",
       "metatag",
       "field_excerpt",
