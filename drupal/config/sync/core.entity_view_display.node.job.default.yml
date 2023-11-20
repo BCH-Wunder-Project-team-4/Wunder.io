@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.job.field_country
     - field.field.node.job.field_excerpt
     - field.field.node.job.field_image
-    - field.field.node.job.field_office
     - image.style.wide
     - node.type.job
   module:
@@ -51,14 +50,6 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: -1
-    region: content
-  field_office:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 103
     region: content
   links:
     settings: {  }

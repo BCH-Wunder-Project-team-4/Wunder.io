@@ -1,0 +1,64 @@
+uuid: 60b1de18-2385-40d4-bccd-0467409f695e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.office.field_office_address_one
+    - field.field.node.office.field_office_address_two
+    - field.field.node.office.field_office_country
+    - field.field.node.office.field_office_email
+    - field.field.node.office.field_office_name
+    - node.type.office
+  module:
+    - user
+id: node.office.default
+targetEntityType: node
+bundle: office
+mode: default
+content:
+  field_office_address_one:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_office_address_two:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_office_country:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_office_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_office_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

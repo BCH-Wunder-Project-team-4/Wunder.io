@@ -1,0 +1,19 @@
+uuid: e43b91b3-e6c2-4c37-b758-21e2f86ce315
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_office_email
+    - node.type.office
+id: node.office.field_office_email
+field_name: field_office_email
+entity_type: node
+bundle: office
+label: office_email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

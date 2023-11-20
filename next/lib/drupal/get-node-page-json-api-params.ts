@@ -2,7 +2,7 @@ import { DrupalJsonApiParams } from "drupal-jsonapi-params";
 
 import { env } from "@/env";
 
-export type ResourceType = "node--frontpage" | "node--page" | "node--article" | "node--job" | "node--case";
+export type ResourceType = "node--frontpage" | "node--page" | "node--article" | "node--job" | "node--case" | "node--employee" | "node--office";
 
 export function getNodePageJsonApiParams(resourceType: ResourceType) {
   const apiParams = new DrupalJsonApiParams().addFilter(
@@ -114,6 +114,44 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
         "status",
         "metatag",
       ]);
+  }
+  if (resourceType === "node--employee") {
+    apiParams.addInclude(["field_employee_image", "uid"]);
+    apiParams.addFields(resourceType, [
+      "title",
+      "body",
+      "uid",
+      "created",
+      "field_name",
+      "field_employee_image",
+      "field_employee_email",
+      "field_employee_phone",
+      "field_employee_position",
+      "status",
+      "metatag",
+      "field_excerpt",
+      "path",
+      "sticky",
+    ]);
+  }
+  if (resourceType === "node--office") {
+    apiParams.addInclude(["uid"]);
+    apiParams.addFields(resourceType, [
+      "title",
+      "body",
+      "uid",
+      "created",
+      "field_name",
+      "field_office_address_one",
+      "field_office_address_two",
+      "field_office_email",
+      "field_office_country",
+      "status",
+      "metatag",
+      "field_excerpt",
+      "path",
+      "sticky",
+    ]);
   }
 
   return apiParams;
