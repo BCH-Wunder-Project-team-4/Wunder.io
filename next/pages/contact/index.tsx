@@ -23,22 +23,23 @@ import {EmployeeTeaser as EmployeeTeaserType, validateAndCleanupEmployeeTeaser }
 import { Team } from "@/components/contact-us/team";
 import { FollowUs } from "@/components/contact-us/followUs";
 import { Invoice } from "@/components/contact-us/invoicing";
+import {OfficeTeaser as OfficeTeaserType, validateAndCleanupOfficeTeaser } from "@/lib/zod/office-teasers";
+import { Offices } from "@/components/contact-us/offices";
 
 
 
 
 interface ContactPageProps extends LayoutProps {
   employeeTeasers: EmployeeTeaserType[];
+  officeTeasers: OfficeTeaserType[];
   languageLinks: LanguageLinks;
 }
 
-export default function ContactPage({
+export default function ContactPage({officeTeasers = [],
   employeeTeasers = []
-}:InferGetStaticPropsType<typeof getStaticProps>) {
+}:InferGetStaticPropsType<typeof getStaticProps>){
   const { t } = useTranslation();
   const focusRef = useRef<HTMLDivElement>(null);
-  
-  console.log(employeeTeasers);
   
   return (
     <>
@@ -58,10 +59,12 @@ export default function ContactPage({
         </div>
       </div>
       <FollowUs></FollowUs>
-      <Team employees={employeeTeasers}></Team>
+      <Team employees={employeeTeasers
+      }></Team>
         <div className=" -z-40">
           <LocationMap></LocationMap>
         </div> 
+      <Offices offices={officeTeasers}></Offices>
       <Invoice></Invoice>   
     </>
   );
@@ -75,11 +78,16 @@ export const getStaticProps: GetStaticProps<ContactPageProps> = async (context) 
   const employeeTeasers = await drupal.getResourceCollectionFromContext<DrupalNode[]>("node--employee", context, {
     params: getNodePageJsonApiParams("node--employee").getQueryObject(),
   });
+  const officeTeasers = await drupal.getResourceCollectionFromContext<DrupalNode[]>("node--office", context, {
+    params: getNodePageJsonApiParams("node--office").getQueryObject(),
+  });
 
   return {
     props: {
       ...(await getCommonPageProps(context)),
+      officeTeasers: officeTeasers.map((teaser) =>validateAndCleanupOfficeTeaser(teaser)),
       employeeTeasers: employeeTeasers.map((teaser) => validateAndCleanupEmployeeTeaser(teaser)),
+      
       languageLinks,
     },
     revalidate: 60,
