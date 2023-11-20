@@ -1,0 +1,19 @@
+uuid: e01c917e-fbe0-4739-a69d-3968631dd243
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_office_address_one
+    - node.type.office
+id: node.office.field_office_address_one
+field_name: field_office_address_one
+entity_type: node
+bundle: office
+label: office_address_one
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

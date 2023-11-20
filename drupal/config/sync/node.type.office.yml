@@ -1,0 +1,17 @@
+uuid: 52e5a1e2-1281-40b3-9181-c60711f96cc2
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: office
+type: office
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

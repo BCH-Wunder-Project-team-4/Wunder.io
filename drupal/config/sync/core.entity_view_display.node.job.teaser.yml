@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.job.field_country
     - field.field.node.job.field_excerpt
     - field.field.node.job.field_image
-    - field.field.node.job.field_office
     - image.style.medium
     - node.type.job
   module:
@@ -47,5 +46,4 @@ content:
 hidden:
   field_country: true
   field_excerpt: true
-  field_office: true
   langcode: true
