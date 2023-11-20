@@ -1,0 +1,13 @@
+uuid: 6030d4c4-4e84-4b82-a448-10bc3b96990e
+langcode: en
+status: true
+dependencies: {  }
+id: node.case
+site_resolver: site_selector
+configuration:
+  sites:
+    frontend: frontend
+revalidator: path
+revalidator_configuration:
+  revalidate_page: true
+  additional_paths: ''

@@ -1,12 +1,12 @@
-uuid: 066730b5-b870-4e73-a9ff-4893df7829d4
+uuid: 0a120e4d-4eba-4ae4-ab9d-204696763062
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - taxonomy
-id: node.field_office
-field_name: field_office
+id: node.field_technology
+field_name: field_technology
 entity_type: node
 type: entity_reference
 settings:

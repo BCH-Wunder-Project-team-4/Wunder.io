@@ -1,32 +1,26 @@
-uuid: a2304e99-df5a-4e92-b56c-163428bf3226
+uuid: 4308c278-3615-4795-8a83-7bfbe9bbdbe5
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.job.body
-    - field.field.node.job.field_country
-    - field.field.node.job.field_excerpt
-    - field.field.node.job.field_image
+    - field.field.node.case.field_content_elements
+    - field.field.node.case.field_date
+    - field.field.node.case.field_excerpt
+    - field.field.node.case.field_image
+    - field.field.node.case.field_industry
+    - field.field.node.case.field_solution
+    - field.field.node.case.field_technology
     - image.style.medium
-    - node.type.job
+    - node.type.case
   module:
     - image
-    - text
     - user
-id: node.job.teaser
+id: node.case.teaser
 targetEntityType: node
-bundle: job
+bundle: case
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 101
-    region: content
   field_image:
     type: image
     label: hidden
@@ -44,6 +38,10 @@ content:
     weight: 100
     region: content
 hidden:
-  field_country: true
+  field_content_elements: true
+  field_date: true
   field_excerpt: true
+  field_industry: true
+  field_solution: true
+  field_technology: true
   langcode: true

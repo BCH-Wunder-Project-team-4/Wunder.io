@@ -1,0 +1,21 @@
+uuid: 95d5ae16-0a42-490f-83bd-6a2a5421e3dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_office_address_two
+field_name: field_office_address_two
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

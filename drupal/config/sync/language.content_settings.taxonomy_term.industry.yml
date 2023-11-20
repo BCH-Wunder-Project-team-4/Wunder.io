@@ -1,0 +1,16 @@
+uuid: 41b172c5-8711-4777-83bd-5fc25298d80b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.industry
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.industry
+target_entity_type_id: taxonomy_term
+target_bundle: industry
+default_langcode: site_default
+language_alterable: true

@@ -1,0 +1,22 @@
+uuid: 31db5050-c5c9-41f3-aba7-f47171e3f3d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: case
+label: Case
+type: 'canonical_entities:node'
+pattern: 'cases/[node:title]'
+selection_criteria:
+  78ea9a17-96b9-40a3-a1f7-1fa41b114f3c:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 78ea9a17-96b9-40a3-a1f7-1fa41b114f3c
+    context_mapping:
+      node: node
+    bundles:
+      case: case
+selection_logic: and
+weight: -5
+relationships: {  }
