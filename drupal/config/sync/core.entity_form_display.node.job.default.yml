@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.job.field_country
     - field.field.node.job.field_excerpt
     - field.field.node.job.field_image
+    - field.field.node.job.field_office
     - image.style.thumbnail
     - node.type.job
   module:
@@ -59,6 +60,16 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_office:
+    type: entity_reference_autocomplete
+    weight: 6
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select
