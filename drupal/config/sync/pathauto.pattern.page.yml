@@ -11,10 +11,10 @@ label: Page
 type: 'canonical_entities:node'
 pattern: '[node:title]'
 selection_criteria:
-  61e9cd38-e513-4d12-a581-1974b469fa10:
+  9fc14a86-642c-43b2-bc72-3843072df64a:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 61e9cd38-e513-4d12-a581-1974b469fa10
+    uuid: 9fc14a86-642c-43b2-bc72-3843072df64a
     context_mapping:
       node: node
     bundles:

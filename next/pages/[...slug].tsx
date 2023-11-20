@@ -5,6 +5,7 @@ import { Article } from "@/components/article";
 import { Job } from "@/components/careers/job";
 import { Meta } from "@/components/meta";
 import { Page } from "@/components/page";
+import { Case } from "@/components/cases/case";
 import {
   createLanguageLinks,
   LanguageLinks,
@@ -26,8 +27,9 @@ import {
   validateAndCleanupJob,
 } from "@/lib/zod/job";
 import { Page as PageType, validateAndCleanupPage } from "@/lib/zod/page";
+import { Case as CaseType, validateAndCleanupCase } from "@/lib/zod/case";
 
-const RESOURCE_TYPES = ["node--article", "node--page", "node--job"];
+const RESOURCE_TYPES = ["node--article", "node--page", "node--job", "node--case"];
 
 export default function CustomPage({
   resource,
@@ -40,6 +42,7 @@ export default function CustomPage({
       {resource.type === "node--article" && <Article article={resource} />}
       {resource.type === "node--job" && <Job job={resource} />}
       {resource.type === "node--page" && <Page page={resource} />}
+      {resource.type === "node--case" && <Case caseNode={resource} />}
     </>
   );
 }
@@ -53,7 +56,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 };
 
 interface PageProps extends CommonPageProps {
-  resource: PageType | ArticleType | JobType;
+  resource: PageType | ArticleType | JobType | CaseType;
   languageLinks: LanguageLinks;
 }
 
@@ -130,6 +133,8 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
       ? validateAndCleanupPage(resource)
       : type === "node--job"
       ? validateAndCleanupJob(resource)
+      : type === "node--case"
+      ? validateAndCleanupCase(resource)
       : null;
 
   return {

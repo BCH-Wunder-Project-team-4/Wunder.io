@@ -1,0 +1,47 @@
+uuid: 4308c278-3615-4795-8a83-7bfbe9bbdbe5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.case.field_content_elements
+    - field.field.node.case.field_date
+    - field.field.node.case.field_excerpt
+    - field.field.node.case.field_image
+    - field.field.node.case.field_industry
+    - field.field.node.case.field_solution
+    - field.field.node.case.field_technology
+    - image.style.medium
+    - node.type.case
+  module:
+    - image
+    - user
+id: node.case.teaser
+targetEntityType: node
+bundle: case
+mode: teaser
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_content_elements: true
+  field_date: true
+  field_excerpt: true
+  field_industry: true
+  field_solution: true
+  field_technology: true
+  langcode: true
