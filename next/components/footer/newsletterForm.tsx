@@ -49,9 +49,8 @@ export const NewsletterForm = () => {
       }
     }
     else {
-      return (
-        alert("Error. Choose at least one option.")
-      )
+      throw new Error("Error. Choose at least one option.");
+
     }
   };
 
@@ -68,43 +67,44 @@ export const NewsletterForm = () => {
 
   return (
     <div className="px-6 flex-col">
-      <h3 className="text-sm font-bold uppercase tracking-wider py-2"> {t('footer-newsletter-subscribe')}</h3>
-      <p className="max-w-sm">{t('footer-newsletter-intro')}</p>
-      <p className="py-3">{t('footer-newsletter-interest')}</p>
+      <h3 className="text-2xl font-bold uppercase tracking-wider py-2"> {t('footer-newsletter-subscribe')}</h3>
+      <p className="max-w-sm text-md">{t('footer-newsletter-intro')}</p>
+      <p className="py-3 text-md">{t('footer-newsletter-interest')}</p>
       <form
         onSubmit={handleSubmit(onSubmit, onErrors)}
         className="flex flex-col"
         name="newsletter">
         <div className="flex flex-row py-2">
-          <Checkbox id="news"  {...register("news", {
+          <input type="checkbox" id="news" className="peer h-5 w-5 shrink-0 rounded border border-graysuit
+      disabled:cursor-not-allowed disabled:border-graysuit text-red-600 bg-gray-100" {...register("news", {
             required: false,
           })} />
-          <Label htmlFor="news" className="px-2 flex align-text-top ">Wunder News</Label>
+          <Label htmlFor="news" className="px-2 flex align-text-top text-md">Wunder News</Label>
 
-          <Checkbox id="careers" defaultChecked {...register("careers", {
+          <input type="checkbox" id="careers"  {...register("careers", {
 
             required: false,
           })} />
-          <Label htmlFor="careers" className="px-2 flex align-text-top ">Careers</Label>
+          <Label htmlFor="careers" className="px-2 flex align-text-top text-md">Careers</Label>
 
-          <Checkbox id="events" {...register("events", {
+          <input type="checkbox" id="events" {...register("events", {
             required: false,
           })} />
-          <Label htmlFor="events" className="px-2 flex align-text-top ">Events</Label>
+          <Label htmlFor="events" className="px-2 flex align-text-top text-">Events</Label>
 
         </div>
         <div className="flex flex-row gap-4">
-          <Input placeholder="Enter your email" required type={"email"} className="max-w-[400px]" {...register("email", {
+          <Input placeholder="Enter your email" required type={"email"} className="max-w-[400px] bg-transparent border-b-2 autofill:active:bg-transparent" {...register("email", {
             required: true,
           })} />
-          <Button variant={"primary"} size="md" type={"submit"} >{t("form-submit")}</Button>
+          <Button variant={"secondary"} className="hover:bg-finnishwinter hover:text-primary-800" size="md" type={"submit"} >{t("form-submit")}</Button>
         </div>
         <div className="flex flex-row gap-4 pt-4">
           <Checkbox id="terms" required {...register("terms", {
             required: true,
           })} />
-          <Label htmlFor="terms" className="px-2  max-w-sm">
-            {t('footer-newsletter-terms',)} <Link href='/privacy-policy' className='text-primary-600'> Privacy Policy </Link>.*
+          <Label htmlFor="terms" className="px-2  max-w-sm text-md">
+            {t('footer-newsletter-terms',)} <Link href='/privacy-policy' className='text-mellow'> Privacy Policy </Link>.*
           </Label>
         </div>
       </form>

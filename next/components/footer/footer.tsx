@@ -6,7 +6,7 @@ export function Footer() {
 
 
   return (
-    <footer className="border-t border-finnishwinter">
+    <footer className="border-t border-finnishwinter bg-primary-600 text-white">
       <div className="mx-auto max-w-6xl flex flex-col sm:flex-row sm:justify-between border-b-finnishwinter border-b-2 py-8">
         <NewsletterForm />
         <FooterLinks />
