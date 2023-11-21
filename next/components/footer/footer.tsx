@@ -13,7 +13,7 @@ export function Footer() {
       </div>
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-center py-5 sm:flex-row sm:justify-between">
-          <p className="relative w-fit [font-family:'Overpass-Regular',Helvetica] font-normal text-[#040505cc] text-[14px] tracking-[0] leading-[normal]">
+          <p className="relative w-fit [font-family:'Overpass-Regular',Helvetica] font-normal text-text-mischka text-[14px] tracking-[0] leading-[normal]">
             © 2023 Wunder. All Rights Reserved.
           </p>
           <SocialShare />

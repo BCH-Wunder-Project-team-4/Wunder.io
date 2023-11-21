@@ -24,31 +24,31 @@ export function SocialShare() {
       id: 1,
       location: "Facebook",
       url: `https://www.facebook.com/${pageUrl}`,
-      icon: <FacebookIcon className="block h-6 w-6 text-primary-600" />,
+      icon: <FacebookIcon className="block h-6 w-6 text-mischka" />,
     },
     {
       id: 2,
       location: "Twitter",
       url: `https://twitter.com/${pageUrl.replace(/\./g, '_')}`,
-      icon: <TwitterIcon className="block h-6 w-6 text-primary-600" />,
+      icon: <TwitterIcon className="block h-6 w-6 text-mischka" />,
     },
     {
       id: 3,
       location: "LinkedIn",
       url: `https://www.linkedin.com/company/${pageUrl}`,
-      icon: <LinkedInIcon className="block h-6 w-6 text-primary-600" />,
+      icon: <LinkedInIcon className="block h-6 w-6 text-mischka" />,
     },
     {
       id: 4,
       location: "Instagram",
       url: `https://www.instagram.com/${pageUrl}`,
-      icon: <IstagramIcon className="block h-6 w-6 text-primary-600" />,
+      icon: <IstagramIcon className="block h-6 w-6 text-mischka" />,
     },
     {
       id: 5,
       location: "Youtube",
       url: `https://www.youtube.com/@${pageUrl.replace(/\.io/g, '1585')}`,
-      icon: <YouTubeIcon className="block h-6 w-6 text-primary-600" />,
+      icon: <YouTubeIcon className="block h-6 w-6 text-mischka" />,
     },
 
   ];

@@ -1,16 +1,16 @@
-import { useTranslation } from "next-i18next";
-import React from "react";
-import clsx from "clsx";
-
-import { Footer } from "@/components/footer/footer";
-import { Header } from "@/components/header/header";
 import {
   PreviewBanner,
   useIsPreviewBannerVisible,
 } from "@/components/preview-banner";
-import { Menu } from "@/lib/zod/menu";
 
+import { Footer } from "@/components/footer/footer";
+import { Header } from "@/components/header/header";
+import { Menu } from "@/lib/zod/menu";
+import React from "react";
 import { SkipToContentLink } from "@/ui/skip-to-content-link";
+import { Toaster } from "@/ui/toaster";
+import clsx from "clsx";
+import { useTranslation } from "next-i18next";
 
 export interface LayoutProps {
   menus: {
@@ -38,8 +38,10 @@ export function Layout({ menus, children }: LayoutProps) {
         <Header menu={menus.main} />
         <main className="grow bg-mischka" id="main-content">
           <div className="mx-auto max-w-6xl px-6 py-8">{children}</div>
+
         </main>
-        <Footer menu={menus.footer} />
+        <Toaster />
+        <Footer />
       </div>
       <PreviewBanner isVisible={isPreviewVisible} />
     </>
