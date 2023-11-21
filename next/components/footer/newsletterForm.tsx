@@ -156,7 +156,7 @@ export const NewsletterForm = () => {
                 </FormItem>
               )}
             />
-            <Button variant={"secondary"} className="hover:bg-finnishwinter hover:text-primary-800 my-1 min-w-[150px] max-h-12" size="md" type={"submit"} >{t("form-submit")}</Button>
+            <Button variant={"secondary"} className="hover:bg-finnishwinter hover:text-primary-800 my-1 min-w-[150px] max-h-12" size="md" type={"submit"} >{t("form-subscribe")}</Button>
           </div>
           <div className="flex flex-row gap-4 pt-4">
             <FormField
