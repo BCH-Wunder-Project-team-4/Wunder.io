@@ -46,4 +46,5 @@ content:
 hidden:
   field_country: true
   field_excerpt: true
+  field_office: true
   langcode: true
