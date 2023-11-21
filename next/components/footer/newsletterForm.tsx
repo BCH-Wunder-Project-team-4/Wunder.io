@@ -148,14 +148,14 @@ export const NewsletterForm = () => {
               )}
             />
           </div>
-          <div className="flex flex-row gap-4 align-middle">
+          <div className="flex flex-row gap-4 align-middle ">
             <FormField
               control={form.control}
               name="email"
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input className="py-2 my-2" placeholder="Enter your email" {...field} />
+                    <Input className="py-2 my-2 text-steelgray" type="email" placeholder="Enter your email" {...field} />
                   </FormControl>
                 </FormItem>
               )}
