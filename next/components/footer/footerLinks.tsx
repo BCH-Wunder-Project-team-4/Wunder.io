@@ -91,27 +91,27 @@ export const FooterLinks = () => {
   const { t } = useTranslation()
   return (
     <div className="px-10 relative columns-3 gap-8 min-h-min  ">
-      <ul className="min-h-full">
+      <ul className="min-h-full" role="list">
         <h4 className="text-lg font-bold uppercase tracking-wider py-2 ">{t("company")}</h4>
         {companyLinks.map((link) => {
           return (
-            <li key={link.id} className="py-1"><Link href={link.url}>{t(`${link.name}`)}</Link></li>
+            <li key={link.id} className="py-1" role="listitem"><Link href={link.url}>{t(`${link.name}`)}</Link></li>
           )
         })}
       </ul>
-      <ul className="min-h-full">
+      <ul className="min-h-full" role="list">
         <h4 className="text-lg font-bold uppercase tracking-wider py-2">{t("resources")}</h4>
         {resourcesLinks.map((link) => {
           return (
-            <li key={link.id} className="py-1"><Link href={link.url}>{t(`${link.name}`)}</Link></li>
+            <li key={link.id} className="py-1" role="listitem"><Link href={link.url}>{t(`${link.name}`)}</Link></li>
           )
         })}
       </ul >
-      <ul className="min-h-full">
+      <ul className="min-h-full" role="list">
         <h4 className="text-lg font-bold uppercase tracking-wider py-2">{t("legal")}</h4>
         {legalLinks.map((link) => {
           return (
-            <li key={link.id} className="py-1"><Link href={link.url}>{t(`${link.name}`)}</Link></li>
+            <li key={link.id} className="py-1" role="listitem"><Link href={link.url}>{t(`${link.name}`)}</Link></li>
           )
         })}
       </ul>

@@ -98,6 +98,7 @@ export const NewsletterForm = () => {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col">
           <div className="flex flex-row flex-wrap  ">
+
             <FormField
               control={form.control}
               name="news"
@@ -105,6 +106,7 @@ export const NewsletterForm = () => {
                 <FormItem className="flex flex-row py-0 px-3">
                   <FormControl>
                     <Checkbox
+                      aria-label={field.name}
                       checked={field.value}
                       onCheckedChange={field.onChange}
                     />
@@ -120,6 +122,7 @@ export const NewsletterForm = () => {
                 <FormItem className="flex flex-row px-3">
                   <FormControl>
                     <Checkbox
+                      aria-label={field.name}
                       checked={field.value}
                       onCheckedChange={field.onChange}
                     />
@@ -135,6 +138,7 @@ export const NewsletterForm = () => {
                 <FormItem className="flex flex-row">
                   <FormControl>
                     <Checkbox
+                      aria-label={field.name}
                       checked={field.value}
                       onCheckedChange={field.onChange}
                     />
@@ -166,13 +170,14 @@ export const NewsletterForm = () => {
                 <FormItem className="flex flex-row items-start">
                   <FormControl>
                     <Checkbox
+                      aria-label={field.name}
                       checked={field.value}
                       onCheckedChange={field.onChange}
                       required
                     />
                   </FormControl>
                   <FormLabel htmlFor="terms" className=" max-w-sm text-md px-2">
-                    {t('footer-newsletter-terms',)} <Link href='/privacy-policy' className='text-mellow'> Privacy Policy </Link>.*</FormLabel>
+                    {t('footer-newsletter-terms',)} <Link href='/privacy-policy' className='text-mellow font-bold'> Privacy Policy </Link>.*</FormLabel>
                 </FormItem>
               )}
             />
