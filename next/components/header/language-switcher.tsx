@@ -1,8 +1,8 @@
+import clsx from "clsx";
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
 import { useEffect, useState } from "react";
-import clsx from "clsx";
 
 import { useLanguageLinks } from "@/lib/contexts/language-links-context";
 import { useOnClickOutside } from "@/lib/hooks/use-on-click-outside";
@@ -39,7 +39,7 @@ export function LanguageSwitcher() {
       </button>
       <ul
         className={clsx(
-          "absolute z-50 mt-1 w-fit border border-finnishwinter bg-mischka",
+          "absolute z-50 mt-1 w-fit border border-finnishwinter bg-primary-600",
           !isOpen && "hidden",
         )}
       >
@@ -50,7 +50,7 @@ export function LanguageSwitcher() {
             return (
               <li key={l}>
                 <Link
-                  className="block p-2 hover:bg-primary-50"
+                  className="block p-2 hover:bg-primary-400"
                   locale={l}
                   href={path}
                 >
