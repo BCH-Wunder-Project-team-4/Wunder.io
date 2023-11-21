@@ -1,9 +1,9 @@
-import NextLink from "next/link";
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
-import { Dispatch, forwardRef, ReactNode, SetStateAction } from "react";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import clsx from "clsx";
+import { useTranslation } from "next-i18next";
+import NextLink from "next/link";
+import { useRouter } from "next/router";
+import { Dispatch, forwardRef, ReactNode, SetStateAction } from "react";
 
 import { MenuItem as MenuItemType } from "@/lib/zod/menu";
 import Chevron from "@/styles/icons/chevron-down.svg";
@@ -32,7 +32,6 @@ export function MenuContainer({
     </div>
   );
 }
-
 
 type MenuProps = NavigationMenu.NavigationMenuProps & {
   isOpen: boolean;
@@ -82,7 +81,7 @@ export function MenuList({ children, level }) {
   return (
     <NavigationMenu.List
       className={clsx(
-        "fixed inset-0 top-[72px] overflow-scroll border-b border-l border-r border-white bg-white lg:absolute lg:top-0 lg:w-[min(33.334vw,384px)] lg:overflow-visible ",
+        "fixed inset-0 top-[74px] overflow-scroll border-b border-l border-r border-white bg-white lg:absolute lg:top-0 lg:w-[min(33.334vw,384px)] lg:overflow-visible ",
         level === 0 &&
           "z-10 h-full lg:left-0 lg:z-auto lg:border-primary-600 lg:bg-primary-500",
         level === 1 && "z-20 lg:left-[min(33.334vw,383px)] lg:z-auto",
