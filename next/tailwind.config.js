@@ -19,6 +19,8 @@ module.exports = {
       finnishwinter: "#e7e6eb",
       mischka: "#f7f7f8",
       white: "#ffffff",
+      tranquil: "#F7FFFF",
+      mellow: "#FFF48A",
 
       info: "#221f2d",
       success: "#007f6c",
