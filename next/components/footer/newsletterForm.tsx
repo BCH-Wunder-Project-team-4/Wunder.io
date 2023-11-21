@@ -46,15 +46,10 @@ export const NewsletterForm = () => {
 
 
     if ((data.careers || data.events || data.news) && (data.terms) && (data.email)) {
-      console.log(data);
-
-
-
       toast({
         variant: "success",
         title: "Thank you for subscribing to our newsletter!",
       })
-
 
       const response = await fetch(`/api/footer-newsletter`, {
         method: "POST",
@@ -83,12 +78,6 @@ export const NewsletterForm = () => {
     }
 
   }
-
-
-  const onErrors = (errors) => console.error(errors);
-
-
-
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
