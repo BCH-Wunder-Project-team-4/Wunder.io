@@ -14,6 +14,7 @@ import {
 } from "@/lib/contexts/language-links-context";
 import { CommonPageProps } from "@/lib/get-common-page-props";
 import { inter, overpass } from "@/styles/fonts";
+import { ThemeProvider } from "next-themes";
 
 interface PageProps extends CommonPageProps {
   languageLinks?: LanguageLinks;
@@ -26,17 +27,19 @@ function App({ Component, pageProps }: AppProps<PageProps>) {
   
   
   return (
-    <SessionProvider session={session}>
-      <QueryClientProvider client={queryClient}>
-        <Fonts>
-          <LanguageLinksProvider languageLinks={languageLinks}>
-            <Layout menus={menus}>
-              <Component {...restPageProps} />
-            </Layout>
-          </LanguageLinksProvider>
-        </Fonts>
-      </QueryClientProvider>
-    </SessionProvider>
+    <ThemeProvider attribute="class">
+      <SessionProvider session={session}>
+        <QueryClientProvider client={queryClient}>
+          <Fonts>
+            <LanguageLinksProvider languageLinks={languageLinks}>
+              <Layout menus={menus}>
+                <Component {...restPageProps} />
+              </Layout>
+            </LanguageLinksProvider>
+          </Fonts>
+        </QueryClientProvider>
+      </SessionProvider>
+    </ThemeProvider>
   );
 }
 
