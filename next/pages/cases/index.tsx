@@ -3,6 +3,7 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { useTranslation } from "next-i18next";
 import { useRef } from "react";
 import { CaseTeaser } from "@/components/cases/case-teaser";
+import { LogoWall } from "@/components/logo-wall";
 
 import { HeadingPage } from "@/components/heading--page-centered";
 import { LayoutProps } from "@/components/layout";
@@ -19,10 +20,12 @@ import { getNodePageJsonApiParams } from "@/lib/drupal/get-node-page-json-api-pa
 interface CasesPageProps extends LayoutProps {
   languageLinks: LanguageLinks;
   cases: DrupalNode[];
+  clients: DrupalNode[];
 }
 
 export default function CasesPage({
   cases = [],
+  clients = [],
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation();
   const focusRef = useRef<HTMLDivElement>(null);
@@ -84,6 +87,7 @@ export default function CasesPage({
             <CaseTeaser key={index} caseItem={caseItem} />
           ))}
         </ul>
+        <LogoWall clients={clients} />
       </div>
     </div>
   );
@@ -99,11 +103,17 @@ export const getStaticProps: GetStaticProps<CasesPageProps> = async (context) =>
     params: getNodePageJsonApiParams("node--case").getQueryObject(),
   });
 
+  const clientsData = await drupal.getResourceCollectionFromContext<DrupalNode[]>("node--client", context, 
+  {
+    params: getNodePageJsonApiParams("node--client").getQueryObject(),
+  });
+
   return {
     props: {
       ...(await getCommonPageProps(context)),
       languageLinks,
       cases,
+      clients: clientsData,
     },
     revalidate: 60,
   };
