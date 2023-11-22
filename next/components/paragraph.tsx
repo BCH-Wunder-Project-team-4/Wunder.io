@@ -7,6 +7,7 @@ import { ParagraphLinks } from "@/components/paragraph--links";
 import { ParagraphListingArticles } from "@/components/paragraph--listing-articles";
 import { ParagraphText } from "@/components/paragraph--text";
 import { Paragraph } from "@/lib/zod/paragraph";
+import { FullWidthParagraph } from "@/components/paragraph--full-width-paragraph";
 
 // Use dynamic imports to defer loading a component until after initial page load: https://nextjs.org/docs/advanced-features/dynamic-import
 const ParagraphVideo = dynamic(() =>
@@ -46,6 +47,9 @@ export function Paragraph({ paragraph }: { paragraph: Paragraph }) {
     }
     case "paragraph--file_attachments": {
       return <ParagraphFileAttachments paragraph={paragraph} />;
+    }
+    case "paragraph--full_width_paragraph": {
+      return <FullWidthParagraph paragraph={paragraph} />;
     }
     default:
       return null;

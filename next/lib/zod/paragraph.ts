@@ -9,6 +9,7 @@ export const FormattedTextSchema = z.object({
   field_heading: z.string().nullable(),
 });
 
+
 export const ListingArticlesSchema = z.object({
   type: z.literal("paragraph--listing_articles"),
   id: z.string(),
@@ -149,6 +150,35 @@ export const HeroSchema = z.object({
   field_secondary_link: LinkShape.nullable().optional(),
 });
 
+
+export const FullWidthParagraphSchema = z.object({
+  type: z.literal("paragraph--full_width_paragraph"),
+  id: z.string(),
+  field_text_one: z.object({
+    processed: z.string(),
+  }),
+  field_header_image: z.object({
+    type: z.literal("media--image"),
+    id: z.string(),
+    field_media_image: ImageShape.nullable(),
+  }).nullable().optional(),
+  field_main_image: z.object({
+    type: z.literal("media--image"),
+    id: z.string(),
+    field_media_image: ImageShape.nullable(),
+  }).nullable().optional(),
+  field_first_image: z.object({
+    type: z.literal("media--image"),
+    id: z.string(),
+    field_media_image: ImageShape.nullable(),
+  }).nullable().optional(),
+  field_second_image: z.object({
+    type: z.literal("media--image"),
+    id: z.string(),
+    field_media_image: ImageShape.nullable(),
+  }).nullable().optional(),
+});
+
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
 export type Video = z.infer<typeof VideoSchema>;
@@ -158,6 +188,7 @@ export type AccordionItem = z.infer<typeof AccordionItemSchema>;
 export type Hero = z.infer<typeof HeroSchema>;
 export type ListingArticles = z.infer<typeof ListingArticlesSchema>;
 export type FileAttachments = z.infer<typeof FileAttachmentsSchema>;
+export type FullWidthParagraph = z.infer<typeof FullWidthParagraphSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -168,4 +199,5 @@ export type Paragraph =
   | AccordionItem
   | Hero
   | ListingArticles
-  | FileAttachments;
+  | FileAttachments
+  | FullWidthParagraph;

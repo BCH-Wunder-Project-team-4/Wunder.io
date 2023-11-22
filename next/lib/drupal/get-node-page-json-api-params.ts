@@ -1,5 +1,4 @@
 import { DrupalJsonApiParams } from "drupal-jsonapi-params";
-
 import { env } from "@/env";
 
 export type ResourceType = "node--frontpage" | "node--page" | "node--article" | "node--job" | "node--case" | "node--employee" | "node--office";
@@ -20,6 +19,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
         "field_content_elements.field_accordion_items",
         "field_content_elements.field_accordion_items.field_content_elements.field_image.field_media_image",
         "field_content_elements.field_accordion_items.field_content_elements.field_video",
+        "field_content_elements.field_full_width_paragraph",
       ])
       .addFields("node--page", [
         "title",
@@ -73,18 +73,18 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "uid",
       "field_country",
       "field_office",]);
-/*     apiParams.addFields(resourceType, [
-      "title",
-      "body",
-      "uid",
-      "created",
-      "field_image",
-      "status",
-      "metatag",
-      "field_excerpt",
-      "path",
-      "sticky",
-    ]); */
+    /*     apiParams.addFields(resourceType, [
+          "title",
+          "body",
+          "uid",
+          "created",
+          "field_image",
+          "status",
+          "metatag",
+          "field_excerpt",
+          "path",
+          "sticky",
+        ]); */
   }
 
   if (resourceType === "node--case") {

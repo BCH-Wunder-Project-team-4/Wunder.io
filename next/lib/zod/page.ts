@@ -1,17 +1,18 @@
-import { DrupalNode } from "next-drupal";
-import { z } from "zod";
-
-import { MetatagsSchema } from "@/lib/zod/metatag";
 import {
   AccordionSchema,
   FileAttachmentsSchema,
   FormattedTextSchema,
+  FullWidthParagraphSchema,
   HeroSchema,
   ImageSchema,
   LinksSchema,
   ListingArticlesSchema,
   VideoSchema,
 } from "@/lib/zod/paragraph";
+
+import { DrupalNode } from "next-drupal";
+import { MetatagsSchema } from "@/lib/zod/metatag";
+import { z } from "zod";
 
 const PageElementsSchema = z.discriminatedUnion("type", [
   FormattedTextSchema,
@@ -22,6 +23,7 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   HeroSchema,
   ListingArticlesSchema,
   FileAttachmentsSchema,
+  FullWidthParagraphSchema,
 ]);
 
 export const PageSchema = z.object({

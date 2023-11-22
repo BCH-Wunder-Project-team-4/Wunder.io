@@ -1,24 +1,25 @@
-import React, { useMemo, useState } from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { useTranslation } from "next-i18next";
-import { useRef } from "react";
-
-import { JobListItem } from "@/components/careers/job-list-item";
-import { HeadingPage } from "@/components/heading--page-centered";
-import { LayoutProps } from "@/components/layout";
-import { Meta } from "@/components/meta";
-import {
-  createLanguageLinksForNextOnlyPage,
-  LanguageLinks,
-} from "@/lib/contexts/language-links-context";
-import { getLatestJobsItems } from "@/lib/drupal/get-jobs";
-import { getCommonPageProps } from "@/lib/get-common-page-props";
 import { JobTeaser as JobTeaserType, validateAndCleanupJobTeaser } from "@/lib/zod/job-teaser";
-import { FormattedText } from "@/components/formatted-text";
+import {
+  LanguageLinks,
+  createLanguageLinksForNextOnlyPage,
+} from "@/lib/contexts/language-links-context";
+import React, { useMemo, useState } from 'react';
+
 import { CareersNewsletterForm } from "@/components/careers/careers-newsletter";
-import { drupal } from "@/lib/drupal/drupal-client";
 import { DrupalNode } from "next-drupal";
+import { FormattedText } from "@/components/formatted-text";
+import { HeadingPage } from "@/components/heading--page-centered";
+import { JobListItem } from "@/components/careers/job-list-item";
+import { LayoutProps } from "@/components/layout";
+import { LogoWall } from '@/components/logo-wall';
+import { Meta } from "@/components/meta";
+import { drupal } from "@/lib/drupal/drupal-client";
+import { getCommonPageProps } from "@/lib/get-common-page-props";
+import { getLatestJobsItems } from "@/lib/drupal/get-jobs";
 import { getNodePageJsonApiParams } from "@/lib/drupal/get-node-page-json-api-params";
+import { useRef } from "react";
+import { useTranslation } from "next-i18next";
 
 interface AllJobsPageProps extends LayoutProps {
   jobTeasers: JobTeaserType[];
@@ -62,10 +63,10 @@ export default function AllJobsPage({
         <FormattedText html={t("careers-intro")} className="text-stone text-center" />
         <HeadingPage>{t("careers-positions")}</HeadingPage>
         <select onChange={e => setChosenCountry(e.target.value)}>
-        <option value="all">All Countries</option>
-        {countries.map((country) => (
-          <option key={country} value={country}>{country}</option>
-        ))}
+          <option value="all">All Countries</option>
+          {countries.map((country) => (
+            <option key={country} value={country}>{country}</option>
+          ))}
         </select>
         <select onChange={e => setChosenOffice(e.target.value)}>
           <option value="all">All Offices</option>
@@ -86,7 +87,7 @@ export default function AllJobsPage({
           <FormattedText html={t("careers-newsletter-info")} className="text-stone" />
         </div>
         <div className="flex-1">
-          <CareersNewsletterForm/>
+          <CareersNewsletterForm />
         </div>
       </div>
     </div>
