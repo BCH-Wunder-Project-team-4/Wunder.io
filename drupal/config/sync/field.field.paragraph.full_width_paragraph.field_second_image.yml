@@ -1,0 +1,38 @@
+uuid: a60f8bde-bf00-4269-9fac-5368f1a87a9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_second_image
+    - paragraphs.paragraphs_type.full_width_paragraph
+  module:
+    - image
+id: paragraph.full_width_paragraph.field_second_image
+field_name: field_second_image
+entity_type: paragraph
+bundle: full_width_paragraph
+label: 'second image'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: 134180cf-28bc-49c4-83c8-cf0d2851ae10
+    alt: ''
+    title: ''
+    width: 5568
+    height: 3840
+field_type: image

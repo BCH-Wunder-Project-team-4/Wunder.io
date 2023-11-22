@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.file_attachments
     - paragraphs.paragraphs_type.formatted_text
+    - paragraphs.paragraphs_type.full_width_paragraph
     - paragraphs.paragraphs_type.hero
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.links
@@ -39,6 +40,7 @@ settings:
       video: video
       listing_articles: listing_articles
       file_attachments: file_attachments
+      full_width_paragraph: full_width_paragraph
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -52,6 +54,9 @@ settings:
         enabled: true
       formatted_text:
         weight: -14
+        enabled: true
+      full_width_paragraph:
+        weight: 15
         enabled: true
       hero:
         weight: -15
