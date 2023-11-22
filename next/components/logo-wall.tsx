@@ -12,7 +12,11 @@ export function LogoWall({ clients }: LogoWallProps) {
   return (
     <div className="flex flex-wrap justify-center items-center">
       {clients.map((client) => (
-        <Link  href={client.field_link.full_url} target="_blank" rel="noopener noreferrer">
+        <Link 
+          href={client.field_link.full_url}
+          key={client.id}
+          target="_blank"
+          rel="noopener noreferrer">
           <div className="p-4">
             <Image
             src={absoluteUrl(client.field_logo.uri.url)}
