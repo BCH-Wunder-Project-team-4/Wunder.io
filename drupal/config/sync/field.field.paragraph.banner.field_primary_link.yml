@@ -1,0 +1,23 @@
+uuid: dea17c7d-84eb-4e4f-8274-cf0d84cde5ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_primary_link
+    - paragraphs.paragraphs_type.banner
+  module:
+    - link
+id: paragraph.banner.field_primary_link
+field_name: field_primary_link
+entity_type: paragraph
+bundle: banner
+label: 'Primary link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

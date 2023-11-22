@@ -1,0 +1,19 @@
+uuid: 122b8b5c-587c-4c9d-9296-643b1312d463
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.banner
+id: paragraph.banner.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: banner
+label: Heading
+description: 'Heading for the banner.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
