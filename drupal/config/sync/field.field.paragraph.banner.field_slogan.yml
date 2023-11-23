@@ -1,0 +1,19 @@
+uuid: b2049bbd-2599-4c10-87c1-5c019b942368
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slogan
+    - paragraphs.paragraphs_type.banner
+id: paragraph.banner.field_slogan
+field_name: field_slogan
+entity_type: paragraph
+bundle: banner
+label: Slogan
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

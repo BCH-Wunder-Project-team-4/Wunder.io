@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.banner.field_heading
     - field.field.paragraph.banner.field_image
     - field.field.paragraph.banner.field_primary_link
+    - field.field.paragraph.banner.field_slogan
     - paragraphs.paragraphs_type.banner
   module:
     - link
@@ -47,6 +48,14 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_slogan:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true
