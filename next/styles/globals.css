@@ -4,14 +4,14 @@
 
 @layer base {
   @import "_focus-visible.css";
-  body {
-    @apply dark:bg-steelgray bg-white;
+  main {
+    @apply bg-mischka dark:bg-steelgray;
+  }
+  hr {
+    @apply border-0 border-t border-solid border-mischka dark:border-scapaflow;
   }
   h1 {
-    @apply dark:text-mischka text-steelgray;
-  }
-  main {
-    @apply dark:bg-steelgray bg-mischka;
+    @apply text-steelgray dark:text-mischka;
   }
 }
 

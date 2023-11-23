@@ -60,7 +60,7 @@ const options: HTMLReactParserOptions = {
       }
 
       case "p": {
-        return <p className="mb-2">{domToReact(domNode.children, options)}</p>;
+        return <p className="mb-2 text-steelgray dark:text-mischka">{domToReact(domNode.children, options)}</p>;
       }
 
       case "input": {
@@ -83,5 +83,5 @@ interface FormattedTextProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export function FormattedText({ html, ...props }: FormattedTextProps) {
-  return <div {...props}>{parse(html, options)}</div>;
+  return <div {...props} >{parse(html, options)}</div>;
 }
