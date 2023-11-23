@@ -1,17 +1,17 @@
-uuid: 46ab87e3-3a5a-47b8-8dfc-42daa02728f2
+uuid: 1d89ba82-ba5b-4d35-88b4-c7e279d25a4a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_text_one
+    - field.storage.paragraph.field_formatted_text
     - paragraphs.paragraphs_type.full_width_paragraph
   module:
     - text
-id: paragraph.full_width_paragraph.field_text_one
-field_name: field_text_one
+id: paragraph.full_width_paragraph.field_formatted_text
+field_name: field_formatted_text
 entity_type: paragraph
 bundle: full_width_paragraph
-label: 'text one'
+label: 'Formatted text'
 description: ''
 required: false
 translatable: false

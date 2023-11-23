@@ -8,22 +8,23 @@ export function FullWidthParagraph({ paragraph }: { paragraph: FullWidthParagrap
 
   return (
     <div>
+      <div>
 
-      {paragraph.field_image.map((image) => (
         <MediaImage
-          media={image}
+          media={paragraph.field_image[0]}
           alt="site-banner"
           priority
         />
-      ))}
-      {paragraph.field_formatted_text.map((text) => (
-        <FormattedText
-          html={text.processed}
-          className={clsx(
-            "mb-6 max-w-2xl text-left text-md/xl text-primary-600 sm:text-lg md:text-lg lg:mb-8 lg:text-xl mt-4",
-          )}
-        />
-      ))}
+
+        {paragraph.field_formatted_text.map((text) => (
+          <FormattedText
+            html={text.processed}
+            className={clsx(
+              "mb-6 max-w-2xl text-left text-md/xl text-primary-600 sm:text-lg md:text-lg lg:mb-8 lg:text-xl mt-4",
+            )}
+          />
+        ))}
+      </div>
 
 
     </div>
