@@ -6,11 +6,11 @@ import {
 import { Footer } from "@/components/footer/footer";
 import { Header } from "@/components/header/header";
 import { Menu } from "@/lib/zod/menu";
-import React from "react";
 import { SkipToContentLink } from "@/ui/skip-to-content-link";
 import { Toaster } from "@/ui/toaster";
 import clsx from "clsx";
 import { useTranslation } from "next-i18next";
+import React from "react";
 
 export interface LayoutProps {
   menus: {
@@ -36,9 +36,8 @@ export function Layout({ menus, children }: LayoutProps) {
           {t("skip-to-main-content")}
         </SkipToContentLink>
         <Header menu={menus.main} />
-        <main className="grow bg-mischka" id="main-content">
+        <main className="grow bg-white" id="main-content">
           <div className="mx-auto max-w-6xl px-6 py-8">{children}</div>
-
         </main>
         <Toaster />
         <Footer />
