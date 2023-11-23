@@ -22,9 +22,13 @@ const Breadcrumb = ({homeElement, separator, containerClasses, listClasses, acti
     return (
         <div>
             <ul className={containerClasses}>
-                <li className={listClasses}><Link href={'/'}>{homeElement}</Link></li>
-                {pathNames.length > 0 && separator}
-            {
+            {paths !== "/" && (
+                  <>
+                    <li className={listClasses}><Link href={'/'}>{homeElement}</Link></li>
+                    {pathNames.length > 0 && separator}
+                  </>
+                )}
+                {
                 pathNames.map( (link, index) => {
                     let href = `/${pathNames.slice(0, index + 1).join('/')}`
                     let itemClasses = paths === href ? `${listClasses} ${activeClasses}` : listClasses
