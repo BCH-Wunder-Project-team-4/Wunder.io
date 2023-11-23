@@ -2,7 +2,6 @@ import { Menu } from "@/lib/zod/menu";
 import Chevron from "@/styles/icons/chevron-down.svg";
 import Link from "next/link";
 import { useState } from "react";
-import Button from "../dark-mode-button";
 
 interface MainMenuFullProps {
   menu: Menu;
@@ -98,7 +97,6 @@ export function MainMenuFull({ menu }: MainMenuFullProps) {
               )}
             </li>
           ))}
-      <Button />
         </ul>
       </nav>
     </div>
