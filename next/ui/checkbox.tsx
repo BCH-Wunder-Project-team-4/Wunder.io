@@ -1,9 +1,8 @@
-import React from "react";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
-import clsx from "clsx";
 
 import Checkmark from "@/styles/icons/checkmark.svg";
-
+import React from "react";
+import clsx from "clsx";
 import css from "./checkbox.module.css";
 
 type CheckboxProps = React.ComponentPropsWithoutRef<
@@ -18,7 +17,7 @@ export const Checkbox = React.forwardRef<
     ref={ref}
     className={clsx(
       css.checkbox,
-      "peer h-5 w-5 shrink-0 rounded border border-scapaflow",
+      "peer h-5 w-5 shrink-0 rounded border border-graysuit",
       "disabled:cursor-not-allowed disabled:border-graysuit",
       className,
     )}

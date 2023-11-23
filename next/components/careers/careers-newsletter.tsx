@@ -1,14 +1,12 @@
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
-import { useForm } from "react-hook-form";
-
 import { AuthGate } from "@/components/auth-gate";
-
 import { Button } from "@/ui/button";
 import { Checkbox } from "@/ui/checkbox";
 import { Input } from "@/ui/careers-form-input";
-import { StatusMessage } from "@/ui/status-message";
 import { Label } from "@/ui/label";
+import { StatusMessage } from "@/ui/status-message";
+import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
 type Inputs = {
   email: string;
@@ -24,7 +22,7 @@ export function CareersNewsletterForm() {
     formState: { isSubmitSuccessful },
   } = useForm<Inputs>();
 
-  const onSubmit = async (data: Inputs) => {   
+  const onSubmit = async (data: Inputs) => {
     const response = await fetch(`/api/careers-newsletter`, {
       method: "POST",
       body: JSON.stringify({
@@ -39,7 +37,7 @@ export function CareersNewsletterForm() {
     });
 
     if (!response.ok) {
-      alert("Error!");    
+      alert("Error!");
     }
   };
 
@@ -54,36 +52,38 @@ export function CareersNewsletterForm() {
   }
 
   return (
-    
+
     <form
       onSubmit={handleSubmit(onSubmit, onErrors)}
       className="mx-auto mb-4 flex max-w-3xl flex-col gap-5 p-4"
     >
-        <>
-          <div>
-            <Input
-              type="email"
-              id="email"
-              placeholder={t("email")}
-              {...register("email", {
-                required: true,
-              })}
-            />
-          </div>
-          <div className="flex items-center gap-2">
-            <Checkbox
-              id="policy_checkbox"
-              {...register("policy_checkbox", {
-                required: true,
-              })}
-            />
-            <Label htmlFor="policy_checkbox" className="mb-0">
-              {t("I agree to the policy")}
-              
-            </Label>
-          </div>
-          <Button type="submit">{t("form-submit")}</Button>
-        </>
+      <>
+        <div>
+          <Input
+            type="email"
+            id="email"
+            required
+            placeholder={t("email")}
+            {...register("email", {
+              required: true,
+            })}
+          />
+        </div>
+        <div className="flex items-center gap-2">
+          <Checkbox
+            required
+            id="policy_checkbox"
+            {...register("policy_checkbox", {
+              required: true,
+            })}
+          />
+          <Label htmlFor="policy_checkbox" className="mb-0">
+            {t("I agree to the policy")}
+
+          </Label>
+        </div>
+        <Button type="submit">{t("form-submit")}</Button>
+      </>
     </form>
   );
 }

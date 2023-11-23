@@ -11,13 +11,10 @@ export default async function handler(
 
 
 
-
   try {
     if (req.method === "POST") {
       const url = drupal.buildUrl(`/${languagePrefix}/webform_rest/submit`);
       const body = JSON.parse(req.body);
-
-
 
 
       // Submit to Drupal.
@@ -25,12 +22,14 @@ export default async function handler(
         method: "POST",
         body: JSON.stringify({
           webform_id: body.webform_id,
+          news: body.news,
+          careers: body.careers,
+          events: body.events,
           email: body.email,
-          policy_checkbox: body.policy_checkbox
+          policy_checkbox: body.terms,
         }),
         headers: {
           "Content-Type": "application/json",
-
         },
       });
 
