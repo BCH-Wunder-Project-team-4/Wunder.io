@@ -10,9 +10,9 @@ import { buttonVariants } from "@/ui/button";
 
 export function ParagraphBanner({ paragraph }: { paragraph: BannerType }) {
   return (
-    <section id="banner" className="bg-secondary-50">
+    <section id="banner" className="bg-white">
       <div className="mx-auto grid max-w-screen-xl lg:grid-cols-12">
-        <div className="mr-auto place-self-center px-8 py-8 lg:col-span-6  lg:py-16">
+        <div className="mr-auto place-self-center px-8 py-8 lg:col-span-6 lg:py-16">
           {paragraph.field_heading && (
             <h1 className="leading-none mb-4 max-w-2xl text-left text-heading-md font-bold tracking-tight text-primary-600 md:text-heading-lg">
               {paragraph.field_heading}
@@ -21,7 +21,7 @@ export function ParagraphBanner({ paragraph }: { paragraph: BannerType }) {
           <FormattedText
             html={paragraph.field_formatted_text.processed}
             className={clsx(
-              "mb-6 max-w-2xl text-left text-md/xl text-primary-600 sm:text-lg md:text-lg lg:mb-8 lg:text-xl",
+              "mb-6 max-w-2xl text-left text-md/xl text-steelgray sm:text-md md:text-lg lg:mb-8 lg:text-lg",
               paragraph.field_heading && "mt-4",
             )}
           />
@@ -30,7 +30,7 @@ export function ParagraphBanner({ paragraph }: { paragraph: BannerType }) {
               <Link
                 href={paragraph.field_primary_link.full_url}
                 className={clsx(
-                  buttonVariants({ variant: "primary" }),
+                  buttonVariants({ variant: "secondary" }),
                   "text-base mr-4 inline-flex px-5 py-3",
                 )}
               >
