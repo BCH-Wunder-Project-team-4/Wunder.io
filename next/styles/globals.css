@@ -7,6 +7,12 @@
   body {
     @apply dark:bg-steelgray bg-white;
   }
+  h1 {
+    @apply dark:text-mischka text-steelgray;
+  }
+  main {
+    @apply dark:bg-steelgray bg-mischka;
+  }
 }
 
 @layer components {
