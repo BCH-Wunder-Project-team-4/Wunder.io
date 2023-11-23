@@ -154,29 +154,19 @@ export const HeroSchema = z.object({
 export const FullWidthParagraphSchema = z.object({
   type: z.literal("paragraph--full_width_paragraph"),
   id: z.string(),
-  field_text_one: z.object({
+  field_formatted_text: z.array(z.object({
     processed: z.string(),
-  }),
-  field_header_image: z.object({
-    type: z.literal("media--image"),
-    id: z.string(),
-    field_media_image: ImageShape.nullable(),
-  }).nullable().optional(),
-  field_main_image: z.object({
-    type: z.literal("media--image"),
-    id: z.string(),
-    field_media_image: ImageShape.nullable(),
-  }).nullable().optional(),
-  field_first_image: z.object({
-    type: z.literal("media--image"),
-    id: z.string(),
-    field_media_image: ImageShape.nullable(),
-  }).nullable().optional(),
-  field_second_image: z.object({
-    type: z.literal("media--image"),
-    id: z.string(),
-    field_media_image: ImageShape.nullable(),
-  }).nullable().optional(),
+  }),),
+  field_image: z.array(z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),)
+
+
 });
 
 export type FormattedText = z.infer<typeof FormattedTextSchema>;

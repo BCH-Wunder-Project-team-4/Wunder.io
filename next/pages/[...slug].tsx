@@ -125,7 +125,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
     drupal,
   );
   const languageLinks = createLanguageLinks(nodeTranslations);
-  console.log(resource);
+
 
   const validatedResource =
     type === "node--article"
