@@ -43,11 +43,11 @@ export function Layout({ menus, children }: LayoutProps) {
           <Breadcrumb
           homeElement={'Home'}
           separator={<span>
-            <Chevron className="inline-block w-6 h-6" />
+            <Chevron className="w-6 h-6" />
               </span>}
           activeClasses='text-primary-600 dark:text-primary-200'
           containerClasses='flex pb-4' 
-          listClasses='hover:underline mx-2 font-bold'
+          listClasses='hover:underline mx-2'
           capitalizeLinks
         />
         {children}
