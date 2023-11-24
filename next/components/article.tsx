@@ -41,7 +41,7 @@ export function Article({ article, ...props }: ArticleProps) {
             priority
           />
           {article.field_image.resourceIdObjMeta.title && (
-            <figcaption className="py-2 text-center text-sm text-scapaflow">
+            <figcaption className="py-2 text-center text-sm text-steelgray">
               {article.field_image.resourceIdObjMeta.title}
             </figcaption>
           )}
@@ -49,7 +49,7 @@ export function Article({ article, ...props }: ArticleProps) {
       )}
       {article.body?.processed && (
         <FormattedText
-          className="mt-4 text-md/xl text-scapaflow sm:text-lg"
+          className="mt-4 text-md/xl text-steelgray dark:text-mischka sm:text-lg"
           html={article.body?.processed}
         />
       )}
