@@ -19,7 +19,7 @@ const Breadcrumb = ({homeElement, separator, containerClasses, listClasses, acti
     const paths = usePathname()
     const pathNames = paths.split('/').filter( path => path )
 
-    const excludedPaths = ["/", "/404", "/500", "/careers"];
+    const excludedPaths = ["/", "/404", "/500"];
 
     if (excludedPaths.includes(paths)) {
       return null;
