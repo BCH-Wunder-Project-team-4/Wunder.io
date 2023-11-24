@@ -19,15 +19,17 @@ const Breadcrumb = ({homeElement, separator, containerClasses, listClasses, acti
     const paths = usePathname()
     const pathNames = paths.split('/').filter( path => path )
 
+    const excludedPaths = ["/", "/404", "/500", "/careers"];
+
+    if (excludedPaths.includes(paths)) {
+      return null;
+  }
+
     return (
         <div>
             <ul className={containerClasses}>
-            {paths !== "/" && (
-                  <>
                     <li className={listClasses}><Link href={'/'}>{homeElement}</Link></li>
                     {pathNames.length > 0 && separator}
-                  </>
-                )}
                 {
                 pathNames.map( (link, index) => {
                     let href = `/${pathNames.slice(0, index + 1).join('/')}`

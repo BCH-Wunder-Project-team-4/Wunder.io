@@ -46,7 +46,7 @@ export function Layout({ menus, children }: LayoutProps) {
             <Chevron className="inline-block w-6 h-6" />
               </span>}
           activeClasses='text-primary-600'
-          containerClasses='flex py-5' 
+          containerClasses='flex pb-4' 
           listClasses='hover:underline mx-2 font-bold'
           capitalizeLinks
         />
