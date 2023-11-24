@@ -11,7 +11,7 @@ import { buttonVariants } from "@/ui/button";
 
 export function ParagraphBanner({ paragraph }: { paragraph: BannerType }) {
   return (
-    <section id="banner" className="bg-whtie">
+    <section id="banner" className="bg-mischka mb-6">
       <div className="mx-auto grid max-w-screen-xl lg:grid-cols-12">
         <div className="mr-auto place-self-center px-8 py-8 lg:col-span-6 lg:py-16">
           {paragraph.field_heading && (
