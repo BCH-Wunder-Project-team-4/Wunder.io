@@ -17,7 +17,11 @@ const ThemeButton = () => {
       <button
         onClick={() => theme == "dark" ? setTheme('light') : setTheme("dark")}
         className=' text-white text-2xl md:text-4xl rounded-lg'>
-        {theme === 'dark' ? <FiSun /> : <FaMoon />}
+        {theme === 'dark' ? (
+        <FiSun className='w-5 h-5' />
+        ) : (
+        <FaMoon className='w-5 h-5' />
+        )}
       </button>
     )
 }
