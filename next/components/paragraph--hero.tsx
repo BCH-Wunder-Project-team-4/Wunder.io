@@ -7,7 +7,7 @@ import { buttonVariants } from "@/ui/button";
 import clsx from "clsx";
 
 export function ParagraphHero({ paragraph }: { paragraph: HeroType }) {
-  console.log(paragraph);
+
 
   return (
     <section id="hero" className="bg-secondary-50">
