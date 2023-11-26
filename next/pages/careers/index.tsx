@@ -60,7 +60,7 @@ export default function AllJobsPage({
       <Meta title={t("Careers")} metatags={[]} />
       <div className="w-full max-w-screen-lg p-4 space-y-4">
         <HeadingPage className="pt-2">{t("careers-title")}</HeadingPage>
-        <FormattedText html={t("careers-intro")} className="text-stone text-center" />
+        <FormattedText html={t("careers-intro")} className="text-center" />
         <HeadingPage>{t("careers-positions")}</HeadingPage>
         <select onChange={e => setChosenCountry(e.target.value)}>
           <option value="all">All Countries</option>
@@ -84,7 +84,7 @@ export default function AllJobsPage({
       <div className="flex flex-col sm:flex-row">
         <div className="flex-1">
           <FormattedText html={t("careers-newsletter-title")} className="text-xl" />
-          <FormattedText html={t("careers-newsletter-info")} className="text-stone" />
+          <FormattedText html={t("careers-newsletter-info")} />
         </div>
         <div className="flex-1">
           <CareersNewsletterForm />
