@@ -153,10 +153,12 @@ export const BannerSchema = z.object({
   type: z.literal("paragraph--banner"),
   id: z.string(),
   field_heading: z.string(),
-  field_slogan: z.string(),
-  field_formatted_text: z.object({
-    processed: z.string(),
-  }),
+  field_slogan: z.string().nullable(),
+  field_formatted_text: z
+    .object({
+      processed: z.string(),
+    })
+    .nullable(),
   field_image: z
     .object({
       type: z.literal("media--image"),

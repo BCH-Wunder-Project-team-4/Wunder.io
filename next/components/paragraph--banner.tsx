@@ -15,8 +15,16 @@ export function ParagraphBanner({ paragraph }: { paragraph: BannerType }) {
       <div className="mx-auto grid max-w-screen-xl lg:grid-cols-12">
         <div className="mr-auto place-self-center md:px-0 lg:pr-8 lg:pl-0 sm py-8 lg:col-span-6 lg:py-16">
           {paragraph.field_heading && (
-            <h1 className="mb-2 max-w-2xl text-left text-md/xl sm:text-lg md:text-xl lg:text-xl tracking-tight">
-              <RoundedStickIcon className="inline-block h-5 w-5 mr-1 mb-1 text-hugs" />
+            <h1
+              className={
+                paragraph.field_slogan
+                  ? "mb-2 max-w-2xl text-left text-md/xl sm:text-lg md:text-xl lg:text-xl tracking-tight"
+                  : "leading-none mb-4 max-w-2xl text-left text-heading-md font-bold tracking-tight text-primary-600 dark:text-mischka md:text-heading-lg"
+              }
+            >
+              {paragraph.field_slogan && (
+                <RoundedStickIcon className="inline-block h-5 w-5 mr-1 mb-1 text-hugs" />
+              )}
               {paragraph.field_heading}
             </h1>
           )}
@@ -25,13 +33,15 @@ export function ParagraphBanner({ paragraph }: { paragraph: BannerType }) {
               {paragraph.field_slogan}
             </h2>
           )}
-          <FormattedText
-            html={paragraph.field_formatted_text.processed}
-            className={clsx(
-              "mb-6 max-w-2xl text-left text-md/xl sm:text-md md:text-lg lg:mb-8 lg:text-lg",
-              paragraph.field_heading && "mt-4",
-            )}
-          />
+          {paragraph.field_formatted_text && (
+            <FormattedText
+              html={paragraph.field_formatted_text.processed}
+              className={clsx(
+                "mb-6 max-w-2xl text-left text-md/xl sm:text-md md:text-lg lg:mb-8 lg:text-lg",
+                paragraph.field_heading && "mt-4",
+              )}
+            />
+          )}
           <div className="gap-4 sm:text-left">
             {paragraph.field_primary_link && (
               <Link
@@ -48,11 +58,13 @@ export function ParagraphBanner({ paragraph }: { paragraph: BannerType }) {
           </div>
         </div>
         <div className="hidden lg:col-span-6 lg:mt-0 lg:flex">
-          <MediaImage
-            media={paragraph.field_image}
-            alt="page-banner"
-            priority
-          />
+          {paragraph.field_image && (
+            <MediaImage
+              media={paragraph.field_image}
+              alt="page-banner"
+              priority
+            />
+          )}
         </div>
       </div>
     </section>
