@@ -10,7 +10,7 @@ field_name: field_heading
 entity_type: paragraph
 bundle: banner
 label: Heading
-description: 'Heading for the banner.'
+description: 'Add a main heading, e.g. "About us".'
 required: true
 translatable: false
 default_value: {  }

@@ -12,7 +12,7 @@ field_name: field_formatted_text
 entity_type: paragraph
 bundle: banner
 label: 'Formatted text'
-description: ''
+description: "Add leading text of what the page is about or what's to come."
 required: false
 translatable: false
 default_value: {  }

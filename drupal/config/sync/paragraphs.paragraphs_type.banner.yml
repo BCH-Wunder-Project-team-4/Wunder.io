@@ -6,5 +6,5 @@ id: banner
 label: Banner
 icon_uuid: null
 icon_default: null
-description: 'A paragraph for a banner element.'
+description: 'A paragraph for a banner element that can be used at the top of the page.'
 behavior_plugins: {  }

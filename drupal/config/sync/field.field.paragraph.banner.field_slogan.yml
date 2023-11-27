@@ -10,7 +10,7 @@ field_name: field_slogan
 entity_type: paragraph
 bundle: banner
 label: Slogan
-description: ''
+description: 'Add a slogan, e.g. "Shaping the digital experience".'
 required: false
 translatable: false
 default_value: {  }
