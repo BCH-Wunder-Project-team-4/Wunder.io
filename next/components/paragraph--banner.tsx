@@ -13,7 +13,7 @@ export function ParagraphBanner({ paragraph }: { paragraph: BannerType }) {
   return (
     <section id="banner" className="mb-6">
       <div className="mx-auto grid max-w-screen-xl lg:grid-cols-12">
-        <div className="mr-auto place-self-center px-8 py-8 lg:col-span-6 lg:py-16">
+        <div className="mr-auto place-self-center md:px-0 lg:pr-8 lg:pl-0 sm py-8 lg:col-span-6 lg:py-16">
           {paragraph.field_heading && (
             <h1 className="mb-2 max-w-2xl text-left text-md/xl sm:text-lg md:text-xl lg:text-xl tracking-tight">
               <RoundedStickIcon className="inline-block h-5 w-5 mr-1 mb-1 text-hugs" />
