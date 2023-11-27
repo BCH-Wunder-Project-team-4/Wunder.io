@@ -19,17 +19,23 @@ import {
 import { Frontpage, validateAndCleanupFrontpage } from "@/lib/zod/frontpage";
 
 import { Divider } from "@/ui/divider";
+import { validateAndCleanupEventTeaser } from "@/lib/zod/events-teaser";
+import { getLatestEventsItems } from "@/lib/drupal/get-events";
+import { Events } from "@/components/events/events";
 
 interface IndexPageProps extends LayoutProps {
   frontpage: Frontpage | null;
   promotedArticleTeasers: ArticleTeaser[];
+  eventsTeasers: any[];
 }
 
 export default function IndexPage({
   frontpage,
   promotedArticleTeasers,
+  eventsTeasers,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation();
+  
 
   return (
     <>
@@ -46,6 +52,8 @@ export default function IndexPage({
         articles={promotedArticleTeasers}
         heading={t("promoted-articles")}
       />
+      <Events events={eventsTeasers} heading={t("Coming events")}></Events>
+
       <ContactList />
       <LogoStrip />
     </>
@@ -79,12 +87,17 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async (
     },
   });
 
+  const { events } = await getLatestEventsItems({ limit: 3, locale: context.locale });
+
   return {
     props: {
       ...(await getCommonPageProps(context)),
       frontpage: frontpage ? validateAndCleanupFrontpage(frontpage) : null,
       promotedArticleTeasers: promotedArticleTeasers.map((teaser) =>
         validateAndCleanupArticleTeaser(teaser),
+      ),
+      eventsTeasers: events.map((teaser) =>
+        validateAndCleanupEventTeaser(teaser),
       ),
     },
     revalidate: 60,
