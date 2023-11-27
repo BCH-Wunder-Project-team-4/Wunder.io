@@ -37,7 +37,7 @@ export function ParagraphBanner({ paragraph }: { paragraph: BannerType }) {
               <Link
                 href={paragraph.field_primary_link.full_url}
                 className={clsx(
-                  buttonVariants({ variant: "primary" }),
+                  buttonVariants({ variant: "banner_cta" }),
                   "text-base mr-4 inline-flex px-5 py-3",
                 )}
               >
