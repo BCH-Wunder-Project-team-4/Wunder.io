@@ -4,13 +4,23 @@
 
 @layer base {
   @import "_focus-visible.css";
+  main {
+    @apply bg-mischka dark:bg-steelgray;
+  }
+  hr {
+    @apply border-0 border-t border-solid border-mischka dark:border-scapaflow;
+  }
+  h1 {
+    @apply text-steelgray dark:text-mischka;
+  }
 }
 
 @layer components {
   .hyperlink {
     @apply flex items-center text-primary-600 visited:text-secondary-900 hover:underline;
 
-    &[href^="https://"]::after {
+    &[href^="https://"]::after
+    {
       @apply ml-1 inline-block h-[1em] w-[1em];
       content: url(./icons/external.svg);
     }
