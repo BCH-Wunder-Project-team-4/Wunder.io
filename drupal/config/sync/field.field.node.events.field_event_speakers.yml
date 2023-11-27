@@ -1,0 +1,19 @@
+uuid: 0a725030-a2b5-4915-a574-7fddfdd81108
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_speakers
+    - node.type.events
+id: node.events.field_event_speakers
+field_name: field_event_speakers
+entity_type: node
+bundle: events
+label: event_speakers
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

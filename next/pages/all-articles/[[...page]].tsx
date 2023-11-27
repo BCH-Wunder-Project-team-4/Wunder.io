@@ -66,7 +66,8 @@ export const getStaticProps: GetStaticProps<AllArticlesPageProps> = async (
   context,
 ) => {
   // Get the page parameter:
-  const page = context.params.page;
+  const page = context.params?.page;
+  
   const currentPage = parseInt(Array.isArray(page) ? page[0] : page || "1");
   const PAGE_SIZE = 6;
 

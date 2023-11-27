@@ -2,15 +2,15 @@
 import dynamic from 'next/dynamic';
 
 
-const DynamicMap = dynamic(() => import('./map'), {
+const DynamicMap = dynamic(() => import('./Map'), {
   ssr: false
 });
 
 
 
-export function LocationMap () {
+export function LocationMap ({markers}) {
   
   return (
-      <DynamicMap/>
+      <DynamicMap markers = {markers}/>
   )
 }
