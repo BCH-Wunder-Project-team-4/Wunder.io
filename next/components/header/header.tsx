@@ -10,6 +10,7 @@ import WunderIcon from "@/styles/icons/wunder.svg";
 
 import { MainMenuFull } from "../main-menu/main-menu-full";
 import { LanguageSwitcher } from "./language-switcher";
+import ThemeButton from "../dark-mode-button";
 
 interface HeaderProps {
   menu: Menu;
@@ -26,6 +27,7 @@ export function Header({ menu }: HeaderProps) {
           <div className="hidden lg:block">
             <MainMenuFull menu={menu} />
           </div>
+          <ThemeButton />
           <LanguageSwitcher />
           <SearchLink />
           <div className="lg:hidden">

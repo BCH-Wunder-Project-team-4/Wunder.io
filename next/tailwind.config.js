@@ -6,6 +6,7 @@ module.exports = {
   variants: {
     display: ["responsive", "group-hover", "group-focus"],
   },
+  darkMode: "class",
   theme: {
     colors: {
       transparent: "transparent",
