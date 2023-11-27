@@ -1,6 +1,6 @@
 export function ContactBanner(){
     return(
-        <div className="flex justify-around items-center text-white p-10" style={{backgroundColor: 'purple'}}>
+        <div className="flex justify-around items-center text-white p-10" style={{backgroundColor: 'white'}}>
             <div>
                 <h1>Contact us</h1>
             </div>

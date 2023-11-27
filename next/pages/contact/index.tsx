@@ -25,6 +25,7 @@ import { FollowUs } from "@/components/contact-us/followUs";
 import { Invoice } from "@/components/contact-us/invoicing";
 import {OfficeTeaser as OfficeTeaserType, validateAndCleanupOfficeTeaser } from "@/lib/zod/office-teasers";
 import { Offices } from "@/components/contact-us/offices";
+import { LatLngTuple } from "leaflet";
 
 
 
@@ -34,26 +35,56 @@ interface ContactPageProps extends LayoutProps {
   officeTeasers: OfficeTeaserType[];
   languageLinks: LanguageLinks;
 }
+type MarkerType = {
+  geocode: LatLngTuple,
+  popUp: string,
+}
 
 export default function ContactPage({officeTeasers = [],
   employeeTeasers = []
 }:InferGetStaticPropsType<typeof getStaticProps>){
   const { t } = useTranslation();
   const focusRef = useRef<HTMLDivElement>(null);
+
+const markers: MarkerType[]  = [
+
+    {
+        geocode: [60.165, 24.933],
+        popUp: 'Helsinki',
+    },
+    {
+        geocode: [60.450, 22.265],
+        popUp: 'Turku',
+    },
+    {
+        geocode: [59.420, 24.805],
+        popUp: 'Tallin',
+    }
+    ,
+    {
+        geocode: [ 57.529, 25.406],
+        popUp: 'Valmiera',
+    }
+    ,
+    {
+        geocode: [56.949, 24.105],
+        popUp: 'Riga',
+    }
+] 
   
   return (
     <>
       <Meta title={t("Contact")} metatags={[]} />
       <div ref={focusRef} tabIndex={-1} />
-      <ContactBanner></ContactBanner>
+      {/* <ContactBanner></ContactBanner> */}
       <div>
-        <h1 className="py-10 font-bold text-2xl">Send us a message</h1>
+        <h1 className="py-10 font-bold text-2xl text-primary-500">Send us a message</h1>
         <div className="flex">
-          <div className="w-1/2">
-            <h2 className="py-4 font-bold text-lg">We love to hear from you</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempus massa non neque vulputate lacinia. Mauris dapibus dolor et orci porttitor, sed volutpat nunc rutrum.</p>
+          <div className="w-1/4">
+            <h2 className="py-4 font-bold text-lg">We'd love to hear from you</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
-          <div>
+          <div className="w-3/4">
         <ContactForm></ContactForm>
         </div>
         </div>
@@ -62,7 +93,7 @@ export default function ContactPage({officeTeasers = [],
       <Team employees={employeeTeasers
       }></Team>
         <div className=" -z-40">
-          <LocationMap></LocationMap>
+          <LocationMap markers = {markers}></LocationMap>
         </div> 
       <Offices offices={officeTeasers}></Offices>
       <Invoice></Invoice>   
@@ -87,7 +118,6 @@ export const getStaticProps: GetStaticProps<ContactPageProps> = async (context) 
       ...(await getCommonPageProps(context)),
       officeTeasers: officeTeasers.map((teaser) =>validateAndCleanupOfficeTeaser(teaser)),
       employeeTeasers: employeeTeasers.map((teaser) => validateAndCleanupEmployeeTeaser(teaser)),
-      
       languageLinks,
     },
     revalidate: 60,

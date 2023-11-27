@@ -28,8 +28,10 @@ import {
 } from "@/lib/zod/job";
 import { Page as PageType, validateAndCleanupPage } from "@/lib/zod/page";
 import { Case as CaseType, validateAndCleanupCase } from "@/lib/zod/case";
+import { SingleEventPath } from "@/components/events/singleEventPath";
+import { Event as EventType, validateAndCleanupEvent } from "@/lib/zod/events";
 
-const RESOURCE_TYPES = ["node--article", "node--page", "node--job", "node--case"];
+const RESOURCE_TYPES = ["node--article", "node--page", "node--job", "node--case", "node--events"];
 
 export default function CustomPage({
   resource,
@@ -43,6 +45,7 @@ export default function CustomPage({
       {resource.type === "node--job" && <Job job={resource} />}
       {resource.type === "node--page" && <Page page={resource} />}
       {resource.type === "node--case" && <Case caseNode={resource} />}
+      {resource.type === "node--events" && <SingleEventPath event={resource}/>}
     </>
   );
 }
@@ -56,7 +59,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 };
 
 interface PageProps extends CommonPageProps {
-  resource: PageType | ArticleType | JobType | CaseType;
+  resource: PageType | ArticleType | JobType | CaseType | EventType;
   languageLinks: LanguageLinks;
 }
 
@@ -135,6 +138,8 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
       ? validateAndCleanupJob(resource)
       : type === "node--case"
       ? validateAndCleanupCase(resource)
+      : type === "node--events"
+      ? validateAndCleanupEvent(resource)
       : null;
 
   return {
