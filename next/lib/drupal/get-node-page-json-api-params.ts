@@ -2,7 +2,7 @@ import { DrupalJsonApiParams } from "drupal-jsonapi-params";
 
 import { env } from "@/env";
 
-export type ResourceType = "node--frontpage" | "node--page" | "node--article" | "node--job" | "node--case" | "node--employee" | "node--office" | "node--client" | "node--events";
+export type ResourceType = "node--frontpage" | "node--page" | "node--article" | "node--job" | "node--case" | "node--employee" | "node--office" | "node--client" | "node--events" | "node--offering";
 
 export function getNodePageJsonApiParams(resourceType: ResourceType) {
   const apiParams = new DrupalJsonApiParams().addFilter(
@@ -183,6 +183,24 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "path",
       "sticky",
     ]);
+  }
+  if (resourceType === "node--offering") {
+    apiParams
+      .addInclude([
+        "field_content_elements",
+        "field_content_elements.field_image.field_media_image",
+        "field_content_elements.field_video",
+        "field_content_elements.field_file_attachments.field_media_document",
+        "field_content_elements.field_accordion_items",
+        "field_content_elements.field_accordion_items.field_content_elements.field_image.field_media_image",
+        "field_content_elements.field_accordion_items.field_content_elements.field_video",
+      ])
+      .addFilter("status", "1")
+      .addFields("node--offering", [
+        "title",
+        "field_content_elements",
+        "metatag",
+      ]);
   }
 
   return apiParams;
