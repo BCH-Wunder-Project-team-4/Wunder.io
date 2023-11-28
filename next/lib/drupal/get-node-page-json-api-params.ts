@@ -1,7 +1,7 @@
 import { DrupalJsonApiParams } from "drupal-jsonapi-params";
 import { env } from "@/env";
 
-export type ResourceType = "node--frontpage" | "node--page" | "node--article" | "node--job" | "node--case" | "node--employee" | "node--office" | "node--client";
+export type ResourceType = "node--frontpage" | "node--page" | "node--article" | "node--job" | "node--case" | "node--employee" | "node--office" | "node--client" | "node--events";
 
 export function getNodePageJsonApiParams(resourceType: ResourceType) {
   const apiParams = new DrupalJsonApiParams().addFilter(
@@ -160,6 +160,30 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
     apiParams.addFields(resourceType, [
       "field_logo",
       "field_link"
+    ]);
+  }
+  if (resourceType === "node--events") {
+    apiParams.addInclude(["uid", "field_event_image", "field_event_speakers_image"]);
+    apiParams.addFields(resourceType, [
+      "title",
+      "body",
+      "uid",
+      "created",
+      "field_name",
+      "field_event_image",
+      "field_event_date",
+      "field_event_location",
+      "field_event_address",
+      "field_event_description",
+      "field_event_duration",
+      "field_event_speakers",
+      "field_event_speakers_info",
+      "field_event_speakers_image",
+      "status",
+      "metatag",
+      "field_excerpt",
+      "path",
+      "sticky",
     ]);
   }
 

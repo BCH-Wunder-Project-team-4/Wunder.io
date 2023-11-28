@@ -1,5 +1,6 @@
 import {
   AccordionSchema,
+  BannerSchema,
   FileAttachmentsSchema,
   FormattedTextSchema,
   FullWidthParagraphSchema,
@@ -23,6 +24,7 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   HeroSchema,
   ListingArticlesSchema,
   FileAttachmentsSchema,
+  BannerSchema,
   FullWidthParagraphSchema,
 ]);
 

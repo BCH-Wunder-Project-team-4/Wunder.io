@@ -11,6 +11,8 @@ import { SkipToContentLink } from "@/ui/skip-to-content-link";
 import { Toaster } from "@/ui/toaster";
 import clsx from "clsx";
 import { useTranslation } from "next-i18next";
+import Breadcrumb from "./breadcrumb";
+import Chevron from "@/styles/icons/chevron-right.svg";
 
 export interface LayoutProps {
   menus: {
@@ -37,7 +39,19 @@ export function Layout({ menus, children }: LayoutProps) {
         </SkipToContentLink>
         <Header menu={menus.main} />
         <main className="grow" id="main-content">
-          <div className="mx-auto max-w-6xl px-6 py-8">{children}</div>
+          <div className="mx-auto max-w-6xl px-6 py-8">
+          <Breadcrumb
+          homeElement={'Home'}
+          separator={<span>
+            <Chevron className="w-6 h-6" />
+              </span>}
+          activeClasses='text-primary-600 dark:text-primary-200'
+          containerClasses='flex pb-4' 
+          listClasses='hover:underline mx-2'
+          capitalizeLinks
+        />
+        {children}
+          </div>
 
         </main>
         <Toaster />

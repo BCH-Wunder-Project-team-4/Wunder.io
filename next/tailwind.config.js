@@ -22,6 +22,7 @@ module.exports = {
       white: "#ffffff",
       tranquil: "#F7FFFF",
       mellow: "#FFF48A",
+      hugs: "#9E005D",
 
       info: "#221f2d",
       success: "#007f6c",

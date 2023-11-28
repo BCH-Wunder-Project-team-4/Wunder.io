@@ -8,6 +8,7 @@ import {
   getCommonPageProps,
 } from "@/lib/get-common-page-props";
 import { DrupalNode, DrupalTranslatedPath } from "next-drupal";
+import { Event as EventType, validateAndCleanupEvent } from "@/lib/zod/events";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import {
   Job as JobType,
@@ -25,11 +26,12 @@ import { Job } from "@/components/careers/job";
 import { Meta } from "@/components/meta";
 import { Page } from "@/components/page";
 import { ResourceType } from "@/lib/drupal/get-node-page-json-api-params";
+import { SingleEventPath } from "@/components/events/singleEventPath";
 import { drupal } from "@/lib/drupal/drupal-client";
 import { getNodePageJsonApiParams } from "@/lib/drupal/get-node-page-json-api-params";
 import { getNodeTranslatedVersions } from "@/lib/drupal/get-node-translated-versions";
 
-const RESOURCE_TYPES = ["node--article", "node--page", "node--job", "node--case"];
+const RESOURCE_TYPES = ["node--article", "node--page", "node--job", "node--case", "node--events"];
 
 export default function CustomPage({
   resource,
@@ -43,6 +45,7 @@ export default function CustomPage({
       {resource.type === "node--job" && <Job job={resource} />}
       {resource.type === "node--page" && <Page page={resource} />}
       {resource.type === "node--case" && <Case caseNode={resource} />}
+      {resource.type === "node--events" && <SingleEventPath event={resource} />}
     </>
   );
 }
@@ -56,7 +59,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 };
 
 interface PageProps extends CommonPageProps {
-  resource: PageType | ArticleType | JobType | CaseType;
+  resource: PageType | ArticleType | JobType | CaseType | EventType;
   languageLinks: LanguageLinks;
 }
 
@@ -136,7 +139,9 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
           ? validateAndCleanupJob(resource)
           : type === "node--case"
             ? validateAndCleanupCase(resource)
-            : null;
+            : type === "node--events"
+              ? validateAndCleanupEvent(resource)
+              : null;
 
   return {
     props: {

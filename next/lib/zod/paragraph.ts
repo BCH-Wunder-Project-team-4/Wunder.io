@@ -1,6 +1,4 @@
-import { any, z } from "zod";
-
-import { Image } from "lucide-react";
+import { z } from "zod";
 
 export const FormattedTextSchema = z.object({
   type: z.literal("paragraph--formatted_text"),
@@ -148,6 +146,27 @@ export const HeroSchema = z.object({
 });
 
 
+export const BannerSchema = z.object({
+  type: z.literal("paragraph--banner"),
+  id: z.string(),
+  field_heading: z.string(),
+  field_slogan: z.string().nullable().optional(),
+  field_formatted_text: z
+    .object({
+      processed: z.string(),
+    })
+    .nullable()
+    .optional(),
+  field_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+  field_primary_link: LinkShape.nullable().optional(),
+});
 
 export const FullWidthParagraphSchema = z.object({
   type: z.literal("paragraph--full_width_paragraph"),
@@ -173,6 +192,7 @@ export type AccordionItem = z.infer<typeof AccordionItemSchema>;
 export type Hero = z.infer<typeof HeroSchema>;
 export type ListingArticles = z.infer<typeof ListingArticlesSchema>;
 export type FileAttachments = z.infer<typeof FileAttachmentsSchema>;
+export type Banner = z.infer<typeof BannerSchema>;
 export type FullWidthParagraph = z.infer<typeof FullWidthParagraphSchema>;
 
 export type Paragraph =
@@ -185,4 +205,5 @@ export type Paragraph =
   | Hero
   | ListingArticles
   | FileAttachments
-  | FullWidthParagraph;
+  | FullWidthParagraph
+  | Banner;

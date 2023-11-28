@@ -2,10 +2,7 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { useForm } from "react-hook-form";
 
-import { AuthGate } from "@/components/auth-gate";
-
 import { Button } from "@/ui/button";
-import { Input } from "@/ui/input";
 import { Label } from "@/ui/label";
 import { StatusMessage } from "@/ui/status-message";
 import { Textarea } from "@/ui/textarea";
@@ -65,45 +62,77 @@ export function ContactForm() {
       onSubmit={handleSubmit(onSubmit, onErrors)}
       className="mx-auto mb-4 flex max-w-3xl flex-col gap-5 rounded border border-finnishwinter bg-white p-4 shadow-md transition-all hover:shadow-md"
     >
-      <h2 className="text-heading-sm font-bold md:text-heading-md">
-        {t("form-title")}
-      </h2>
+      
         <>
-          <p>{t("form-description")}</p>
-          <div>
-            <Label htmlFor="name">{t("form-label-name")}</Label>
-            <Input
+          <div className="flex justify-between">
+          <div className="w-1/2">
+            <Label htmlFor="name"></Label>
+            <input
+              className="border w-11/12 p-1"
               type="text"
               id="name"
+              placeholder="first name"
               {...register("name", {
                 required: true,
               })}
             />
           </div>
-          <div>
-            <Label htmlFor="email">{t("form-label-email")}</Label>
-            <Input
+          <div className="w-1/2">
+            <Label htmlFor="name"></Label>
+            <input
+              className="border w-11/12 p-1 float-right"
+              type="text"
+              id="name"
+              placeholder="last name"
+              {...register("name", {
+                required: true,
+              })}
+            />
+          </div>
+          </div>
+          <div className="flex justify-between">
+          <div className="w-1/2">
+            <Label htmlFor="email"></Label>
+            <input
+              className="border w-11/12 p-1"
               type="email"
               id="email"
+              placeholder="email"
               {...register("email", {
                 required: true,
               })}
             />
           </div>
+          <div className="w-1/2">
+            <Label htmlFor="email"></Label>
+            <input
+              className="border w-11/12 p-1 float-right"
+              type="email"
+              id="email"
+              placeholder="phone"
+              {...register("email", {
+                required: true,
+              })}
+            />
+          </div>
+          </div>
           <div>
-            <Label htmlFor="subject">{t("form-label-subject")}</Label>
-            <Input
+            <Label htmlFor="subject"></Label>
+            <input
+              className="border w-full p-1"
               type="text"
               id="subject"
+              placeholder="company"
               {...register("subject", {
                 required: true,
               })}
             />
           </div>
           <div>
-            <Label htmlFor="message">{t("form-label-message")}</Label>
+            <Label htmlFor="message"></Label>
             <Textarea
               id="message"
+              placeholder="write something ..."
               {...register("message", {
                 required: true,
               })}
