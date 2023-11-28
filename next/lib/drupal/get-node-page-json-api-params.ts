@@ -20,6 +20,8 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
         "field_content_elements.field_accordion_items.field_content_elements.field_image.field_media_image",
         "field_content_elements.field_accordion_items.field_content_elements.field_video",
         "field_content_elements.field_accordion_items.field_content_elements.field_file_attachments.field_media_document",
+        "field_content_elements.field_images.field_media_image",
+
       ])
       .addFields("node--page", [
         "title",

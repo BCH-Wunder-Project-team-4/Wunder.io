@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.full_width_paragraph.field_formatted_text
-    - field.field.paragraph.full_width_paragraph.field_image
+    - field.field.paragraph.full_width_paragraph.field_images
+    - field.field.paragraph.full_width_paragraph.field_texts
     - paragraphs.paragraphs_type.full_width_paragraph
   module:
     - text
@@ -13,19 +13,20 @@ targetEntityType: paragraph
 bundle: full_width_paragraph
 mode: default
 content:
-  field_formatted_text:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_image:
-    type: entity_reference_label
+  field_images:
+    type: entity_reference_entity_view
     label: above
     settings:
-      link: true
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 6
+    region: content
+  field_texts:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
     region: content
 hidden: {  }

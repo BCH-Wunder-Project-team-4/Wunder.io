@@ -2,60 +2,62 @@ import { FormattedText } from "@/components/formatted-text";
 import { FullWidthParagraph as FullWidthParagraphType } from "@/lib/zod/paragraph";
 import { MediaImage } from "@/components/media--image";
 import clsx from "clsx";
+import css from "./full-width-paragraph.module.css";
 
 export function FullWidthParagraph({ paragraph }: { paragraph: FullWidthParagraphType }) {
 
+  console.log("paragraph", paragraph);
 
   return (
-    <div className="relative">
-      <div className="my-custom-full-width-component parent">
+    <div className={clsx(css.relative)}>
+      <div className={clsx(css.parent)}>
         <MediaImage
-          className="firstImage"
-          media={paragraph.field_image[0]}
+          className={clsx(css.firstImage)}
+          media={paragraph.field_images[0]}
           alt="site-banner"
           priority
         />
         <MediaImage
-          className="secondImage"
-          media={paragraph.field_image[1]}
+          className={clsx(css.secondImage)}
+          media={paragraph.field_images[1]}
           alt="site-banner"
           priority
         />
         <MediaImage
-          className="thirdImage"
-          media={paragraph.field_image[2]}
+          className={clsx(css.thirdImage)}
+          media={paragraph.field_images[2]}
           alt="site-banner"
           priority
         />
         <MediaImage
-          className="forthImage"
-          media={paragraph.field_image[3]}
+          className={clsx(css.forthImage)}
+          media={paragraph.field_images[3]}
           alt="site-banner"
           priority
         />
 
 
-        <div className="firstText mt-10">
+        <div className={clsx(css.firstText, "mt-10")}>
           <FormattedText
-            html={paragraph.field_formatted_text[0].processed}
+            html={paragraph.field_texts[0].processed}
             className={clsx(
               "max-w-2xl text-primary-600 sm:text-md md:text-md lg:mb-8 xl:text-lg 2xl:text-xl text-left md:text-right "
             )}
           />
         </div>
-        <div className="secondText">
+        <div className={clsx(css.secondText)}>
           <FormattedText
-            html={paragraph.field_formatted_text[1].processed}
+            html={paragraph.field_texts[1].processed}
             className={clsx(
-              " max-w-2xl text-left  text-primary-600 sm:text-md md:text-md lg:mb-8 xl:text-lg 2xl:text-xl mt-4 ",
+              "max-w-2xl text-left  text-primary-600  md:text-md lg:mb-8 xl:text-lg 2xl:text-xl mt-4 ",
             )}
           />
         </div>
-        <div className="thirdText flex justify-end">
+        <div className={clsx(css.thirdText, "flex justify-end")}>
           <FormattedText
-            html={paragraph.field_formatted_text[2].processed}
+            html={paragraph.field_texts[2].processed}
             className={clsx(
-              " max-w-2xl text-left md:text-right  text-primary-600 md:text-md lg:mb-8 xl:text-lg 2xl:text-xl",
+              "max-w-2xl text-left md:text-right  text-primary-600 md:text-md lg:mb-8 xl:text-lg 2xl:text-xl",
             )}
           />
         </div>

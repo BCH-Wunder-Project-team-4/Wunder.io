@@ -1,4 +1,6 @@
-import { z } from "zod";
+import { any, z } from "zod";
+
+import { Image } from "lucide-react";
 
 export const FormattedTextSchema = z.object({
   type: z.literal("paragraph--formatted_text"),
@@ -135,38 +137,31 @@ export const HeroSchema = z.object({
   type: z.literal("paragraph--hero"),
   id: z.string(),
   field_heading: z.string(),
-  field_formatted_text: z.object({
-    processed: z.string(),
-  }),
-  field_image: z
-    .object({
-      type: z.literal("media--image"),
-      id: z.string(),
-      field_media_image: ImageShape.nullable(),
-    })
-    .nullable()
-    .optional(),
+  field_formatted_text: z.object({ processed: z.string(), }),
+  field_image: z.object({
+    type: z.literal("media--image"),
+    id: z.string(),
+    field_media_image: ImageShape.nullable(),
+  }).nullable().optional(),
   field_primary_link: LinkShape.nullable().optional(),
   field_secondary_link: LinkShape.nullable().optional(),
 });
 
 
+
 export const FullWidthParagraphSchema = z.object({
   type: z.literal("paragraph--full_width_paragraph"),
   id: z.string(),
-  field_formatted_text: z.array(z.object({
+  field_texts: z.array(z.object({
     processed: z.string(),
   }),),
-  field_image: z.array(z
+  field_images: z.array(z
     .object({
       type: z.literal("media--image"),
       id: z.string(),
       field_media_image: ImageShape.nullable(),
     })
-    .nullable()
-    .optional(),)
-
-
+  ),
 });
 
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
