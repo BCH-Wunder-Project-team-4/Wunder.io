@@ -6,5 +6,5 @@ id: scrolling_numbers
 label: 'Scrolling Numbers'
 icon_uuid: null
 icon_default: null
-description: 'Add a set of scrolling numbers.'
+description: 'Define fields for scrolling numbers.'
 behavior_plugins: {  }

@@ -1,0 +1,24 @@
+uuid: 7c94e564-ed4d-4ac2-96dc-2846eb8b7bd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.scrolling_numbers_element.field_scrolling_numbers
+    - paragraphs.paragraphs_type.scrolling_numbers_element
+  module:
+    - entity_reference_revisions
+id: paragraph.scrolling_numbers_element.default
+targetEntityType: paragraph
+bundle: scrolling_numbers_element
+mode: default
+content:
+  field_scrolling_numbers:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
