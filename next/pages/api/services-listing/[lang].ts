@@ -26,7 +26,6 @@ export default async function handler(
         defaultLocale: siteConfig.defaultLocale,
       },
     );
-console.log(serviceTeasers);
     const validatedServiceTeasers = serviceTeasers
       .map((serviceNode) => validateAndCleanupServiceTeaser(serviceNode))
       // If any service teaser is invalid, it will be replaced by null in the array, so we need to filter it out:
