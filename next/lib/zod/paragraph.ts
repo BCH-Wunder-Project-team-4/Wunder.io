@@ -171,6 +171,12 @@ export const BannerSchema = z.object({
   field_primary_link: LinkShape.nullable().optional(),
 });
 
+export const ServicesSchema = z.object({
+  type: z.literal("paragraph--services"),
+  id: z.string(),
+  field_heading: z.string().nullable()
+});
+
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
 export type Video = z.infer<typeof VideoSchema>;
@@ -181,6 +187,7 @@ export type Hero = z.infer<typeof HeroSchema>;
 export type ListingArticles = z.infer<typeof ListingArticlesSchema>;
 export type FileAttachments = z.infer<typeof FileAttachmentsSchema>;
 export type Banner = z.infer<typeof BannerSchema>;
+export type Services = z.infer<typeof ServicesSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -192,4 +199,5 @@ export type Paragraph =
   | Hero
   | ListingArticles
   | FileAttachments
-  | Banner;
+  | Banner
+  | Services;
