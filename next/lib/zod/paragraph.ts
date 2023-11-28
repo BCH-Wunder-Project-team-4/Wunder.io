@@ -149,6 +149,28 @@ export const HeroSchema = z.object({
   field_secondary_link: LinkShape.nullable().optional(),
 });
 
+export const BannerSchema = z.object({
+  type: z.literal("paragraph--banner"),
+  id: z.string(),
+  field_heading: z.string(),
+  field_slogan: z.string().nullable().optional(),
+  field_formatted_text: z
+    .object({
+      processed: z.string(),
+    })
+    .nullable()
+    .optional(),
+  field_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+  field_primary_link: LinkShape.nullable().optional(),
+});
+
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
 export type Video = z.infer<typeof VideoSchema>;
@@ -158,6 +180,7 @@ export type AccordionItem = z.infer<typeof AccordionItemSchema>;
 export type Hero = z.infer<typeof HeroSchema>;
 export type ListingArticles = z.infer<typeof ListingArticlesSchema>;
 export type FileAttachments = z.infer<typeof FileAttachmentsSchema>;
+export type Banner = z.infer<typeof BannerSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -168,4 +191,5 @@ export type Paragraph =
   | AccordionItem
   | Hero
   | ListingArticles
-  | FileAttachments;
+  | FileAttachments
+  | Banner;

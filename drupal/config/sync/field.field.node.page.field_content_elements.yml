@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_content_elements
     - node.type.page
     - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.banner
     - paragraphs.paragraphs_type.file_attachments
     - paragraphs.paragraphs_type.formatted_text
     - paragraphs.paragraphs_type.hero
@@ -32,6 +33,7 @@ settings:
   handler_settings:
     target_bundles:
       hero: hero
+      banner: banner
       formatted_text: formatted_text
       image: image
       accordion: accordion
@@ -42,30 +44,33 @@ settings:
     negate: 0
     target_bundles_drag_drop:
       accordion:
-        weight: -11
+        weight: -16
         enabled: true
       accordion_item:
-        weight: -12
+        weight: -17
         enabled: false
+      banner:
+        weight: -20
+        enabled: true
       file_attachments:
-        weight: 10
+        weight: -12
         enabled: true
       formatted_text:
-        weight: -14
+        weight: -19
         enabled: true
       hero:
-        weight: -15
+        weight: -21
         enabled: true
       image:
-        weight: -13
+        weight: -18
         enabled: true
       links:
-        weight: -10
+        weight: -15
         enabled: true
       listing_articles:
-        weight: 9
+        weight: -13
         enabled: true
       video:
-        weight: -9
+        weight: -14
         enabled: true
 field_type: entity_reference_revisions

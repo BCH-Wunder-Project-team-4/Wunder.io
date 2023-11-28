@@ -1,0 +1,22 @@
+uuid: d6baad65-a060-40e7-a1ca-514b049826ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_formatted_text
+    - paragraphs.paragraphs_type.banner
+  module:
+    - text
+id: paragraph.banner.field_formatted_text
+field_name: field_formatted_text
+entity_type: paragraph
+bundle: banner
+label: 'Formatted text'
+description: "Add leading text of what the page is about or what's to come."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

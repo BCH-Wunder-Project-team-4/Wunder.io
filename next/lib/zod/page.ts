@@ -4,6 +4,7 @@ import { z } from "zod";
 import { MetatagsSchema } from "@/lib/zod/metatag";
 import {
   AccordionSchema,
+  BannerSchema,
   FileAttachmentsSchema,
   FormattedTextSchema,
   HeroSchema,
@@ -22,6 +23,7 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   HeroSchema,
   ListingArticlesSchema,
   FileAttachmentsSchema,
+  BannerSchema,
 ]);
 
 export const PageSchema = z.object({

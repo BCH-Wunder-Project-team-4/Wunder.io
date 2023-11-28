@@ -1,6 +1,6 @@
-import React from "react";
 import clsx from "clsx";
 import { cva } from "cva";
+import React from "react";
 
 export const buttonVariants = cva(
   "flex justify-center items-center border-2 rounded-[8px] transition-colors duration-200 active:scale-[0.98] disabled:cursor-not-allowed",
@@ -24,6 +24,12 @@ export const buttonVariants = cva(
           "hover:bg-primary-50 hover:text-primary-600 hover:border-transparent",
           "active:bg-primary-50 active:text-primary-600 active:border-transparent",
           "disabled:!border-transparent disabled:!text-primary-200",
+        ],
+        banner_cta: [
+          "bg-primary-600 border-primary-600 text-white",
+          "hover:bg-primary-700 hover:text-white hover:border-primary-700",
+          "active:bg-primary-700 active:text-white",
+          "disabled:!border-primary-200 disabled:!text-white disabled:!bg-primary-200",
         ],
       },
       size: {
