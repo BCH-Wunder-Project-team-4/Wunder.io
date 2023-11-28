@@ -1,0 +1,19 @@
+uuid: 394bf030-0325-4a03-ad60-beaeeb8667b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_suffix
+    - paragraphs.paragraphs_type.scrolling_numbers
+id: paragraph.scrolling_numbers.field_suffix
+field_name: field_suffix
+entity_type: paragraph
+bundle: scrolling_numbers
+label: Suffix
+description: "Add a suffix that is attached to the end of the number, e.g. '%'or '+'."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

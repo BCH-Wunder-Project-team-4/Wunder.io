@@ -1,0 +1,23 @@
+uuid: 67cff71d-e1ec-42ca-9f18-83a714d7928b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_number
+    - paragraphs.paragraphs_type.scrolling_numbers
+id: paragraph.scrolling_numbers.field_number
+field_name: field_number
+entity_type: paragraph
+bundle: scrolling_numbers
+label: Number
+description: 'Add the target number value for the scrolling number.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 5000
+  prefix: ''
+  suffix: ''
+field_type: integer

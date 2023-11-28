@@ -1,0 +1,19 @@
+uuid: 8504da9d-7026-4b22-9fc3-ae1152929fd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.scrolling_numbers
+id: paragraph.scrolling_numbers.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: scrolling_numbers
+label: Description
+description: 'Add descriptive text for the scrolling number, e.g. "Offices".'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,40 @@
+uuid: e094a1dd-ac2a-4c52-a2e2-30f43768eb0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.scrolling_numbers.field_description
+    - field.field.paragraph.scrolling_numbers.field_number
+    - field.field.paragraph.scrolling_numbers.field_suffix
+    - paragraphs.paragraphs_type.scrolling_numbers
+id: paragraph.scrolling_numbers.default
+targetEntityType: paragraph
+bundle: scrolling_numbers
+mode: default
+content:
+  field_description:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_number:
+    type: number
+    weight: 0
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_suffix:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

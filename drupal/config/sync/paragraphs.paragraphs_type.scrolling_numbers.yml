@@ -1,0 +1,10 @@
+uuid: ff04f6b8-6805-4cac-840f-d4aa4ec5aa02
+langcode: en
+status: true
+dependencies: {  }
+id: scrolling_numbers
+label: 'Scrolling Numbers'
+icon_uuid: null
+icon_default: null
+description: 'Add a set of scrolling numbers.'
+behavior_plugins: {  }
