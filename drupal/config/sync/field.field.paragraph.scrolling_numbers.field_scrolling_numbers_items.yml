@@ -1,18 +1,18 @@
-uuid: 71978c39-536c-44fc-86a9-29178617584e
+uuid: d2a73beb-501b-413c-bd6b-c89c0e9e1206
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_scrolling_numbers
+    - field.storage.paragraph.field_scrolling_numbers_items
     - paragraphs.paragraphs_type.scrolling_numbers
-    - paragraphs.paragraphs_type.scrolling_numbers_element
+    - paragraphs.paragraphs_type.scrolling_numbers_item
   module:
     - entity_reference_revisions
-id: paragraph.scrolling_numbers_element.field_scrolling_numbers
-field_name: field_scrolling_numbers
+id: paragraph.scrolling_numbers.field_scrolling_numbers_items
+field_name: field_scrolling_numbers_items
 entity_type: paragraph
-bundle: scrolling_numbers_element
-label: 'Scrolling Numbers'
+bundle: scrolling_numbers
+label: 'Scrolling Numbers items'
 description: ''
 required: true
 translatable: false
@@ -22,7 +22,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      scrolling_numbers: scrolling_numbers
+      scrolling_numbers_item: scrolling_numbers_item
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -53,11 +53,11 @@ settings:
         weight: 22
         enabled: false
       scrolling_numbers:
-        weight: 23
-        enabled: true
-      scrolling_numbers_element:
         weight: 13
         enabled: false
+      scrolling_numbers_item:
+        weight: 23
+        enabled: true
       video:
         weight: 24
         enabled: false

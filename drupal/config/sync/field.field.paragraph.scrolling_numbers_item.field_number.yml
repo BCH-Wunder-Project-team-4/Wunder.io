@@ -1,16 +1,16 @@
-uuid: 67cff71d-e1ec-42ca-9f18-83a714d7928b
+uuid: 06f496ac-ea7e-442b-a4e4-673d39db563b
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_number
-    - paragraphs.paragraphs_type.scrolling_numbers
-id: paragraph.scrolling_numbers.field_number
+    - paragraphs.paragraphs_type.scrolling_numbers_item
+id: paragraph.scrolling_numbers_item.field_number
 field_name: field_number
 entity_type: paragraph
-bundle: scrolling_numbers
+bundle: scrolling_numbers_item
 label: Number
-description: 'Add the target number value for the scrolling number.'
+description: 'Add the target number, e.g. 100.'
 required: true
 translatable: false
 default_value: {  }

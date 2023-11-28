@@ -1,0 +1,10 @@
+uuid: b48d800b-a76f-411e-86db-0cfb93445b39
+langcode: en
+status: true
+dependencies: {  }
+id: scrolling_numbers_item
+label: 'Scrolling Numbers item'
+icon_uuid: null
+icon_default: null
+description: 'This paragraph holds a scrolling numbers item, with a number, number suffix and description.'
+behavior_plugins: {  }

@@ -1,0 +1,19 @@
+uuid: 09acf6da-889a-48c3-a7e8-3c5fbd626a89
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.scrolling_numbers
+id: paragraph.scrolling_numbers.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: scrolling_numbers
+label: Heading
+description: 'Heading for the Scrolling numbers section.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

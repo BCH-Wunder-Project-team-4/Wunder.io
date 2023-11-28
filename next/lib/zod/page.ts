@@ -11,7 +11,7 @@ import {
   ImageSchema,
   LinksSchema,
   ListingArticlesSchema,
-  ScrollingNumbersElementSchema,
+  ScrollingNumbersSchema,
   VideoSchema,
 } from "@/lib/zod/paragraph";
 
@@ -25,7 +25,7 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   ListingArticlesSchema,
   FileAttachmentsSchema,
   BannerSchema,
-  ScrollingNumbersElementSchema,
+  ScrollingNumbersSchema,
 ]);
 
 export const PageSchema = z.object({

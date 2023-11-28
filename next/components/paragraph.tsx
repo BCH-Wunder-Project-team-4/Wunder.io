@@ -52,7 +52,7 @@ export function Paragraph({ paragraph }: { paragraph: Paragraph }) {
     case "paragraph--banner": {
       return <ParagraphBanner paragraph={paragraph} />;
     }
-    case "paragraph--scrolling_numbers_element": {
+    case "paragraph--scrolling_numbers": {
       return <ParagraphScrollingNumbers paragraph={paragraph} />;
     }
     default:

@@ -13,7 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.listing_articles
-    - paragraphs.paragraphs_type.scrolling_numbers_element
+    - paragraphs.paragraphs_type.scrolling_numbers
     - paragraphs.paragraphs_type.video
   module:
     - entity_reference_revisions
@@ -42,7 +42,7 @@ settings:
       video: video
       listing_articles: listing_articles
       file_attachments: file_attachments
-      scrolling_numbers_element: scrolling_numbers_element
+      scrolling_numbers: scrolling_numbers
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -74,10 +74,10 @@ settings:
         enabled: true
       scrolling_numbers:
         weight: 12
-        enabled: false
-      scrolling_numbers_element:
-        weight: 13
         enabled: true
+      scrolling_numbers_item:
+        weight: 23
+        enabled: false
       video:
         weight: -14
         enabled: true

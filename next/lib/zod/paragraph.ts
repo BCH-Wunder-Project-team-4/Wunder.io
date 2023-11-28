@@ -52,7 +52,7 @@ export const LinkShape = z.object({
 });
 
 export const ScrollingNumberShape = z.object({
-  type: z.literal("paragraph--scrolling_numbers"),
+  type: z.literal("paragraph--scrolling_numbers_item"),
   field_number: z.number(),
   field_number_suffix: z.string().nullable().optional(),
   field_description: z.string(),
@@ -178,17 +178,18 @@ export const BannerSchema = z.object({
   field_primary_link: LinkShape.nullable().optional(),
 });
 
-export const ScrollingNumbersElementSchema = z.object({
-  type: z.literal("paragraph--scrolling_numbers_element"),
+export const ScrollingNumbersSchema = z.object({
+  type: z.literal("paragraph--scrolling_numbers"),
   id: z.string(),
-  field_scrolling_numbers: z.array(ScrollingNumberShape),
+  field_heading: z.string(),
+  field_scrolling_numbers_items: z.array(ScrollingNumberShape),
 });
 
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
 export type Video = z.infer<typeof VideoSchema>;
 export type Links = z.infer<typeof LinksSchema>;
-export type ScrollingNumbers = z.infer<typeof ScrollingNumbersElementSchema>;
+export type ScrollingNumbers = z.infer<typeof ScrollingNumbersSchema>;
 export type Accordion = z.infer<typeof AccordionSchema>;
 export type AccordionItem = z.infer<typeof AccordionItemSchema>;
 export type Hero = z.infer<typeof HeroSchema>;

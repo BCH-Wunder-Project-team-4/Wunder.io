@@ -1,12 +1,12 @@
-uuid: 6d77b307-962b-414a-803b-f6d2b220d4f1
+uuid: 0b3637d9-6296-4844-aa88-58043f938b97
 langcode: en
 status: true
 dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
-id: paragraph.field_scrolling_numbers
-field_name: field_scrolling_numbers
+id: paragraph.field_scrolling_numbers_items
+field_name: field_scrolling_numbers_items
 entity_type: paragraph
 type: entity_reference_revisions
 settings:
