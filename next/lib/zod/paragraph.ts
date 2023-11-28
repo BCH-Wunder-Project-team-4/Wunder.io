@@ -174,7 +174,7 @@ export const BannerSchema = z.object({
 export const ServicesSchema = z.object({
   type: z.literal("paragraph--services"),
   id: z.string(),
-  field_heading: z.string().nullable()
+  field_heading: z.string().nullable(),
 });
 
 export type FormattedText = z.infer<typeof FormattedTextSchema>;

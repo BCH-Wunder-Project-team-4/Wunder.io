@@ -30,7 +30,8 @@ export const ServiceSchema = z.object({
   type: z.literal("node--service"),
   id: z.string(),
   title: z.string(),
-  field_content_elements: z.array(ServiceElementsSchema),
+  field_excerpt: z.string().optional(),
+  field_content_elements: z.array(ServiceElementsSchema).optional(),
   metatag: MetatagsSchema.optional(),
 });
 

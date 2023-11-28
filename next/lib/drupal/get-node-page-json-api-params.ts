@@ -212,9 +212,9 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
         "field_content_elements.field_accordion_items",
         "field_content_elements.field_accordion_items.field_content_elements.field_image.field_media_image",
         "field_content_elements.field_accordion_items.field_content_elements.field_video",
+        "field_excerpt"
       ])
-      .addFields("node--page", [
-        "field_excerpt",
+      .addFields("node--service", [
         "title",
         "field_content_elements",
         "path",
