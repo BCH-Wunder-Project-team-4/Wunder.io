@@ -2,7 +2,16 @@ import { DrupalJsonApiParams } from "drupal-jsonapi-params";
 
 import { env } from "@/env";
 
-export type ResourceType = "node--frontpage" | "node--page" | "node--article" | "node--job" | "node--case" | "node--employee" | "node--office" | "node--client" | "node--events";
+export type ResourceType =
+  | "node--frontpage"
+  | "node--page"
+  | "node--article"
+  | "node--job"
+  | "node--case"
+  | "node--employee"
+  | "node--office"
+  | "node--client"
+  | "node--events";
 
 export function getNodePageJsonApiParams(resourceType: ResourceType) {
   const apiParams = new DrupalJsonApiParams().addFilter(
@@ -20,6 +29,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
         "field_content_elements.field_accordion_items",
         "field_content_elements.field_accordion_items.field_content_elements.field_image.field_media_image",
         "field_content_elements.field_accordion_items.field_content_elements.field_video",
+        "field_content_elements.field_scrolling_numbers",
       ])
       .addFields("node--page", [
         "title",
@@ -72,8 +82,9 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "field_image",
       "uid",
       "field_country",
-      "field_office",]);
-/*     apiParams.addFields(resourceType, [
+      "field_office",
+    ]);
+    /*     apiParams.addFields(resourceType, [
       "title",
       "body",
       "uid",
@@ -155,13 +166,14 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
   }
   if (resourceType === "node--client") {
     apiParams.addInclude(["uid", "field_logo"]);
-    apiParams.addFields(resourceType, [
-      "field_logo",
-      "field_link"
-    ]);
+    apiParams.addFields(resourceType, ["field_logo", "field_link"]);
   }
   if (resourceType === "node--events") {
-    apiParams.addInclude(["uid", "field_event_image", "field_event_speakers_image"]);
+    apiParams.addInclude([
+      "uid",
+      "field_event_image",
+      "field_event_speakers_image",
+    ]);
     apiParams.addFields(resourceType, [
       "title",
       "body",

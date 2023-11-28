@@ -51,6 +51,13 @@ export const LinkShape = z.object({
   full_url: z.string(),
 });
 
+export const ScrollingNumberShape = z.object({
+  type: z.literal("paragraph--scrolling_numbers"),
+  field_number: z.number(),
+  field_number_suffix: z.string().nullable().optional(),
+  field_description: z.string(),
+});
+
 export const ImageSchema = z.object({
   type: z.literal("paragraph--image"),
   id: z.string(),
@@ -171,10 +178,17 @@ export const BannerSchema = z.object({
   field_primary_link: LinkShape.nullable().optional(),
 });
 
+export const ScrollingNumbersElementSchema = z.object({
+  type: z.literal("paragraph--scrolling_numbers_element"),
+  id: z.string(),
+  field_scrolling_numbers: z.array(ScrollingNumberShape),
+});
+
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
 export type Video = z.infer<typeof VideoSchema>;
 export type Links = z.infer<typeof LinksSchema>;
+export type ScrollingNumbers = z.infer<typeof ScrollingNumbersElementSchema>;
 export type Accordion = z.infer<typeof AccordionSchema>;
 export type AccordionItem = z.infer<typeof AccordionItemSchema>;
 export type Hero = z.infer<typeof HeroSchema>;
@@ -192,4 +206,5 @@ export type Paragraph =
   | Hero
   | ListingArticles
   | FileAttachments
-  | Banner;
+  | Banner
+  | ScrollingNumbers;
