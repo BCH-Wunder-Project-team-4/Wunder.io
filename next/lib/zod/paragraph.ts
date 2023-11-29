@@ -185,6 +185,21 @@ export const ScrollingNumbersSchema = z.object({
   field_scrolling_numbers_items: z.array(ScrollingNumberShape),
 });
 
+export const SimpleQuoteSchema = z.object({
+  type: z.literal("paragraph--simple_quote"),
+  id: z.string(),
+  field_quote: z.string(),
+  field_quote_author: z.string(),
+  field_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+});
+
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
 export type Video = z.infer<typeof VideoSchema>;
@@ -196,6 +211,7 @@ export type Hero = z.infer<typeof HeroSchema>;
 export type ListingArticles = z.infer<typeof ListingArticlesSchema>;
 export type FileAttachments = z.infer<typeof FileAttachmentsSchema>;
 export type Banner = z.infer<typeof BannerSchema>;
+export type SimpleQuote = z.infer<typeof SimpleQuoteSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -208,4 +224,5 @@ export type Paragraph =
   | ListingArticles
   | FileAttachments
   | Banner
-  | ScrollingNumbers;
+  | ScrollingNumbers
+  | SimpleQuote;

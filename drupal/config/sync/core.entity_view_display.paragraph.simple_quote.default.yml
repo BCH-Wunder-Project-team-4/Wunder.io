@@ -1,0 +1,38 @@
+uuid: 5460c04f-9932-4b61-8d5d-f3608182b483
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.simple_quote.field_image
+    - field.field.paragraph.simple_quote.field_quote
+    - field.field.paragraph.simple_quote.field_quote_author
+    - paragraphs.paragraphs_type.simple_quote
+id: paragraph.simple_quote.default
+targetEntityType: paragraph
+bundle: simple_quote
+mode: default
+content:
+  field_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_quote:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_quote_author:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden: {  }

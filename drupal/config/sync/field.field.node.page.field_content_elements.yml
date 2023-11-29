@@ -14,6 +14,7 @@ dependencies:
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.listing_articles
     - paragraphs.paragraphs_type.scrolling_numbers
+    - paragraphs.paragraphs_type.simple_quote
     - paragraphs.paragraphs_type.video
   module:
     - entity_reference_revisions
@@ -43,6 +44,7 @@ settings:
       listing_articles: listing_articles
       file_attachments: file_attachments
       scrolling_numbers: scrolling_numbers
+      simple_quote: simple_quote
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -78,6 +80,9 @@ settings:
       scrolling_numbers_item:
         weight: 23
         enabled: false
+      simple_quote:
+        weight: 14
+        enabled: true
       video:
         weight: -14
         enabled: true
