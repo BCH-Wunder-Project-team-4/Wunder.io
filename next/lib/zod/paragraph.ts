@@ -193,6 +193,22 @@ export const InfosectionSchema = z.object({
     .nullable()
     .optional(),
 });
+export const InfosectionBSchema = z.object({
+  type: z.literal("paragraph--infosection_b"),
+  id: z.string(),
+  field_heading: z.string(),
+  field_formatted_text: z.object({
+    processed: z.string(),
+  }),
+  field_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+});
 
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
@@ -206,6 +222,7 @@ export type FileAttachments = z.infer<typeof FileAttachmentsSchema>;
 export type Banner = z.infer<typeof BannerSchema>;
 export type Services = z.infer<typeof ServicesSchema>;
 export type Infosection = z.infer<typeof InfosectionSchema>;
+export type InfosectionB = z.infer<typeof InfosectionBSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -219,4 +236,5 @@ export type Paragraph =
   | FileAttachments
   | Banner
   | Services
-  | Infosection;
+  | Infosection
+  | InfosectionB;
