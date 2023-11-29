@@ -33,14 +33,9 @@ export function ParagraphScrollingNumbers({
     }, [count, to, duration, isInView, hasAnimated]);
 
     return (
-      <motion.p
-        className="font-bold text-2xl"
-        ref={ref}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
+      <motion.span ref={ref} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         {rounded}
-      </motion.p>
+      </motion.span>
     );
   };
 
@@ -51,12 +46,10 @@ export function ParagraphScrollingNumbers({
       <div className="flex flex-row">
         {paragraph.field_scrolling_numbers_items.map((item, index) => (
           <div key={index} className="flex flex-col items-center p-5">
-            <Counter from={0} to={item.field_number} duration={2} />
-            {item.field_number_suffix}
-            {/* <motion.p className="font-bold text-2xl">
-              {item.field_number}
-              {item.field_number_suffix}
-            </motion.p> */}
+            <p className="font-bold text-2xl">
+              <Counter from={0} to={item.field_number} duration={2} />
+              <span>{item.field_number_suffix}</span>
+            </p>
             <div className="text-2xl">{item.field_description}</div>
           </div>
         ))}
