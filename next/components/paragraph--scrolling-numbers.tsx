@@ -43,14 +43,21 @@ export function ParagraphScrollingNumbers({
     <section id="scrolling_numbers">
       <HeadingParagraph>{paragraph.field_heading}</HeadingParagraph>
       <div className="h-36"></div>
-      <div className="flex flex-row">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 bg-primary-600 py-8 px-4 rounded-md">
         {paragraph.field_scrolling_numbers_items.map((item, index) => (
-          <div key={index} className="flex flex-col items-center p-5">
-            <p className="font-bold text-2xl">
-              <Counter from={0} to={item.field_number} duration={2} />
+          <div key={index} className="flex flex-col items-center">
+            <p className="font-bold text-white" style={{ fontSize: "64px" }}>
+              {/* Larger numerical values, such as years, are not subjected to animation for better readability and performance. */}
+              {item.field_number >= 1000 ? (
+                <span>{item.field_number}</span>
+              ) : (
+                <Counter from={0} to={item.field_number} duration={3} />
+              )}
               <span>{item.field_number_suffix}</span>
             </p>
-            <div className="text-2xl">{item.field_description}</div>
+            <p className="text-xs text-rose text-transform: uppercase">
+              {item.field_description}
+            </p>
           </div>
         ))}
       </div>
