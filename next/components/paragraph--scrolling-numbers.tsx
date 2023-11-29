@@ -8,7 +8,7 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export function ParagraphScrollingNumbers({
   paragraph,
@@ -20,23 +20,16 @@ export function ParagraphScrollingNumbers({
   const Counter = ({ from, to, duration }) => {
     const count = useMotionValue(from);
     const ref = useRef(null);
-    // const { scrollYProgress } = useScroll();
     const isInView = useInView(ref, { once: true });
-    const [hasAnimated, setHasAnimated] = useState(false);
     const rounded = useTransform(count, (latest) => Math.round(latest));
 
     useEffect(() => {
-      if (isInView && !hasAnimated) {
+      if (isInView) {
         animate(count, to, { duration: duration });
-        setHasAnimated(true);
       }
-    }, [count, to, duration, isInView, hasAnimated]);
+    }, [isInView]);
 
-    return (
-      <motion.span ref={ref} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-        {rounded}
-      </motion.span>
-    );
+    return <motion.span ref={ref}>{rounded}</motion.span>;
   };
 
   return (
@@ -50,7 +43,7 @@ export function ParagraphScrollingNumbers({
               {item.field_number >= 1000 ? (
                 <span>{item.field_number}</span>
               ) : (
-                <Counter from={0} to={item.field_number} duration={3} />
+                <Counter from={0} to={item.field_number} duration={2.5} />
               )}
               <span>{item.field_number_suffix}</span>
             </p>
