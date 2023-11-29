@@ -1,16 +1,16 @@
-uuid: 62727847-8dc9-4fc1-b9c7-61660e4f4ce1
+uuid: 1dacc864-1df0-469d-a02f-a0aa069b2017
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_formatted_text
-    - paragraphs.paragraphs_type.banner
+    - paragraphs.paragraphs_type.wunderpedia
   module:
     - text
-id: paragraph.banner.field_formatted_text
+id: paragraph.wunderpedia.field_formatted_text
 field_name: field_formatted_text
 entity_type: paragraph
-bundle: banner
+bundle: wunderpedia
 label: 'Formatted text'
 description: ''
 required: false

@@ -1,0 +1,23 @@
+uuid: 23f9c032-c441-4770-b9ed-38400842c2e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_links
+    - paragraphs.paragraphs_type.wunderpedia
+  module:
+    - link
+id: paragraph.wunderpedia.field_links
+field_name: field_links
+entity_type: paragraph
+bundle: wunderpedia
+label: Links
+description: 'Add a list of links.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

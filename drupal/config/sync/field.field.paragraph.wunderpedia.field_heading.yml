@@ -1,0 +1,19 @@
+uuid: 807e575e-09dd-41ba-9e15-c382449983dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.wunderpedia
+id: paragraph.wunderpedia.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: wunderpedia
+label: Heading
+description: 'Heading for the whole accordion'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,4 +1,4 @@
-uuid: f4a7b332-ca5d-42b4-9c85-a22ac2d73fe6
+uuid: dc487d79-dc87-4b9b-b5ae-6844827ec04e
 langcode: en
 status: true
 dependencies:
@@ -7,8 +7,6 @@ dependencies:
     - paragraphs.paragraphs_type.accordion_item
   module:
     - text
-_core:
-  default_config_hash: krFpkcz2sTJg5IGzU7oPKt3cBEpShObttx8XX5hN5m0
 id: paragraph.accordion_item.field_formatted_text
 field_name: field_formatted_text
 entity_type: paragraph

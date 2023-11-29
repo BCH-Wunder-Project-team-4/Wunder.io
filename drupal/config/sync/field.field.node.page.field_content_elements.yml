@@ -15,6 +15,7 @@ dependencies:
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.listing_articles
     - paragraphs.paragraphs_type.video
+    - paragraphs.paragraphs_type.wunderpedia
   module:
     - entity_reference_revisions
 _core:
@@ -42,6 +43,7 @@ settings:
       video: video
       listing_articles: listing_articles
       file_attachments: file_attachments
+      wunderpedia: wunderpedia
       full_width_paragraph: full_width_paragraph
     negate: 0
     target_bundles_drag_drop:
@@ -77,5 +79,8 @@ settings:
         enabled: true
       video:
         weight: -14
+        enabled: true
+      wunderpedia:
+        weight: 13
         enabled: true
 field_type: entity_reference_revisions
