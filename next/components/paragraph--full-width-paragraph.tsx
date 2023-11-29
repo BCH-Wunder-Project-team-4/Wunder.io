@@ -1,11 +1,13 @@
 import { FormattedText } from "@/components/formatted-text";
 import { FullWidthParagraph as FullWidthParagraphType } from "@/lib/zod/paragraph";
 import { MediaImage } from "@/components/media--image";
+import { MediaVideo } from "./media--video";
 import clsx from "clsx";
 import css from "./full-width-paragraph.module.css";
 
 export function FullWidthParagraph({ paragraph }: { paragraph: FullWidthParagraphType }) {
 
+  console.log(paragraph);
 
 
   return (
@@ -65,6 +67,8 @@ export function FullWidthParagraph({ paragraph }: { paragraph: FullWidthParagrap
 
 
       </div>
+      <MediaVideo
+        media={paragraph.field_video} />
     </div >
   )
 }

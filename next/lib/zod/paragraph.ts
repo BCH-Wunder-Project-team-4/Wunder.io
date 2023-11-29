@@ -170,6 +170,7 @@ export const BannerSchema = z.object({
 export const FullWidthParagraphSchema = z.object({
   type: z.literal("paragraph--full_width_paragraph"),
   id: z.string(),
+
   field_texts: z.array(z.object({
     processed: z.string(),
   }),),
