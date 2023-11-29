@@ -14,7 +14,7 @@ export function ServiceTeaser({ service }: ServiceTeaserProps) {
   return (
     <Link
       href={service.path.alias}
-      className="relative grid h-full dark:bg-steelgray bg-mischka p-4"
+      className="relative grid h-full dark:bg-steelgray bg-mischka p-4 transition-transform duration-200 ease-in-out hover:scale-105"
     >
       <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold  text-primary-600 dark:text-primary-200 underline">
         {service.title}

@@ -210,6 +210,12 @@ export const InfosectionBSchema = z.object({
     .optional(),
 });
 
+export const SubheadingSchema = z.object({
+  type: z.literal("paragraph--subheading"),
+  id: z.string(),
+  field_subheading: z.string(),
+});
+
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
 export type Video = z.infer<typeof VideoSchema>;
@@ -223,6 +229,7 @@ export type Banner = z.infer<typeof BannerSchema>;
 export type Services = z.infer<typeof ServicesSchema>;
 export type Infosection = z.infer<typeof InfosectionSchema>;
 export type InfosectionB = z.infer<typeof InfosectionBSchema>;
+export type Subheading = z.infer<typeof SubheadingSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -237,4 +244,5 @@ export type Paragraph =
   | Banner
   | Services
   | Infosection
-  | InfosectionB;
+  | InfosectionB
+  | Subheading;

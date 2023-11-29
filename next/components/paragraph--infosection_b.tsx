@@ -24,7 +24,7 @@ export function ParagraphInfosectionB({ paragraph }: { paragraph: InfosectionBTy
           <FormattedText
             html={paragraph.field_formatted_text.processed}
             className={clsx(
-              "mb-6 max-w-2xl text-left text-md/xl text-primary-600 sm:text-lg md:text-lg lg:mb-8 lg:text-sm",
+              "mb-6 max-w-2xl text-left text-md/xl text-primary-600 sm:text-lg md:text-lg lg:mb-8 lg:text-lg",
               paragraph.field_heading && "mt-4",
             )}
           />
