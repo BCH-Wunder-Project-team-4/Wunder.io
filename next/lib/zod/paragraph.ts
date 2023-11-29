@@ -1,3 +1,4 @@
+import { any } from "cypress/types/bluebird";
 import { z } from "zod";
 
 export const FormattedTextSchema = z.object({
@@ -8,7 +9,6 @@ export const FormattedTextSchema = z.object({
   }),
   field_heading: z.string().nullable(),
 });
-
 
 export const ListingArticlesSchema = z.object({
   type: z.literal("paragraph--listing_articles"),
@@ -145,7 +145,6 @@ export const HeroSchema = z.object({
   field_secondary_link: LinkShape.nullable().optional(),
 });
 
-
 export const BannerSchema = z.object({
   type: z.literal("paragraph--banner"),
   id: z.string(),
@@ -183,6 +182,14 @@ export const FullWidthParagraphSchema = z.object({
   ),
 });
 
+export const ParagraphWunderpediaSchema = z.object({
+  type: z.literal("paragraph--wunderpedia"),
+  id: z.string(),
+  field_heading: z.string().nullable().optional(),
+  field_formatted_text: z.any(),
+  field_links: z.array(LinkShape),
+});
+
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
 export type Video = z.infer<typeof VideoSchema>;
@@ -194,6 +201,7 @@ export type ListingArticles = z.infer<typeof ListingArticlesSchema>;
 export type FileAttachments = z.infer<typeof FileAttachmentsSchema>;
 export type Banner = z.infer<typeof BannerSchema>;
 export type FullWidthParagraph = z.infer<typeof FullWidthParagraphSchema>;
+export type ParagraphWunderpedia = z.infer<typeof ParagraphWunderpediaSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -206,4 +214,5 @@ export type Paragraph =
   | ListingArticles
   | FileAttachments
   | FullWidthParagraph
-  | Banner;
+  | Banner
+  | ParagraphWunderpedia;

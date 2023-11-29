@@ -6,7 +6,7 @@ import css from "./full-width-paragraph.module.css";
 
 export function FullWidthParagraph({ paragraph }: { paragraph: FullWidthParagraphType }) {
 
-  console.log("paragraph", paragraph);
+
 
   return (
     <div className={clsx(css.relative)}>

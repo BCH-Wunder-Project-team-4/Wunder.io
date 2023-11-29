@@ -130,6 +130,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
   const languageLinks = createLanguageLinks(nodeTranslations);
 
 
+
   const validatedResource =
     type === "node--article"
       ? validateAndCleanupArticle(resource)

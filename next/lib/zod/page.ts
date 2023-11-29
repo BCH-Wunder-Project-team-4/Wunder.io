@@ -8,6 +8,7 @@ import {
   ImageSchema,
   LinksSchema,
   ListingArticlesSchema,
+  ParagraphWunderpediaSchema,
   VideoSchema,
 } from "@/lib/zod/paragraph";
 
@@ -26,6 +27,7 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   FileAttachmentsSchema,
   BannerSchema,
   FullWidthParagraphSchema,
+  ParagraphWunderpediaSchema,
 ]);
 
 export const PageSchema = z.object({
