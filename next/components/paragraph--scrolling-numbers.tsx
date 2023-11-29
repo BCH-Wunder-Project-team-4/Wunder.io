@@ -40,10 +40,9 @@ export function ParagraphScrollingNumbers({
   };
 
   return (
-    <section id="scrolling_numbers">
+    <section id="scrolling_numbers" className="mb-6">
       <HeadingParagraph>{paragraph.field_heading}</HeadingParagraph>
-      <div className="h-36"></div>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 bg-primary-600 py-8 px-4 rounded-md">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 bg-primary-600 py-8 px-4 rounded-md mt-6">
         {paragraph.field_scrolling_numbers_items.map((item, index) => (
           <div key={index} className="flex flex-col items-center">
             <p className="font-bold text-white" style={{ fontSize: "64px" }}>
@@ -61,7 +60,6 @@ export function ParagraphScrollingNumbers({
           </div>
         ))}
       </div>
-      <div className="h-36"></div>
     </section>
   );
 }
