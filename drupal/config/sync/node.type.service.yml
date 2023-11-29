@@ -1,0 +1,18 @@
+uuid: 85fa781f-43c5-4ba9-a071-a2d766c868b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Service
+type: service
+description: 'Use this content type to add and manage the services listed in the Offering page'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

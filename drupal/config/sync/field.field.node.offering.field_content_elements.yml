@@ -1,0 +1,91 @@
+uuid: abdc1756-88aa-4d38-a38e-4f2bc3787e25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_elements
+    - node.type.offering
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.accordion_item
+    - paragraphs.paragraphs_type.banner
+    - paragraphs.paragraphs_type.file_attachments
+    - paragraphs.paragraphs_type.formatted_text
+    - paragraphs.paragraphs_type.hero
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.infosection
+    - paragraphs.paragraphs_type.infosection_b
+    - paragraphs.paragraphs_type.links
+    - paragraphs.paragraphs_type.listing_articles
+    - paragraphs.paragraphs_type.services
+    - paragraphs.paragraphs_type.video
+  module:
+    - entity_reference_revisions
+id: node.offering.field_content_elements
+field_name: field_content_elements
+entity_type: node
+bundle: offering
+label: 'Content elements'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      hero: hero
+      formatted_text: formatted_text
+      image: image
+      accordion_item: accordion_item
+      links: links
+      accordion: accordion
+      video: video
+      listing_articles: listing_articles
+      file_attachments: file_attachments
+      services: services
+      banner: banner
+      infosection: infosection
+      infosection_b: infosection_b
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: -10
+        enabled: true
+      accordion_item:
+        weight: -12
+        enabled: true
+      banner:
+        weight: 13
+        enabled: true
+      file_attachments:
+        weight: 10
+        enabled: true
+      formatted_text:
+        weight: -14
+        enabled: true
+      hero:
+        weight: -15
+        enabled: true
+      image:
+        weight: -13
+        enabled: true
+      infosection:
+        weight: 13
+        enabled: true
+      infosection_b:
+        weight: 14
+        enabled: true
+      links:
+        weight: -11
+        enabled: true
+      listing_articles:
+        weight: 9
+        enabled: true
+      services:
+        weight: 12
+        enabled: true
+      video:
+        weight: -9
+        enabled: true
+field_type: entity_reference_revisions
