@@ -177,6 +177,23 @@ export const ServicesSchema = z.object({
   field_heading: z.string().nullable(),
 });
 
+export const InfosectionSchema = z.object({
+  type: z.literal("paragraph--infosection"),
+  id: z.string(),
+  field_heading: z.string(),
+  field_formatted_text: z.object({
+    processed: z.string(),
+  }),
+  field_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+});
+
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
 export type Video = z.infer<typeof VideoSchema>;
@@ -188,6 +205,7 @@ export type ListingArticles = z.infer<typeof ListingArticlesSchema>;
 export type FileAttachments = z.infer<typeof FileAttachmentsSchema>;
 export type Banner = z.infer<typeof BannerSchema>;
 export type Services = z.infer<typeof ServicesSchema>;
+export type Infosection = z.infer<typeof InfosectionSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -200,4 +218,5 @@ export type Paragraph =
   | ListingArticles
   | FileAttachments
   | Banner
-  | Services;
+  | Services
+  | Infosection;

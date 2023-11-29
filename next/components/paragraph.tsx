@@ -9,6 +9,7 @@ import { ParagraphText } from "@/components/paragraph--text";
 import { Paragraph } from "@/lib/zod/paragraph";
 import { ParagraphBanner } from "./paragraph--banner";
 import { ParagraphServices } from "./paragraph--services";
+import { ParagraphInfosection } from "./paragraph--infosection";
 
 // Use dynamic imports to defer loading a component until after initial page load: https://nextjs.org/docs/advanced-features/dynamic-import
 const ParagraphVideo = dynamic(() =>
@@ -54,6 +55,9 @@ export function Paragraph({ paragraph }: { paragraph: Paragraph }) {
     }
     case "paragraph--services": {
       return <ParagraphServices paragraph={paragraph} />;
+    }
+    case "paragraph--infosection": {
+      return <ParagraphInfosection paragraph={paragraph} />;
     }
     default:
       return null;
