@@ -50,7 +50,7 @@ export function ParagraphScrollingNumbers({
       <div className="h-36"></div>
       <div className="flex flex-row">
         {paragraph.field_scrolling_numbers_items.map((item, index) => (
-          <div key={index} className="flex flex-col items-center">
+          <div key={index} className="flex flex-col items-center p-5">
             <Counter from={0} to={item.field_number} duration={2} />
             {item.field_number_suffix}
             {/* <motion.p className="font-bold text-2xl">
