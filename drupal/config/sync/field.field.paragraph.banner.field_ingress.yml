@@ -1,0 +1,19 @@
+uuid: f96d88a9-dfff-4545-8506-02d63ed00b95
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ingress
+    - paragraphs.paragraphs_type.banner
+id: paragraph.banner.field_ingress
+field_name: field_ingress
+entity_type: paragraph
+bundle: banner
+label: Ingress
+description: 'Add short and catchy text of what the following content is about.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
