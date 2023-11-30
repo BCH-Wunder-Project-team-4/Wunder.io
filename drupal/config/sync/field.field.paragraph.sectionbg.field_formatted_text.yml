@@ -1,0 +1,22 @@
+uuid: 286544c4-9960-4ae5-b1d4-22b05981fe33
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_formatted_text
+    - paragraphs.paragraphs_type.sectionbg
+  module:
+    - text
+id: paragraph.sectionbg.field_formatted_text
+field_name: field_formatted_text
+entity_type: paragraph
+bundle: sectionbg
+label: 'Formatted text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

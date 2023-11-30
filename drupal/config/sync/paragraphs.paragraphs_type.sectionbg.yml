@@ -1,0 +1,10 @@
+uuid: 159feb89-96d6-423b-a65a-a9c6b71e8a58
+langcode: en
+status: true
+dependencies: {  }
+id: sectionbg
+label: 'Section with fading background'
+icon_uuid: null
+icon_default: null
+description: 'Section with a title, text, a possible link and a fading background with the selected image.'
+behavior_plugins: {  }

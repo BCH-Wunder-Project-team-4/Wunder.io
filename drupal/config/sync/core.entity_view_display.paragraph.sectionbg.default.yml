@@ -1,0 +1,54 @@
+uuid: c1dfbc4e-ed45-47f9-b380-3635c9e81089
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sectionbg.field_formatted_text
+    - field.field.paragraph.sectionbg.field_heading
+    - field.field.paragraph.sectionbg.field_image
+    - field.field.paragraph.sectionbg.field_primary_link
+    - paragraphs.paragraphs_type.sectionbg
+  module:
+    - link
+    - text
+id: paragraph.sectionbg.default
+targetEntityType: paragraph
+bundle: sectionbg
+mode: default
+content:
+  field_formatted_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_primary_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden: {  }

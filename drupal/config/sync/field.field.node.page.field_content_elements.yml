@@ -11,8 +11,13 @@ dependencies:
     - paragraphs.paragraphs_type.formatted_text
     - paragraphs.paragraphs_type.hero
     - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.infosection
+    - paragraphs.paragraphs_type.infosection_b
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.listing_articles
+    - paragraphs.paragraphs_type.sectionbg
+    - paragraphs.paragraphs_type.services
+    - paragraphs.paragraphs_type.subheading
     - paragraphs.paragraphs_type.video
   module:
     - entity_reference_revisions
@@ -41,6 +46,11 @@ settings:
       video: video
       listing_articles: listing_articles
       file_attachments: file_attachments
+      sectionbg: sectionbg
+      infosection: infosection
+      infosection_b: infosection_b
+      services: services
+      subheading: subheading
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -64,11 +74,26 @@ settings:
       image:
         weight: -18
         enabled: true
+      infosection:
+        weight: 22
+        enabled: true
+      infosection_b:
+        weight: 23
+        enabled: true
       links:
         weight: -15
         enabled: true
       listing_articles:
         weight: -13
+        enabled: true
+      sectionbg:
+        weight: 16
+        enabled: true
+      services:
+        weight: 26
+        enabled: true
+      subheading:
+        weight: 27
         enabled: true
       video:
         weight: -14

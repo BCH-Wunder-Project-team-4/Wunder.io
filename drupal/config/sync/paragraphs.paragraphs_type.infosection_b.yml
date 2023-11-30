@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: infosection_b
-label: 'Info Section B'
+label: 'Info section with image on left'
 icon_uuid: null
 icon_default: null
 description: 'Info section with the image on the left side.'
