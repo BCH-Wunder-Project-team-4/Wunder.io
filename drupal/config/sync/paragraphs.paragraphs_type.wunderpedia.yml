@@ -1,0 +1,10 @@
+uuid: f9f40c08-a143-4f25-8127-5be5bb8ad892
+langcode: en
+status: true
+dependencies: {  }
+id: wunderpedia
+label: Wunderpedia
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

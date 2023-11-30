@@ -1,0 +1,45 @@
+uuid: d5416c45-3a08-4081-9a8c-cb1b959bee25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.wunderpedia.field_formatted_text
+    - field.field.paragraph.wunderpedia.field_heading
+    - field.field.paragraph.wunderpedia.field_links
+    - paragraphs.paragraphs_type.wunderpedia
+  module:
+    - link
+    - text
+id: paragraph.wunderpedia.default
+targetEntityType: paragraph
+bundle: wunderpedia
+mode: default
+content:
+  field_formatted_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_links:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

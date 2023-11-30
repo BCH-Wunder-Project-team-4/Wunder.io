@@ -1,4 +1,4 @@
-uuid: db260331-14c4-4f66-b739-89980f109b91
+uuid: 8defebf3-c3e3-4b2d-8a5f-91983665a03b
 langcode: en
 status: true
 dependencies:
@@ -7,8 +7,6 @@ dependencies:
     - paragraphs.paragraphs_type.accordion
   module:
     - text
-_core:
-  default_config_hash: maslF_S8qQzWdQR0tmqOuCUniF919aMr_8FPORgrBCY
 id: paragraph.accordion.field_formatted_text
 field_name: field_formatted_text
 entity_type: paragraph
@@ -16,7 +14,7 @@ bundle: accordion
 label: 'Formatted text'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

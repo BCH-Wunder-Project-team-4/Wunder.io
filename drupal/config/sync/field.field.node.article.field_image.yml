@@ -6,7 +6,14 @@ dependencies:
     - field.storage.node.field_image
     - node.type.article
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 _core:
   default_config_hash: sb1lfSeRR7VS0EPl9A17cmIye6KESnSkPdk-0p5fU4Y
 id: node.article.field_image
@@ -32,9 +39,9 @@ settings:
   title_field: false
   title_field_required: false
   default_image:
-    uuid: null
+    uuid: bc9bbb6a-5b7a-4bd6-ba17-9709e1bcf4e8
     alt: ''
     title: ''
-    width: null
-    height: null
+    width: 1200
+    height: 1200
 field_type: image
