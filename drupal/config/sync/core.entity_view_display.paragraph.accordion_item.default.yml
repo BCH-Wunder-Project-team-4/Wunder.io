@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.accordion_item
   module:
     - entity_reference_revisions
+    - text
 _core:
   default_config_hash: UFzsuO09ozeDVF7Vx9YPPTEdUcxi5WjBYSAPQYjTMhs
 id: paragraph.accordion_item.default
@@ -25,6 +26,13 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  field_formatted_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_heading:
     type: string
     label: above
@@ -33,5 +41,4 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden:
-  field_formatted_text: true
+hidden: {  }

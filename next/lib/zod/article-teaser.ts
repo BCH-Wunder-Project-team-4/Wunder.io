@@ -1,7 +1,6 @@
+import { ArticleBaseSchema } from "@/lib/zod/article";
 import { DrupalNode } from "next-drupal";
 import { z } from "zod";
-
-import { ArticleBaseSchema } from "@/lib/zod/article";
 
 export const ArticleTeaserSchema = ArticleBaseSchema.extend({
   path: z.object({

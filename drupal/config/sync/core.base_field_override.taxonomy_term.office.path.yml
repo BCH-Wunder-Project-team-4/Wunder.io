@@ -1,0 +1,20 @@
+uuid: d9f17686-7a01-4cda-8b8d-1e4c5a838ddf
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.office
+  module:
+    - path
+id: taxonomy_term.office.path
+field_name: path
+entity_type: taxonomy_term
+bundle: office
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

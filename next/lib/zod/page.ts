@@ -1,20 +1,22 @@
-import { DrupalNode } from "next-drupal";
-import { z } from "zod";
-
-import { MetatagsSchema } from "@/lib/zod/metatag";
 import {
   AccordionSchema,
   BannerSchema,
   FileAttachmentsSchema,
   FormattedTextSchema,
+  FullWidthParagraphSchema,
   HeroSchema,
   ImageSchema,
   LinksSchema,
   ListingArticlesSchema,
+  ParagraphWunderpediaSchema,
   ScrollingNumbersSchema,
   SimpleQuoteSchema,
   VideoSchema,
 } from "@/lib/zod/paragraph";
+
+import { MetatagsSchema } from "@/lib/zod/metatag";
+import { DrupalNode } from "next-drupal";
+import { z } from "zod";
 
 const PageElementsSchema = z.discriminatedUnion("type", [
   FormattedTextSchema,
@@ -27,6 +29,8 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   FileAttachmentsSchema,
   BannerSchema,
   ScrollingNumbersSchema,
+  FullWidthParagraphSchema,
+  ParagraphWunderpediaSchema,
   SimpleQuoteSchema,
 ]);
 

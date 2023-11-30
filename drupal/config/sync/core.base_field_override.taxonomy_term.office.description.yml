@@ -1,0 +1,21 @@
+uuid: add95eca-3de0-42dd-b16c-e3d9d8429833
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.office
+  module:
+    - text
+id: taxonomy_term.office.description
+field_name: description
+entity_type: taxonomy_term
+bundle: office
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

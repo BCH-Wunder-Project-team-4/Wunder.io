@@ -1,0 +1,10 @@
+uuid: fa58a84d-079b-461a-bdcf-661949ee82da
+langcode: en
+status: true
+dependencies: {  }
+id: full_width_paragraph
+label: 'Full-width paragraph'
+icon_uuid: null
+icon_default: null
+description: 'A paragraph with 4 pictures and 3 texts'
+behavior_plugins: {  }

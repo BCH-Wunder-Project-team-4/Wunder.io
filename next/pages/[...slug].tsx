@@ -1,35 +1,35 @@
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
-import { DrupalNode, DrupalTranslatedPath } from "next-drupal";
-
-import { Article } from "@/components/article";
-import { Job } from "@/components/careers/job";
-import { Meta } from "@/components/meta";
-import { Page } from "@/components/page";
-import { Case } from "@/components/cases/case";
-import {
-  createLanguageLinks,
-  LanguageLinks,
-} from "@/lib/contexts/language-links-context";
-import { drupal } from "@/lib/drupal/drupal-client";
-import { getNodePageJsonApiParams } from "@/lib/drupal/get-node-page-json-api-params";
-import { ResourceType } from "@/lib/drupal/get-node-page-json-api-params";
-import { getNodeTranslatedVersions } from "@/lib/drupal/get-node-translated-versions";
-import {
-  CommonPageProps,
-  getCommonPageProps,
-} from "@/lib/get-common-page-props";
 import {
   Article as ArticleType,
   validateAndCleanupArticle,
 } from "@/lib/zod/article";
+import { Case as CaseType, validateAndCleanupCase } from "@/lib/zod/case";
+import {
+  CommonPageProps,
+  getCommonPageProps,
+} from "@/lib/get-common-page-props";
+import { DrupalNode, DrupalTranslatedPath } from "next-drupal";
+import { Event as EventType, validateAndCleanupEvent } from "@/lib/zod/events";
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import {
   Job as JobType,
   validateAndCleanupJob,
 } from "@/lib/zod/job";
+import {
+  LanguageLinks,
+  createLanguageLinks,
+} from "@/lib/contexts/language-links-context";
 import { Page as PageType, validateAndCleanupPage } from "@/lib/zod/page";
-import { Case as CaseType, validateAndCleanupCase } from "@/lib/zod/case";
+
+import { Article } from "@/components/article";
+import { Case } from "@/components/cases/case";
+import { Job } from "@/components/careers/job";
+import { Meta } from "@/components/meta";
+import { Page } from "@/components/page";
+import { ResourceType } from "@/lib/drupal/get-node-page-json-api-params";
 import { SingleEventPath } from "@/components/events/singleEventPath";
-import { Event as EventType, validateAndCleanupEvent } from "@/lib/zod/events";
+import { drupal } from "@/lib/drupal/drupal-client";
+import { getNodePageJsonApiParams } from "@/lib/drupal/get-node-page-json-api-params";
+import { getNodeTranslatedVersions } from "@/lib/drupal/get-node-translated-versions";
 
 const RESOURCE_TYPES = ["node--article", "node--page", "node--job", "node--case", "node--events"];
 
@@ -45,7 +45,7 @@ export default function CustomPage({
       {resource.type === "node--job" && <Job job={resource} />}
       {resource.type === "node--page" && <Page page={resource} />}
       {resource.type === "node--case" && <Case caseNode={resource} />}
-      {resource.type === "node--events" && <SingleEventPath event={resource}/>}
+      {resource.type === "node--events" && <SingleEventPath event={resource} />}
     </>
   );
 }
@@ -129,18 +129,20 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
   );
   const languageLinks = createLanguageLinks(nodeTranslations);
 
+
+
   const validatedResource =
     type === "node--article"
       ? validateAndCleanupArticle(resource)
       : type === "node--page"
-      ? validateAndCleanupPage(resource)
-      : type === "node--job"
-      ? validateAndCleanupJob(resource)
-      : type === "node--case"
-      ? validateAndCleanupCase(resource)
-      : type === "node--events"
-      ? validateAndCleanupEvent(resource)
-      : null;
+        ? validateAndCleanupPage(resource)
+        : type === "node--job"
+          ? validateAndCleanupJob(resource)
+          : type === "node--case"
+            ? validateAndCleanupCase(resource)
+            : type === "node--events"
+              ? validateAndCleanupEvent(resource)
+              : null;
 
   return {
     props: {
