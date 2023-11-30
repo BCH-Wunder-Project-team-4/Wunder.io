@@ -1,0 +1,33 @@
+uuid: 97522fcf-eac4-4dd4-9e7c-e9a6055b2ad4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.scrolling_numbers.field_heading
+    - field.field.paragraph.scrolling_numbers.field_scrolling_numbers_items
+    - paragraphs.paragraphs_type.scrolling_numbers
+  module:
+    - entity_reference_revisions
+id: paragraph.scrolling_numbers.default
+targetEntityType: paragraph
+bundle: scrolling_numbers
+mode: default
+content:
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_scrolling_numbers_items:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

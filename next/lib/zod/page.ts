@@ -9,11 +9,13 @@ import {
   LinksSchema,
   ListingArticlesSchema,
   ParagraphWunderpediaSchema,
+  ScrollingNumbersSchema,
+  SimpleQuoteSchema,
   VideoSchema,
 } from "@/lib/zod/paragraph";
 
-import { DrupalNode } from "next-drupal";
 import { MetatagsSchema } from "@/lib/zod/metatag";
+import { DrupalNode } from "next-drupal";
 import { z } from "zod";
 
 const PageElementsSchema = z.discriminatedUnion("type", [
@@ -26,8 +28,10 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   ListingArticlesSchema,
   FileAttachmentsSchema,
   BannerSchema,
+  ScrollingNumbersSchema,
   FullWidthParagraphSchema,
   ParagraphWunderpediaSchema,
+  SimpleQuoteSchema,
 ]);
 
 export const PageSchema = z.object({

@@ -1,0 +1,19 @@
+uuid: be381ef9-191a-44e6-8222-f2f9629bbf98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_quote
+    - paragraphs.paragraphs_type.simple_quote
+id: paragraph.simple_quote.field_quote
+field_name: field_quote
+entity_type: paragraph
+bundle: simple_quote
+label: Quote
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

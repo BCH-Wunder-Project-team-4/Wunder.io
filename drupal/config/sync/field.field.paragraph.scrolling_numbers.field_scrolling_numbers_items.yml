@@ -1,0 +1,64 @@
+uuid: d2a73beb-501b-413c-bd6b-c89c0e9e1206
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_scrolling_numbers_items
+    - paragraphs.paragraphs_type.scrolling_numbers
+    - paragraphs.paragraphs_type.scrolling_numbers_item
+  module:
+    - entity_reference_revisions
+id: paragraph.scrolling_numbers.field_scrolling_numbers_items
+field_name: field_scrolling_numbers_items
+entity_type: paragraph
+bundle: scrolling_numbers
+label: 'Scrolling Numbers items'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      scrolling_numbers_item: scrolling_numbers_item
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 14
+        enabled: false
+      accordion_item:
+        weight: 15
+        enabled: false
+      banner:
+        weight: 16
+        enabled: false
+      file_attachments:
+        weight: 17
+        enabled: false
+      formatted_text:
+        weight: 18
+        enabled: false
+      hero:
+        weight: 19
+        enabled: false
+      image:
+        weight: 20
+        enabled: false
+      links:
+        weight: 21
+        enabled: false
+      listing_articles:
+        weight: 22
+        enabled: false
+      scrolling_numbers:
+        weight: 13
+        enabled: false
+      scrolling_numbers_item:
+        weight: 23
+        enabled: true
+      video:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

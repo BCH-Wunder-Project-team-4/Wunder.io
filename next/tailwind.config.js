@@ -23,7 +23,9 @@ module.exports = {
       tranquil: "#F7FFFF",
       mellow: "#FFF48A",
       hugs: "#9E005D",
+      rose: "#FFC7E8",
       fog: "#BAA2FF",
+      bittersweet: "#FF7060",
 
       info: "#221f2d",
       success: "#007f6c",
