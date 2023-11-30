@@ -6,7 +6,7 @@ import { InfosectionB as InfosectionBType } from "@/lib/zod/paragraph";
 
 export function ParagraphInfosectionB({ paragraph }: { paragraph: InfosectionBType }) {
   return (
-    <section className="border-b border-primary-600 dark:border-primary-200 md:pb-5">
+    <section className="border-b border-primary-600 dark:border-primary-200 pb-5">
       <div className="grid min-w-screen-xl lg:grid-cols-12 justify-center items-center">
         <div className="lg:col-span-6 pb-5">
         <div className="relative mx-auto border-steelgray dark:border-scapaflow bg-steelgray border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]">

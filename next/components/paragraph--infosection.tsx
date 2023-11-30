@@ -6,7 +6,7 @@ import { Infosection as InfosectionType } from "@/lib/zod/paragraph";
 
 export function ParagraphInfosection({ paragraph }: { paragraph: InfosectionType }) {
   return (
-    <section id="hero" className="border-b border-primary-600 dark:border-primary-200 md:pb-5">
+    <section id="hero" className="border-b border-primary-600 dark:border-primary-200 pb-5">
       <div className="mx-auto grid max-w-screen-xl lg:grid-cols-12  justify-center items-center">
         <div className="mr-auto place-self-center px-8 py-8 lg:col-span-6  lg:py-16">
           {paragraph.field_heading && (

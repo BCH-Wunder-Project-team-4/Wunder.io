@@ -45,12 +45,14 @@ export function ParagraphSectionbg({ paragraph }: { paragraph: SectionType }) {
             </div>
           </div>
         </div>
-        <div className="hidden lg:col-span-6 lg:mt-0 lg:flex">
+        <div className="hidden lg:col-span-6 lg:mt-0 lg:flex justify-center items-center">
           {paragraph.field_image && (
-            <div className="w-full h-full">
+            <div className="w-4/5 h-4/5">
               <MediaImage 
               media={paragraph.field_image} alt="page-banner" 
-              priority/>
+              priority
+              className="rounded-md"/>
+              
             </div>
           )}
         </div>
