@@ -24,6 +24,7 @@ module.exports = {
       mellow: "#FFF48A",
       hugs: "#9E005D",
       rose: "#FFC7E8",
+      fog: "#BAA2FF",
 
       info: "#221f2d",
       success: "#007f6c",

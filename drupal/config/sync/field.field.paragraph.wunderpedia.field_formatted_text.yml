@@ -1,0 +1,22 @@
+uuid: 1dacc864-1df0-469d-a02f-a0aa069b2017
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_formatted_text
+    - paragraphs.paragraphs_type.wunderpedia
+  module:
+    - text
+id: paragraph.wunderpedia.field_formatted_text
+field_name: field_formatted_text
+entity_type: paragraph
+bundle: wunderpedia
+label: 'Formatted text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

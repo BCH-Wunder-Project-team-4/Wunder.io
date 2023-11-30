@@ -9,6 +9,8 @@ import { ParagraphText } from "@/components/paragraph--text";
 import { Paragraph } from "@/lib/zod/paragraph";
 import { ParagraphBanner } from "./paragraph--banner";
 import { ParagraphScrollingNumbers } from "./paragraph--scrolling-numbers";
+import { FullWidthParagraph } from "@/components/paragraph--full-width-paragraph";
+import { ParagraphWunderpedia } from "./paragraph--wunderpedia";
 
 // Use dynamic imports to defer loading a component until after initial page load: https://nextjs.org/docs/advanced-features/dynamic-import
 const ParagraphVideo = dynamic(() =>
@@ -54,6 +56,12 @@ export function Paragraph({ paragraph }: { paragraph: Paragraph }) {
     }
     case "paragraph--scrolling_numbers": {
       return <ParagraphScrollingNumbers paragraph={paragraph} />;
+    }
+    case "paragraph--full_width_paragraph": {
+      return <FullWidthParagraph paragraph={paragraph} />;
+    }
+    case "paragraph--wunderpedia": {
+      return <ParagraphWunderpedia paragraph={paragraph} />;
     }
     default:
       return null;

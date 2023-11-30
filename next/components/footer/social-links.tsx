@@ -6,7 +6,7 @@ import YouTubeIcon from "@/styles/icons/youtube.svg";
 import { useState } from "react";
 import { useTranslation } from "next-i18next";
 
-export function SocialShare() {
+export function SocialLinks() {
   const [pageUrl, setPageUrl] = useState<string>("wunder.io");
   const { t } = useTranslation();
 

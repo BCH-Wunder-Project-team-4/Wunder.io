@@ -19,10 +19,10 @@ mode: default
 content:
   field_formatted_text:
     type: text_default
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   field_heading:
     type: string

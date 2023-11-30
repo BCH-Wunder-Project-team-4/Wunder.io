@@ -1,4 +1,4 @@
-uuid: d6baad65-a060-40e7-a1ca-514b049826ab
+uuid: 62727847-8dc9-4fc1-b9c7-61660e4f4ce1
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ field_name: field_formatted_text
 entity_type: paragraph
 bundle: banner
 label: 'Formatted text'
-description: "Add leading text of what the page is about or what's to come."
+description: ''
 required: false
 translatable: false
 default_value: {  }

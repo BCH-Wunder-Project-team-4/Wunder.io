@@ -97,7 +97,7 @@ export const NewsletterForm = () => {
       <p className="py-3 text-md">{t('footer-newsletter-interest')}</p>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col">
-          <div className="flex flex-row flex-wrap  ">
+          <div className="flex flex-row  ">
 
             <FormField
               control={form.control}
@@ -148,7 +148,7 @@ export const NewsletterForm = () => {
               )}
             />
           </div>
-          <div className="flex flex-row gap-4 align-middle ">
+          <div className="flex flex-row flex-wrap gap-4 align-middle ">
             <FormField
               control={form.control}
               name="email"

@@ -1,14 +1,14 @@
+import ArrowIcon from "@/styles/icons/arrow-down.svg";
+import { FormattedText } from "@/components/formatted-text";
+import { Hero as HeroType } from "@/lib/zod/paragraph";
 import Link from "next/link";
+import { MediaImage } from "@/components/media--image";
+import { buttonVariants } from "@/ui/button";
 import clsx from "clsx";
 
-import { FormattedText } from "@/components/formatted-text";
-import { MediaImage } from "@/components/media--image";
-import { Hero as HeroType } from "@/lib/zod/paragraph";
-import ArrowIcon from "@/styles/icons/arrow-down.svg";
-
-import { buttonVariants } from "@/ui/button";
-
 export function ParagraphHero({ paragraph }: { paragraph: HeroType }) {
+
+
   return (
     <section id="hero" className="bg-secondary-50">
       <div className="mx-auto grid max-w-screen-xl lg:grid-cols-12">
