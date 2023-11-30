@@ -1,4 +1,3 @@
-import { any } from "cypress/types/bluebird";
 import { z } from "zod";
 
 export const FormattedTextSchema = z.object({
@@ -50,6 +49,13 @@ export const DocumentShape = z.object({
 export const LinkShape = z.object({
   title: z.string(),
   full_url: z.string(),
+});
+
+export const ScrollingNumberShape = z.object({
+  type: z.literal("paragraph--scrolling_numbers_item"),
+  field_number: z.number(),
+  field_number_suffix: z.string().nullable().optional(),
+  field_description: z.string(),
 });
 
 export const ImageSchema = z.object({
@@ -135,12 +141,15 @@ export const HeroSchema = z.object({
   type: z.literal("paragraph--hero"),
   id: z.string(),
   field_heading: z.string(),
-  field_formatted_text: z.object({ processed: z.string(), }),
-  field_image: z.object({
-    type: z.literal("media--image"),
-    id: z.string(),
-    field_media_image: ImageShape.nullable(),
-  }).nullable().optional(),
+  field_formatted_text: z.object({ processed: z.string() }),
+  field_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
   field_primary_link: LinkShape.nullable().optional(),
   field_secondary_link: LinkShape.nullable().optional(),
 });
@@ -236,15 +245,17 @@ export const FullWidthParagraphSchema = z.object({
   type: z.literal("paragraph--full_width_paragraph"),
   id: z.string(),
 
-  field_texts: z.array(z.object({
-    processed: z.string(),
-  }),),
-  field_images: z.array(z
-    .object({
+  field_texts: z.array(
+    z.object({
+      processed: z.string(),
+    }),
+  ),
+  field_images: z.array(
+    z.object({
       type: z.literal("media--image"),
       id: z.string(),
       field_media_image: ImageShape.nullable(),
-    })
+    }),
   ),
 });
 
@@ -256,10 +267,33 @@ export const ParagraphWunderpediaSchema = z.object({
   field_links: z.array(LinkShape),
 });
 
+export const ScrollingNumbersSchema = z.object({
+  type: z.literal("paragraph--scrolling_numbers"),
+  id: z.string(),
+  field_heading: z.string(),
+  field_scrolling_numbers_items: z.array(ScrollingNumberShape),
+});
+
+export const SimpleQuoteSchema = z.object({
+  type: z.literal("paragraph--simple_quote"),
+  id: z.string(),
+  field_quote: z.string(),
+  field_quote_author: z.string(),
+  field_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+});
+
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
 export type Video = z.infer<typeof VideoSchema>;
 export type Links = z.infer<typeof LinksSchema>;
+export type ScrollingNumbers = z.infer<typeof ScrollingNumbersSchema>;
 export type Accordion = z.infer<typeof AccordionSchema>;
 export type AccordionItem = z.infer<typeof AccordionItemSchema>;
 export type Hero = z.infer<typeof HeroSchema>;
@@ -273,6 +307,7 @@ export type Subheading = z.infer<typeof SubheadingSchema>;
 export type Sectionbg = z.infer<typeof SectionbgSchema>;
 export type FullWidthParagraph = z.infer<typeof FullWidthParagraphSchema>;
 export type ParagraphWunderpedia = z.infer<typeof ParagraphWunderpediaSchema>;
+export type SimpleQuote = z.infer<typeof SimpleQuoteSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -292,4 +327,6 @@ export type Paragraph =
   | Sectionbg
   | FullWidthParagraph
   | Banner
-  | ParagraphWunderpedia;
+  | ParagraphWunderpedia
+  | ScrollingNumbers
+  | SimpleQuote;

@@ -16,6 +16,8 @@ dependencies:
     - paragraphs.paragraphs_type.infosection_b
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.listing_articles
+    - paragraphs.paragraphs_type.scrolling_numbers
+    - paragraphs.paragraphs_type.simple_quote
     - paragraphs.paragraphs_type.sectionbg
     - paragraphs.paragraphs_type.services
     - paragraphs.paragraphs_type.subheading
@@ -50,6 +52,8 @@ settings:
       file_attachments: file_attachments
       wunderpedia: wunderpedia
       full_width_paragraph: full_width_paragraph
+      scrolling_numbers: scrolling_numbers
+      simple_quote: simple_quote
       sectionbg: sectionbg
       infosection: infosection
       infosection_b: infosection_b
@@ -92,6 +96,15 @@ settings:
         enabled: true
       listing_articles:
         weight: -13
+        enabled: true
+      scrolling_numbers:
+        weight: 12
+        enabled: true
+      scrolling_numbers_item:
+        weight: 23
+        enabled: false
+      simple_quote:
+        weight: 14
         enabled: true
       sectionbg:
         weight: 16

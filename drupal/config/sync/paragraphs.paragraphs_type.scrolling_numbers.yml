@@ -1,0 +1,10 @@
+uuid: 015ddd8e-2980-4848-b493-19454555dc60
+langcode: en
+status: true
+dependencies: {  }
+id: scrolling_numbers
+label: 'Scrolling Numbers'
+icon_uuid: null
+icon_default: null
+description: 'This paragraph type holds a scrolling numbers.'
+behavior_plugins: {  }

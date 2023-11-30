@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 
 import { ParagraphFileAttachments } from "@/components/paragraph--file-attachments";
+import { FullWidthParagraph } from "@/components/paragraph--full-width-paragraph";
 import { ParagraphHero } from "@/components/paragraph--hero";
 import { ParagraphImage } from "@/components/paragraph--image";
 import { ParagraphLinks } from "@/components/paragraph--links";
@@ -8,7 +9,8 @@ import { ParagraphListingArticles } from "@/components/paragraph--listing-articl
 import { ParagraphText } from "@/components/paragraph--text";
 import { Paragraph } from "@/lib/zod/paragraph";
 import { ParagraphBanner } from "./paragraph--banner";
-import { FullWidthParagraph } from "@/components/paragraph--full-width-paragraph";
+import { ParagraphScrollingNumbers } from "./paragraph--scrolling-numbers";
+import { ParagraphSimpleQuote } from "./paragraph--simple-quote";
 import { ParagraphWunderpedia } from "./paragraph--wunderpedia";
 import { ParagraphServices } from "./paragraph--services";
 import { ParagraphInfosection } from "./paragraph--infosection";
@@ -58,11 +60,17 @@ export function Paragraph({ paragraph }: { paragraph: Paragraph }) {
     case "paragraph--banner": {
       return <ParagraphBanner paragraph={paragraph} />;
     }
+    case "paragraph--scrolling_numbers": {
+      return <ParagraphScrollingNumbers paragraph={paragraph} />;
+    }
     case "paragraph--full_width_paragraph": {
       return <FullWidthParagraph paragraph={paragraph} />;
     }
     case "paragraph--wunderpedia": {
       return <ParagraphWunderpedia paragraph={paragraph} />;
+    }
+    case "paragraph--simple_quote": {
+      return <ParagraphSimpleQuote paragraph={paragraph} />;
     }
     case "paragraph--services": {
       return <ParagraphServices paragraph={paragraph} />;

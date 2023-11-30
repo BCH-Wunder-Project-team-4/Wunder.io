@@ -1,0 +1,10 @@
+uuid: 17d69c16-ccda-4b68-ac47-9b11bec19efc
+langcode: en
+status: true
+dependencies: {  }
+id: simple_quote
+label: 'Simple Quote'
+icon_uuid: null
+icon_default: null
+description: 'A paragraph for a quote with option for author picture.'
+behavior_plugins: {  }
