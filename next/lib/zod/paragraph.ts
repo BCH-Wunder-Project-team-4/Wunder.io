@@ -215,6 +215,26 @@ export const SubheadingSchema = z.object({
   id: z.string(),
   field_subheading: z.string(),
 });
+export const SectionbgSchema = z.object({
+  type: z.literal("paragraph--sectionbg"),
+  id: z.string(),
+  field_heading: z.string(),
+  field_formatted_text: z
+    .object({
+      processed: z.string(),
+    })
+    .nullable()
+    .optional(),
+  field_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+  field_primary_link: LinkShape.nullable().optional(),
+});
 
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
@@ -230,6 +250,7 @@ export type Services = z.infer<typeof ServicesSchema>;
 export type Infosection = z.infer<typeof InfosectionSchema>;
 export type InfosectionB = z.infer<typeof InfosectionBSchema>;
 export type Subheading = z.infer<typeof SubheadingSchema>;
+export type Sectionbg = z.infer<typeof SectionbgSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -245,4 +266,5 @@ export type Paragraph =
   | Services
   | Infosection
   | InfosectionB
-  | Subheading;
+  | Subheading
+  | Sectionbg;

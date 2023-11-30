@@ -10,7 +10,7 @@ export function ParagraphInfosection({ paragraph }: { paragraph: InfosectionType
       <div className="mx-auto grid max-w-screen-xl lg:grid-cols-12  justify-center items-center">
         <div className="mr-auto place-self-center px-8 py-8 lg:col-span-6  lg:py-16">
           {paragraph.field_heading && (
-            <h3 className="leading-none mb-4 max-w-2xl text-left text-heading-sm tracking-tight text-primary-600 dark:text-primary-200">
+            <h3 className="leading-none mb-4 max-w-2xl text-left text-heading-sm font-bold tracking-tight text-primary-600 dark:text-primary-200">
               {paragraph.field_heading}
             </h3>
           )}

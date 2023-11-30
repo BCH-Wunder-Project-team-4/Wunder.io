@@ -15,7 +15,8 @@ import {
   ServicesSchema,
   InfosectionSchema,
   InfosectionBSchema,
-  SubheadingSchema
+  SubheadingSchema,
+  SectionbgSchema
 } from "@/lib/zod/paragraph";
 
 const PageElementsSchema = z.discriminatedUnion("type", [
@@ -31,7 +32,8 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   ServicesSchema,
   InfosectionSchema,
   InfosectionBSchema,
-  SubheadingSchema
+  SubheadingSchema,
+  SectionbgSchema
 ]);
 
 export const PageSchema = z.object({
