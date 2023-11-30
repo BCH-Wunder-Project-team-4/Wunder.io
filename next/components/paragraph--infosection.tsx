@@ -22,12 +22,26 @@ export function ParagraphInfosection({ paragraph }: { paragraph: InfosectionType
             )}
           />
         </div>
-        <div className="hidden lg:col-span-6 lg:mt-0 lg:flex">
+        <div className="lg:col-span-6 lg:mt-0 lg:flex-col">
+        <div className="relative mx-auto border-steelgray dark:border-scapaflow bg-steelgray border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]">
+          <div className="h-[156px] md:h-[278px] bg-white dark:bg-gray-800">
           <MediaImage
             media={paragraph.field_image}
             alt="site-banner"
             priority
+            className="dark:hidden h-[156px] md:h-[278px] w-full"
           />
+          <MediaImage
+            media={paragraph.field_image}
+            alt="site-banner"
+            priority
+            className="hidden dark:block h-[156px] md:h-[278px] w-full"
+          />
+          </div>
+        </div>
+            <div className="relative mx-auto bg-scapaflow dark:bg-stone rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]">
+                <div className="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-steelgray dark:bg-scapaflow"></div>
+            </div>
         </div>
       </div>
     </section>
