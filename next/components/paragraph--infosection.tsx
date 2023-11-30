@@ -6,7 +6,7 @@ import { Infosection as InfosectionType } from "@/lib/zod/paragraph";
 
 export function ParagraphInfosection({ paragraph }: { paragraph: InfosectionType }) {
   return (
-    <section id="hero" className="">
+    <section id="hero" className="border-b border-primary-600 dark:border-primary-200 md:pb-5">
       <div className="mx-auto grid max-w-screen-xl lg:grid-cols-12  justify-center items-center">
         <div className="mr-auto place-self-center px-8 py-8 lg:col-span-6  lg:py-16">
           {paragraph.field_heading && (
@@ -17,7 +17,7 @@ export function ParagraphInfosection({ paragraph }: { paragraph: InfosectionType
           <FormattedText
             html={paragraph.field_formatted_text.processed}
             className={clsx(
-              "mb-6 max-w-2xl text-left text-md/xl text-primary-600 sm:text-lg md:text-lg lg:mb-8 lg:text-lg",
+              "mb-0 max-w-2xl text-left text-md/xl text-primary-600 sm:text-lg md:text-lg lg:mb-0 lg:text-lg",
               paragraph.field_heading && "mt-4",
             )}
           />

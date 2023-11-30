@@ -47,12 +47,10 @@ export function ParagraphSectionbg({ paragraph }: { paragraph: SectionType }) {
         </div>
         <div className="hidden lg:col-span-6 lg:mt-0 lg:flex">
           {paragraph.field_image && (
-            <div className="absolute top-0 left-0 w-full h-full">
+            <div className="w-full h-full">
               <MediaImage 
               media={paragraph.field_image} alt="page-banner" 
-              priority
-              className="object-cover w-full h-full" />
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent to-black"></div>
+              priority/>
             </div>
           )}
         </div>
