@@ -7,9 +7,6 @@ import css from "./full-width-paragraph.module.css";
 
 export function FullWidthParagraph({ paragraph }: { paragraph: FullWidthParagraphType }) {
 
-  console.log(paragraph);
-
-
   return (
     <div className={clsx(css.relative)}>
       <div className={clsx(css.parent)}>
@@ -67,8 +64,6 @@ export function FullWidthParagraph({ paragraph }: { paragraph: FullWidthParagrap
 
 
       </div>
-      <MediaVideo
-        media={paragraph.field_video} />
     </div >
   )
 }
