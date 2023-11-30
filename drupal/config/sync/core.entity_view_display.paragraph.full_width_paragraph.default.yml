@@ -1,0 +1,32 @@
+uuid: cc4cf5b9-64b9-450a-9cb6-d16ea68ba9be
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.full_width_paragraph.field_images
+    - field.field.paragraph.full_width_paragraph.field_texts
+    - paragraphs.paragraphs_type.full_width_paragraph
+  module:
+    - text
+id: paragraph.full_width_paragraph.default
+targetEntityType: paragraph
+bundle: full_width_paragraph
+mode: default
+content:
+  field_images:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_texts:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+hidden: {  }

@@ -9,11 +9,13 @@ dependencies:
     - paragraphs.paragraphs_type.banner
     - paragraphs.paragraphs_type.file_attachments
     - paragraphs.paragraphs_type.formatted_text
+    - paragraphs.paragraphs_type.full_width_paragraph
     - paragraphs.paragraphs_type.hero
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.listing_articles
     - paragraphs.paragraphs_type.video
+    - paragraphs.paragraphs_type.wunderpedia
   module:
     - entity_reference_revisions
 _core:
@@ -41,6 +43,8 @@ settings:
       video: video
       listing_articles: listing_articles
       file_attachments: file_attachments
+      wunderpedia: wunderpedia
+      full_width_paragraph: full_width_paragraph
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -58,6 +62,9 @@ settings:
       formatted_text:
         weight: -19
         enabled: true
+      full_width_paragraph:
+        weight: 15
+        enabled: true
       hero:
         weight: -21
         enabled: true
@@ -72,5 +79,8 @@ settings:
         enabled: true
       video:
         weight: -14
+        enabled: true
+      wunderpedia:
+        weight: 13
         enabled: true
 field_type: entity_reference_revisions

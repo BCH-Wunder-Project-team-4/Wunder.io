@@ -1,3 +1,4 @@
+import { any } from "cypress/types/bluebird";
 import { z } from "zod";
 
 export const FormattedTextSchema = z.object({
@@ -134,17 +135,12 @@ export const HeroSchema = z.object({
   type: z.literal("paragraph--hero"),
   id: z.string(),
   field_heading: z.string(),
-  field_formatted_text: z.object({
-    processed: z.string(),
-  }),
-  field_image: z
-    .object({
-      type: z.literal("media--image"),
-      id: z.string(),
-      field_media_image: ImageShape.nullable(),
-    })
-    .nullable()
-    .optional(),
+  field_formatted_text: z.object({ processed: z.string(), }),
+  field_image: z.object({
+    type: z.literal("media--image"),
+    id: z.string(),
+    field_media_image: ImageShape.nullable(),
+  }).nullable().optional(),
   field_primary_link: LinkShape.nullable().optional(),
   field_secondary_link: LinkShape.nullable().optional(),
 });
@@ -171,6 +167,30 @@ export const BannerSchema = z.object({
   field_primary_link: LinkShape.nullable().optional(),
 });
 
+export const FullWidthParagraphSchema = z.object({
+  type: z.literal("paragraph--full_width_paragraph"),
+  id: z.string(),
+
+  field_texts: z.array(z.object({
+    processed: z.string(),
+  }),),
+  field_images: z.array(z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+  ),
+});
+
+export const ParagraphWunderpediaSchema = z.object({
+  type: z.literal("paragraph--wunderpedia"),
+  id: z.string(),
+  field_heading: z.string().nullable().optional(),
+  field_formatted_text: z.any(),
+  field_links: z.array(LinkShape),
+});
+
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
 export type Video = z.infer<typeof VideoSchema>;
@@ -181,6 +201,8 @@ export type Hero = z.infer<typeof HeroSchema>;
 export type ListingArticles = z.infer<typeof ListingArticlesSchema>;
 export type FileAttachments = z.infer<typeof FileAttachmentsSchema>;
 export type Banner = z.infer<typeof BannerSchema>;
+export type FullWidthParagraph = z.infer<typeof FullWidthParagraphSchema>;
+export type ParagraphWunderpedia = z.infer<typeof ParagraphWunderpediaSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -192,4 +214,6 @@ export type Paragraph =
   | Hero
   | ListingArticles
   | FileAttachments
-  | Banner;
+  | FullWidthParagraph
+  | Banner
+  | ParagraphWunderpedia;

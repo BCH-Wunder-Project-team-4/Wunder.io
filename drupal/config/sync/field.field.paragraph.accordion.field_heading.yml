@@ -14,7 +14,7 @@ bundle: accordion
 label: Heading
 description: 'Heading for the whole accordion'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

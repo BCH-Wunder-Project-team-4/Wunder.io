@@ -51,6 +51,7 @@ module:
   redirect: 0
   registration_role: 0
   require_login: 0
+  responsive_image: 0
   rest: 0
   serialization: 0
   simple_oauth: 0
