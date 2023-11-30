@@ -10,8 +10,8 @@ id: paragraph.infosection.field_image
 field_name: field_image
 entity_type: paragraph
 bundle: infosection
-label: Image
-description: ''
+label: Screenshot
+description: 'Set the screenshot for the laptop frame.'
 required: false
 translatable: false
 default_value: {  }

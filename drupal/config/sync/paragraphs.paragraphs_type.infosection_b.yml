@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies: {  }
 id: infosection_b
-label: 'Info section with image on left'
+label: 'Laptop frame section B (Laptop on the left side)'
 icon_uuid: null
 icon_default: null
-description: 'Info section with the image on the left side.'
+description: 'Laptop frame paragraph with the laptop frame on the left side.'
 behavior_plugins: {  }

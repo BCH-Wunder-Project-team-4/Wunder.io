@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies: {  }
 id: infosection
-label: 'Info section'
+label: 'Laptop frame section'
 icon_uuid: null
 icon_default: null
-description: 'Informational section of a page with an image. Example usage in the solutions section of the Offering page.'
+description: 'Informational section of a page with a laptop frame. Example usage in the solutions section of the Offering page.'
 behavior_plugins: {  }
