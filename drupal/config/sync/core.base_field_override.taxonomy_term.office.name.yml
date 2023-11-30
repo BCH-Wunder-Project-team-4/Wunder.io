@@ -1,0 +1,18 @@
+uuid: 4fc127a7-5da3-4dc9-984c-1f71d53af7ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.office
+id: taxonomy_term.office.name
+field_name: name
+entity_type: taxonomy_term
+bundle: office
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -8,6 +8,8 @@ import { ParagraphListingArticles } from "@/components/paragraph--listing-articl
 import { ParagraphText } from "@/components/paragraph--text";
 import { Paragraph } from "@/lib/zod/paragraph";
 import { ParagraphBanner } from "./paragraph--banner";
+import { FullWidthParagraph } from "@/components/paragraph--full-width-paragraph";
+import { ParagraphWunderpedia } from "./paragraph--wunderpedia";
 import { ParagraphServices } from "./paragraph--services";
 import { ParagraphInfosection } from "./paragraph--infosection";
 import { ParagraphInfosectionB } from "./paragraph--infosection_b";
@@ -55,6 +57,12 @@ export function Paragraph({ paragraph }: { paragraph: Paragraph }) {
     }
     case "paragraph--banner": {
       return <ParagraphBanner paragraph={paragraph} />;
+    }
+    case "paragraph--full_width_paragraph": {
+      return <FullWidthParagraph paragraph={paragraph} />;
+    }
+    case "paragraph--wunderpedia": {
+      return <ParagraphWunderpedia paragraph={paragraph} />;
     }
     case "paragraph--services": {
       return <ParagraphServices paragraph={paragraph} />;
