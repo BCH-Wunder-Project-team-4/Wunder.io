@@ -2,7 +2,6 @@ import RoundedStickIcon from "@/styles/icons/rounded-stick.svg";
 import clsx from "clsx";
 import Link from "next/link";
 
-import { FormattedText } from "@/components/formatted-text";
 import { MediaImage } from "@/components/media--image";
 import { Banner as BannerType } from "@/lib/zod/paragraph";
 import ArrowIcon from "@/styles/icons/arrow-down.svg";
@@ -19,7 +18,7 @@ export function ParagraphBanner({ paragraph }: { paragraph: BannerType }) {
               className={
                 paragraph.field_slogan
                   ? "mb-2 max-w-2xl text-left text-md/xl sm:text-lg md:text-xl lg:text-xl tracking-tight"
-                  : "leading-none mb-4 max-w-2xl text-left text-heading-md font-bold tracking-tight text-primary-600 dark:text-mischka md:text-heading-lg"
+                  : "leading-none mb-4 max-w-2xl text-left text-heading-md font-bold tracking-tight text-primary-600 dark:text-fog md:text-heading-lg"
               }
             >
               {paragraph.field_slogan && (
@@ -29,18 +28,14 @@ export function ParagraphBanner({ paragraph }: { paragraph: BannerType }) {
             </h1>
           )}
           {paragraph.field_slogan && (
-            <h2 className="leading-none mb-4 max-w-2xl text-left text-heading-md font-bold tracking-tight text-primary-600 dark:text-mischka md:text-heading-lg">
+            <h2 className="leading-none mb-4 max-w-2xl text-left text-heading-md font-bold tracking-tight text-primary-600 dark:text-fog md:text-heading-lg">
               {paragraph.field_slogan}
             </h2>
           )}
-          {paragraph.field_formatted_text && (
-            <FormattedText
-              html={paragraph.field_formatted_text.processed}
-              className={clsx(
-                "mb-6 max-w-2xl text-left text-md/xl sm:text-md md:text-lg lg:mb-8 lg:text-lg",
-                paragraph.field_heading && "mt-4",
-              )}
-            />
+          {paragraph.field_ingress && (
+            <p className="text-steelgray dark:text-mischka mb-6 max-w-2xl text-left text-md/xl sm:text-md md:text-lg lg:mb-8 lg:text-lg">
+              {paragraph.field_ingress}
+            </p>
           )}
           <div className="gap-4 sm:text-left">
             {paragraph.field_primary_link && (
