@@ -18,7 +18,7 @@ export function ParagraphBanner({ paragraph }: { paragraph: BannerType }) {
               className={
                 paragraph.field_slogan
                   ? "mb-2 max-w-2xl text-left text-md/xl sm:text-lg md:text-xl lg:text-xl tracking-tight"
-                  : "leading-none mb-4 max-w-2xl text-left text-heading-md font-bold tracking-tight text-primary-600 dark:text-mischka md:text-heading-lg"
+                  : "leading-none mb-4 max-w-2xl text-left text-heading-md font-bold tracking-tight text-primary-600 dark:text-fog md:text-heading-lg"
               }
             >
               {paragraph.field_slogan && (
@@ -28,7 +28,7 @@ export function ParagraphBanner({ paragraph }: { paragraph: BannerType }) {
             </h1>
           )}
           {paragraph.field_slogan && (
-            <h2 className="leading-none mb-4 max-w-2xl text-left text-heading-md font-bold tracking-tight text-primary-600 dark:text-mischka md:text-heading-lg">
+            <h2 className="leading-none mb-4 max-w-2xl text-left text-heading-md font-bold tracking-tight text-primary-600 dark:text-fog md:text-heading-lg">
               {paragraph.field_slogan}
             </h2>
           )}
