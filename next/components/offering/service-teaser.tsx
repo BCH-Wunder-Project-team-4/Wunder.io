@@ -16,7 +16,7 @@ export function ServiceTeaser({ service }: ServiceTeaserProps) {
       href={service.path.alias}
       className="relative grid h-full dark:bg-steelgray bg-mischka p-4 transition-transform duration-200 ease-in-out hover:scale-105"
     >
-      <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold  text-primary-600 dark:text-primary-200 underline">
+      <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold  text-primary-600 dark:text-fog underline">
         {service.title}
       </h3>
       <FormattedText className="text-stone dark:text-graysuit" html={service.field_excerpt}/>

@@ -16,7 +16,7 @@ export function ParagraphSectionbg({ paragraph }: { paragraph: SectionType }) {
         <div className="mr-auto place-self-center md:px-0 lg:pr-8 lg:pl-0 sm py-8 lg:col-span-6 lg:py-16">
           <div className="relative z-10">
             {paragraph.field_heading && (
-              <h1 className="leading-none mb-4 max-w-2xl text-left text-heading-md font-bold tracking-tight text-primary-600 dark:text-mischka md:text-heading-sm">
+              <h1 className="leading-none mb-4 max-w-2xl text-left text-heading-md font-bold tracking-tight text-primary-600 dark:text-fog md:text-heading-sm">
                 {paragraph.field_heading}
               </h1>
             )}

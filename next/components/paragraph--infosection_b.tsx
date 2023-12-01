@@ -8,7 +8,7 @@ export function ParagraphInfosectionB({ paragraph }: { paragraph: InfosectionBTy
   console.log("paragraph", paragraph);
   
   return (
-    <section className="border-b border-primary-600 dark:border-primary-200 pb-5">
+    <section className="border-b border-primary-600 dark:border-fog pb-5">
       <div className="grid min-w-screen-xl lg:grid-cols-12 justify-center items-center">
         <div className="lg:col-span-6 pb-5">
         <div className="relative mx-auto border-steelgray dark:border-scapaflow bg-steelgray border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]">
@@ -33,7 +33,7 @@ export function ParagraphInfosectionB({ paragraph }: { paragraph: InfosectionBTy
         </div>
         <div className="mr-auto place-self-center px-8 py-8 lg:col-span-6  lg:py-16">
           {paragraph.field_heading && (
-            <h3 className="leading-none mb-4 max-w-2xl text-left text-heading-sm tracking-tight text-primary-600 dark:text-primary-200 font-bold">
+            <h3 className="leading-none mb-4 max-w-2xl text-left text-heading-sm tracking-tight text-primary-600 dark:text-fog font-bold">
               {paragraph.field_heading}
             </h3>
           )}

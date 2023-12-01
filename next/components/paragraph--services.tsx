@@ -10,7 +10,7 @@ export function ParagraphServices({
     <>
       {paragraph.field_heading && (
         <h1               className={
-          "leading-none mb-4 max-w-2xl text-left text-heading-md font-bold tracking-tight text-primary-600 dark:text-mischka md:text-heading-md"
+          "leading-none mb-4 max-w-2xl text-left text-heading-md font-bold tracking-tight text-primary-600 dark:text-fog md:text-heading-md"
         }>{paragraph.field_heading}</h1>
       )}
       <ServicesListing listingId={paragraph.id}/>
