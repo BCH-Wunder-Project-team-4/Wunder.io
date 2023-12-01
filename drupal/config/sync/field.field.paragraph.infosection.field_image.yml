@@ -10,8 +10,8 @@ id: paragraph.infosection.field_image
 field_name: field_image
 entity_type: paragraph
 bundle: infosection
-label: Screenshot
-description: 'Set the screenshot for the laptop frame.'
+label: 'Light mode screenshot'
+description: 'Set the light mode screenshot for the laptop frame.'
 required: false
 translatable: false
 default_value: {  }

@@ -5,6 +5,8 @@ import { MediaImage } from "@/components/media--image";
 import { InfosectionB as InfosectionBType } from "@/lib/zod/paragraph";
 
 export function ParagraphInfosectionB({ paragraph }: { paragraph: InfosectionBType }) {
+  console.log("paragraph", paragraph);
+  
   return (
     <section className="border-b border-primary-600 dark:border-primary-200 pb-5">
       <div className="grid min-w-screen-xl lg:grid-cols-12 justify-center items-center">
@@ -18,7 +20,7 @@ export function ParagraphInfosectionB({ paragraph }: { paragraph: InfosectionBTy
             className="dark:hidden h-[156px] md:h-[278px] w-full"
           />
           <MediaImage
-            media={paragraph.field_image}
+            media={paragraph.field_dark_image}
             alt="site-banner"
             priority
             className="hidden dark:block h-[156px] md:h-[278px] w-full"

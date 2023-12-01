@@ -197,6 +197,14 @@ export const InfosectionSchema = z.object({
     })
     .nullable()
     .optional(),
+  field_dark_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
 });
 export const InfosectionBSchema = z.object({
   type: z.literal("paragraph--infosection_b"),
@@ -213,7 +221,15 @@ export const InfosectionBSchema = z.object({
     })
     .nullable()
     .optional(),
-});
+  field_dark_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+})
 
 export const SubheadingSchema = z.object({
   type: z.literal("paragraph--subheading"),

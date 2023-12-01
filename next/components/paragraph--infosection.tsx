@@ -32,7 +32,7 @@ export function ParagraphInfosection({ paragraph }: { paragraph: InfosectionType
             className="dark:hidden h-[156px] md:h-[278px] w-full"
           />
           <MediaImage
-            media={paragraph.field_image}
+            media={paragraph.field_dark_image}
             alt="site-banner"
             priority
             className="hidden dark:block h-[156px] md:h-[278px] w-full"

@@ -103,14 +103,14 @@ settings:
       scrolling_numbers_item:
         weight: 23
         enabled: false
-      simple_quote:
-        weight: 14
-        enabled: true
       sectionbg:
         weight: 16
         enabled: true
       services:
         weight: 26
+        enabled: true
+      simple_quote:
+        weight: 14
         enabled: true
       subheading:
         weight: 27

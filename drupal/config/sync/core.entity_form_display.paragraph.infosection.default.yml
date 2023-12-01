@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.infosection.field_dark_image
     - field.field.paragraph.infosection.field_formatted_text
     - field.field.paragraph.infosection.field_heading
     - field.field.paragraph.infosection.field_image
@@ -15,6 +16,13 @@ targetEntityType: paragraph
 bundle: infosection
 mode: default
 content:
+  field_dark_image:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   field_formatted_text:
     type: text_textarea
     weight: 1
