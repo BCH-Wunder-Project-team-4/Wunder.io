@@ -1,0 +1,10 @@
+uuid: 3cbd5bd4-b282-41ea-ba28-8300a735a28c
+langcode: en
+status: true
+dependencies: {  }
+id: services
+label: Services
+icon_uuid: null
+icon_default: null
+description: 'This is the services wall paragraph for the Offering page. It displays teasers of the Service content type. '
+behavior_plugins: {  }

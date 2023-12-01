@@ -12,6 +12,11 @@ import {
   ScrollingNumbersSchema,
   SimpleQuoteSchema,
   VideoSchema,
+  ServicesSchema,
+  InfosectionSchema,
+  InfosectionBSchema,
+  SubheadingSchema,
+  SectionbgSchema
 } from "@/lib/zod/paragraph";
 
 import { MetatagsSchema } from "@/lib/zod/metatag";
@@ -29,6 +34,11 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   FileAttachmentsSchema,
   BannerSchema,
   ScrollingNumbersSchema,
+  ServicesSchema,
+  InfosectionSchema,
+  InfosectionBSchema,
+  SubheadingSchema,
+  SectionbgSchema,
   FullWidthParagraphSchema,
   ParagraphWunderpediaSchema,
   SimpleQuoteSchema,

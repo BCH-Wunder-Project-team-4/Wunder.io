@@ -171,6 +171,87 @@ export const BannerSchema = z.object({
   field_primary_link: LinkShape.nullable().optional(),
 });
 
+export const ServicesSchema = z.object({
+  type: z.literal("paragraph--services"),
+  id: z.string(),
+  field_heading: z.string().nullable(),
+});
+
+export const InfosectionSchema = z.object({
+  type: z.literal("paragraph--infosection"),
+  id: z.string(),
+  field_heading: z.string(),
+  field_formatted_text: z.object({
+    processed: z.string(),
+  }),
+  field_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+  field_dark_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+});
+export const InfosectionBSchema = z.object({
+  type: z.literal("paragraph--infosection_b"),
+  id: z.string(),
+  field_heading: z.string(),
+  field_formatted_text: z.object({
+    processed: z.string(),
+  }),
+  field_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+  field_dark_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+})
+
+export const SubheadingSchema = z.object({
+  type: z.literal("paragraph--subheading"),
+  id: z.string(),
+  field_subheading: z.string(),
+});
+export const SectionbgSchema = z.object({
+  type: z.literal("paragraph--sectionbg"),
+  id: z.string(),
+  field_heading: z.string(),
+  field_formatted_text: z
+    .object({
+      processed: z.string(),
+    })
+    .nullable()
+    .optional(),
+  field_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+  field_primary_link: LinkShape.nullable().optional(),
+});
+
 export const FullWidthParagraphSchema = z.object({
   type: z.literal("paragraph--full_width_paragraph"),
   id: z.string(),
@@ -230,6 +311,11 @@ export type Hero = z.infer<typeof HeroSchema>;
 export type ListingArticles = z.infer<typeof ListingArticlesSchema>;
 export type FileAttachments = z.infer<typeof FileAttachmentsSchema>;
 export type Banner = z.infer<typeof BannerSchema>;
+export type Services = z.infer<typeof ServicesSchema>;
+export type Infosection = z.infer<typeof InfosectionSchema>;
+export type InfosectionB = z.infer<typeof InfosectionBSchema>;
+export type Subheading = z.infer<typeof SubheadingSchema>;
+export type Sectionbg = z.infer<typeof SectionbgSchema>;
 export type FullWidthParagraph = z.infer<typeof FullWidthParagraphSchema>;
 export type ParagraphWunderpedia = z.infer<typeof ParagraphWunderpediaSchema>;
 export type SimpleQuote = z.infer<typeof SimpleQuoteSchema>;
@@ -244,6 +330,12 @@ export type Paragraph =
   | Hero
   | ListingArticles
   | FileAttachments
+ 
+  | Services
+  | Infosection
+  | InfosectionB
+  | Subheading
+  | Sectionbg
   | FullWidthParagraph
   | Banner
   | ParagraphWunderpedia

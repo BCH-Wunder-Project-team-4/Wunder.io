@@ -1,0 +1,23 @@
+uuid: adbb95d2-ab44-41c5-bbe9-684c2630e338
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.subheading.field_subheading
+    - paragraphs.paragraphs_type.subheading
+id: paragraph.subheading.default
+targetEntityType: paragraph
+bundle: subheading
+mode: default
+content:
+  field_subheading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
