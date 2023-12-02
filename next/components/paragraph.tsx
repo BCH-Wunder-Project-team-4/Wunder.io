@@ -17,6 +17,7 @@ import { ParagraphInfosection } from "./paragraph--infosection";
 import { ParagraphInfosectionB } from "./paragraph--infosection_b";
 import { ParagraphSubheading } from "./paragraph--subheading";
 import { ParagraphSectionbg } from "./paragraph--sectionbg";
+import { ParagraphLogoWall } from "./paragraph--logo-wall";
 
 // Use dynamic imports to defer loading a component until after initial page load: https://nextjs.org/docs/advanced-features/dynamic-import
 const ParagraphVideo = dynamic(() =>
@@ -86,6 +87,9 @@ export function Paragraph({ paragraph }: { paragraph: Paragraph }) {
     }
     case "paragraph--sectionbg": {
       return <ParagraphSectionbg paragraph={paragraph} />;
+    }
+    case "paragraph--logo_wall": {
+      return <ParagraphLogoWall paragraph={paragraph} />;
     }
     default:
       return null;
