@@ -168,8 +168,8 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
     ]);
   }
   if (resourceType === "node--client") {
-    apiParams.addInclude(["uid", "field_image"]);
-    apiParams.addFields(resourceType, ["field_image", "field_link"]);
+    apiParams.addInclude(["uid", "field_logo"]);
+    apiParams.addFields(resourceType, ["field_logo", "field_link"]);
   }
   if (resourceType === "node--events") {
     apiParams.addInclude([

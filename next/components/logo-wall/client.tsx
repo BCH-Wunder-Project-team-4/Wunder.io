@@ -21,12 +21,12 @@ export function Client({ client }: ClientProps) {
     key={client.id}
     target="_blank"
     rel="noopener noreferrer">
-    <div className="p-4">
+    <div className="p-5">
       <Image
-      src={absoluteUrl(client.field_image.uri.url)}
-      width={100}
-      height={100}
-      alt={client.field_image.resourceIdObjMeta.alt}
+      src={absoluteUrl(client.field_logo.uri.url)}
+      width={150}
+      height={150}
+      alt={client.field_logo.resourceIdObjMeta.alt}
       className="max-w-full object-cover"
       />
     </div>

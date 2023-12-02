@@ -13,7 +13,7 @@ export const ClientBaseSchema = z.object({
     display_name: z.any(),
   }),
   title: z.string(),
-  field_image: ImageShape.nullable(),
+  field_logo: ImageShape.nullable(),
   field_link: z.any()
 });
 
