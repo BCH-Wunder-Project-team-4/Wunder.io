@@ -20,7 +20,8 @@ export default async function handler(
         params: {
           "filter[status]": 1,
           "filter[langcode]": languagePrefix,
-          "fields[node--client]": "title,path,uid,field_logo,field_link",
+          "fields[node--client]": "title,path,uid,field_image,field_link",
+          include: "field_image,uid",
         },
         locale: languagePrefix,
         defaultLocale: siteConfig.defaultLocale,

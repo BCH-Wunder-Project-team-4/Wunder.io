@@ -32,7 +32,7 @@ export function ClientsListing({
   return (
     <>
       {isLoading && <LoadingSpinner />}
-      <ul className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+      <ul className="flex flex-wrap justify-center items-center">
         {!isLoading &&
           data?.map((client: ClientType) => (
             <li key={client.id}>

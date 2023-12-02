@@ -19,10 +19,10 @@ export function LogoWall({ clients }: LogoWallProps) {
           rel="noopener noreferrer">
           <div className="p-4">
             <Image
-            src={absoluteUrl(client.field_logo.uri.url)}
+            src={absoluteUrl(client.field_image.uri.url)}
             width={100}
             height={100}
-            alt={client.field_logo.resourceIdObjMeta.alt}
+            alt={client.field_image.resourceIdObjMeta.alt}
             className="max-w-full object-cover"
             />
           </div>
