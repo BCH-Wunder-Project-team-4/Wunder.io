@@ -1,0 +1,35 @@
+uuid: 15d6e623-7840-417d-9225-b62073e7b53b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profile_picture
+    - media.type.image
+  content:
+    - 'media:image:9a20048c-dc31-43bf-97e3-1bf918319b7e'
+  module:
+    - user
+id: user.user.field_profile_picture
+field_name: field_profile_picture
+entity_type: user
+bundle: user
+label: 'Profile picture'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 9a20048c-dc31-43bf-97e3-1bf918319b7e
+    weight: 0
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

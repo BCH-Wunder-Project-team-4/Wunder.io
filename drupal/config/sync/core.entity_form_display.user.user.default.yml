@@ -2,7 +2,10 @@ uuid: d401a127-c212-4cd7-8177-956cc60243d1
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.field.user.user.field_profile_picture
   module:
+    - media_library
     - path
     - user
 id: user.user.default
@@ -11,9 +14,16 @@ bundle: user
 mode: default
 content:
   account:
-    weight: 0
+    weight: 1
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_profile_picture:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   language:
     weight: 2
