@@ -27,7 +27,6 @@ export const EventBaseSchema = z.object({
   field_event_date: z.string().optional().nullable(),
   field_event_speakers: z.any(),
   
-  
 });
 
 const EventSchema = EventBaseSchema.extend({

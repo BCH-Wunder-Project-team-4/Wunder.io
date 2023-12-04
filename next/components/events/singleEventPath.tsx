@@ -48,6 +48,7 @@ export function SingleEventPath({ event, ...props }: EventProps) {
       setDivVisibility(!isDivVisible);
         setShowMap(showMap === 'Show Map' ? 'Hide Map' : 'Show Map');
     };
+    console.log(event.field_event_speakers);
   return (
     <div {...props}>
         <div style={backgroundImageStyle}>
