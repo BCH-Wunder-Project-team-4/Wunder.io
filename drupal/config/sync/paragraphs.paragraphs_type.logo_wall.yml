@@ -1,0 +1,10 @@
+uuid: e8e1ebc4-842a-418e-8ff2-598f8dfe9ab6
+langcode: en
+status: true
+dependencies: {  }
+id: logo_wall
+label: 'Logo wall'
+icon_uuid: null
+icon_default: null
+description: "A wall of logos by listing the 'client' content type. Edit the client content to the manage the links and logos."
+behavior_plugins: {  }

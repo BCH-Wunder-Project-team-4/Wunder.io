@@ -3,6 +3,7 @@ import { z } from "zod";
 
 import { MetatagsSchema } from "@/lib/zod/metatag";
 import { ImageShape } from "@/lib/zod/paragraph";
+import { any } from "cypress/types/bluebird";
 
 
 export const EventBaseSchema = z.object({
@@ -20,12 +21,11 @@ export const EventBaseSchema = z.object({
   field_event_address: z.string().optional().nullable(),
   field_event_description: z.string().optional().nullable(),
   field_event_duration: z.string().optional().nullable(),
+  field_event_geocode_latitude: z.number().optional().nullable(),
+  field_event_geocode_longitude: z.number().optional().nullable(),
   field_event_location: z.string().optional().nullable(),
   field_event_date: z.string().optional().nullable(),
-  field_event_speakers: z.array(z.string()).optional().nullable(),
-  field_event_speakers_info: z.array(z.string()).optional().nullable(),
-  field_event_speakers_image: z.array(ImageShape.nullable()).optional().nullable(),
-  
+  field_event_speakers: z.any(),
   
 });
 

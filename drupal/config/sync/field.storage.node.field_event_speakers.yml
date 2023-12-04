@@ -1,20 +1,20 @@
-uuid: e853aa9c-dedb-4796-a34f-8101aa92671c
+uuid: af572b6e-e3aa-495e-9a52-b86d1c07087f
 langcode: en
 status: true
 dependencies:
   module:
+    - entity_reference_revisions
     - node
+    - paragraphs
 id: node.field_event_speakers
 field_name: field_event_speakers
 entity_type: node
-type: string
+type: entity_reference_revisions
 settings:
-  max_length: 100
-  case_sensitive: false
-  is_ascii: false
-module: core
+  target_type: paragraph
+module: entity_reference_revisions
 locked: false
-cardinality: 4
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

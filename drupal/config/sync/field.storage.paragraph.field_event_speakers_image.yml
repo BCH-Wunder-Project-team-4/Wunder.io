@@ -1,14 +1,14 @@
-uuid: e515c7c8-30d0-48fc-8c3b-5c27abe5569c
+uuid: 62f71476-aae0-4f68-995b-911c95b21cee
 langcode: en
 status: true
 dependencies:
   module:
     - file
     - image
-    - node
-id: node.field_event_speakers_image
+    - paragraphs
+id: paragraph.field_event_speakers_image
 field_name: field_event_speakers_image
-entity_type: node
+entity_type: paragraph
 type: image
 settings:
   target_type: file
@@ -16,14 +16,14 @@ settings:
   display_default: false
   uri_scheme: public
   default_image:
-    uuid: 4f10e5d4-8f4e-47ce-b79b-00faf7a31173
-    alt: speaker
+    uuid: ''
+    alt: ''
     title: ''
-    width: 3000
-    height: 4499
+    width: null
+    height: null
 module: image
 locked: false
-cardinality: 4
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

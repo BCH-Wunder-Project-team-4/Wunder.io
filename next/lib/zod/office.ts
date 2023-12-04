@@ -13,12 +13,12 @@ export const OfficeBaseSchema = z.object({
     display_name: z.string(),
   }),
   title: z.string(),
-  field_excerpt: z.string().optional().nullable(),
   field_office_email: z.string().optional().nullable(),
   field_office_address_one: z.string().optional().nullable(),
   field_office_address_two: z.string().optional().nullable(),
-  field_office_name: z.string().optional().nullable(),
   field_office_country: z.string().optional().nullable(),
+  field_office_geocode_latitude: z.number().optional().nullable(),
+  field_office_geocode_longitude: z.number().optional().nullable(),
   
 });
 

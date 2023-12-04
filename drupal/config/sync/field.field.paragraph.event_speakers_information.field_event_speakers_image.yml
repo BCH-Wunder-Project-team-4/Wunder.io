@@ -1,18 +1,18 @@
-uuid: e489d512-7c2b-4deb-a94b-2d1554209411
+uuid: 9a24d64a-ca22-4aef-b91d-8598b9f548af
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_event_speakers_image
-    - node.type.events
+    - field.storage.paragraph.field_event_speakers_image
+    - paragraphs.paragraphs_type.event_speakers_information
   module:
     - image
-id: node.events.field_event_speakers_image
+id: paragraph.event_speakers_information.field_event_speakers_image
 field_name: field_event_speakers_image
-entity_type: node
-bundle: events
+entity_type: paragraph
+bundle: event_speakers_information
 label: event_speakers_image
-description: 'please put speakers image in ascending order (first box for first speaker , second box for second speaker...)'
+description: ''
 required: false
 translatable: false
 default_value: {  }
@@ -30,9 +30,9 @@ settings:
   title_field: false
   title_field_required: false
   default_image:
-    uuid: 2be84f13-0a1e-473f-a739-7526c4fdc0da
-    alt: speaker
+    uuid: ''
+    alt: ''
     title: ''
-    width: 3000
-    height: 4499
+    width: null
+    height: null
 field_type: image

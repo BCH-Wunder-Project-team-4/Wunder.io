@@ -10,7 +10,8 @@ export type ResourceType =
   | "node--employee"
   | "node--office"
   | "node--client"
-  | "node--events";
+  | "node--events" 
+  | "node--service";
 
 export function getNodePageJsonApiParams(resourceType: ResourceType) {
   const apiParams = new DrupalJsonApiParams().addFilter(
@@ -31,6 +32,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
         "field_content_elements.field_accordion_items.field_content_elements.field_file_attachments.field_media_document",
         "field_content_elements.field_images.field_media_image",
         "field_content_elements.field_scrolling_numbers_items",
+        "field_content_elements.field_dark_image.field_media_image",
       ])
       .addFields("node--page", [
         "title",
@@ -153,11 +155,12 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "body",
       "uid",
       "created",
-      "field_name",
       "field_office_address_one",
       "field_office_address_two",
       "field_office_email",
       "field_office_country",
+      "field_office_geocode_latitude",
+      "field_office_geocode_longitude",
       "status",
       "metatag",
       "field_excerpt",
@@ -173,7 +176,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
     apiParams.addInclude([
       "uid",
       "field_event_image",
-      "field_event_speakers_image",
+      "field_event_speakers",
     ]);
     apiParams.addFields(resourceType, [
       "title",
@@ -186,10 +189,10 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "field_event_location",
       "field_event_address",
       "field_event_description",
+      "field_event_geocode_latitude",
+      "field_event_geocode_longitude",
       "field_event_duration",
       "field_event_speakers",
-      "field_event_speakers_info",
-      "field_event_speakers_image",
       "status",
       "metatag",
       "field_excerpt",
@@ -197,6 +200,24 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "sticky",
     ]);
   }
-
+  if (resourceType === "node--service") {
+    apiParams
+      .addInclude([
+        "field_content_elements",
+        "field_content_elements.field_image.field_media_image",
+        "field_content_elements.field_video",
+        "field_content_elements.field_file_attachments.field_media_document",
+        "field_content_elements.field_accordion_items",
+        "field_content_elements.field_accordion_items.field_content_elements.field_image.field_media_image",
+        "field_content_elements.field_accordion_items.field_content_elements.field_video",
+      ])
+      .addFields("node--service", [
+        "title",
+        "field_content_elements",
+        "path",
+        "status",
+        "metatag",
+      ]);
+  }
   return apiParams;
 }

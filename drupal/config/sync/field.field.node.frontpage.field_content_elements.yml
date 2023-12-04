@@ -14,6 +14,8 @@ dependencies:
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.listing_articles
+    - paragraphs.paragraphs_type.logo_wall
+    - paragraphs.paragraphs_type.subheading
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.wunder_story
   module:
@@ -24,14 +26,14 @@ id: node.frontpage.field_content_elements
 field_name: field_content_elements
 entity_type: node
 bundle: frontpage
-label: 'Content elements'
-description: ''
+label: "Content elements"
+description: ""
 required: true
 translatable: false
-default_value: {  }
-default_value_callback: ''
+default_value: {}
+default_value_callback: ""
 settings:
-  handler: 'default:paragraph'
+  handler: "default:paragraph"
   handler_settings:
     target_bundles:
       hero: hero
@@ -42,6 +44,8 @@ settings:
       video: video
       listing_articles: listing_articles
       file_attachments: file_attachments
+      logo_wall: logo_wall
+      subheading: subheading
       wunder_story: wunder_story
       banner: banner
       full_width_paragraph: full_width_paragraph
@@ -55,7 +59,7 @@ settings:
         enabled: false
       banner:
         weight: 25
-        enabled: true
+        enabled: false
       file_attachments:
         weight: 10
         enabled: true
@@ -83,6 +87,9 @@ settings:
       listing_articles:
         weight: 9
         enabled: true
+      logo_wall:
+        weight: 22
+        enabled: true
       scrolling_numbers:
         weight: 35
         enabled: false
@@ -100,7 +107,7 @@ settings:
         enabled: false
       subheading:
         weight: 40
-        enabled: false
+        enabled: true
       video:
         weight: -9
         enabled: true

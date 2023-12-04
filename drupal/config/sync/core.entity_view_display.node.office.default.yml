@@ -7,7 +7,8 @@ dependencies:
     - field.field.node.office.field_office_address_two
     - field.field.node.office.field_office_country
     - field.field.node.office.field_office_email
-    - field.field.node.office.field_office_name
+    - field.field.node.office.field_office_geocode_latitude
+    - field.field.node.office.field_office_geocode_longitude
     - node.type.office
   module:
     - user
@@ -47,13 +48,27 @@ content:
     third_party_settings: {  }
     weight: 105
     region: content
-  field_office_name:
-    type: string
+  field_office_geocode_latitude:
+    type: number_decimal
     label: above
     settings:
-      link_to_entity: false
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
     third_party_settings: {  }
-    weight: 101
+    weight: 106
+    region: content
+  field_office_geocode_longitude:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 107
     region: content
   links:
     settings: {  }

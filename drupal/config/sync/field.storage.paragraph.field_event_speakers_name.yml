@@ -1,20 +1,20 @@
-uuid: a563b16c-8a39-4217-bb1b-18be77a3d134
+uuid: f8381c3e-d85d-4261-ac3e-e20a5618f53e
 langcode: en
 status: true
 dependencies:
   module:
-    - node
-id: node.field_event_speakers_info
-field_name: field_event_speakers_info
-entity_type: node
+    - paragraphs
+id: paragraph.field_event_speakers_name
+field_name: field_event_speakers_name
+entity_type: paragraph
 type: string
 settings:
-  max_length: 750
+  max_length: 50
   case_sensitive: false
   is_ascii: false
 module: core
 locked: false
-cardinality: 4
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
