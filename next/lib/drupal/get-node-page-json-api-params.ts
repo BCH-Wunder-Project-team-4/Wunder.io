@@ -66,7 +66,16 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
 
   // The article content type has an image field, and author information:
   if (resourceType === "node--article") {
-    apiParams.addInclude(["field_image", "uid"]);
+    apiParams.addInclude([
+      "field_image",
+      "uid",
+      "field_content_elements",
+      "field_content_elements.field_image.field_media_image",
+      "field_content_elements.field_video",
+      "field_content_elements.field_file_attachments.field_media_document",
+      "field_content_elements.field_accordion_items",
+      "field_content_elements.field_accordion_items.field_content_elements.field_image.field_media_image",
+      "field_content_elements.field_accordion_items.field_content_elements.field_video",]);
     apiParams.addFields(resourceType, [
       "title",
       "body",
@@ -78,6 +87,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "field_excerpt",
       "path",
       "sticky",
+      "field_content_elements"
     ]);
   }
   if (resourceType === "node--job") {
