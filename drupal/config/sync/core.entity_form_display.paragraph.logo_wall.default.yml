@@ -1,0 +1,23 @@
+uuid: aac93608-5e88-4c84-8679-cd33de7d24d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.logo_wall.field_heading
+    - paragraphs.paragraphs_type.logo_wall
+id: paragraph.logo_wall.default
+targetEntityType: paragraph
+bundle: logo_wall
+mode: default
+content:
+  field_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

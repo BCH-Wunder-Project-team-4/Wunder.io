@@ -16,10 +16,11 @@ dependencies:
     - paragraphs.paragraphs_type.infosection_b
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.listing_articles
+    - paragraphs.paragraphs_type.logo_wall
     - paragraphs.paragraphs_type.scrolling_numbers
-    - paragraphs.paragraphs_type.simple_quote
     - paragraphs.paragraphs_type.sectionbg
     - paragraphs.paragraphs_type.services
+    - paragraphs.paragraphs_type.simple_quote
     - paragraphs.paragraphs_type.subheading
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.wunderpedia
@@ -50,11 +51,12 @@ settings:
       video: video
       listing_articles: listing_articles
       file_attachments: file_attachments
-      wunderpedia: wunderpedia
-      full_width_paragraph: full_width_paragraph
       scrolling_numbers: scrolling_numbers
+      wunderpedia: wunderpedia
       simple_quote: simple_quote
+      full_width_paragraph: full_width_paragraph
       sectionbg: sectionbg
+      logo_wall: logo_wall
       infosection: infosection
       infosection_b: infosection_b
       services: services
@@ -96,6 +98,9 @@ settings:
         enabled: true
       listing_articles:
         weight: -13
+        enabled: true
+      logo_wall:
+        weight: 22
         enabled: true
       scrolling_numbers:
         weight: 12

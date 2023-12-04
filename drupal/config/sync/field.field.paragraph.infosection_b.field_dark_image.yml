@@ -11,7 +11,7 @@ field_name: field_dark_image
 entity_type: paragraph
 bundle: infosection_b
 label: 'Dark mode screenshot'
-description: 'Set the screenshot that will be shown in dark mode.'
+description: 'Set the laptop screenshot that will be shown in dark mode.'
 required: false
 translatable: false
 default_value: {  }

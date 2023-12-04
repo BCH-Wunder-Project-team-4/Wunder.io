@@ -16,7 +16,8 @@ import {
   InfosectionSchema,
   InfosectionBSchema,
   SubheadingSchema,
-  SectionbgSchema
+  SectionbgSchema,
+  LogoWallSchema
 } from "@/lib/zod/paragraph";
 
 import { MetatagsSchema } from "@/lib/zod/metatag";
@@ -42,6 +43,7 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   FullWidthParagraphSchema,
   ParagraphWunderpediaSchema,
   SimpleQuoteSchema,
+  LogoWallSchema,
 ]);
 
 export const PageSchema = z.object({

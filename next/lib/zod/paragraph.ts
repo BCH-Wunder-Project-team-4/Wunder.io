@@ -300,6 +300,12 @@ export const SimpleQuoteSchema = z.object({
     .optional(),
 });
 
+export const LogoWallSchema = z.object({
+  type: z.literal("paragraph--logo_wall"),
+  id: z.string(),
+  field_heading: z.string().nullable(),
+});
+
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
 export type Video = z.infer<typeof VideoSchema>;
@@ -319,6 +325,7 @@ export type Sectionbg = z.infer<typeof SectionbgSchema>;
 export type FullWidthParagraph = z.infer<typeof FullWidthParagraphSchema>;
 export type ParagraphWunderpedia = z.infer<typeof ParagraphWunderpediaSchema>;
 export type SimpleQuote = z.infer<typeof SimpleQuoteSchema>;
+export type LogoWall = z.infer<typeof LogoWallSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -340,4 +347,5 @@ export type Paragraph =
   | Banner
   | ParagraphWunderpedia
   | ScrollingNumbers
-  | SimpleQuote;
+  | SimpleQuote
+  | LogoWall;
