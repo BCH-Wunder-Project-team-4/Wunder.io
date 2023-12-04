@@ -1,0 +1,13 @@
+uuid: dfce7421-2012-460b-8f2a-39bbca005580
+langcode: en
+status: true
+dependencies: {  }
+id: node.offering
+site_resolver: site_selector
+configuration:
+  sites:
+    frontend: frontend
+revalidator: path
+revalidator_configuration:
+  revalidate_page: true
+  additional_paths: ''

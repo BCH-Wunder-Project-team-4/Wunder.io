@@ -35,17 +35,7 @@ export function ParagraphScrollingNumbers({
   return (
     <section id="scrolling_numbers" className="mb-6">
       <HeadingParagraph>{paragraph.field_heading}</HeadingParagraph>
-      <div
-        className={`grid grid-cols-1 md:grid-cols-${Math.min(
-          paragraph.field_scrolling_numbers_items.length,
-          3,
-        )} ${
-          paragraph.field_scrolling_numbers_items.length === 4
-            ? "lg:grid-cols-4"
-            : "lg:grid-cols-" +
-              Math.min(paragraph.field_scrolling_numbers_items.length, 5)
-        } gap-4 bg-primary-600 py-8 px-4 rounded-md mt-6`}
-      >
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 bg-primary-600 py-8 px-4 rounded-md mt-6">
         {paragraph.field_scrolling_numbers_items.map((item, index) => (
           <div key={index} className="flex flex-col items-center">
             <p className="font-bold text-white" style={{ fontSize: "64px" }}>
@@ -53,7 +43,7 @@ export function ParagraphScrollingNumbers({
               {item.field_number >= 1000 ? (
                 <span>{item.field_number}</span>
               ) : (
-                <Counter from={0} to={item.field_number} duration={2.5} />
+                <Counter from={0} to={item.field_number} duration={2} />
               )}
               <span>{item.field_number_suffix}</span>
             </p>

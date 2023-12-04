@@ -1,21 +1,28 @@
-uuid: 1a7a1412-b76a-4deb-ad1f-37445c1f61cb
+uuid: c1dfbc4e-ed45-47f9-b380-3635c9e81089
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.banner.field_heading
-    - field.field.paragraph.banner.field_image
-    - field.field.paragraph.banner.field_ingress
-    - field.field.paragraph.banner.field_primary_link
-    - field.field.paragraph.banner.field_slogan
-    - paragraphs.paragraphs_type.banner
+    - field.field.paragraph.sectionbg.field_formatted_text
+    - field.field.paragraph.sectionbg.field_heading
+    - field.field.paragraph.sectionbg.field_image
+    - field.field.paragraph.sectionbg.field_primary_link
+    - paragraphs.paragraphs_type.sectionbg
   module:
     - link
-id: paragraph.banner.default
+    - text
+id: paragraph.sectionbg.default
 targetEntityType: paragraph
-bundle: banner
+bundle: sectionbg
 mode: default
 content:
+  field_formatted_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_heading:
     type: string
     label: hidden
@@ -32,13 +39,6 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-  field_ingress:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 5
-    region: content
   field_primary_link:
     type: link
     label: hidden
@@ -50,13 +50,5 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 3
-    region: content
-  field_slogan:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 4
     region: content
 hidden: {  }

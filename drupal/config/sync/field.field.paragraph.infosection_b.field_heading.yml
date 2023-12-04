@@ -1,0 +1,19 @@
+uuid: 4858702f-f873-4ec3-b638-dd8b54e0137b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.infosection_b
+id: paragraph.infosection_b.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: infosection_b
+label: Heading
+description: 'Heading for the whole accordion'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

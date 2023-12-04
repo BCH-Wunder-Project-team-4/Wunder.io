@@ -10,7 +10,8 @@ export type ResourceType =
   | "node--employee"
   | "node--office"
   | "node--client"
-  | "node--events";
+  | "node--events" 
+  | "node--service";
 
 export function getNodePageJsonApiParams(resourceType: ResourceType) {
   const apiParams = new DrupalJsonApiParams().addFilter(
@@ -31,6 +32,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
         "field_content_elements.field_accordion_items.field_content_elements.field_file_attachments.field_media_document",
         "field_content_elements.field_images.field_media_image",
         "field_content_elements.field_scrolling_numbers_items",
+        "field_content_elements.field_dark_image.field_media_image",
       ])
       .addFields("node--page", [
         "title",
@@ -198,6 +200,24 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "sticky",
     ]);
   }
-
+  if (resourceType === "node--service") {
+    apiParams
+      .addInclude([
+        "field_content_elements",
+        "field_content_elements.field_image.field_media_image",
+        "field_content_elements.field_video",
+        "field_content_elements.field_file_attachments.field_media_document",
+        "field_content_elements.field_accordion_items",
+        "field_content_elements.field_accordion_items.field_content_elements.field_image.field_media_image",
+        "field_content_elements.field_accordion_items.field_content_elements.field_video",
+      ])
+      .addFields("node--service", [
+        "title",
+        "field_content_elements",
+        "path",
+        "status",
+        "metatag",
+      ]);
+  }
   return apiParams;
 }

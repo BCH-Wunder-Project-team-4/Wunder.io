@@ -1,0 +1,21 @@
+uuid: de7fd2bd-74cf-4814-8388-825220809463
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.services
+id: paragraph.services.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: services
+label: Heading
+description: 'Services heading'
+required: true
+translatable: false
+default_value:
+  -
+    value: Services
+default_value_callback: ''
+settings: {  }
+field_type: string

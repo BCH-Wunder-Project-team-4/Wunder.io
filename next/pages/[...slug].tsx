@@ -1,3 +1,4 @@
+import { Service } from "@/components/offering/service";
 import {
   Article as ArticleType,
   validateAndCleanupArticle,
@@ -26,12 +27,13 @@ import { Job } from "@/components/careers/job";
 import { Meta } from "@/components/meta";
 import { Page } from "@/components/page";
 import { ResourceType } from "@/lib/drupal/get-node-page-json-api-params";
+import { Service as ServiceType, validateAndCleanupService } from "@/lib/zod/service";
 import { SingleEventPath } from "@/components/events/singleEventPath";
 import { drupal } from "@/lib/drupal/drupal-client";
 import { getNodePageJsonApiParams } from "@/lib/drupal/get-node-page-json-api-params";
 import { getNodeTranslatedVersions } from "@/lib/drupal/get-node-translated-versions";
 
-const RESOURCE_TYPES = ["node--article", "node--page", "node--job", "node--case", "node--events"];
+const RESOURCE_TYPES = ["node--article", "node--page", "node--job", "node--case", "node--events", "node--service"];
 
 export default function CustomPage({
   resource,
@@ -46,6 +48,7 @@ export default function CustomPage({
       {resource.type === "node--page" && <Page page={resource} />}
       {resource.type === "node--case" && <Case caseNode={resource} />}
       {resource.type === "node--events" && <SingleEventPath event={resource} />}
+      {resource.type === "node--service" && <Service service={resource}/>}
     </>
   );
 }
@@ -59,7 +62,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 };
 
 interface PageProps extends CommonPageProps {
-  resource: PageType | ArticleType | JobType | CaseType | EventType;
+  resource: PageType | ArticleType | JobType | CaseType | EventType | ServiceType;
   languageLinks: LanguageLinks;
 }
 
@@ -135,14 +138,16 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
     type === "node--article"
       ? validateAndCleanupArticle(resource)
       : type === "node--page"
-        ? validateAndCleanupPage(resource)
-        : type === "node--job"
-          ? validateAndCleanupJob(resource)
-          : type === "node--case"
-            ? validateAndCleanupCase(resource)
-            : type === "node--events"
-              ? validateAndCleanupEvent(resource)
-              : null;
+      ? validateAndCleanupPage(resource)
+      : type === "node--job"
+      ? validateAndCleanupJob(resource)
+      : type === "node--case"
+      ? validateAndCleanupCase(resource)
+      : type === "node--events"
+      ? validateAndCleanupEvent(resource)
+      : type === "node--service"
+      ? validateAndCleanupService(resource)
+      : null;
 
   return {
     props: {

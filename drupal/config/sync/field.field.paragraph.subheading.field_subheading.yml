@@ -1,0 +1,19 @@
+uuid: e552116e-5f95-4bf2-a508-9ca5cfa26a68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_subheading
+    - paragraphs.paragraphs_type.subheading
+id: paragraph.subheading.field_subheading
+field_name: field_subheading
+entity_type: paragraph
+bundle: subheading
+label: Subheading
+description: 'A simple text field that can be used as a subheading to title sections.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

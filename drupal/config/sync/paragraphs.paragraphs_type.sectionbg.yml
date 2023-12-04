@@ -1,0 +1,10 @@
+uuid: 159feb89-96d6-423b-a65a-a9c6b71e8a58
+langcode: en
+status: true
+dependencies: {  }
+id: sectionbg
+label: 'Info section with image'
+icon_uuid: null
+icon_default: null
+description: 'Simple section with a title, text, a possible link and a an image on the right side. Example use in Offering page.'
+behavior_plugins: {  }
