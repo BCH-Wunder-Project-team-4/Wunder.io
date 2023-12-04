@@ -7,6 +7,7 @@ import { StatusMessage } from "@/ui/status-message";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import Link from "next/link";
 
 type Inputs = {
   email: string;
@@ -45,14 +46,13 @@ export function CareersNewsletterForm() {
 
   if (isSubmitSuccessful) {
     return (
-      <StatusMessage level="success" className="mx-auto w-full max-w-3xl">
+      <StatusMessage level="success" className="mx-auto w-full max-w-3xl dark:text-mischka">
         <p className="mb-4">{t("Thank you for subscribing to our newsletter!")}</p>
       </StatusMessage>
     );
   }
 
   return (
-
     <form
       onSubmit={handleSubmit(onSubmit, onErrors)}
       className="mx-auto mb-4 flex max-w-3xl flex-col gap-5 p-4"
@@ -77,9 +77,8 @@ export function CareersNewsletterForm() {
               required: true,
             })}
           />
-          <Label htmlFor="policy_checkbox" className="mb-0">
-            {t("I agree to the policy")}
-
+          <Label htmlFor="policy_checkbox" className=" max-w-sm text-md px-2">
+                    {t('footer-newsletter-terms',)} <Link href='/privacy-policy' className='dark:text-mellow text-hug font-bold'> Privacy Policy </Link>.*
           </Label>
         </div>
         <Button type="submit">{t("form-submit")}</Button>
