@@ -7,7 +7,8 @@ dependencies:
     - field.field.node.office.field_office_address_two
     - field.field.node.office.field_office_country
     - field.field.node.office.field_office_email
-    - field.field.node.office.field_office_name
+    - field.field.node.office.field_office_geocode_latitude
+    - field.field.node.office.field_office_geocode_longitude
     - node.type.office
   module:
     - path
@@ -54,12 +55,18 @@ content:
       placeholder: ''
       size: 60
     third_party_settings: {  }
-  field_office_name:
-    type: string_textfield
-    weight: 121
+  field_office_geocode_latitude:
+    type: number
+    weight: 126
     region: content
     settings:
-      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_office_geocode_longitude:
+    type: number
+    weight: 127
+    region: content
+    settings:
       placeholder: ''
     third_party_settings: {  }
   langcode:

@@ -1,0 +1,23 @@
+uuid: edace66c-a4d7-4dc9-8cca-4d7b1c846de5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_geocode_latitude
+    - node.type.events
+id: node.events.field_event_geocode_latitude
+field_name: field_event_geocode_latitude
+entity_type: node
+bundle: events
+label: event_geocode_latitude
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

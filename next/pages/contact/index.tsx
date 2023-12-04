@@ -46,31 +46,12 @@ export default function ContactPage({officeTeasers = [],
   const { t } = useTranslation();
   const focusRef = useRef<HTMLDivElement>(null);
 
-const markers: MarkerType[]  = [
-
-    {
-        geocode: [60.165, 24.933],
-        popUp: 'Helsinki',
-    },
-    {
-        geocode: [60.450, 22.265],
-        popUp: 'Turku',
-    },
-    {
-        geocode: [59.420, 24.805],
-        popUp: 'Tallin',
-    }
-    ,
-    {
-        geocode: [ 57.529, 25.406],
-        popUp: 'Valmiera',
-    }
-    ,
-    {
-        geocode: [56.949, 24.105],
-        popUp: 'Riga',
-    }
-] 
+const markers:MarkerType[] = officeTeasers.map((officeTeaser) => {
+  return {
+    geocode: [officeTeaser.field_office_geocode_latitude, officeTeaser.field_office_geocode_longitude],
+    popUp: officeTeaser.title,
+  }})
+  
   
   return (
     <>

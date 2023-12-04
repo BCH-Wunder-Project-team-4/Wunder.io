@@ -1,0 +1,23 @@
+uuid: bd8e9a7b-3f3d-498b-82a3-ac1f49059eee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_geocode_longitude
+    - node.type.events
+id: node.events.field_event_geocode_longitude
+field_name: field_event_geocode_longitude
+entity_type: node
+bundle: events
+label: event_geocode_longitude
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

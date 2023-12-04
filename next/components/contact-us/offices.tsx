@@ -22,4 +22,5 @@ export function Offices({ offices}: LatestOfficeProps) {
       </ul>
     </div>
   );
+  
 }

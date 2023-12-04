@@ -1,0 +1,19 @@
+uuid: 2dc8338c-3697-4131-ae87-8aff475f034b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_event_speakers_description
+    - paragraphs.paragraphs_type.event_speakers_information
+id: paragraph.event_speakers_information.field_event_speakers_description
+field_name: field_event_speakers_description
+entity_type: paragraph
+bundle: event_speakers_information
+label: event_speakers_description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

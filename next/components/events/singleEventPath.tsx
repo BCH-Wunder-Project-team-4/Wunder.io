@@ -24,13 +24,14 @@ type MarkerType = {
   }
 
 export function SingleEventPath({ event, ...props }: EventProps) {
+  
   const { t } = useTranslation();
   const router = useRouter();
   const markers: MarkerType[]  = [
 
     {
-        geocode: [60.165, 24.933],
-        popUp: 'Helsinki',
+        geocode: [event.field_event_geocode_latitude, event.field_event_geocode_longitude],
+        popUp: event.title,
     },]
   const backgroundImageStyle = {
     backgroundImage: `url('${absoluteUrl(event.field_event_image?.uri.url)}')`,
@@ -47,14 +48,15 @@ export function SingleEventPath({ event, ...props }: EventProps) {
       setDivVisibility(!isDivVisible);
         setShowMap(showMap === 'Show Map' ? 'Hide Map' : 'Show Map');
     };
+    console.log(event.field_event_speakers);
   return (
     <div {...props}>
         <div style={backgroundImageStyle}>
             <div className="w-full h-full flex text-white font-bold items-center justify-center text-2xl backdrop-blur">
             <div>
             <h1>{event.title}</h1>
-            {event.field_event_speakers.length > 0? <p>Speakers: {event.field_event_speakers.map((speaker) => speaker).join(' and ')}</p> 
-            : <p>Speakers: {event.field_event_speakers}</p>}
+            {<p>Speakers: {event.field_event_speakers.map((speaker) => speaker.field_event_speakers_name).join(' and ')}</p> 
+            }
             <p>Date: {event.field_event_date.slice(0, 10)}</p>
             <p>{event.field_event_location}</p>
             </div>
@@ -93,10 +95,8 @@ export function SingleEventPath({ event, ...props }: EventProps) {
       </div>
       <div className="py-4">
         <h1>Speakers: </h1>
-        {event.field_event_speakers_info.length > 0? event.field_event_speakers_info.map((speaker_info) => 
-        <p className="py-2">{speaker_info}</p>)
-        :
-        <p>{event.field_event_speakers_info}</p>
+        {event.field_event_speakers.map((speaker) => 
+        <p className="py-2">{speaker.field_event_speakers_description}</p>)
         }
       </div>
     </div>

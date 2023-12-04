@@ -1,3 +1,5 @@
+import { authOptions } from './auth/[...nextauth]';
+import { getServerSession } from 'next-auth/next';
 import { NextApiRequest, NextApiResponse } from "next";
 
 
@@ -16,6 +18,8 @@ export default async function handler(
 
   // if there is no session, return 401:
   
+  // const session = await getServerSession(req, res, authOptions);
+  // console.log(session);
 
   try {
     if (req.method === "POST") {

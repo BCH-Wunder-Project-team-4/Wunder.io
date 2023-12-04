@@ -7,16 +7,19 @@ dependencies:
     - field.field.node.events.field_event_date
     - field.field.node.events.field_event_description
     - field.field.node.events.field_event_duration
+    - field.field.node.events.field_event_geocode_latitude
+    - field.field.node.events.field_event_geocode_longitude
     - field.field.node.events.field_event_image
     - field.field.node.events.field_event_location
     - field.field.node.events.field_event_speakers
-    - field.field.node.events.field_event_speakers_image
-    - field.field.node.events.field_event_speakers_info
+    - field.field.node.events.field_event_webform
     - node.type.events
   module:
     - datetime
+    - entity_reference_revisions
     - image
     - user
+    - webform
 id: node.events.default
 targetEntityType: node
 bundle: events
@@ -54,6 +57,28 @@ content:
     third_party_settings: {  }
     weight: 105
     region: content
+  field_event_geocode_latitude:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_event_geocode_longitude:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 112
+    region: content
   field_event_image:
     type: image
     label: above
@@ -74,31 +99,22 @@ content:
     weight: 103
     region: content
   field_event_speakers:
-    type: string
+    type: entity_reference_revisions_entity_view
     label: above
     settings:
-      link_to_entity: false
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    weight: 107
+    weight: 113
     region: content
-  field_event_speakers_image:
-    type: image
+  field_event_webform:
+    type: webform_entity_reference_entity_view
     label: above
     settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
+      source_entity: true
+      lazy: false
     third_party_settings: {  }
-    weight: 109
-    region: content
-  field_event_speakers_info:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 108
+    weight: 110
     region: content
   links:
     settings: {  }

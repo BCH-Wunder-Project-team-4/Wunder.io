@@ -7,7 +7,7 @@ import { OfficeBaseSchema } from "@/lib/zod/office";
 export const OfficeTeaserSchema = OfficeBaseSchema.extend({
   path: z.object({
     alias: z.string(),
-  }),
+  }).nullable().optional(),
 });
 
 export function validateAndCleanupOfficeTeaser(
