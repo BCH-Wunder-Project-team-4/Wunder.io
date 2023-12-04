@@ -8,20 +8,20 @@ dependencies:
 id: events
 label: events
 type: 'canonical_entities:node'
-pattern: 'events/[node:title]'
+pattern: 'all-events/[node:title]'
 selection_criteria:
-  d802bde8-a150-46f8-85da-b73a7638f30c:
+  423d336c-e0e3-4672-b23c-92b73a92af37:
     id: 'entity_bundle:node'
     negate: false
-    uuid: d802bde8-a150-46f8-85da-b73a7638f30c
+    uuid: 423d336c-e0e3-4672-b23c-92b73a92af37
     context_mapping:
       node: node
     bundles:
       events: events
-  b17c3a6c-1feb-4df4-92ae-84f95a97d481:
+  97232572-a20e-4575-b1a2-41b5c92f02e1:
     id: language
     negate: false
-    uuid: b17c3a6c-1feb-4df4-92ae-84f95a97d481
+    uuid: 97232572-a20e-4575-b1a2-41b5c92f02e1
     context_mapping:
       language: 'node:langcode:language'
     langcodes:
