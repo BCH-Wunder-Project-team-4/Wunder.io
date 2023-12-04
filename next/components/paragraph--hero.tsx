@@ -10,9 +10,9 @@ export function ParagraphHero({ paragraph }: { paragraph: HeroType }) {
 
 
   return (
-    <section id="hero" className="bg-secondary-50">
-      <div className="mx-auto grid max-w-screen-xl lg:grid-cols-12">
-        <div className="mr-auto place-self-center px-8 py-8 lg:col-span-6  lg:py-16">
+    <section id="hero" className="">
+      <div className="mx-auto grid max-w-screen-xl grid-cols-1 sm:grid-cols-12">
+        <div className="mr-auto place-self-center px-8 py-8 sm:col-span-6  lg:py-16">
           {paragraph.field_heading && (
             <h1 className="leading-none mb-4 max-w-2xl text-left text-heading-md font-bold tracking-tight text-primary-600 md:text-heading-lg">
               {paragraph.field_heading}
@@ -31,7 +31,7 @@ export function ParagraphHero({ paragraph }: { paragraph: HeroType }) {
                 href={paragraph.field_primary_link.full_url}
                 className={clsx(
                   buttonVariants({ variant: "primary" }),
-                  "text-base mr-4 inline-flex px-5 py-3",
+                  "text-base mr-4 inline-flex px-5 py-3 my-3",
                 )}
               >
                 {paragraph.field_primary_link.title}
@@ -53,11 +53,12 @@ export function ParagraphHero({ paragraph }: { paragraph: HeroType }) {
             )}
           </div>
         </div>
-        <div className="hidden lg:col-span-6 lg:mt-0 lg:flex">
+        <div className="col-span-6">
           <MediaImage
             media={paragraph.field_image}
             alt="site-banner"
             priority
+            className="max-w-full h-auto"
           />
         </div>
       </div>
