@@ -17,7 +17,6 @@ export function ArticleTeaser({ article }: ArticleTeaserProps) {
   const router = useRouter();
   const date = formatDate(article.created, router.locale);
 
-console.log(article)
   return (
     <Link
       href={article.path.alias}
