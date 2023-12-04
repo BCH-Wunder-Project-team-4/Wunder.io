@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.paragraph.trilogy_snapshot.field_formatted_text
     - field.field.paragraph.trilogy_snapshot.field_heading
+    - field.field.paragraph.trilogy_snapshot.field_primary_link
     - field.field.paragraph.trilogy_snapshot.field_trilogy_images
     - paragraphs.paragraphs_type.trilogy_snapshot
   module:
+    - link
     - text
 id: paragraph.trilogy_snapshot.default
 targetEntityType: paragraph
@@ -28,6 +30,18 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_primary_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_trilogy_images:
     type: entity_reference_entity_view

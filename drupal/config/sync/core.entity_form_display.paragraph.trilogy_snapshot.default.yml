@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.paragraph.trilogy_snapshot.field_formatted_text
     - field.field.paragraph.trilogy_snapshot.field_heading
+    - field.field.paragraph.trilogy_snapshot.field_primary_link
     - field.field.paragraph.trilogy_snapshot.field_trilogy_images
     - paragraphs.paragraphs_type.trilogy_snapshot
   module:
+    - link
     - media_library
     - text
 id: paragraph.trilogy_snapshot.default
@@ -30,6 +32,14 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_primary_link:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   field_trilogy_images:
     type: media_library_widget

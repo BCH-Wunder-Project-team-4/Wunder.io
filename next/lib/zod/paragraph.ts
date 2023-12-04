@@ -224,7 +224,7 @@ export const InfosectionBSchema = z.object({
     })
     .nullable()
     .optional(),
-})
+});
 
 export const SubheadingSchema = z.object({
   type: z.literal("paragraph--subheading"),
@@ -268,6 +268,23 @@ export const FullWidthParagraphSchema = z.object({
       field_media_image: ImageShape.nullable(),
     }),
   ),
+});
+
+export const TrilogySnapshotSchema = z.object({
+  type: z.literal("paragraph--trilogy_snapshot"),
+  id: z.string(),
+  field_heading: z.string(),
+  field_formatted_text: z.object({
+    processed: z.string(),
+  }),
+  field_trilogy_images: z.array(
+    z.object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    }),
+  ),
+  field_primary_link: LinkShape.nullable().optional(),
 });
 
 export const ParagraphWunderpediaSchema = z.object({
@@ -326,6 +343,7 @@ export type FullWidthParagraph = z.infer<typeof FullWidthParagraphSchema>;
 export type ParagraphWunderpedia = z.infer<typeof ParagraphWunderpediaSchema>;
 export type SimpleQuote = z.infer<typeof SimpleQuoteSchema>;
 export type LogoWall = z.infer<typeof LogoWallSchema>;
+export type TrilogySnapshot = z.infer<typeof TrilogySnapshotSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -337,7 +355,6 @@ export type Paragraph =
   | Hero
   | ListingArticles
   | FileAttachments
- 
   | Services
   | Infosection
   | InfosectionB
@@ -348,4 +365,5 @@ export type Paragraph =
   | ParagraphWunderpedia
   | ScrollingNumbers
   | SimpleQuote
-  | LogoWall;
+  | LogoWall
+  | TrilogySnapshot;
