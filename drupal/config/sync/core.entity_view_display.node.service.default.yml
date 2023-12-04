@@ -1,0 +1,39 @@
+uuid: d4df1720-d235-4500-a002-bf04440b9223
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.service.field_content_elements
+    - field.field.node.service.field_excerpt
+    - node.type.service
+  module:
+    - entity_reference_revisions
+    - user
+id: node.service.default
+targetEntityType: node
+bundle: service
+mode: default
+content:
+  field_content_elements:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_excerpt:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true

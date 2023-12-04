@@ -1,0 +1,10 @@
+uuid: ae076383-4a61-42b1-aef9-487fd35a1a42
+langcode: en
+status: true
+dependencies: {  }
+id: subheading
+label: Subheading
+icon_uuid: null
+icon_default: null
+description: 'Simple heading text field that can be used to title sub sections on a page.'
+behavior_plugins: {  }

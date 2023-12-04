@@ -1,0 +1,60 @@
+uuid: b51f7f9c-bb70-44b9-b3a8-08ee353094dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.expert_talks.body
+    - field.field.node.expert_talks.field_excerpt
+    - field.field.node.expert_talks.field_image
+    - field.field.node.expert_talks.field_tags
+    - image.style.wide
+    - node.type.expert_talks
+  module:
+    - image
+    - text
+    - user
+id: node.expert_talks.default
+targetEntityType: node
+bundle: expert_talks
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_excerpt:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

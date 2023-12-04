@@ -1,0 +1,53 @@
+uuid: 581b6ae9-d11c-4987-ae08-6262fe4905e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sectionbg.field_formatted_text
+    - field.field.paragraph.sectionbg.field_heading
+    - field.field.paragraph.sectionbg.field_image
+    - field.field.paragraph.sectionbg.field_primary_link
+    - paragraphs.paragraphs_type.sectionbg
+  module:
+    - link
+    - media_library
+    - text
+id: paragraph.sectionbg.default
+targetEntityType: paragraph
+bundle: sectionbg
+mode: default
+content:
+  field_formatted_text:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_primary_link:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

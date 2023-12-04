@@ -1,0 +1,49 @@
+uuid: 9708fd86-d784-4a73-92e8-5a09e4e63a37
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.infosection_b.field_dark_image
+    - field.field.paragraph.infosection_b.field_formatted_text
+    - field.field.paragraph.infosection_b.field_heading
+    - field.field.paragraph.infosection_b.field_image
+    - paragraphs.paragraphs_type.infosection_b
+  module:
+    - text
+id: paragraph.infosection_b.default
+targetEntityType: paragraph
+bundle: infosection_b
+mode: default
+content:
+  field_dark_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_formatted_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }
