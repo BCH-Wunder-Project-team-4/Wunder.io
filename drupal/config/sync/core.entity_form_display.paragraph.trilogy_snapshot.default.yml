@@ -1,0 +1,43 @@
+uuid: 4ca18ff9-f066-4694-a9b1-4e7626f7e2b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.trilogy_snapshot.field_formatted_text
+    - field.field.paragraph.trilogy_snapshot.field_heading
+    - field.field.paragraph.trilogy_snapshot.field_trilogy_images
+    - paragraphs.paragraphs_type.trilogy_snapshot
+  module:
+    - media_library
+    - text
+id: paragraph.trilogy_snapshot.default
+targetEntityType: paragraph
+bundle: trilogy_snapshot
+mode: default
+content:
+  field_formatted_text:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_trilogy_images:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
