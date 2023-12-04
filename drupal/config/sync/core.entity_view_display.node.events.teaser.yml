@@ -8,11 +8,12 @@ dependencies:
     - field.field.node.events.field_event_date
     - field.field.node.events.field_event_description
     - field.field.node.events.field_event_duration
+    - field.field.node.events.field_event_geocode_latitude
+    - field.field.node.events.field_event_geocode_longitude
     - field.field.node.events.field_event_image
     - field.field.node.events.field_event_location
     - field.field.node.events.field_event_speakers
-    - field.field.node.events.field_event_speakers_image
-    - field.field.node.events.field_event_speakers_info
+    - field.field.node.events.field_event_webform
     - node.type.events
   module:
     - user
@@ -31,9 +32,10 @@ hidden:
   field_event_date: true
   field_event_description: true
   field_event_duration: true
+  field_event_geocode_latitude: true
+  field_event_geocode_longitude: true
   field_event_image: true
   field_event_location: true
   field_event_speakers: true
-  field_event_speakers_image: true
-  field_event_speakers_info: true
+  field_event_webform: true
   langcode: true

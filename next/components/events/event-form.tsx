@@ -5,6 +5,7 @@ import { Button } from "@/ui/button";
 import { Input } from "@/ui/input";
 import { Label } from "@/ui/label";
 import { StatusMessage } from "@/ui/status-message";
+import { useState } from "react";
 
 type Inputs = {
   name: string;
@@ -13,6 +14,7 @@ type Inputs = {
 
 export function EventForm({eventName}) {
   const router = useRouter();
+  const [submissionResponse, setSubmissionResponse] = useState(true);
   const { t } = useTranslation();
   const {
     register,
@@ -35,13 +37,17 @@ export function EventForm({eventName}) {
     });
 
     if (!response.ok) {
-      alert("Error!");    
+      alert("This email has already been submitted.");
+      setSubmissionResponse(false);              
+    }
+    if (response.ok) {
+      setSubmissionResponse(true);              
     }
   };
 
-  const onErrors = (errors) => console.error(errors);
+  const onErrors = (errors) => {alert(`email is ${errors.email.type}`)};
 
-  if (isSubmitSuccessful) {
+  if (isSubmitSuccessful && submissionResponse) {
     return (
       <StatusMessage level="success" className="mx-auto w-full max-w-3xl">
         <p className="mb-4">{t("form-thank-you-message")}</p>

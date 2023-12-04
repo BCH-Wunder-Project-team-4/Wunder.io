@@ -1,0 +1,11 @@
+_core:
+  default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
+theme: current
+defaults:
+  sender: SMTPMailSystem
+  formatter: SMTPMailSystem
+modules:
+  views_send:
+    direct:
+      sender: SMTPMailSystem
+      formatter: SMTPMailSystem

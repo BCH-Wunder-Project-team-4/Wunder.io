@@ -1,0 +1,44 @@
+uuid: ab04d2b4-be1a-4b2f-ae81-cf8882ed286e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.event_speakers_information.field_event_speakers_description
+    - field.field.paragraph.event_speakers_information.field_event_speakers_image
+    - field.field.paragraph.event_speakers_information.field_event_speakers_name
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.event_speakers_information
+  module:
+    - image
+id: paragraph.event_speakers_information.default
+targetEntityType: paragraph
+bundle: event_speakers_information
+mode: default
+content:
+  field_event_speakers_description:
+    type: string_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_event_speakers_image:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_event_speakers_name:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

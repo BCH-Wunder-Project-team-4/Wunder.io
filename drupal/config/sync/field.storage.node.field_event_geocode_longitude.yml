@@ -1,17 +1,14 @@
-uuid: c5e21b28-86b1-49bd-8a75-d7a2a57d2f13
+uuid: 820887fc-0da4-474a-a256-5da65ca3ac59
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_office_name
-field_name: field_office_name
+id: node.field_event_geocode_longitude
+field_name: field_event_geocode_longitude
 entity_type: node
-type: string
-settings:
-  max_length: 25
-  case_sensitive: false
-  is_ascii: false
+type: float
+settings: {  }
 module: core
 locked: false
 cardinality: 1

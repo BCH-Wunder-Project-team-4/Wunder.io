@@ -1,0 +1,23 @@
+uuid: 161f90a1-77ed-4aa2-b7f1-9b7ba4e7550e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_office_geocode_latitude
+    - node.type.office
+id: node.office.field_office_geocode_latitude
+field_name: field_office_geocode_latitude
+entity_type: node
+bundle: office
+label: office_geocode_latitude
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

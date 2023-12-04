@@ -1,0 +1,10 @@
+uuid: e8275991-e3d6-4696-ac05-0f51e03afe65
+langcode: en
+status: true
+dependencies: {  }
+id: event_speakers_information
+label: event_speakers_information
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

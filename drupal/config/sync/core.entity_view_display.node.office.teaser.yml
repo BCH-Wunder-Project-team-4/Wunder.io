@@ -8,7 +8,8 @@ dependencies:
     - field.field.node.office.field_office_address_two
     - field.field.node.office.field_office_country
     - field.field.node.office.field_office_email
-    - field.field.node.office.field_office_name
+    - field.field.node.office.field_office_geocode_latitude
+    - field.field.node.office.field_office_geocode_longitude
     - node.type.office
   module:
     - user
@@ -27,5 +28,6 @@ hidden:
   field_office_address_two: true
   field_office_country: true
   field_office_email: true
-  field_office_name: true
+  field_office_geocode_latitude: true
+  field_office_geocode_longitude: true
   langcode: true

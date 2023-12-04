@@ -1,0 +1,23 @@
+uuid: b4e8be57-0350-4bbb-b45f-1fc559b7f498
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_office_geocode_longitude
+    - node.type.office
+id: node.office.field_office_geocode_longitude
+field_name: field_office_geocode_longitude
+entity_type: node
+bundle: office
+label: office_geocode_longitude
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

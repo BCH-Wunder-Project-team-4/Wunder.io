@@ -1,6 +1,6 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { useTranslation } from "next-i18next";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { HeadingPage } from "@/components/heading--page";
 import { LayoutProps } from "@/components/layout";
 import { Meta } from "@/components/meta";
@@ -14,8 +14,7 @@ import { EventListItem } from "@/components/events/eventList";
 import { getLatestEventsItems } from "@/lib/drupal/get-events";
 import clsx from "clsx";
 import ArrowIcon from "@/styles/icons/arrow-down.svg";
-
-import { buttonVariants } from "@/ui/button";
+import { useRouter } from "next/router";
 
 interface AllEventsPageProps extends LayoutProps {
   eventTeasers: EventTeaserType[];
@@ -26,7 +25,9 @@ export default function AllEventsPage({
   eventTeasers = []
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation();
+  const router = useRouter();
   const focusRef = useRef<HTMLDivElement>(null);
+  
   return (
     <>
       <Meta title={t("all-events")} metatags={[]} />
@@ -37,6 +38,7 @@ export default function AllEventsPage({
           <li key={event.id}>
             <EventListItem event={event} />
           </li>
+          
         ))}
       </ul>
       {/* <div>

@@ -1,0 +1,18 @@
+uuid: 66530362-8337-4c1f-93d0-d2f423da45ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_event_geocode_latitude
+field_name: field_event_geocode_latitude
+entity_type: node
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

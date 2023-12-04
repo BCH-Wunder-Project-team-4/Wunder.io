@@ -7,17 +7,20 @@ dependencies:
     - field.field.node.events.field_event_date
     - field.field.node.events.field_event_description
     - field.field.node.events.field_event_duration
+    - field.field.node.events.field_event_geocode_latitude
+    - field.field.node.events.field_event_geocode_longitude
     - field.field.node.events.field_event_image
     - field.field.node.events.field_event_location
     - field.field.node.events.field_event_speakers
-    - field.field.node.events.field_event_speakers_image
-    - field.field.node.events.field_event_speakers_info
+    - field.field.node.events.field_event_webform
     - image.style.thumbnail
     - node.type.events
   module:
     - datetime
     - image
+    - paragraphs
     - path
+    - webform
 id: node.events.default
 targetEntityType: node
 bundle: events
@@ -59,6 +62,20 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_event_geocode_latitude:
+    type: number
+    weight: 131
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_event_geocode_longitude:
+    type: number
+    weight: 132
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_event_image:
     type: image_image
     weight: 121
@@ -76,28 +93,30 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_event_speakers:
-    type: string_textfield
-    weight: 127
+    type: paragraphs
+    weight: 133
     region: content
     settings:
-      size: 60
-      placeholder: ''
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
-  field_event_speakers_image:
-    type: image_image
-    weight: 129
+  field_event_webform:
+    type: webform_entity_reference_select
+    weight: 130
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-  field_event_speakers_info:
-    type: string_textfield
-    weight: 128
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
+      default_data: true
+      webforms: {  }
     third_party_settings: {  }
   langcode:
     type: language_select

@@ -21,6 +21,10 @@ export default async function handler(
     if (req.method === "POST") {
       const url = drupal.buildUrl(`/${languagePrefix}/webform_rest/submit`);
       const body = JSON.parse(req.body);
+      const webformId = body.name.toLowerCase().split(' ').join('_');
+      
+      
+      
       
       
 
@@ -28,8 +32,7 @@ export default async function handler(
       const result = await drupal.fetch(url.toString(), {
         method: "POST",
         body: JSON.stringify({
-          webform_id: "event",
-          name: body.name,
+          webform_id: webformId,
           email: body.email,
         }),
         headers: {
@@ -39,14 +42,17 @@ export default async function handler(
         },
       });
 
-      if (result.ok) {
+      if (result.ok) {        
         res.status(200).end();
-      } else {
+      } else {  
+        const error = await result.json();
+        // console.log('response', error);             
         res.status(result.status).end();
-        throw new Error();
+        throw new Error();       
       }
+      
     }
-  } catch (error) {
+  } catch (error) {              
     return res.status(400).json(error.message);
   }
 }
