@@ -114,7 +114,9 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "field_excerpt",
       "path",
       "sticky",
-      "field_content_elements"
+      "field_content_elements",
+      "field_country",
+      "field_office",
       ]);
   }
 

@@ -38,8 +38,8 @@ export default function AllJobsPage({
   const [chosenOffice, setChosenOffice] = useState<string>("all");
 
   useMemo(() => {
-/*     const countries = jobTeasers.flatMap((job) => job.field_country.map((country) => country.name)); */
-/*     const offices = jobTeasers.flatMap((job) => job.field_office.map((office) => office.name)); */
+    const countries = jobTeasers.flatMap((job) => job.field_country.map((country) => country.name));
+    const offices = jobTeasers.flatMap((job) => job.field_office.map((office) => office.name));
     setCountries(Array.from(new Set(countries)));
     setOffices(Array.from(new Set(offices)));
   }, [jobTeasers]);
@@ -53,7 +53,6 @@ export default function AllJobsPage({
     }
     return true;
   });
-
 
   return (
     <div>
@@ -104,6 +103,8 @@ export const getStaticProps: GetStaticProps<AllJobsPageProps> = async (context) 
   const openPositions = await drupal.getResourceCollectionFromContext<DrupalNode[]>("node--job", context, {
     params: getNodePageJsonApiParams("node--job").getQueryObject(),
   });
+
+  console.log(openPositions)
 
   return {
     props: {

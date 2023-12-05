@@ -68,7 +68,34 @@ const JobSchema = JobBaseSchema.extend({
 
 export function validateAndCleanupJob(job: DrupalNode): Job | null {
   try {
-    return JobSchema.parse(job);
+    // Validate the top level fields first.
+    const topLevelJobData = JobSchema.omit({
+      field_content_elements: true,
+    }).parse(job);
+
+    // Validate the field_content_elements separately, one by one.
+    // This way, if one of them is invalid, we can still return the rest of the job contents.
+    const validatedParagraphs = job.field_content_elements
+      .map((paragraph: any) => {
+        const result = JobElementsSchema.safeParse(paragraph);
+
+        switch (result.success) {
+          case true:
+            return result.data;
+          case false:
+            console.log(
+              `Error validating Job paragraph ${paragraph.type}: `,
+              JSON.stringify(result.error, null, 2),
+            );
+            return null;
+        }
+      })
+      .filter(Boolean);
+
+    return {
+      ...topLevelJobData,
+      field_content_elements: validatedParagraphs,
+    };
   } catch (error) {
     const { name = "ZodError", issues = [] } = error;
     console.log(JSON.stringify({ name, issues, job }, null, 2));
