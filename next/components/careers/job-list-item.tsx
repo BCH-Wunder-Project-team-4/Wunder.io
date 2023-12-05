@@ -14,7 +14,7 @@ export function JobListItem({ job }: JobListItemProps) {
     <Link href={job.path.alias}>
       <div className={classNames("relative grid rounded bg-white transition-all hover:shadow-md")}>
         {job.field_image && (
-          <div className="w-full h-38">
+          <div className="aspect-w-4 aspect-h-3 rounded-sm overflow-hidden">
             <Image
               src={absoluteUrl(job.field_image.uri.url)}
               className="object-cover"
