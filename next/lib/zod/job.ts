@@ -3,6 +3,33 @@ import { z } from "zod";
 
 import { MetatagsSchema } from "@/lib/zod/metatag";
 import { ImageShape } from "@/lib/zod/paragraph";
+import {
+  AccordionSchema,
+  BannerSchema,
+  FileAttachmentsSchema,
+  FormattedTextSchema,
+  HeroSchema,
+  ImageSchema,
+  LinksSchema,
+  ListingArticlesSchema,
+  VideoSchema,
+  SimpleQuoteSchema,
+  SubheadingSchema,
+} from "@/lib/zod/paragraph";
+
+const JobElementsSchema = z.discriminatedUnion("type", [
+  FormattedTextSchema,
+  ImageSchema,
+  VideoSchema,
+  LinksSchema,
+  AccordionSchema,
+  HeroSchema,
+  ListingArticlesSchema,
+  FileAttachmentsSchema,
+  BannerSchema,
+  SimpleQuoteSchema,
+  SubheadingSchema,
+]);
 
 export const CountrySchema = z.object({
   type: z.string(),
@@ -29,13 +56,14 @@ export const JobBaseSchema = z.object({
   field_excerpt: z.string().optional().nullable(),
   field_country: z.array(CountrySchema).optional().nullable(),
   field_office: z.array(OfficeSchema).optional().nullable(),
+  field_content_elements: z.array(JobElementsSchema).optional(),
 });
 
 const JobSchema = JobBaseSchema.extend({
   metatag: MetatagsSchema.optional(),
   body: z.object({
     processed: z.string(),
-  }),
+  }).optional().nullable(),
 });
 
 export function validateAndCleanupJob(job: DrupalNode): Job | null {

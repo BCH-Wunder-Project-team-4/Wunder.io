@@ -96,19 +96,26 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "uid",
       "field_country",
       "field_office",
-    ]);
-    /*     apiParams.addFields(resourceType, [
-          "title",
-          "body",
-          "uid",
-          "created",
-          "field_image",
-          "status",
-          "metatag",
-          "field_excerpt",
-          "path",
-          "sticky",
-        ]); */
+      "field_content_elements",
+      "field_content_elements.field_image.field_media_image",
+      "field_content_elements.field_video",
+      "field_content_elements.field_file_attachments.field_media_document",
+      "field_content_elements.field_accordion_items",
+      "field_content_elements.field_accordion_items.field_content_elements.field_image.field_media_image",
+      "field_content_elements.field_accordion_items.field_content_elements.field_video",]);
+    apiParams.addFields(resourceType, [
+      "title",
+      "body",
+      "uid",
+      "created",
+      "field_image",
+      "status",
+      "metatag",
+      "field_excerpt",
+      "path",
+      "sticky",
+      "field_content_elements"
+      ]);
   }
 
   if (resourceType === "node--case") {
