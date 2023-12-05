@@ -13,6 +13,8 @@ import {
   LinksSchema,
   ListingArticlesSchema,
   VideoSchema,
+  SimpleQuoteSchema,
+  SubheadingSchema,
 } from "@/lib/zod/paragraph";
 
 const ArticleElementsSchema = z.discriminatedUnion("type", [
@@ -25,6 +27,8 @@ const ArticleElementsSchema = z.discriminatedUnion("type", [
   ListingArticlesSchema,
   FileAttachmentsSchema,
   BannerSchema,
+  SimpleQuoteSchema,
+  SubheadingSchema,
 ]);
 
 
