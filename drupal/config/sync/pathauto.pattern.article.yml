@@ -9,12 +9,12 @@ _core:
 id: article
 label: Article
 type: 'canonical_entities:node'
-pattern: 'all-articles/[node:title]'
+pattern: 'articles/[node:title]'
 selection_criteria:
-  ea666473-5725-4bab-a092-38fdd532ef98:
+  2120d454-3901-4bfc-bf41-8c322b4b3759:
     id: 'entity_bundle:node'
     negate: false
-    uuid: ea666473-5725-4bab-a092-38fdd532ef98
+    uuid: 2120d454-3901-4bfc-bf41-8c322b4b3759
     context_mapping:
       node: node
     bundles:

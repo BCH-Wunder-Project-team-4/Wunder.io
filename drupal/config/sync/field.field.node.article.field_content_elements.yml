@@ -12,6 +12,8 @@ dependencies:
     - paragraphs.paragraphs_type.hero
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.links
+    - paragraphs.paragraphs_type.simple_quote
+    - paragraphs.paragraphs_type.subheading
     - paragraphs.paragraphs_type.video
   module:
     - entity_reference_revisions
@@ -37,6 +39,8 @@ settings:
       video: video
       file_attachments: file_attachments
       banner: banner
+      simple_quote: simple_quote
+      subheading: subheading
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -95,10 +99,10 @@ settings:
         enabled: false
       simple_quote:
         weight: 41
-        enabled: false
+        enabled: true
       subheading:
         weight: 42
-        enabled: false
+        enabled: true
       video:
         weight: -9
         enabled: true
