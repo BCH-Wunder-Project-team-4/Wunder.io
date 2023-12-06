@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.job.body
+    - field.field.node.job.field_content_elements
     - field.field.node.job.field_country
     - field.field.node.job.field_excerpt
     - field.field.node.job.field_image
@@ -11,6 +12,7 @@ dependencies:
     - image.style.wide
     - node.type.job
   module:
+    - entity_reference_revisions
     - image
     - text
     - user
@@ -25,6 +27,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_content_elements:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_country:
     type: entity_reference_label

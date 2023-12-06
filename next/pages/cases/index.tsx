@@ -64,24 +64,26 @@ export default function CasesPage({
       <Meta title={t("Cases")} metatags={[]} />
       <div className="w-full max-w-screen-lg p-4 space-y-4">
         <HeadingPage className="pt-2">{t("Our success stories")}</HeadingPage>
-        <select onChange={e => setChosenIndustry(e.target.value)}>
+        <div className="space-x-4 pb-4">
+        <select className="text-primary-600 dark:text-fog p-1 border rounded bg-mischka dark:bg-steelgray" onChange={e => setChosenIndustry(e.target.value)}>
           <option value="all">All Industries</option>
           {industries.map((industry) => (
             <option key={industry} value={industry}>{industry}</option>
           ))}
         </select>
-        <select onChange={e => setChosenSolution(e.target.value)}>
+        <select className="text-primary-600 dark:text-fog p-1 border rounded bg-mischka dark:bg-steelgray" onChange={e => setChosenSolution(e.target.value)}>
           <option value="all">All Solutions</option>
           {solutions.map((solution) => (
             <option key={solution} value={solution}>{solution}</option>
           ))}
         </select>
-        <select onChange={e => setChosenTechnology(e.target.value)}>
+        <select className="text-primary-600 dark:text-fog p-1 border rounded bg-mischka dark:bg-steelgray" onChange={e => setChosenTechnology(e.target.value)}>
           <option value="all">All Technologies</option>
           {technologies.map((technology) => (
             <option key={technology} value={technology}>{technology}</option>
           ))}
         </select>
+        </div>
         <ul className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
           {filteredCases.map((caseItem, index) => (
             <CaseTeaser key={index} caseItem={caseItem} />

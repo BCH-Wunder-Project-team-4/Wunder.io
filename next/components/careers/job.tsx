@@ -6,6 +6,7 @@ import { FormattedText } from "@/components/formatted-text";
 import { HeadingPage } from "@/components/heading--page";
 import { absoluteUrl } from "@/lib/drupal/absolute-url";
 import { Job } from "@/lib/zod/job";
+import { Paragraph } from "../paragraph";
 
 interface JobProps {
   job: Job;
@@ -44,6 +45,9 @@ export function Job({ job, ...props }: JobProps) {
           html={job.body?.processed}
         />
       )}
+        {job.field_content_elements?.map((paragraph) => (
+        <Paragraph key={paragraph.id} paragraph={paragraph} />
+      ))}
     </div>
   );
 }
