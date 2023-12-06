@@ -7,6 +7,8 @@ import { HeadingPage } from "@/components/heading--page";
 import { absoluteUrl } from "@/lib/drupal/absolute-url";
 import { formatDate } from "@/lib/utils";
 import { Article } from "@/lib/zod/article";
+import { Paragraph } from "./paragraph";
+import { MediaImage } from "./media--image";
 
 interface ArticleProps {
   article: Article;
@@ -15,12 +17,10 @@ interface ArticleProps {
 export function Article({ article, ...props }: ArticleProps) {
   const { t } = useTranslation();
   const router = useRouter();
+
   return (
-    <article {...props}>
+    <div className="grid gap-4" {...props}>
       <HeadingPage>{article.title}</HeadingPage>
-      {article.field_excerpt && (
-        <div className="my-4 text-xl">{article.field_excerpt}</div>
-      )}
       <div className="mb-4 text-scapaflow">
         {article.uid?.display_name && (
           <span>
@@ -41,18 +41,15 @@ export function Article({ article, ...props }: ArticleProps) {
             priority
           />
           {article.field_image.resourceIdObjMeta.title && (
-            <figcaption className="py-2 text-center text-sm text-steelgray">
+            <figcaption className="py-2 text-center text-sm text-scapaflow">
               {article.field_image.resourceIdObjMeta.title}
             </figcaption>
           )}
         </figure>
       )}
-      {article.body?.processed && (
-        <FormattedText
-          className="mt-4 text-md/xl text-steelgray dark:text-mischka sm:text-lg"
-          html={article.body?.processed}
-        />
-      )}
-    </article>
+      {article.field_content_elements?.map((paragraph) => (
+        <Paragraph key={paragraph.id} paragraph={paragraph} />
+      ))}
+    </div>
   );
 }

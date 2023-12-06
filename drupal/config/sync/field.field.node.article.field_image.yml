@@ -20,8 +20,8 @@ id: node.article.field_image
 field_name: field_image
 entity_type: node
 bundle: article
-label: Image
-description: ''
+label: 'Main image'
+description: 'Set the main image. Appears as the teaser image and at the top of the article.'
 required: false
 translatable: true
 default_value: {  }
@@ -39,7 +39,7 @@ settings:
   title_field: false
   title_field_required: false
   default_image:
-    uuid: bc9bbb6a-5b7a-4bd6-ba17-9709e1bcf4e8
+    uuid: ''
     alt: ''
     title: ''
     width: 1200

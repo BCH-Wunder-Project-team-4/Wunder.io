@@ -11,6 +11,7 @@ import {
   LinksSchema,
   ListingArticlesSchema,
   VideoSchema,
+  LogoWallSchema,
 } from "@/lib/zod/paragraph";
 
 const FrontpageElementsSchema = z.discriminatedUnion("type", [
@@ -22,6 +23,7 @@ const FrontpageElementsSchema = z.discriminatedUnion("type", [
   HeroSchema,
   ListingArticlesSchema,
   FileAttachmentsSchema,
+  LogoWallSchema,
 ]);
 
 export const FrontpageSchema = z.object({

@@ -5,9 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.job.body
+    - field.field.node.job.field_content_elements
     - field.field.node.job.field_country
     - field.field.node.job.field_excerpt
     - field.field.node.job.field_image
+    - field.field.node.job.field_office
     - image.style.medium
     - node.type.job
   module:
@@ -44,6 +46,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_content_elements: true
   field_country: true
   field_excerpt: true
   field_office: true
