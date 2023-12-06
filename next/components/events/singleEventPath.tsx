@@ -5,7 +5,10 @@ import { HeadingPage } from "@/components/heading--page";
 import { absoluteUrl } from "@/lib/drupal/absolute-url";
 import { formatDate } from "@/lib/utils";
 import { Event } from "@/lib/zod/events";
+import LocationIcon from "@/styles/icons/location.svg";
+import PresenterIcon from "@/styles/icons/presenter.svg";
 import { LatLngTuple } from "leaflet";
+import Image from "next/image";
 import { useState } from "react";
 import { LocationMap } from "../contact-us/dynamicMap";
 import { EventForm } from "./event-form";
@@ -30,14 +33,7 @@ export function SingleEventPath({ event, ...props }: EventProps) {
       popUp: event.title,
     },
   ];
-  const backgroundImageStyle = {
-    backgroundImage: `url('${absoluteUrl(event.field_event_image?.uri.url)}')`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    width: "100%",
-    height: "300px", // Set a specific height for the container
-  };
+
   const [isDivVisible, setDivVisibility] = useState(false);
   const [showMap, setShowMap] = useState("Show Map");
 
@@ -45,31 +41,53 @@ export function SingleEventPath({ event, ...props }: EventProps) {
     setDivVisibility(!isDivVisible);
     setShowMap(showMap === "Show Map" ? "Hide Map" : "Show Map");
   };
+
   //console.log(event.field_event_speakers);
   console.log(event);
+
   return (
     <div {...props}>
-      <div style={backgroundImageStyle}>
-        <div className="w-full h-full flex text-mischka font-bold items-center justify-center text-md md:text-2xl p-4">
-          <div>
-            <h1 className="text-mischka">{event.title}</h1>
-            {event.field_event_speakers.length > 0 && (
-              <p>
-                Speakers:{" "}
-                {event.field_event_speakers
-                  .map((speaker, index, array) =>
-                    index < array.length - 2
-                      ? speaker.field_event_speakers_name + ", "
-                      : index === array.length - 2
-                      ? speaker.field_event_speakers_name + " and "
-                      : speaker.field_event_speakers_name,
-                  )
-                  .join("")}
-              </p>
-            )}
-            <p>Date: {formatDate(event.field_event_date, router.locale)}</p>
-            <p>{event.field_event_location}</p>
-          </div>
+      <div className="relative w-full h-[400px] bg-evergreen rounded-md">
+        <Image
+          src={absoluteUrl(event.field_event_image?.uri.url)}
+          alt={event.field_event_image.resourceIdObjMeta.alt}
+          width={event.field_event_image.resourceIdObjMeta.width}
+          height={event.field_event_image.resourceIdObjMeta.height}
+          className="w-full h-[300px] object-cover rounded-md"
+        />
+        <div className="absolute bottom-0 left-0 right-0 p-4 text-white bg-primary-600 opacity-70 rounded-b-md">
+          <h3 className="text-white font-bold text-heading-sm md:text-heading-md">
+            {event.title}
+          </h3>
+          <p className="text-lg md:text-xl font-bold pb-2">
+            {formatDate(event.field_event_date, router.locale)}
+          </p>
+          <p className="text-md md:text-lg">
+            {
+              <LocationIcon
+                aria-hidden
+                className="inline-block w-5 h-5 md:w-6 md:h-6 mb-1 mr-1"
+              />
+            }
+            {event.field_event_location}
+          </p>
+          {event.field_event_speakers.length > 0 && (
+            <p className="text-md md:text-lg">
+              <PresenterIcon
+                aria-hidden
+                className="inline-block w-5 h-5 md:w-6 md:h-6 mb-1 mr-1"
+              />
+              {event.field_event_speakers
+                .map((speaker, index, array) =>
+                  index < array.length - 2
+                    ? speaker.field_event_speakers_name + ", "
+                    : index === array.length - 2
+                    ? speaker.field_event_speakers_name + " and "
+                    : speaker.field_event_speakers_name,
+                )
+                .join("")}
+            </p>
+          )}
         </div>
       </div>
 
