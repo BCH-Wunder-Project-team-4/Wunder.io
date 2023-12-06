@@ -1,0 +1,10 @@
+uuid: 2e5fc17e-924d-415d-b0c9-b184f1cee195
+langcode: en
+status: true
+dependencies: {  }
+id: anchor
+label: Anchor
+icon_uuid: null
+icon_default: null
+description: 'Place this anchor paragraph where you want the anchor link to take on click.'
+behavior_plugins: {  }
