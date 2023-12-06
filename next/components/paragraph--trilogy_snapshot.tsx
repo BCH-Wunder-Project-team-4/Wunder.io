@@ -17,7 +17,7 @@ export function ParagraphTrilogySnapshot({
       <div>
         <h2
           className={
-            "leading-none mt-8 mb-4 max-w-2xl text-left text-heading-md font-bold tracking-tight text-primary-600 dark:text-fog md:text-heading-md"
+            "leading-none max-w-2xl text-left text-heading-sm font-bold tracking-tight text-primary-600 dark:text-fog md:text-heading-md"
           }
         >
           {paragraph.field_heading}
@@ -25,7 +25,7 @@ export function ParagraphTrilogySnapshot({
         <FormattedText
           html={paragraph.field_formatted_text.processed}
           className={clsx(
-            "mb-0 max-w-2xl text-left text-sm/xl",
+            "mb-0 max-w-2xl text-left text-md/xl",
             paragraph.field_heading && "mt-4",
           )}
         />
