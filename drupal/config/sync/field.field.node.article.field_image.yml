@@ -20,8 +20,8 @@ id: node.article.field_image
 field_name: field_image
 entity_type: node
 bundle: article
-label: 'Teaser image'
-description: 'Set the image for the article teaser!'
+label: 'Main image'
+description: 'Set the main image. Appears as the teaser image and at the top of the article.'
 required: false
 translatable: true
 default_value: {  }
