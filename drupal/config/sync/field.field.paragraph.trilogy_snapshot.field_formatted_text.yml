@@ -1,0 +1,22 @@
+uuid: 9b14fae5-2942-4338-92d9-b707daedc338
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_formatted_text
+    - paragraphs.paragraphs_type.trilogy_snapshot
+  module:
+    - text
+id: paragraph.trilogy_snapshot.field_formatted_text
+field_name: field_formatted_text
+entity_type: paragraph
+bundle: trilogy_snapshot
+label: 'Formatted text'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long
