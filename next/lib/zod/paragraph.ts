@@ -305,6 +305,11 @@ export const LogoWallSchema = z.object({
   id: z.string(),
   field_heading: z.string().nullable(),
 });
+export const AnchorSchema = z.object({
+  type: z.literal("paragraph--anchor"),
+  id: z.string(),
+  field_section_id: z.string().nullable(),
+});
 
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
@@ -326,6 +331,7 @@ export type FullWidthParagraph = z.infer<typeof FullWidthParagraphSchema>;
 export type ParagraphWunderpedia = z.infer<typeof ParagraphWunderpediaSchema>;
 export type SimpleQuote = z.infer<typeof SimpleQuoteSchema>;
 export type LogoWall = z.infer<typeof LogoWallSchema>;
+export type Anchor = z.infer<typeof AnchorSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -348,4 +354,5 @@ export type Paragraph =
   | ParagraphWunderpedia
   | ScrollingNumbers
   | SimpleQuote
-  | LogoWall;
+  | LogoWall
+  | Anchor;
