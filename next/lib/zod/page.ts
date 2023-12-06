@@ -6,18 +6,19 @@ import {
   FullWidthParagraphSchema,
   HeroSchema,
   ImageSchema,
+  InfosectionBSchema,
+  InfosectionSchema,
   LinksSchema,
   ListingArticlesSchema,
+  LogoWallSchema,
   ParagraphWunderpediaSchema,
   ScrollingNumbersSchema,
-  SimpleQuoteSchema,
-  VideoSchema,
-  ServicesSchema,
-  InfosectionSchema,
-  InfosectionBSchema,
-  SubheadingSchema,
   SectionbgSchema,
-  LogoWallSchema,
+  ServicesSchema,
+  SimpleQuoteSchema,
+  SubheadingSchema,
+  TrilogySnapshotSchema,
+  VideoSchema,
   AnchorSchema,
 } from "@/lib/zod/paragraph";
 
@@ -45,6 +46,7 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   ParagraphWunderpediaSchema,
   SimpleQuoteSchema,
   LogoWallSchema,
+  TrilogySnapshotSchema,
   AnchorSchema
 ]);
 

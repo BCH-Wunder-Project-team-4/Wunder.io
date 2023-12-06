@@ -23,6 +23,7 @@ dependencies:
     - paragraphs.paragraphs_type.services
     - paragraphs.paragraphs_type.simple_quote
     - paragraphs.paragraphs_type.subheading
+    - paragraphs.paragraphs_type.trilogy_snapshot
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.wunderpedia
   module:
@@ -60,6 +61,7 @@ settings:
       infosection: infosection
       logo_wall: logo_wall
       infosection_b: infosection_b
+      trilogy_snapshot: trilogy_snapshot
       anchor: anchor
       services: services
       subheading: subheading
@@ -127,6 +129,9 @@ settings:
         enabled: true
       subheading:
         weight: 27
+        enabled: true
+      trilogy_snapshot:
+        weight: 24
         enabled: true
       video:
         weight: -14

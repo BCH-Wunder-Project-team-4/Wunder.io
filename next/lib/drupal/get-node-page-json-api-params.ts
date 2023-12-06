@@ -1,5 +1,5 @@
-import { DrupalJsonApiParams } from "drupal-jsonapi-params";
 import { env } from "@/env";
+import { DrupalJsonApiParams } from "drupal-jsonapi-params";
 
 export type ResourceType =
   | "node--frontpage"
@@ -10,7 +10,7 @@ export type ResourceType =
   | "node--employee"
   | "node--office"
   | "node--client"
-  | "node--events" 
+  | "node--events"
   | "node--service";
 
 export function getNodePageJsonApiParams(resourceType: ResourceType) {
@@ -33,6 +33,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
         "field_content_elements.field_images.field_media_image",
         "field_content_elements.field_scrolling_numbers_items",
         "field_content_elements.field_dark_image.field_media_image",
+        "field_content_elements.field_trilogy_images.field_media_image",
       ])
       .addFields("node--page", [
         "title",
@@ -192,11 +193,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
     apiParams.addFields(resourceType, ["field_logo", "field_link"]);
   }
   if (resourceType === "node--events") {
-    apiParams.addInclude([
-      "uid",
-      "field_event_image",
-      "field_event_speakers",
-    ]);
+    apiParams.addInclude(["uid", "field_event_image", "field_event_speakers"]);
     apiParams.addFields(resourceType, [
       "title",
       "body",

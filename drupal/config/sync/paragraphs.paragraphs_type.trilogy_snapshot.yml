@@ -1,0 +1,10 @@
+uuid: d69f8aed-b3a7-43f2-94c2-913f4b3fa391
+langcode: en
+status: true
+dependencies: {  }
+id: trilogy_snapshot
+label: 'Trilogy Snapshot'
+icon_uuid: null
+icon_default: null
+description: 'A paragraph with text and three images.'
+behavior_plugins: {  }
