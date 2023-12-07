@@ -13,7 +13,6 @@ interface ExpertTalkListItemProps {
 export function ExpertTalkListItem({ expertTalk }: ExpertTalkListItemProps) {
   const { t } = useTranslation();
   const author = expertTalk.uid?.display_name;
-  const router = useRouter();
   return (
     <Link
       href={expertTalk.path.alias}
