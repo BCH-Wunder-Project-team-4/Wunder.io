@@ -5,6 +5,7 @@ import { HeadingPage } from "@/components/heading--page";
 import { absoluteUrl } from "@/lib/drupal/absolute-url";
 import { formatDate } from "@/lib/utils";
 import { Event } from "@/lib/zod/events";
+import LocationArrowIcon from "@/styles/icons/location-arrow.svg";
 import LocationIcon from "@/styles/icons/location.svg";
 import PresenterIcon from "@/styles/icons/presenter.svg";
 import { LatLngTuple } from "leaflet";
@@ -44,6 +45,7 @@ export function SingleEventPath({ event, ...props }: EventProps) {
 
   //console.log(event.field_event_speakers);
   console.log(event);
+  const time = event.field_event_date.substring(11, 16);
 
   return (
     <div {...props}>
@@ -91,44 +93,49 @@ export function SingleEventPath({ event, ...props }: EventProps) {
         </div>
       </div>
 
-      <div className="flex justify-between pt-4">
-        <div className="w-1/2">
+      <div className="flex flex-col md:flex-row justify-between pt-4">
+        <div className="w-2/3">
           <HeadingPage>{event.title}</HeadingPage>
-          <div className="mb-4 text-scapaflow">
+
+          {/* Event published info */}
+          {/* <div className="mb-4 text-scapaflow dark:text-graysuit">
             <span>published on - </span>
             <span>{formatDate(event.created, router.locale)}</span>
-          </div>
+          </div> */}
           <div>
-            <h2>Date and time</h2>
-            <p>{formatDate(event.field_event_date, router.locale)}</p>
+            <h2 className="text-heading-sm">Date and time</h2>
+            <p>
+              {formatDate(event.field_event_date, router.locale)} {time}
+            </p>
           </div>
         </div>
-        <div className="w-2/4">
+        <div className="w-full md:w-1/3 my-2 md:my-0">
           <EventForm eventName={event.title}></EventForm>
         </div>
       </div>
       <div className="py-4">
-        <h2>Location</h2>
+        <h2 className="text-heading-sm">Location</h2>
         <p>{event.field_event_location}</p>
         <p>{event.field_event_address}</p>
         <div>
           <p
             onClick={handleTextClick}
-            style={{ cursor: "pointer", color: "blue" }}
+            className="bg-primary-600 text-white cursor-pointer px-3 py-2 my-2 inline-block border border-primary-600 rounded-md"
           >
+            <LocationArrowIcon className="inline-block w-5 h-5 -rotate-90 mr-1 mb-1" />
             {showMap}
           </p>
           {isDivVisible && <LocationMap markers={markers} />}
         </div>
       </div>
-      <div>
-        <h2>About this event</h2>
+      <div className="w-2/3 pr-2">
+        <h2 className="text-heading-sm">About this event</h2>
         <p className="pb-4">Duration: {event.field_event_duration}</p>
         <p>{event.field_event_description}</p>
       </div>
       {event.field_event_speakers.length > 0 && (
-        <div className="py-4">
-          <h2>Speakers:</h2>
+        <div className="py-4 w-2/3 pr-2">
+          <h2 className="text-heading-sm">Speakers</h2>
           {event.field_event_speakers.map((speaker, index) => (
             <p key={index} className="py-2">
               {speaker.field_event_speakers_description}

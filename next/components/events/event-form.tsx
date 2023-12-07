@@ -1,18 +1,18 @@
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
-import { useForm } from "react-hook-form";
 import { Button } from "@/ui/button";
 import { Input } from "@/ui/input";
 import { Label } from "@/ui/label";
 import { StatusMessage } from "@/ui/status-message";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 type Inputs = {
   name: string;
   email: string;
 };
 
-export function EventForm({eventName}) {
+export function EventForm({ eventName }) {
   const router = useRouter();
   const [submissionResponse, setSubmissionResponse] = useState(true);
   const { t } = useTranslation();
@@ -23,7 +23,7 @@ export function EventForm({eventName}) {
     formState: { isSubmitSuccessful },
   } = useForm<Inputs>();
 
-  const onSubmit = async (data: Inputs) => {  
+  const onSubmit = async (data: Inputs) => {
     const response = await fetch(`/api/event`, {
       method: "POST",
       body: JSON.stringify({
@@ -38,14 +38,16 @@ export function EventForm({eventName}) {
 
     if (!response.ok) {
       alert("This email has already been submitted.");
-      setSubmissionResponse(false);              
+      setSubmissionResponse(false);
     }
     if (response.ok) {
-      setSubmissionResponse(true);              
+      setSubmissionResponse(true);
     }
   };
 
-  const onErrors = (errors) => {alert(`email is ${errors.email.type}`)};
+  const onErrors = (errors) => {
+    alert(`email is ${errors.email.type}`);
+  };
 
   if (isSubmitSuccessful && submissionResponse) {
     return (
@@ -63,23 +65,25 @@ export function EventForm({eventName}) {
       onSubmit={handleSubmit(onSubmit, onErrors)}
       className="mx-auto flex max-w-3xl flex-col gap-5 rounded border border-finnishwinter bg-white p-4 shadow-md transition-all hover:shadow-md"
     >
-      
-        <>
-          <div className="text-center">
-            <Label htmlFor="email"></Label>
-            <Input 
-              type="email"
-              id="email"
-              className="border"
-              placeholder="enter your email"
-              {...register("email", {
-                required: true,
-              })}
-            />
-          </div>
+      <>
+        <div className="text-center">
+          <h3 className="text-left text-heading-sm mb-4">
+            Sign up for the event
+          </h3>
+          <Label htmlFor="email"></Label>
+          <Input
+            type="email"
+            id="email"
+            className="border"
+            placeholder="enter your email"
+            {...register("email", {
+              required: true,
+            })}
+          />
+        </div>
 
-          <Button type="submit">Register</Button>
-        </>
+        <Button type="submit">Register</Button>
+      </>
     </form>
   );
 }
