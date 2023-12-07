@@ -63,26 +63,31 @@ export function EventForm({ eventName }) {
   return (
     <form
       onSubmit={handleSubmit(onSubmit, onErrors)}
-      className="mx-auto flex max-w-3xl flex-col gap-5 rounded border border-finnishwinter bg-white p-4 shadow-md transition-all hover:shadow-md"
+      className="mx-auto flex max-w-3xl flex-col gap-5 rounded border border-finnishwinter bg-white dark:bg-martinique dark:border-scapaflow p-4 shadow-md transition-all hover:shadow-md"
     >
       <>
         <div className="text-center">
-          <h3 className="text-left text-heading-sm mb-4">
+          <h3 className="text-left text-heading-sm mb-4 text-steelgray dark:text-mischka">
             Sign up for the event
           </h3>
           <Label htmlFor="email"></Label>
           <Input
             type="email"
             id="email"
-            className="border"
-            placeholder="enter your email"
+            className="border dark:text-steelgray"
+            placeholder="Enter your email"
             {...register("email", {
               required: true,
             })}
           />
         </div>
 
-        <Button type="submit">Register</Button>
+        <Button
+          className="dark:hover:bg-steelgray dark:hover:border-steelgray dark:hover:text-white"
+          type="submit"
+        >
+          Register
+        </Button>
       </>
     </form>
   );

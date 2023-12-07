@@ -5,6 +5,7 @@ import { HeadingPage } from "@/components/heading--page";
 import { absoluteUrl } from "@/lib/drupal/absolute-url";
 import { formatDate } from "@/lib/utils";
 import { Event } from "@/lib/zod/events";
+import CalendarIcon from "@/styles/icons/calendar.svg";
 import LocationArrowIcon from "@/styles/icons/location-arrow.svg";
 import LocationIcon from "@/styles/icons/location.svg";
 import PresenterIcon from "@/styles/icons/presenter.svg";
@@ -94,30 +95,41 @@ export function SingleEventPath({ event, ...props }: EventProps) {
       </div>
 
       <div className="flex flex-col md:flex-row justify-between pt-4">
-        <div className="w-2/3">
+        <div className="w-2/3 flex flex-col justify-evenly">
           <HeadingPage>{event.title}</HeadingPage>
-
           {/* Event published info */}
           {/* <div className="mb-4 text-scapaflow dark:text-graysuit">
             <span>published on - </span>
             <span>{formatDate(event.created, router.locale)}</span>
           </div> */}
-          <div>
-            <h2 className="text-heading-sm">Date and time</h2>
-            <p>
-              {formatDate(event.field_event_date, router.locale)} {time}
-            </p>
+          <div className="my-2">
+            <h2 className="text-heading-sm mb-2">Date and time</h2>
+            <div className="flex flex-row gap-3">
+              <CalendarIcon className="inline-block w-5 h-5" />
+              <div>
+                <p>
+                  {formatDate(event.field_event_date, router.locale)} {time}
+                </p>
+                <p className="pb-4">Duration: {event.field_event_duration}</p>
+              </div>
+            </div>
           </div>
         </div>
         <div className="w-full md:w-1/3 my-2 md:my-0">
           <EventForm eventName={event.title}></EventForm>
         </div>
       </div>
+
       <div className="py-4">
-        <h2 className="text-heading-sm">Location</h2>
-        <p>{event.field_event_location}</p>
-        <p>{event.field_event_address}</p>
-        <div>
+        <h2 className="text-heading-sm mb-2">Location</h2>
+        <div className="flex flex-row gap-3">
+          <LocationIcon aria-hidden className="inline-block w-5 h-5" />
+          <div className="w-full md:w-2/3">
+            <p>{event.field_event_location}</p>
+            <p>{event.field_event_address}</p>
+          </div>
+        </div>
+        <div className="w-full md:w-2/3">
           <p
             onClick={handleTextClick}
             className="bg-primary-600 text-white cursor-pointer px-3 py-2 my-2 inline-block border border-primary-600 rounded-md"
@@ -128,16 +140,15 @@ export function SingleEventPath({ event, ...props }: EventProps) {
           {isDivVisible && <LocationMap markers={markers} />}
         </div>
       </div>
-      <div className="w-2/3 pr-2">
-        <h2 className="text-heading-sm">About this event</h2>
-        <p className="pb-4">Duration: {event.field_event_duration}</p>
+      <div className="w-full md:w-2/3 py-4">
+        <h2 className="text-heading-sm mb-2">About this event</h2>
         <p>{event.field_event_description}</p>
       </div>
       {event.field_event_speakers.length > 0 && (
-        <div className="py-4 w-2/3 pr-2">
-          <h2 className="text-heading-sm">Speakers</h2>
+        <div className="w-full md:w-2/3 py-4">
+          <h2 className="text-heading-sm mb-2">Speakers</h2>
           {event.field_event_speakers.map((speaker, index) => (
-            <p key={index} className="py-2">
+            <p key={index} className="pb-2">
               {speaker.field_event_speakers_description}
             </p>
           ))}
