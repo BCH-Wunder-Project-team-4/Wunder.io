@@ -19,7 +19,7 @@ export function EventTeaserComponent({ event }: EventTeaserProps) {
   return (
     <Link
       href={event.path.alias}
-      className="relative grid h-full rounded border border-primary-600 bg-transparent  transition-all hover:shadow-md"
+      className="relative grid h-full max-w-sm rounded border border-primary-600 bg-transparent  transition-all hover:shadow-md"
     >
       {event.field_event_image && (
         <div className="relative">
