@@ -44,20 +44,21 @@ export function SingleEventPath({ event, ...props }: EventProps) {
     setShowMap(showMap === "Show Map" ? "Hide Map" : "Show Map");
   };
 
-  //console.log(event.field_event_speakers);
-  console.log(event);
   const time = event.field_event_date.substring(11, 16);
 
   return (
     <div {...props}>
       <div className="relative w-full h-[400px] bg-evergreen rounded-md">
-        <Image
-          src={absoluteUrl(event.field_event_image?.uri.url)}
-          alt={event.field_event_image.resourceIdObjMeta.alt}
-          width={event.field_event_image.resourceIdObjMeta.width}
-          height={event.field_event_image.resourceIdObjMeta.height}
-          className="w-full h-[300px] object-cover rounded-md"
-        />
+        {event.field_event_image && (
+          <Image
+            src={absoluteUrl(event.field_event_image?.uri.url)}
+            alt={event.field_event_image.resourceIdObjMeta.alt}
+            width={event.field_event_image.resourceIdObjMeta.width}
+            height={event.field_event_image.resourceIdObjMeta.height}
+            priority
+            className="w-full h-[300px] object-cover rounded-md"
+          />
+        )}
         <div className="absolute bottom-0 left-0 right-0 p-4 text-white bg-primary-600 opacity-70 rounded-b-md">
           <h3 className="text-white font-bold text-heading-sm md:text-heading-md">
             {event.title}
@@ -94,7 +95,7 @@ export function SingleEventPath({ event, ...props }: EventProps) {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between pt-4">
+      <div className="flex flex-col md:flex-row justify-between pt-4 gap-2">
         <div className="w-2/3 flex flex-col justify-evenly">
           <HeadingPage>{event.title}</HeadingPage>
           {/* Event published info */}
@@ -105,7 +106,7 @@ export function SingleEventPath({ event, ...props }: EventProps) {
           <div className="my-2">
             <h2 className="text-heading-sm mb-2">Date and time</h2>
             <div className="flex flex-row gap-3">
-              <CalendarIcon className="inline-block w-5 h-5" />
+              <CalendarIcon aria-hidden className="inline-block w-5 h-5" />
               <div>
                 <p>
                   {formatDate(event.field_event_date, router.locale)} {time}
@@ -122,7 +123,7 @@ export function SingleEventPath({ event, ...props }: EventProps) {
 
       <div className="py-4">
         <h2 className="text-heading-sm mb-2">Location</h2>
-        <div className="flex flex-row gap-3">
+        <div className="flex flex-row gap-3 mb-2">
           <LocationIcon aria-hidden className="inline-block w-5 h-5" />
           <div className="w-full md:w-2/3">
             <p>{event.field_event_location}</p>
@@ -134,23 +135,51 @@ export function SingleEventPath({ event, ...props }: EventProps) {
             onClick={handleTextClick}
             className="bg-primary-600 text-white cursor-pointer px-3 py-2 my-2 inline-block border border-primary-600 rounded-md"
           >
-            <LocationArrowIcon className="inline-block w-5 h-5 -rotate-90 mr-1 mb-1" />
+            <LocationArrowIcon
+              aria-hidden
+              className="inline-block w-5 h-5 -rotate-90 mr-1 mb-1"
+            />
             {showMap}
           </p>
           {isDivVisible && <LocationMap markers={markers} />}
         </div>
       </div>
-      <div className="w-full md:w-2/3 py-4">
-        <h2 className="text-heading-sm mb-2">About this event</h2>
-        <p>{event.field_event_description}</p>
-      </div>
+      {event.field_event_description && (
+        <div className="w-full md:w-2/3 py-4">
+          <h2 className="text-heading-sm mb-2">About this event</h2>
+          <p>{event.field_event_description}</p>
+        </div>
+      )}
       {event.field_event_speakers.length > 0 && (
         <div className="w-full md:w-2/3 py-4">
           <h2 className="text-heading-sm mb-2">Speakers</h2>
           {event.field_event_speakers.map((speaker, index) => (
-            <p key={index} className="pb-2">
-              {speaker.field_event_speakers_description}
-            </p>
+            <div key={index} className="py-2">
+              <p className="font-bold mb-2">
+                {speaker.field_event_speakers_name}
+              </p>
+              <div className="flex flex-col md:flex-row gap-4">
+                {speaker.field_event_speakers_image && (
+                  <Image
+                    src={absoluteUrl(
+                      speaker.field_event_speakers_image?.uri.url,
+                    )}
+                    alt={
+                      speaker.field_event_speakers_image.resourceIdObjMeta.alt
+                    }
+                    width={
+                      speaker.field_event_speakers_image.resourceIdObjMeta.width
+                    }
+                    height={
+                      speaker.field_event_speakers_image.resourceIdObjMeta
+                        .height
+                    }
+                    className="w-24 h-auto object-cover rounded-md mb-2"
+                  />
+                )}
+                <p>{speaker.field_event_speakers_description}</p>
+              </div>
+            </div>
           ))}
         </div>
       )}
