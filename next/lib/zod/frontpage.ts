@@ -1,7 +1,3 @@
-import { DrupalNode } from "next-drupal";
-import { z } from "zod";
-
-import { MetatagsSchema } from "@/lib/zod/metatag";
 import {
   AccordionSchema,
   FileAttachmentsSchema,
@@ -10,9 +6,15 @@ import {
   ImageSchema,
   LinksSchema,
   ListingArticlesSchema,
-  VideoSchema,
+  ListingExpertTalksSchema,
   LogoWallSchema,
+  VideoSchema,
+  WunderStorySchema,
 } from "@/lib/zod/paragraph";
+
+import { DrupalNode } from "next-drupal";
+import { MetatagsSchema } from "@/lib/zod/metatag";
+import { z } from "zod";
 
 const FrontpageElementsSchema = z.discriminatedUnion("type", [
   FormattedTextSchema,
@@ -23,6 +25,8 @@ const FrontpageElementsSchema = z.discriminatedUnion("type", [
   HeroSchema,
   ListingArticlesSchema,
   FileAttachmentsSchema,
+  WunderStorySchema,
+  ListingExpertTalksSchema,
   LogoWallSchema,
 ]);
 

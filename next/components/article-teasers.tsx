@@ -1,12 +1,10 @@
-import Link from "next/link";
-import { useTranslation } from "next-i18next";
-import clsx from "clsx";
-
+import ArrowIcon from "@/styles/icons/arrow-down.svg";
 import { ArticleTeaser } from "@/components/article-teaser";
 import { ArticleTeaser as ArticleTeaserType } from "@/lib/zod/article-teaser";
-import ArrowIcon from "@/styles/icons/arrow-down.svg";
-
+import Link from "next/link";
 import { buttonVariants } from "@/ui/button";
+import clsx from "clsx";
+import { useTranslation } from "next-i18next";
 
 interface LatestArticlesProps {
   articles?: ArticleTeaserType[];

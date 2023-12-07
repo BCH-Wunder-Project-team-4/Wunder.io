@@ -1,8 +1,7 @@
 import { DrupalNode } from "next-drupal";
-import { z } from "zod";
-
-import { MetatagsSchema } from "@/lib/zod/metatag";
 import { ImageShape } from "@/lib/zod/paragraph";
+import { MetatagsSchema } from "@/lib/zod/metatag";
+import { z } from "zod";
 
 export const EventBaseSchema = z.object({
   type: z.literal("node--events"),

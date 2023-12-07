@@ -1,0 +1,36 @@
+uuid: 8b5d2dd3-5af5-4681-be12-824303ae3fc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.wunder_story.field_formatted_text
+    - field.field.paragraph.wunder_story.field_secondary_link
+    - paragraphs.paragraphs_type.wunder_story
+  module:
+    - link
+    - text
+id: paragraph.wunder_story.default
+targetEntityType: paragraph
+bundle: wunder_story
+mode: default
+content:
+  field_formatted_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_secondary_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

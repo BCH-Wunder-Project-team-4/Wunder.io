@@ -1,20 +1,22 @@
+import { EventTeaser as EventTeaserType, validateAndCleanupEventTeaser } from "@/lib/zod/events-teaser";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { useTranslation } from "next-i18next";
+import {
+  LanguageLinks,
+  createLanguageLinksForNextOnlyPage,
+} from "@/lib/contexts/language-links-context";
 import { useEffect, useRef, useState } from "react";
+
+import ArrowIcon from "@/styles/icons/arrow-down.svg";
+import { EventListItem } from "@/components/events/eventList";
 import { HeadingPage } from "@/components/heading--page";
 import { LayoutProps } from "@/components/layout";
 import { Meta } from "@/components/meta";
-import {
-  createLanguageLinksForNextOnlyPage,
-  LanguageLinks,
-} from "@/lib/contexts/language-links-context";
-import { getCommonPageProps } from "@/lib/get-common-page-props";
-import { EventTeaser as EventTeaserType, validateAndCleanupEventTeaser } from "@/lib/zod/events-teaser";
-import { EventListItem } from "@/components/events/eventList";
-import { getLatestEventsItems } from "@/lib/drupal/get-events";
+import { buttonVariants } from "@/ui/button";
 import clsx from "clsx";
-import ArrowIcon from "@/styles/icons/arrow-down.svg";
+import { getCommonPageProps } from "@/lib/get-common-page-props";
+import { getLatestEventsItems } from "@/lib/drupal/get-events";
 import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
 interface AllEventsPageProps extends LayoutProps {
   eventTeasers: EventTeaserType[];
@@ -27,29 +29,29 @@ export default function AllEventsPage({
   const { t } = useTranslation();
   const router = useRouter();
   const focusRef = useRef<HTMLDivElement>(null);
-  
+
   return (
     <>
-      <Meta title={t("all-events")} metatags={[]} />
+      <Meta title={"All Expert Talks"} metatags={[]} />
       <div ref={focusRef} tabIndex={-1} />
-      <HeadingPage>{t("all-events")}</HeadingPage>
+      <HeadingPage>All Expert Talks</HeadingPage>
       <ul className="mt-4">
         {eventTeasers?.map((event) => (
           <li key={event.id}>
             <EventListItem event={event} />
           </li>
-          
+
         ))}
       </ul>
-      {/* <div>
+      <div>
         <button className={clsx(
-              buttonVariants({ variant: "primary" }),
-              "text-base mr-4 mt-4 inline-flex px-5 py-3",
-            )}
-          >
-            {t("load-more")}
-            <ArrowIcon aria-hidden className="ml-3 h-6 w-6 -rotate-90" /></button>
-      </div> */}
+          buttonVariants({ variant: "primary" }),
+          "text-base mr-4 mt-4 inline-flex px-5 py-3",
+        )}
+        >
+          {t("load-more")}
+          <ArrowIcon aria-hidden className="ml-3 h-6 w-6 -rotate-90" /></button>
+      </div>
     </>
   );
 }
@@ -60,11 +62,11 @@ export const getStaticProps: GetStaticProps<AllEventsPageProps> = async (
   context,
 ) => {
   console.log("context", context);
-  
+
   const pageRoot = "/contact";
   const languageLinks = createLanguageLinksForNextOnlyPage(pageRoot, context);
   const { events } = await getLatestEventsItems({
-    locale: context.locale 
+    locale: context.locale
   });
 
 

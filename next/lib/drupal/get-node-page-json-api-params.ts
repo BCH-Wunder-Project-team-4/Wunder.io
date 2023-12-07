@@ -1,5 +1,5 @@
-import { env } from "@/env";
 import { DrupalJsonApiParams } from "drupal-jsonapi-params";
+import { env } from "@/env";
 
 export type ResourceType =
   | "node--frontpage"
@@ -11,7 +11,8 @@ export type ResourceType =
   | "node--office"
   | "node--client"
   | "node--events"
-  | "node--service";
+  | "node--service"
+  | "node--expert_talks";
 
 export function getNodePageJsonApiParams(resourceType: ResourceType) {
   const apiParams = new DrupalJsonApiParams().addFilter(
@@ -90,6 +91,27 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "path",
       "sticky",
       "field_content_elements",
+    ]);
+  }
+  if (resourceType === "node--expert_talks") {
+    apiParams.addInclude([
+      "field_image",
+      "uid",
+      "field_experts_photo"]);
+    apiParams.addFields(resourceType, [
+      "title",
+      "body",
+      "uid",
+      "created",
+      "field_image",
+      "field_experts_photo",
+      "status",
+      "metatag",
+      "field_excerpt",
+      "path",
+      "sticky",
+      "field_name",
+      "field_experts_position",
     ]);
   }
   if (resourceType === "node--job") {

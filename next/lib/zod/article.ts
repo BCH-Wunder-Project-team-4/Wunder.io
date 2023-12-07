@@ -1,8 +1,3 @@
-import { DrupalNode } from "next-drupal";
-import { z } from "zod";
-
-import { MetatagsSchema } from "@/lib/zod/metatag";
-import { ImageShape } from "@/lib/zod/paragraph";
 import {
   AccordionSchema,
   BannerSchema,
@@ -12,10 +7,15 @@ import {
   ImageSchema,
   LinksSchema,
   ListingArticlesSchema,
-  VideoSchema,
   SimpleQuoteSchema,
   SubheadingSchema,
+  VideoSchema,
 } from "@/lib/zod/paragraph";
+
+import { DrupalNode } from "next-drupal";
+import { ImageShape } from "@/lib/zod/paragraph";
+import { MetatagsSchema } from "@/lib/zod/metatag";
+import { z } from "zod";
 
 const ArticleElementsSchema = z.discriminatedUnion("type", [
   FormattedTextSchema,
@@ -55,31 +55,31 @@ export function validateAndCleanupArticle(article: DrupalNode): Article | null {
     }).parse(article);
 
     const validatedParagraphs = article.field_content_elements
-    .map((paragraph: any) => {
-      const result = ArticleElementsSchema.safeParse(paragraph);
+      .map((paragraph: any) => {
+        const result = ArticleElementsSchema.safeParse(paragraph);
 
-      switch (result.success) {
-        case true:
-          return result.data;
-        case false:
-          console.log(
-            `Error validating article paragraph ${paragraph.type}: `,
-            JSON.stringify(result.error, null, 2),
-          );
-          return null;
-      }
-    })
-    .filter(Boolean);
+        switch (result.success) {
+          case true:
+            return result.data;
+          case false:
+            console.log(
+              `Error validating article paragraph ${paragraph.type}: `,
+              JSON.stringify(result.error, null, 2),
+            );
+            return null;
+        }
+      })
+      .filter(Boolean);
 
-  return {
-    ...topLevelArticleData,
-    field_content_elements: validatedParagraphs,
-  };
-} catch (error) {
-  const { name = "ZodError", issues = [] } = error;
-  console.log(JSON.stringify({ name, issues, article }, null, 2));
-  return null;
-}
+    return {
+      ...topLevelArticleData,
+      field_content_elements: validatedParagraphs,
+    };
+  } catch (error) {
+    const { name = "ZodError", issues = [] } = error;
+    console.log(JSON.stringify({ name, issues, article }, null, 2));
+    return null;
+  }
 }
 
 export type Article = z.infer<typeof ArticleSchema>;

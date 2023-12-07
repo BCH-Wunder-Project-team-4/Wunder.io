@@ -1,9 +1,8 @@
 import { DrupalNode } from "next-drupal";
-import { z } from "zod";
-
-import { MetatagsSchema } from "@/lib/zod/metatag";
 import { ImageShape } from "@/lib/zod/paragraph";
+import { MetatagsSchema } from "@/lib/zod/metatag";
 import { any } from "cypress/types/bluebird";
+import { z } from "zod";
 
 export const ClientBaseSchema = z.object({
   type: z.literal("node--client"),

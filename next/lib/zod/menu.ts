@@ -1,6 +1,5 @@
-import { z } from "zod";
-
 import { DrupalMenuLinkContentWithLangcode } from "@/types";
+import { z } from "zod";
 
 export const MenuItemOptionsSchema = z.object({
   attributes: z.object({

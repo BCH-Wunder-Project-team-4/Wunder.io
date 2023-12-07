@@ -1,0 +1,29 @@
+uuid: d017da40-3762-4c49-b8d1-fb0f716b2a25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.expert_talks
+    - taxonomy.vocabulary.tags
+id: node.expert_talks.field_tags
+field_name: field_tags
+entity_type: node
+bundle: expert_talks
+label: Tags
+description: 'Enter a comma-separated list. For example: Amsterdam, Mexico City, "Cleveland, Ohio"'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: _none
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

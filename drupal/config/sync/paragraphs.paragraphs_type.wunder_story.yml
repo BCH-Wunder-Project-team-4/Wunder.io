@@ -1,0 +1,10 @@
+uuid: 7cb088aa-1b14-4947-837e-1777f92f6af6
+langcode: en
+status: true
+dependencies: {  }
+id: wunder_story
+label: 'Wunder Story'
+icon_uuid: null
+icon_default: null
+description: 'A small paragraph with a Wunder icon on the top and a small Wunder story and button-link to another page'
+behavior_plugins: {  }

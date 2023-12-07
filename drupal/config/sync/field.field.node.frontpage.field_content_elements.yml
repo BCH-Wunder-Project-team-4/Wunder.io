@@ -8,13 +8,16 @@ dependencies:
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.file_attachments
     - paragraphs.paragraphs_type.formatted_text
+    - paragraphs.paragraphs_type.full_width_paragraph
     - paragraphs.paragraphs_type.hero
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.listing_articles
+    - paragraphs.paragraphs_type.listing_experts_talks
     - paragraphs.paragraphs_type.logo_wall
     - paragraphs.paragraphs_type.subheading
     - paragraphs.paragraphs_type.video
+    - paragraphs.paragraphs_type.wunder_story
   module:
     - entity_reference_revisions
 _core:
@@ -42,6 +45,9 @@ settings:
       listing_articles: listing_articles
       file_attachments: file_attachments
       logo_wall: logo_wall
+      wunder_story: wunder_story
+      listing_experts_talks: listing_experts_talks
+      full_width_paragraph: full_width_paragraph
       subheading: subheading
     negate: 0
     target_bundles_drag_drop:
@@ -54,6 +60,9 @@ settings:
       banner:
         weight: 25
         enabled: false
+      event_speakers_information:
+        weight: 29
+        enabled: false
       file_attachments:
         weight: 10
         enabled: true
@@ -62,7 +71,7 @@ settings:
         enabled: true
       full_width_paragraph:
         weight: 28
-        enabled: false
+        enabled: true
       hero:
         weight: -15
         enabled: true
@@ -80,6 +89,9 @@ settings:
         enabled: true
       listing_articles:
         weight: 9
+        enabled: true
+      listing_experts_talks:
+        weight: 25
         enabled: true
       logo_wall:
         weight: 22
@@ -104,6 +116,9 @@ settings:
         enabled: true
       video:
         weight: -9
+        enabled: true
+      wunder_story:
+        weight: 22
         enabled: true
       wunderpedia:
         weight: 42
