@@ -1,8 +1,6 @@
 import { DrupalNode } from "next-drupal";
-import { z } from "zod";
 import { EventBaseSchema } from "@/lib/zod/events";
-
-
+import { z } from "zod";
 
 export const EventTeaserSchema = EventBaseSchema.extend({
   path: z.object({

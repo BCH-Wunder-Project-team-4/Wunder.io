@@ -1,3 +1,4 @@
+import { any } from "cypress/types/bluebird";
 import { z } from "zod";
 
 export const FormattedTextSchema = z.object({
@@ -11,6 +12,12 @@ export const FormattedTextSchema = z.object({
 
 export const ListingArticlesSchema = z.object({
   type: z.literal("paragraph--listing_articles"),
+  id: z.string(),
+  field_heading: z.string().nullable(),
+  field_limit: z.number(),
+});
+export const ListingExpertTalksSchema = z.object({
+  type: z.literal("paragraph--listing_experts_talks"),
   id: z.string(),
   field_heading: z.string().nullable(),
   field_limit: z.number(),
@@ -291,7 +298,7 @@ export const ParagraphWunderpediaSchema = z.object({
   type: z.literal("paragraph--wunderpedia"),
   id: z.string(),
   field_heading: z.string().nullable().optional(),
-  field_formatted_text: z.any(),
+  field_formatted_text: z.object({ processed: z.string() }),
   field_links: z.array(LinkShape),
 });
 
@@ -322,6 +329,13 @@ export const LogoWallSchema = z.object({
   id: z.string(),
   field_heading: z.string().nullable(),
 });
+
+export const WunderStorySchema = z.object({
+  type: z.literal("paragraph--wunder_story"),
+  id: z.string(),
+  field_formatted_text: z.object({ processed: z.string() }),
+  field_secondary_link: LinkShape.nullable().optional(),
+});
 export const AnchorSchema = z.object({
   type: z.literal("paragraph--anchor"),
   id: z.string(),
@@ -337,6 +351,7 @@ export type Accordion = z.infer<typeof AccordionSchema>;
 export type AccordionItem = z.infer<typeof AccordionItemSchema>;
 export type Hero = z.infer<typeof HeroSchema>;
 export type ListingArticles = z.infer<typeof ListingArticlesSchema>;
+export type ListingExpertTalks = z.infer<typeof ListingExpertTalksSchema>;
 export type FileAttachments = z.infer<typeof FileAttachmentsSchema>;
 export type Banner = z.infer<typeof BannerSchema>;
 export type Services = z.infer<typeof ServicesSchema>;
@@ -350,6 +365,7 @@ export type SimpleQuote = z.infer<typeof SimpleQuoteSchema>;
 export type LogoWall = z.infer<typeof LogoWallSchema>;
 export type TrilogySnapshot = z.infer<typeof TrilogySnapshotSchema>;
 export type Anchor = z.infer<typeof AnchorSchema>;
+export type WunderStory = z.infer<typeof WunderStorySchema>;
 
 export type Paragraph =
   | FormattedText
@@ -360,6 +376,7 @@ export type Paragraph =
   | AccordionItem
   | Hero
   | ListingArticles
+  | ListingExpertTalks
   | FileAttachments
   | Services
   | Infosection
@@ -370,6 +387,7 @@ export type Paragraph =
   | Banner
   | ParagraphWunderpedia
   | ScrollingNumbers
+  | WunderStory
   | SimpleQuote
   | LogoWall
   | TrilogySnapshot

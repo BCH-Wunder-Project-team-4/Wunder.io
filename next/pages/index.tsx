@@ -1,41 +1,39 @@
+import {
+  ArticleTeaser,
+  validateAndCleanupArticleTeaser,
+} from "@/lib/zod/article-teaser";
+import { ExpertTalkTeaser, validateAndCleanupExpertTalkTeaser } from "@/lib/zod/expertTalk-teaser";
+import { Frontpage, validateAndCleanupFrontpage } from "@/lib/zod/frontpage";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { DrupalNode } from "next-drupal";
-import { useTranslation } from "next-i18next";
 
-import { ArticleTeasers } from "@/components/article-teasers";
-import { ContactForm } from "@/components/contact-form";
-import { ContactList } from "@/components/contact-list";
+import { Divider } from "@/ui/divider";
+import { DrupalNode } from "next-drupal";
 import { LayoutProps } from "@/components/layout";
 import { LogoStrip } from "@/components/logo-strip";
 import { Meta } from "@/components/meta";
 import { Paragraph } from "@/components/paragraph";
 import { drupal } from "@/lib/drupal/drupal-client";
-import { getNodePageJsonApiParams } from "@/lib/drupal/get-node-page-json-api-params";
 import { getCommonPageProps } from "@/lib/get-common-page-props";
-import {
-  ArticleTeaser,
-  validateAndCleanupArticleTeaser,
-} from "@/lib/zod/article-teaser";
-import { Frontpage, validateAndCleanupFrontpage } from "@/lib/zod/frontpage";
-
-import { Divider } from "@/ui/divider";
-import { validateAndCleanupEventTeaser } from "@/lib/zod/events-teaser";
 import { getLatestEventsItems } from "@/lib/drupal/get-events";
-import { Events } from "@/components/events/events";
+import { getNodePageJsonApiParams } from "@/lib/drupal/get-node-page-json-api-params";
+import { useTranslation } from "next-i18next";
+import { validateAndCleanupEventTeaser } from "@/lib/zod/events-teaser";
 
 interface IndexPageProps extends LayoutProps {
   frontpage: Frontpage | null;
   promotedArticleTeasers: ArticleTeaser[];
+  promotedExpertTalkTeasers: ExpertTalkTeaser[];
   eventsTeasers: any[];
 }
 
 export default function IndexPage({
   frontpage,
   promotedArticleTeasers,
+  promotedExpertTalkTeasers,
   eventsTeasers,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation();
-  
+
 
   return (
     <>
@@ -46,15 +44,6 @@ export default function IndexPage({
         ))}
       </div>
       <Divider className="max-w-4xl" />
-      <ContactForm />
-      <Divider className="max-w-4xl" />
-      <ArticleTeasers
-        articles={promotedArticleTeasers}
-        heading={t("promoted-articles")}
-      />
-      <Events events={eventsTeasers} heading={t("Coming events")}></Events>
-
-      <ContactList />
       <LogoStrip />
     </>
   );
@@ -86,6 +75,19 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async (
       "page[limit]": 3,
     },
   });
+  const promotedExpertTalkTeasers = await drupal.getResourceCollectionFromContext<
+    DrupalNode[]
+  >("node--expert_talks", context, {
+    params: {
+      "filter[status]": 1,
+      "filter[langcode]": context.locale,
+      "filter[promote]": 1,
+      "fields[node--expert_talks]": "title,path,field_image,uid,created,field_experts_photo,field_name,field_excerpt",
+      include: "field_image,uid,field_experts_photo",
+      sort: "-sticky,-created",
+      "page[limit]": 3,
+    },
+  });
 
   const { events } = await getLatestEventsItems({ limit: 3, locale: context.locale });
 
@@ -95,6 +97,9 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async (
       frontpage: frontpage ? validateAndCleanupFrontpage(frontpage) : null,
       promotedArticleTeasers: promotedArticleTeasers.map((teaser) =>
         validateAndCleanupArticleTeaser(teaser),
+      ),
+      promotedExpertTalkTeasers: promotedExpertTalkTeasers.map((teaser) =>
+        validateAndCleanupExpertTalkTeaser(teaser),
       ),
       eventsTeasers: events.map((teaser) =>
         validateAndCleanupEventTeaser(teaser),

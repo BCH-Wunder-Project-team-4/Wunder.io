@@ -1,7 +1,6 @@
 import { DrupalNode } from "next-drupal";
-import { z } from "zod";
-
 import { ServiceSchema } from "@/lib/zod/service";
+import { z } from "zod";
 
 export const ServiceTeaserSchema = ServiceSchema.extend({
   path: z.object({

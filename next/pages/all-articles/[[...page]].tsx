@@ -1,22 +1,22 @@
+import {
+  ArticleTeaser as ArticleTeaserType,
+  validateAndCleanupArticleTeaser,
+} from "@/lib/zod/article-teaser";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
-import { useTranslation } from "next-i18next";
-import { useRef } from "react";
+import {
+  LanguageLinks,
+  createLanguageLinksForNextOnlyPage,
+} from "@/lib/contexts/language-links-context";
+import { Pagination, PaginationProps } from "@/components/pagination";
 
 import { ArticleListItem } from "@/components/article-list-item";
 import { HeadingPage } from "@/components/heading--page";
 import { LayoutProps } from "@/components/layout";
 import { Meta } from "@/components/meta";
-import { Pagination, PaginationProps } from "@/components/pagination";
-import {
-  createLanguageLinksForNextOnlyPage,
-  LanguageLinks,
-} from "@/lib/contexts/language-links-context";
-import { getLatestArticlesItems } from "@/lib/drupal/get-articles";
 import { getCommonPageProps } from "@/lib/get-common-page-props";
-import {
-  ArticleTeaser as ArticleTeaserType,
-  validateAndCleanupArticleTeaser,
-} from "@/lib/zod/article-teaser";
+import { getLatestArticlesItems } from "@/lib/drupal/get-articles";
+import { useRef } from "react";
+import { useTranslation } from "next-i18next";
 
 interface AllArticlesPageProps extends LayoutProps {
   articleTeasers: ArticleTeaserType[];
@@ -67,7 +67,7 @@ export const getStaticProps: GetStaticProps<AllArticlesPageProps> = async (
 ) => {
   // Get the page parameter:
   const page = context.params?.page;
-  
+
   const currentPage = parseInt(Array.isArray(page) ? page[0] : page || "1");
   const PAGE_SIZE = 6;
 

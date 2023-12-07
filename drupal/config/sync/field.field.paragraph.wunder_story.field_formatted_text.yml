@@ -1,0 +1,22 @@
+uuid: caf32ae4-f3bd-4200-84a7-d6b4c7ae92c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_formatted_text
+    - paragraphs.paragraphs_type.wunder_story
+  module:
+    - text
+id: paragraph.wunder_story.field_formatted_text
+field_name: field_formatted_text
+entity_type: paragraph
+bundle: wunder_story
+label: 'Formatted text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

@@ -1,0 +1,16 @@
+uuid: 31bc66c6-a0c3-4ad9-917a-f4417e6e8b42
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.expert_talks
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.expert_talks
+target_entity_type_id: node
+target_bundle: expert_talks
+default_langcode: site_default
+language_alterable: true

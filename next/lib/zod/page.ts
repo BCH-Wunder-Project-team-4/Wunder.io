@@ -10,6 +10,7 @@ import {
   InfosectionSchema,
   LinksSchema,
   ListingArticlesSchema,
+  ListingExpertTalksSchema,
   LogoWallSchema,
   ParagraphWunderpediaSchema,
   ScrollingNumbersSchema,
@@ -22,8 +23,8 @@ import {
   AnchorSchema,
 } from "@/lib/zod/paragraph";
 
-import { MetatagsSchema } from "@/lib/zod/metatag";
 import { DrupalNode } from "next-drupal";
+import { MetatagsSchema } from "@/lib/zod/metatag";
 import { z } from "zod";
 
 const PageElementsSchema = z.discriminatedUnion("type", [
@@ -34,6 +35,7 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   AccordionSchema,
   HeroSchema,
   ListingArticlesSchema,
+  ListingExpertTalksSchema,
   FileAttachmentsSchema,
   BannerSchema,
   ScrollingNumbersSchema,

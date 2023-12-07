@@ -1,14 +1,13 @@
+import { ArticleTeaser as ArticleTeaserType } from "@/lib/zod/article-teaser";
 import Image from "next/image";
 import Link from "next/link";
+import { absoluteUrl } from "@/lib/drupal/absolute-url";
+import { formatDate } from "@/lib/utils";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 
-import { absoluteUrl } from "@/lib/drupal/absolute-url";
-import { formatDate } from "@/lib/utils";
-import { ArticleTeaser } from "@/lib/zod/article-teaser";
-
 interface ArticleTeaserProps {
-  article: ArticleTeaser;
+  article: ArticleTeaserType;
 }
 
 export function ArticleTeaser({ article }: ArticleTeaserProps) {

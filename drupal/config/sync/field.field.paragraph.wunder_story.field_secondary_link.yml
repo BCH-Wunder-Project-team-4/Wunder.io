@@ -1,0 +1,23 @@
+uuid: b52bd2fc-5666-4bd0-9f4a-50948d19d0ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_secondary_link
+    - paragraphs.paragraphs_type.wunder_story
+  module:
+    - link
+id: paragraph.wunder_story.field_secondary_link
+field_name: field_secondary_link
+entity_type: paragraph
+bundle: wunder_story
+label: 'Secondary link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

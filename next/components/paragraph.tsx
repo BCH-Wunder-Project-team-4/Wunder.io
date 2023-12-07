@@ -6,6 +6,7 @@ import { ParagraphHero } from "@/components/paragraph--hero";
 import { ParagraphImage } from "@/components/paragraph--image";
 import { ParagraphLinks } from "@/components/paragraph--links";
 import { ParagraphListingArticles } from "@/components/paragraph--listing-articles";
+import { ParagraphListingExpertTalks } from "@/components/paragraph--listing-expertTalks";
 import { ParagraphText } from "@/components/paragraph--text";
 import { Paragraph } from "@/lib/zod/paragraph";
 import { ParagraphBanner } from "./paragraph--banner";
@@ -19,6 +20,7 @@ import { ParagraphSimpleQuote } from "./paragraph--simple-quote";
 import { ParagraphSubheading } from "./paragraph--subheading";
 import { ParagraphTrilogySnapshot } from "./paragraph--trilogy_snapshot";
 import { ParagraphWunderpedia } from "./paragraph--wunderpedia";
+import { ParagraphWunderStory } from "./paragraph--wunderStory";
 import { ParagraphAnchor } from "./paragraph--anchor";
 
 // Use dynamic imports to defer loading a component until after initial page load: https://nextjs.org/docs/advanced-features/dynamic-import
@@ -57,6 +59,9 @@ export function Paragraph({ paragraph }: { paragraph: Paragraph }) {
     case "paragraph--listing_articles": {
       return <ParagraphListingArticles paragraph={paragraph} />;
     }
+    case "paragraph--listing_experts_talks": {
+      return <ParagraphListingExpertTalks paragraph={paragraph} />;
+    }
     case "paragraph--file_attachments": {
       return <ParagraphFileAttachments paragraph={paragraph} />;
     }
@@ -92,6 +97,9 @@ export function Paragraph({ paragraph }: { paragraph: Paragraph }) {
     }
     case "paragraph--logo_wall": {
       return <ParagraphLogoWall paragraph={paragraph} />;
+    }
+    case "paragraph--wunder_story": {
+      return <ParagraphWunderStory paragraph={paragraph} />;
     }
     case "paragraph--trilogy_snapshot": {
       return <ParagraphTrilogySnapshot paragraph={paragraph} />;

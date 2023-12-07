@@ -1,8 +1,3 @@
-import { DrupalNode } from "next-drupal";
-import { z } from "zod";
-
-import { MetatagsSchema } from "@/lib/zod/metatag";
-import { ImageShape } from "@/lib/zod/paragraph";
 import {
   AccordionSchema,
   BannerSchema,
@@ -12,10 +7,15 @@ import {
   ImageSchema,
   LinksSchema,
   ListingArticlesSchema,
-  VideoSchema,
   SimpleQuoteSchema,
   SubheadingSchema,
+  VideoSchema,
 } from "@/lib/zod/paragraph";
+
+import { DrupalNode } from "next-drupal";
+import { ImageShape } from "@/lib/zod/paragraph";
+import { MetatagsSchema } from "@/lib/zod/metatag";
+import { z } from "zod";
 
 const JobElementsSchema = z.discriminatedUnion("type", [
   FormattedTextSchema,

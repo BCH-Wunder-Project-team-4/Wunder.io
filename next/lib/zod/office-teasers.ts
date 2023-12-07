@@ -1,8 +1,6 @@
 import { DrupalNode } from "next-drupal";
-import { z } from "zod";
 import { OfficeBaseSchema } from "@/lib/zod/office";
-
-
+import { z } from "zod";
 
 export const OfficeTeaserSchema = OfficeBaseSchema.extend({
   path: z.object({

@@ -1,0 +1,25 @@
+uuid: 11626c2c-bd04-4b7f-8cd0-2b33bcc88cbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_limit
+    - paragraphs.paragraphs_type.listing_experts_talks
+id: paragraph.listing_experts_talks.field_limit
+field_name: field_limit
+entity_type: paragraph
+bundle: listing_experts_talks
+label: Limit
+description: 'Choose how many items at most you want to display for the listing.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 5
+default_value_callback: ''
+settings:
+  min: 1
+  max: 100
+  prefix: ''
+  suffix: ''
+field_type: integer

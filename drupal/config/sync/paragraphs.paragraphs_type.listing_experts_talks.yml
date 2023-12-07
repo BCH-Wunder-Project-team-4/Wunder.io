@@ -1,0 +1,10 @@
+uuid: 6cdfede5-63dc-42bf-a95c-bb5c39a62fc3
+langcode: en
+status: true
+dependencies: {  }
+id: listing_experts_talks
+label: 'Listing: Experts talks'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

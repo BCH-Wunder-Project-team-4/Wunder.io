@@ -1,7 +1,6 @@
 import { DrupalNode } from "next-drupal";
-import { z } from "zod";
-
 import { MetatagsSchema } from "@/lib/zod/metatag";
+import { z } from "zod";
 
 export const OfficeBaseSchema = z.object({
   type: z.literal("node--office"),
@@ -19,7 +18,7 @@ export const OfficeBaseSchema = z.object({
   field_office_country: z.string().optional().nullable(),
   field_office_geocode_latitude: z.number().optional().nullable(),
   field_office_geocode_longitude: z.number().optional().nullable(),
-  
+
 });
 
 const OfficeSchema = OfficeBaseSchema.extend({
