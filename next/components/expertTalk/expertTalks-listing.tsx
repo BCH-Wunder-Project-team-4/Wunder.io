@@ -1,11 +1,11 @@
-import { ArticleTeaser } from "@/components/article-teaser";
-import { ArticleTeaser as ArticleTeaserType } from "@/lib/zod/article-teaser";
+import { ExpertTalkTeaser } from "@/components/expertTalk/expertTalk-teaser";
+import { ExpertTalkTeaser as ExpertTalkTeaserType } from "@/lib/zod/expertTalk-teaser";
 import { LoadingSpinner } from "@/components/loading-spinner";
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 
-export function ArticlesListing({
+export function ExpertTalksListing({
   listingId,
   limit,
 }: {
@@ -15,10 +15,10 @@ export function ArticlesListing({
   const { t } = useTranslation();
   const router = useRouter();
   const { data, isLoading } = useQuery(
-    [`articles-${router.locale}-${listingId}`],
+    [`expertTalks-${router.locale}-${listingId}`],
     async () => {
       const response = await fetch(
-        `/api/articles-listing/${router.locale}?limit=${limit}`,
+        `/api/expertTalks-listing/${router.locale}?limit=${limit}`,
         {
           headers: {
             "accept-language": router.locale,
@@ -33,11 +33,11 @@ export function ArticlesListing({
   return (
     <>
       {isLoading && <LoadingSpinner />}
-      <ul className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+      <ul className="mt-4 flex overflow-x-auto no-scrollbar">
         {!isLoading &&
-          data?.map((article: ArticleTeaserType) => (
-            <li key={article.id}>
-              <ArticleTeaser article={article} />
+          data?.map((expertTalk: ExpertTalkTeaserType) => (
+            <li key={expertTalk.id} className="flex flex-nowrap lg:ml-20 md:ml-10 ml-5 ">
+              <ExpertTalkTeaser expertTalk={expertTalk} />
             </li>
           ))}
       </ul>

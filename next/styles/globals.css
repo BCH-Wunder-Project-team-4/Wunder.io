@@ -28,7 +28,19 @@
 }
 
 @layer utilities {
-  .circle-clip {
-    clip-path: circle();
-  }
+  @variants responsive {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+}
+.circle-clip {
+  clip-path: circle();
+}
 }

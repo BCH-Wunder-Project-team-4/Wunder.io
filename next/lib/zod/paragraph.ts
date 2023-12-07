@@ -16,6 +16,12 @@ export const ListingArticlesSchema = z.object({
   field_heading: z.string().nullable(),
   field_limit: z.number(),
 });
+export const ListingExpertTalksSchema = z.object({
+  type: z.literal("paragraph--listing_experts_talks"),
+  id: z.string(),
+  field_heading: z.string().nullable(),
+  field_limit: z.number(),
+});
 
 export const ImageShape = z.object({
   type: z.literal("file--file"),
@@ -323,6 +329,7 @@ export type Accordion = z.infer<typeof AccordionSchema>;
 export type AccordionItem = z.infer<typeof AccordionItemSchema>;
 export type Hero = z.infer<typeof HeroSchema>;
 export type ListingArticles = z.infer<typeof ListingArticlesSchema>;
+export type ListingExpertTalks = z.infer<typeof ListingExpertTalksSchema>;
 export type FileAttachments = z.infer<typeof FileAttachmentsSchema>;
 export type Banner = z.infer<typeof BannerSchema>;
 export type Services = z.infer<typeof ServicesSchema>;
@@ -345,8 +352,8 @@ export type Paragraph =
   | AccordionItem
   | Hero
   | ListingArticles
+  | ListingExpertTalks
   | FileAttachments
-
   | Services
   | Infosection
   | InfosectionB

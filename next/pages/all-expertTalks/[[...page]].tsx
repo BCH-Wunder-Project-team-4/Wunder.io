@@ -1,7 +1,7 @@
 import {
-  ArticleTeaser as ArticleTeaserType,
-  validateAndCleanupArticleTeaser,
-} from "@/lib/zod/article-teaser";
+  ExpertTalkTeaser as ExpertTalkTeaserType,
+  validateAndCleanupExpertTalkTeaser,
+} from "@/lib/zod/expertTalk-teaser";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import {
   LanguageLinks,
@@ -9,36 +9,36 @@ import {
 } from "@/lib/contexts/language-links-context";
 import { Pagination, PaginationProps } from "@/components/pagination";
 
-import { ArticleListItem } from "@/components/article-list-item";
+import { ExpertTalkListItem } from "@/components/expertTalk/expertTalk-list-item";
 import { HeadingPage } from "@/components/heading--page";
 import { LayoutProps } from "@/components/layout";
 import { Meta } from "@/components/meta";
 import { getCommonPageProps } from "@/lib/get-common-page-props";
-import { getLatestArticlesItems } from "@/lib/drupal/get-articles";
+import { getLatestExpertTalksItems } from "@/lib/drupal/get-expertTalks";
 import { useRef } from "react";
 import { useTranslation } from "next-i18next";
 
-interface AllArticlesPageProps extends LayoutProps {
-  articleTeasers: ArticleTeaserType[];
+interface AllExpertTalksPageProps extends LayoutProps {
+  expertTalkTeasers: ExpertTalkTeaserType[];
   paginationProps: PaginationProps;
   languageLinks: LanguageLinks;
 }
 
-export default function AllArticlesPage({
-  articleTeasers = [],
+export default function AllExpertTalksPage({
+  expertTalkTeasers = [],
   paginationProps,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation();
   const focusRef = useRef<HTMLDivElement>(null);
   return (
     <>
-      <Meta title={t("all-articles")} metatags={[]} />
+      <Meta title={"Expert talks"} metatags={[]} />
       <div ref={focusRef} tabIndex={-1} />
-      <HeadingPage>{t("all-articles")}</HeadingPage>
+      <HeadingPage>{"Expert talks2"}</HeadingPage>
       <ul className="mt-4">
-        {articleTeasers?.map((article) => (
-          <li key={article.id}>
-            <ArticleListItem article={article} />
+        {expertTalkTeasers?.map((expertTalk) => (
+          <li key={expertTalk.id}>
+            <ExpertTalkListItem expertTalk={expertTalk} />
           </li>
         ))}
       </ul>
@@ -62,7 +62,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<AllArticlesPageProps> = async (
+export const getStaticProps: GetStaticProps<AllExpertTalksPageProps> = async (
   context,
 ) => {
   // Get the page parameter:
@@ -71,7 +71,7 @@ export const getStaticProps: GetStaticProps<AllArticlesPageProps> = async (
   const currentPage = parseInt(Array.isArray(page) ? page[0] : page || "1");
   const PAGE_SIZE = 6;
 
-  const { totalPages, articles } = await getLatestArticlesItems({
+  const { totalPages, expertTalks } = await getLatestExpertTalksItems({
     limit: PAGE_SIZE,
     offset: currentPage ? PAGE_SIZE * (currentPage - 1) : 0,
     locale: context.locale,
@@ -82,7 +82,7 @@ export const getStaticProps: GetStaticProps<AllArticlesPageProps> = async (
   const nextEnabled = currentPage < totalPages;
 
   // Create links for prev/next pages.
-  const pageRoot = "/all-articles";
+  const pageRoot = "/all-expertTalks";
   const prevPage = currentPage - 1;
   const nextPage = currentPage + 1;
   const prevPageHref =
@@ -99,8 +99,8 @@ export const getStaticProps: GetStaticProps<AllArticlesPageProps> = async (
   return {
     props: {
       ...(await getCommonPageProps(context)),
-      articleTeasers: articles.map((teaser) =>
-        validateAndCleanupArticleTeaser(teaser),
+      expertTalkTeasers: expertTalks.map((teaser) =>
+        validateAndCleanupExpertTalkTeaser(teaser),
       ),
       paginationProps: {
         currentPage,

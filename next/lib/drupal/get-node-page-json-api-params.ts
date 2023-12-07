@@ -10,7 +10,8 @@ export type ResourceType =
   | "node--employee"
   | "node--office"
   | "node--client"
-  | "node--events" 
+  | "node--events"
+  | "node--expert_talks"
   | "node--service";
 
 export function getNodePageJsonApiParams(resourceType: ResourceType) {
@@ -32,7 +33,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
         "field_content_elements.field_accordion_items.field_content_elements.field_file_attachments.field_media_document",
         "field_content_elements.field_images.field_media_image",
         "field_content_elements.field_scrolling_numbers_items",
-        "field_content_elements.field_dark_image.field_media_image",
+        "field_content_elements.field_dark_image",
       ])
       .addFields("node--page", [
         "title",
@@ -78,6 +79,27 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "field_excerpt",
       "path",
       "sticky",
+    ]);
+  }
+  if (resourceType === "node--expert_talks") {
+    apiParams.addInclude([
+      "field_image",
+      "uid",
+      "field_experts_photo"]);
+    apiParams.addFields(resourceType, [
+      "title",
+      "body",
+      "uid",
+      "created",
+      "field_image",
+      "field_experts_photo",
+      "status",
+      "metatag",
+      "field_excerpt",
+      "path",
+      "sticky",
+      "field_name",
+      "field_experts_position",
     ]);
   }
   if (resourceType === "node--job") {

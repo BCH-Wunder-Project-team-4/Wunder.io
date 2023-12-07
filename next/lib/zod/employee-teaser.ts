@@ -1,8 +1,6 @@
 import { DrupalNode } from "next-drupal";
-import { z } from "zod";
 import { EmployeeBaseSchema } from "@/lib/zod/employee";
-
-
+import { z } from "zod";
 
 export const EmployeeTeaserSchema = EmployeeBaseSchema.extend({
   path: z.object({

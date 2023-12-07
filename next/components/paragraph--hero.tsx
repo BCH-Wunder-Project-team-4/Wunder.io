@@ -10,7 +10,7 @@ export function ParagraphHero({ paragraph }: { paragraph: HeroType }) {
 
 
   return (
-    <section id="hero" className="">
+    <section id="hero" className="pt-5 pb-10">
       <div className="mx-auto grid max-w-screen-xl grid-cols-1 sm:grid-cols-12">
         <div className="mr-auto place-self-center px-8 py-8 sm:col-span-6  lg:py-16">
           {paragraph.field_heading && (

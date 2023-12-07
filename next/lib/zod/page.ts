@@ -6,22 +6,23 @@ import {
   FullWidthParagraphSchema,
   HeroSchema,
   ImageSchema,
+  InfosectionBSchema,
+  InfosectionSchema,
   LinksSchema,
   ListingArticlesSchema,
+  ListingExpertTalksSchema,
+  LogoWallSchema,
   ParagraphWunderpediaSchema,
   ScrollingNumbersSchema,
-  SimpleQuoteSchema,
-  VideoSchema,
-  ServicesSchema,
-  InfosectionSchema,
-  InfosectionBSchema,
-  SubheadingSchema,
   SectionbgSchema,
-  LogoWallSchema
+  ServicesSchema,
+  SimpleQuoteSchema,
+  SubheadingSchema,
+  VideoSchema
 } from "@/lib/zod/paragraph";
 
-import { MetatagsSchema } from "@/lib/zod/metatag";
 import { DrupalNode } from "next-drupal";
+import { MetatagsSchema } from "@/lib/zod/metatag";
 import { z } from "zod";
 
 const PageElementsSchema = z.discriminatedUnion("type", [
@@ -32,6 +33,7 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   AccordionSchema,
   HeroSchema,
   ListingArticlesSchema,
+  ListingExpertTalksSchema,
   FileAttachmentsSchema,
   BannerSchema,
   ScrollingNumbersSchema,

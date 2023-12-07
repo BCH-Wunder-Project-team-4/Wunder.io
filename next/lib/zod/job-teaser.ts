@@ -1,7 +1,6 @@
 import { DrupalNode } from "next-drupal";
-import { z } from "zod";
-
 import { JobBaseSchema } from "@/lib/zod/job";
+import { z } from "zod";
 
 export const JobTeaserSchema = JobBaseSchema.extend({
   path: z.object({

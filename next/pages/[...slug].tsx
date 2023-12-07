@@ -1,4 +1,3 @@
-import { Service } from "@/components/offering/service";
 import {
   Article as ArticleType,
   validateAndCleanupArticle,
@@ -10,6 +9,7 @@ import {
 } from "@/lib/get-common-page-props";
 import { DrupalNode, DrupalTranslatedPath } from "next-drupal";
 import { Event as EventType, validateAndCleanupEvent } from "@/lib/zod/events";
+import { ExpertTalk as ExpertTalkType, validateAndCleanupExpertTalk } from "@/lib/zod/expertTalk";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import {
   Job as JobType,
@@ -20,20 +20,22 @@ import {
   createLanguageLinks,
 } from "@/lib/contexts/language-links-context";
 import { Page as PageType, validateAndCleanupPage } from "@/lib/zod/page";
+import { Service as ServiceType, validateAndCleanupService } from "@/lib/zod/service";
 
 import { Article } from "@/components/article";
 import { Case } from "@/components/cases/case";
+import { ExpertTalk } from "@/components/expertTalk/expertTalk";
 import { Job } from "@/components/careers/job";
 import { Meta } from "@/components/meta";
 import { Page } from "@/components/page";
 import { ResourceType } from "@/lib/drupal/get-node-page-json-api-params";
-import { Service as ServiceType, validateAndCleanupService } from "@/lib/zod/service";
+import { Service } from "@/components/offering/service";
 import { SingleEventPath } from "@/components/events/singleEventPath";
 import { drupal } from "@/lib/drupal/drupal-client";
 import { getNodePageJsonApiParams } from "@/lib/drupal/get-node-page-json-api-params";
 import { getNodeTranslatedVersions } from "@/lib/drupal/get-node-translated-versions";
 
-const RESOURCE_TYPES = ["node--article", "node--page", "node--job", "node--case", "node--events", "node--service"];
+const RESOURCE_TYPES = ["node--article", "node--page", "node--job", "node--case", "node--events", "node--service", "node--expert_talks"];
 
 export default function CustomPage({
   resource,
@@ -48,7 +50,8 @@ export default function CustomPage({
       {resource.type === "node--page" && <Page page={resource} />}
       {resource.type === "node--case" && <Case caseNode={resource} />}
       {resource.type === "node--events" && <SingleEventPath event={resource} />}
-      {resource.type === "node--service" && <Service service={resource}/>}
+      {resource.type === "node--expert_talks" && <ExpertTalk expertTalk={resource} />}
+      {resource.type === "node--service" && <Service service={resource} />}
     </>
   );
 }
@@ -62,7 +65,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 };
 
 interface PageProps extends CommonPageProps {
-  resource: PageType | ArticleType | JobType | CaseType | EventType | ServiceType;
+  resource: PageType | ArticleType | JobType | CaseType | EventType | ServiceType | ExpertTalkType;
   languageLinks: LanguageLinks;
 }
 
@@ -132,22 +135,24 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
   );
   const languageLinks = createLanguageLinks(nodeTranslations);
 
-
-
   const validatedResource =
     type === "node--article"
       ? validateAndCleanupArticle(resource)
-      : type === "node--page"
-      ? validateAndCleanupPage(resource)
-      : type === "node--job"
-      ? validateAndCleanupJob(resource)
-      : type === "node--case"
-      ? validateAndCleanupCase(resource)
-      : type === "node--events"
-      ? validateAndCleanupEvent(resource)
-      : type === "node--service"
-      ? validateAndCleanupService(resource)
-      : null;
+      : type === "node--expert_talks"
+        ? validateAndCleanupExpertTalk(resource)
+        : type === "node--page"
+          ? validateAndCleanupPage(resource)
+          : type === "node--job"
+            ? validateAndCleanupJob(resource)
+            : type === "node--case"
+              ? validateAndCleanupCase(resource)
+              : type === "node--events"
+                ? validateAndCleanupEvent(resource)
+                : type === "node--service"
+                  ? validateAndCleanupService(resource)
+                  : null;
+
+
 
   return {
     props: {

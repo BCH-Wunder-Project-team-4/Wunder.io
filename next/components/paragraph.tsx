@@ -6,6 +6,7 @@ import { ParagraphHero } from "@/components/paragraph--hero";
 import { ParagraphImage } from "@/components/paragraph--image";
 import { ParagraphLinks } from "@/components/paragraph--links";
 import { ParagraphListingArticles } from "@/components/paragraph--listing-articles";
+import { ParagraphListingExpertTalks } from "@/components/paragraph--listing-expertTalks";
 import { ParagraphText } from "@/components/paragraph--text";
 import { Paragraph } from "@/lib/zod/paragraph";
 import { ParagraphBanner } from "./paragraph--banner";
@@ -55,6 +56,9 @@ export function Paragraph({ paragraph }: { paragraph: Paragraph }) {
     }
     case "paragraph--listing_articles": {
       return <ParagraphListingArticles paragraph={paragraph} />;
+    }
+    case "paragraph--listing_experts_talks": {
+      return <ParagraphListingExpertTalks paragraph={paragraph} />;
     }
     case "paragraph--file_attachments": {
       return <ParagraphFileAttachments paragraph={paragraph} />;

@@ -1,9 +1,7 @@
 import { DrupalNode } from "next-drupal";
-import { z } from "zod";
-
-import { MetatagsSchema } from "@/lib/zod/metatag";
 import { ImageShape } from "@/lib/zod/paragraph";
-
+import { MetatagsSchema } from "@/lib/zod/metatag";
+import { z } from "zod";
 
 export const EmployeeBaseSchema = z.object({
   type: z.literal("node--employee"),
@@ -20,7 +18,7 @@ export const EmployeeBaseSchema = z.object({
   field_employee_email: z.string().optional().nullable(),
   field_employee_phone: z.string().optional().nullable(),
   field_employee_name: z.string().optional().nullable(),
-  
+
 });
 
 const EmployeeSchema = EmployeeBaseSchema.extend({
