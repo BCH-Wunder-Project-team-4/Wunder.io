@@ -2,7 +2,6 @@ import { ExpertTalkTeaser as ExpertTalkTeaserType } from "@/lib/zod/expertTalk-t
 import Image from "next/image";
 import Link from "next/link";
 import { absoluteUrl } from "@/lib/drupal/absolute-url";
-import { formatDate } from "@/lib/utils";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 
@@ -14,7 +13,6 @@ export function ExpertTalkTeaser({ expertTalk }: ExpertTalkTeaserProps) {
   const { t } = useTranslation();
   const author = expertTalk.uid?.display_name;
   const router = useRouter();
-  const date = formatDate(expertTalk.created, router.locale);
 
 
   return (

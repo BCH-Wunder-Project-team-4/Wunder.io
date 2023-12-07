@@ -3,7 +3,6 @@ import { FormattedText } from "@/components/formatted-text";
 import { HeadingPage } from "@/components/heading--page";
 import Image from "next/image";
 import { absoluteUrl } from "@/lib/drupal/absolute-url";
-import { formatDate } from "@/lib/utils";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 

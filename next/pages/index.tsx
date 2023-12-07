@@ -82,7 +82,7 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async (
       "filter[status]": 1,
       "filter[langcode]": context.locale,
       "filter[promote]": 1,
-      "fields[node--expert_talks]": "title,path,field_image,uid,created,field_experts_photo",
+      "fields[node--expert_talks]": "title,path,field_image,uid,created,field_experts_photo,field_name,field_excerpt",
       include: "field_image,uid,field_experts_photo",
       sort: "-sticky,-created",
       "page[limit]": 3,

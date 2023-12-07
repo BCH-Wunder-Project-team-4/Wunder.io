@@ -138,12 +138,12 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
   const validatedResource =
     type === "node--article"
       ? validateAndCleanupArticle(resource)
-      : type === "node--expert_talks"
-        ? validateAndCleanupExpertTalk(resource)
-        : type === "node--page"
-          ? validateAndCleanupPage(resource)
-          : type === "node--job"
-            ? validateAndCleanupJob(resource)
+      : type === "node--page"
+        ? validateAndCleanupPage(resource)
+        : type === "node--job"
+          ? validateAndCleanupJob(resource)
+          : type === "node--expert_talks"
+            ? validateAndCleanupExpertTalk(resource)
             : type === "node--case"
               ? validateAndCleanupCase(resource)
               : type === "node--events"

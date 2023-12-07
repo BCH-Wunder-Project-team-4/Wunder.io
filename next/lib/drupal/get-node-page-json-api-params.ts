@@ -11,7 +11,8 @@ export type ResourceType =
   | "node--office"
   | "node--client"
   | "node--events"
-  | "node--service";
+  | "node--service"
+  | "node--expert_talks";
 
 export function getNodePageJsonApiParams(resourceType: ResourceType) {
   const apiParams = new DrupalJsonApiParams().addFilter(

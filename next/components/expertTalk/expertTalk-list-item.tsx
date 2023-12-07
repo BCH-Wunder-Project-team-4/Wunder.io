@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { absoluteUrl } from "@/lib/drupal/absolute-url";
 import classNames from "classnames";
-import { formatDate } from "@/lib/utils";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 
@@ -15,7 +14,6 @@ export function ExpertTalkListItem({ expertTalk }: ExpertTalkListItemProps) {
   const { t } = useTranslation();
   const author = expertTalk.uid?.display_name;
   const router = useRouter();
-  const date = formatDate(expertTalk.created, router.locale);
   return (
     <Link
       href={expertTalk.path.alias}
@@ -31,7 +29,6 @@ export function ExpertTalkListItem({ expertTalk }: ExpertTalkListItemProps) {
       </h3>
       <div className="mb-4 line-clamp-2 text-md text-scapaflow">
         {author && <>{t("posted-by", { author })} - </>}
-        {date}
       </div>
       <div className="flex flex-col items-start gap-4 sm:flex-row">
         {expertTalk.field_image && (
