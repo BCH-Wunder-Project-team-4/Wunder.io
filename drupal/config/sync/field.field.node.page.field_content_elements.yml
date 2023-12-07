@@ -34,14 +34,14 @@ id: node.page.field_content_elements
 field_name: field_content_elements
 entity_type: node
 bundle: page
-label: "Content elements"
-description: ""
+label: 'Content elements'
+description: ''
 required: true
 translatable: false
-default_value: {}
-default_value_callback: ""
+default_value: {  }
+default_value_callback: ''
 settings:
-  handler: "default:paragraph"
+  handler: 'default:paragraph'
   handler_settings:
     target_bundles:
       hero: hero

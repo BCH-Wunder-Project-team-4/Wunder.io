@@ -1,0 +1,24 @@
+uuid: 2295e86b-069f-414d-be15-9c897c69e1bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 7ImqDwO6Ewsen7abW6KP-vbGKcUZnqQkv-ayAU_yr2Y
+id: expert_talks
+label: 'Expert talks'
+type: 'canonical_entities:node'
+pattern: 'expertTalks/[node:title]'
+selection_criteria:
+  26cba523-67bb-4a3d-8f79-f79015557cda:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 26cba523-67bb-4a3d-8f79-f79015557cda
+    context_mapping:
+      node: node
+    bundles:
+      expert_talks: expert_talks
+selection_logic: and
+weight: -5
+relationships: {  }

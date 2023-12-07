@@ -5,7 +5,10 @@ dependencies:
   config:
     - field.field.node.expert_talks.body
     - field.field.node.expert_talks.field_excerpt
+    - field.field.node.expert_talks.field_expert_job_title
+    - field.field.node.expert_talks.field_experts_photo
     - field.field.node.expert_talks.field_image
+    - field.field.node.expert_talks.field_name
     - field.field.node.expert_talks.field_tags
     - image.style.wide
     - node.type.expert_talks
@@ -32,6 +35,25 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  field_expert_job_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_experts_photo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 102
+    region: content
   field_image:
     type: image
     label: hidden
@@ -42,6 +64,14 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: -1
+    region: content
+  field_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
     region: content
   field_tags:
     type: entity_reference_label

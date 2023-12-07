@@ -5,7 +5,10 @@ dependencies:
   config:
     - field.field.node.expert_talks.body
     - field.field.node.expert_talks.field_excerpt
+    - field.field.node.expert_talks.field_expert_job_title
+    - field.field.node.expert_talks.field_experts_photo
     - field.field.node.expert_talks.field_image
+    - field.field.node.expert_talks.field_name
     - field.field.node.expert_talks.field_tags
     - image.style.thumbnail
     - node.type.expert_talks
@@ -20,7 +23,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 121
+    weight: 20
     region: content
     settings:
       rows: 9
@@ -36,19 +39,43 @@ content:
     third_party_settings: {  }
   field_excerpt:
     type: string_textarea
-    weight: 1
+    weight: 15
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_image:
+  field_expert_job_title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_experts_photo:
     type: image_image
-    weight: 3
+    weight: 5
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 25
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_tags:
     type: entity_reference_autocomplete_tags
@@ -62,7 +89,7 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 2
+    weight: 9
     region: content
     settings:
       include_locked: true
@@ -101,7 +128,7 @@ content:
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 10
     region: content
     settings:
       size: 60

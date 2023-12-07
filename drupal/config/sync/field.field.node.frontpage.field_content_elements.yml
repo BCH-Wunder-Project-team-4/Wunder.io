@@ -6,7 +6,6 @@ dependencies:
     - field.storage.node.field_content_elements
     - node.type.frontpage
     - paragraphs.paragraphs_type.accordion
-    - paragraphs.paragraphs_type.banner
     - paragraphs.paragraphs_type.file_attachments
     - paragraphs.paragraphs_type.formatted_text
     - paragraphs.paragraphs_type.full_width_paragraph
@@ -14,6 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.listing_articles
+    - paragraphs.paragraphs_type.listing_experts_talks
     - paragraphs.paragraphs_type.logo_wall
     - paragraphs.paragraphs_type.subheading
     - paragraphs.paragraphs_type.video
@@ -26,14 +26,14 @@ id: node.frontpage.field_content_elements
 field_name: field_content_elements
 entity_type: node
 bundle: frontpage
-label: "Content elements"
-description: ""
+label: 'Content elements'
+description: ''
 required: true
 translatable: false
-default_value: {}
-default_value_callback: ""
+default_value: {  }
+default_value_callback: ''
 settings:
-  handler: "default:paragraph"
+  handler: 'default:paragraph'
   handler_settings:
     target_bundles:
       hero: hero
@@ -45,10 +45,10 @@ settings:
       listing_articles: listing_articles
       file_attachments: file_attachments
       logo_wall: logo_wall
-      subheading: subheading
       wunder_story: wunder_story
-      banner: banner
+      listing_experts_talks: listing_experts_talks
       full_width_paragraph: full_width_paragraph
+      subheading: subheading
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -59,6 +59,9 @@ settings:
         enabled: false
       banner:
         weight: 25
+        enabled: false
+      event_speakers_information:
+        weight: 29
         enabled: false
       file_attachments:
         weight: 10
@@ -86,6 +89,9 @@ settings:
         enabled: true
       listing_articles:
         weight: 9
+        enabled: true
+      listing_experts_talks:
+        weight: 25
         enabled: true
       logo_wall:
         weight: 22

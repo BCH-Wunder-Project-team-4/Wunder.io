@@ -1,0 +1,31 @@
+uuid: 0fb18237-be7b-41ca-9d02-582094d109cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.listing_experts_talks.field_heading
+    - field.field.paragraph.listing_experts_talks.field_limit
+    - paragraphs.paragraphs_type.listing_experts_talks
+id: paragraph.listing_experts_talks.default
+targetEntityType: paragraph
+bundle: listing_experts_talks
+mode: default
+content:
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_limit:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

@@ -10,14 +10,14 @@ id: paragraph.infosection.field_dark_image
 field_name: field_dark_image
 entity_type: paragraph
 bundle: infosection
-label: "Dark mode screenshot"
-description: "Set the laptop screenshot that will be shown in dark mode."
+label: 'Dark mode screenshot'
+description: 'Set the laptop screenshot that will be shown in dark mode.'
 required: false
 translatable: false
-default_value: {}
-default_value_callback: ""
+default_value: {  }
+default_value_callback: ''
 settings:
-  handler: "default:media"
+  handler: 'default:media'
   handler_settings:
     target_bundles:
       image: image
@@ -25,5 +25,5 @@ settings:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: ""
+    auto_create_bundle: ''
 field_type: entity_reference

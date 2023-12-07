@@ -10,14 +10,14 @@ id: paragraph.infosection.field_image
 field_name: field_image
 entity_type: paragraph
 bundle: infosection
-label: "Light mode screenshot"
-description: "Set the laptop screenshot that will be shown in light mode."
+label: 'Light mode screenshot'
+description: 'Set the laptop screenshot that will be shown in light mode.'
 required: false
 translatable: false
-default_value: {}
-default_value_callback: ""
+default_value: {  }
+default_value_callback: ''
 settings:
-  handler: "default:media"
+  handler: 'default:media'
   handler_settings:
     target_bundles:
       image: image

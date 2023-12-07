@@ -1,18 +1,18 @@
-uuid: 3faeeb8a-94b4-45de-9d7e-08257d6cee96
+uuid: dd3a5ab5-05dc-4690-8d72-e2fec2110a72
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image
+    - field.storage.node.field_experts_photo
     - node.type.expert_talks
   module:
     - image
-id: node.expert_talks.field_image
-field_name: field_image
+id: node.expert_talks.field_experts_photo
+field_name: field_experts_photo
 entity_type: node
 bundle: expert_talks
-label: Image
-description: 'Put here speaker image '
+label: 'Experts photo'
+description: ''
 required: true
 translatable: false
 default_value: {  }
@@ -30,9 +30,9 @@ settings:
   title_field: false
   title_field_required: false
   default_image:
-    uuid: bc9bbb6a-5b7a-4bd6-ba17-9709e1bcf4e8
-    alt: ''
-    title: ''
-    width: 1200
-    height: 1200
+    uuid: d7de391b-17f7-4b16-9cd0-ce81a24fa384
+    alt: 'Picture of Author'
+    title: Author
+    width: 640
+    height: 640
 field_type: image
