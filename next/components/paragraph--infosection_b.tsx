@@ -5,7 +5,6 @@ import { MediaImage } from "@/components/media--image";
 import { InfosectionB as InfosectionBType } from "@/lib/zod/paragraph";
 
 export function ParagraphInfosectionB({ paragraph }: { paragraph: InfosectionBType }) {
-  console.log("paragraph", paragraph);
   
   return (
     <section className="border-b border-primary-600 dark:border-fog pb-5">

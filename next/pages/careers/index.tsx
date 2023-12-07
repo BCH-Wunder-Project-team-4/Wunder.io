@@ -106,8 +106,6 @@ export const getStaticProps: GetStaticProps<AllJobsPageProps> = async (context) 
     params: getNodePageJsonApiParams("node--job").getQueryObject(),
   });
 
-  console.log(openPositions)
-
   return {
     props: {
       ...(await getCommonPageProps(context)),

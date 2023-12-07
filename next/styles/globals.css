@@ -4,6 +4,9 @@
 
 @layer base {
   @import "_focus-visible.css";
+  html {
+    @apply scroll-smooth;
+  }
   main {
     @apply bg-mischka dark:bg-steelgray;
   }

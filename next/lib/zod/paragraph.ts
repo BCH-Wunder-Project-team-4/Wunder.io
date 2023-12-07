@@ -336,6 +336,11 @@ export const WunderStorySchema = z.object({
   field_formatted_text: z.object({ processed: z.string() }),
   field_secondary_link: LinkShape.nullable().optional(),
 });
+export const AnchorSchema = z.object({
+  type: z.literal("paragraph--anchor"),
+  id: z.string(),
+  field_section_id: z.string().nullable(),
+});
 
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
@@ -359,6 +364,7 @@ export type ParagraphWunderpedia = z.infer<typeof ParagraphWunderpediaSchema>;
 export type SimpleQuote = z.infer<typeof SimpleQuoteSchema>;
 export type LogoWall = z.infer<typeof LogoWallSchema>;
 export type TrilogySnapshot = z.infer<typeof TrilogySnapshotSchema>;
+export type Anchor = z.infer<typeof AnchorSchema>;
 export type WunderStory = z.infer<typeof WunderStorySchema>;
 
 export type Paragraph =
@@ -384,4 +390,5 @@ export type Paragraph =
   | WunderStory
   | SimpleQuote
   | LogoWall
-  | TrilogySnapshot;
+  | TrilogySnapshot
+  | Anchor;
