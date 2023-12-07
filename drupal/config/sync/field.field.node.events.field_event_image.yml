@@ -33,6 +33,6 @@ settings:
     uuid: ''
     alt: ''
     title: ''
-    width: null
-    height: null
+    width: 1920
+    height: 1280
 field_type: image
