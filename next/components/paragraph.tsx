@@ -10,15 +10,16 @@ import { ParagraphListingExpertTalks } from "@/components/paragraph--listing-exp
 import { ParagraphText } from "@/components/paragraph--text";
 import { Paragraph } from "@/lib/zod/paragraph";
 import { ParagraphBanner } from "./paragraph--banner";
-import { ParagraphScrollingNumbers } from "./paragraph--scrolling-numbers";
-import { ParagraphSimpleQuote } from "./paragraph--simple-quote";
-import { ParagraphWunderpedia } from "./paragraph--wunderpedia";
-import { ParagraphServices } from "./paragraph--services";
 import { ParagraphInfosection } from "./paragraph--infosection";
 import { ParagraphInfosectionB } from "./paragraph--infosection_b";
-import { ParagraphSubheading } from "./paragraph--subheading";
-import { ParagraphSectionbg } from "./paragraph--sectionbg";
 import { ParagraphLogoWall } from "./paragraph--logo-wall";
+import { ParagraphScrollingNumbers } from "./paragraph--scrolling-numbers";
+import { ParagraphSectionbg } from "./paragraph--sectionbg";
+import { ParagraphServices } from "./paragraph--services";
+import { ParagraphSimpleQuote } from "./paragraph--simple-quote";
+import { ParagraphSubheading } from "./paragraph--subheading";
+import { ParagraphTrilogySnapshot } from "./paragraph--trilogy_snapshot";
+import { ParagraphWunderpedia } from "./paragraph--wunderpedia";
 import { ParagraphWunderStory } from "./paragraph--wunderStory";
 
 // Use dynamic imports to defer loading a component until after initial page load: https://nextjs.org/docs/advanced-features/dynamic-import
@@ -98,6 +99,9 @@ export function Paragraph({ paragraph }: { paragraph: Paragraph }) {
     }
     case "paragraph--wunder_story": {
       return <ParagraphWunderStory paragraph={paragraph} />;
+    }
+    case "paragraph--trilogy_snapshot": {
+      return <ParagraphTrilogySnapshot paragraph={paragraph} />;
     }
     default:
       return null;

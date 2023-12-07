@@ -34,8 +34,8 @@ export function ArticleTeaser({ article }: ArticleTeaserProps) {
           <div className="absolute inset-0 bg-primary-400 opacity-50 hover:bg-transparent"></div>
         </div>
       )}
-      <div className="text-white bg-primary-600 opacity-80 absolute mt-64 px-5 p-1 rounded-b-md">
-        <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold">
+      <div className="text-white w-full bg-primary-600 opacity-80 absolute mt-64 px-5 p-1 rounded-b-md ">
+        <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold ">
           {article.title}
         </h3>
         <div className=" line-clamp-2  text-md m-4 ">

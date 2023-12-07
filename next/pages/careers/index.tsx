@@ -54,7 +54,6 @@ export default function AllJobsPage({
     return true;
   });
 
-
   return (
     <div>
       <Meta title={t("Careers")} metatags={[]} />
@@ -62,18 +61,20 @@ export default function AllJobsPage({
         <HeadingPage className="pt-2">{t("careers-title")}</HeadingPage>
         <FormattedText html={t("careers-intro")} className="text-center" />
         <HeadingPage>{t("careers-positions")}</HeadingPage>
-        <select onChange={e => setChosenCountry(e.target.value)}>
+        <div className="space-x-4 pb-4">
+        <select className="text-primary-600 dark:text-fog p-1 border rounded bg-mischka dark:bg-steelgray" onChange={e => setChosenCountry(e.target.value)}>
           <option value="all">All Countries</option>
           {countries.map((country) => (
             <option key={country} value={country}>{country}</option>
           ))}
         </select>
-        <select onChange={e => setChosenOffice(e.target.value)}>
+        <select className="text-primary-600 dark:text-fog p-1 border rounded bg-mischka dark:bg-steelgray" onChange={e => setChosenOffice(e.target.value)}>
           <option value="all">All Offices</option>
           {offices.map((office) => (
             <option key={office} value={office}>{office}</option>
           ))}
         </select>
+        </div>
         <ul className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
           {filteredJobs.map((job, index) => (
             <JobListItem key={index} job={job} />
@@ -104,6 +105,8 @@ export const getStaticProps: GetStaticProps<AllJobsPageProps> = async (context) 
   const openPositions = await drupal.getResourceCollectionFromContext<DrupalNode[]>("node--job", context, {
     params: getNodePageJsonApiParams("node--job").getQueryObject(),
   });
+
+  console.log(openPositions)
 
   return {
     props: {

@@ -1,0 +1,20 @@
+uuid: b6edf3ec-36b3-4acc-8329-9bf4d4cd199f
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.field_trilogy_images
+field_name: field_trilogy_images
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

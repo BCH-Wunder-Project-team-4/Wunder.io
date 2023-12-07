@@ -11,7 +11,6 @@ export type ResourceType =
   | "node--office"
   | "node--client"
   | "node--events"
-  | "node--expert_talks"
   | "node--service";
 
 export function getNodePageJsonApiParams(resourceType: ResourceType) {
@@ -33,7 +32,8 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
         "field_content_elements.field_accordion_items.field_content_elements.field_file_attachments.field_media_document",
         "field_content_elements.field_images.field_media_image",
         "field_content_elements.field_scrolling_numbers_items",
-        "field_content_elements.field_dark_image",
+        "field_content_elements.field_dark_image.field_media_image",
+        "field_content_elements.field_trilogy_images.field_media_image",
       ])
       .addFields("node--page", [
         "title",
@@ -67,7 +67,16 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
 
   // The article content type has an image field, and author information:
   if (resourceType === "node--article") {
-    apiParams.addInclude(["field_image", "uid"]);
+    apiParams.addInclude([
+      "field_image",
+      "uid",
+      "field_content_elements",
+      "field_content_elements.field_image.field_media_image",
+      "field_content_elements.field_video",
+      "field_content_elements.field_file_attachments.field_media_document",
+      "field_content_elements.field_accordion_items",
+      "field_content_elements.field_accordion_items.field_content_elements.field_image.field_media_image",
+      "field_content_elements.field_accordion_items.field_content_elements.field_video",]);
     apiParams.addFields(resourceType, [
       "title",
       "body",
@@ -79,6 +88,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "field_excerpt",
       "path",
       "sticky",
+      "field_content_elements"
     ]);
   }
   if (resourceType === "node--expert_talks") {
@@ -108,19 +118,28 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "uid",
       "field_country",
       "field_office",
+      "field_content_elements",
+      "field_content_elements.field_image.field_media_image",
+      "field_content_elements.field_video",
+      "field_content_elements.field_file_attachments.field_media_document",
+      "field_content_elements.field_accordion_items",
+      "field_content_elements.field_accordion_items.field_content_elements.field_image.field_media_image",
+      "field_content_elements.field_accordion_items.field_content_elements.field_video",]);
+    apiParams.addFields(resourceType, [
+      "title",
+      "body",
+      "uid",
+      "created",
+      "field_image",
+      "status",
+      "metatag",
+      "field_excerpt",
+      "path",
+      "sticky",
+      "field_content_elements",
+      "field_country",
+      "field_office",
     ]);
-    /*     apiParams.addFields(resourceType, [
-          "title",
-          "body",
-          "uid",
-          "created",
-          "field_image",
-          "status",
-          "metatag",
-          "field_excerpt",
-          "path",
-          "sticky",
-        ]); */
   }
 
   if (resourceType === "node--case") {
@@ -195,11 +214,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
     apiParams.addFields(resourceType, ["field_logo", "field_link"]);
   }
   if (resourceType === "node--events") {
-    apiParams.addInclude([
-      "uid",
-      "field_event_image",
-      "field_event_speakers",
-    ]);
+    apiParams.addInclude(["uid", "field_event_image", "field_event_speakers"]);
     apiParams.addFields(resourceType, [
       "title",
       "body",

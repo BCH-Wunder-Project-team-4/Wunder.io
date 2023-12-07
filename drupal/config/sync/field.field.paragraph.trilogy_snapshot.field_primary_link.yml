@@ -1,0 +1,23 @@
+uuid: fc9ae099-5ef9-4deb-88c6-7b62e1309d20
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_primary_link
+    - paragraphs.paragraphs_type.trilogy_snapshot
+  module:
+    - link
+id: paragraph.trilogy_snapshot.field_primary_link
+field_name: field_primary_link
+entity_type: paragraph
+bundle: trilogy_snapshot
+label: 'Primary link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

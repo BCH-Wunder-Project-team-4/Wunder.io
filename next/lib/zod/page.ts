@@ -18,7 +18,8 @@ import {
   ServicesSchema,
   SimpleQuoteSchema,
   SubheadingSchema,
-  VideoSchema
+  TrilogySnapshotSchema,
+  VideoSchema,
 } from "@/lib/zod/paragraph";
 
 import { DrupalNode } from "next-drupal";
@@ -46,6 +47,7 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   ParagraphWunderpediaSchema,
   SimpleQuoteSchema,
   LogoWallSchema,
+  TrilogySnapshotSchema,
 ]);
 
 export const PageSchema = z.object({

@@ -18,8 +18,8 @@ id: node.job.field_image
 field_name: field_image
 entity_type: node
 bundle: job
-label: Image
-description: ''
+label: 'Main image'
+description: 'Set the main image. Appears in the teaser and at the top of the listing.'
 required: false
 translatable: true
 default_value: {  }

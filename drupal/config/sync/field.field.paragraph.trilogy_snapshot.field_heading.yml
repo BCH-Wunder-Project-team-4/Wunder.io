@@ -1,0 +1,19 @@
+uuid: 77ce89c9-81a6-4c33-a617-3efc3bb1fcc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.trilogy_snapshot
+id: paragraph.trilogy_snapshot.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: trilogy_snapshot
+label: Heading
+description: 'Heading for the paragraph'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

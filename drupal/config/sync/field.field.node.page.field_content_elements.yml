@@ -24,6 +24,7 @@ dependencies:
     - paragraphs.paragraphs_type.sectionbg
     - paragraphs.paragraphs_type.services
     - paragraphs.paragraphs_type.subheading
+    - paragraphs.paragraphs_type.trilogy_snapshot
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.wunderpedia
   module:
@@ -58,9 +59,10 @@ settings:
       simple_quote: simple_quote
       full_width_paragraph: full_width_paragraph
       sectionbg: sectionbg
-      logo_wall: logo_wall
       infosection: infosection
+      logo_wall: logo_wall
       infosection_b: infosection_b
+      trilogy_snapshot: trilogy_snapshot
       services: services
       subheading: subheading
     negate: 0
@@ -74,6 +76,9 @@ settings:
       banner:
         weight: -20
         enabled: true
+      event_speakers_information:
+        weight: 28
+        enabled: false
       file_attachments:
         weight: -12
         enabled: true
@@ -121,6 +126,9 @@ settings:
         enabled: true
       subheading:
         weight: 27
+        enabled: true
+      trilogy_snapshot:
+        weight: 24
         enabled: true
       video:
         weight: -14
