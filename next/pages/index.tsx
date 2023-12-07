@@ -35,7 +35,7 @@ export default function IndexPage({
   eventsTeasers,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation();
-  
+  console.log(promotedArticleTeasers);
 
   return (
     <>
@@ -80,7 +80,7 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async (
       "filter[status]": 1,
       "filter[langcode]": context.locale,
       "filter[promote]": 1,
-      "fields[node--article]": "title,path,field_image,uid,created",
+      "fields[node--article]": "title,path,field_image,uid,created, uid",
       include: "field_image,uid",
       sort: "-sticky,-created",
       "page[limit]": 3,
@@ -94,7 +94,7 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async (
       ...(await getCommonPageProps(context)),
       frontpage: frontpage ? validateAndCleanupFrontpage(frontpage) : null,
       promotedArticleTeasers: promotedArticleTeasers.map((teaser) =>
-        validateAndCleanupArticleTeaser(teaser),
+      validateAndCleanupArticleTeaser(teaser),
       ),
       eventsTeasers: events.map((teaser) =>
         validateAndCleanupEventTeaser(teaser),

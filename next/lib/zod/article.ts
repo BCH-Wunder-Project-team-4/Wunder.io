@@ -40,9 +40,11 @@ export const ArticleSchema = z.object({
   uid: z.object({
     id: z.string(),
     display_name: z.string(),
+    
   }),
   title: z.string(),
   field_image: ImageShape.nullable(),
+  
   field_excerpt: z.string().optional().nullable(),
   field_content_elements: z.array(ArticleElementsSchema).optional(),
   metatag: MetatagsSchema.optional(),

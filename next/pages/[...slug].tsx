@@ -39,7 +39,6 @@ export default function CustomPage({
   resource,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   if (!resource) return null;
-
   return (
     <>
       <Meta title={resource.title} metatags={resource.metatag} />
