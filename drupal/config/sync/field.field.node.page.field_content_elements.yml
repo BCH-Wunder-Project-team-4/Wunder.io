@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_content_elements
     - node.type.page
     - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.anchor
     - paragraphs.paragraphs_type.banner
     - paragraphs.paragraphs_type.file_attachments
     - paragraphs.paragraphs_type.formatted_text
@@ -61,6 +62,7 @@ settings:
       logo_wall: logo_wall
       infosection_b: infosection_b
       trilogy_snapshot: trilogy_snapshot
+      anchor: anchor
       services: services
       subheading: subheading
     negate: 0
@@ -71,6 +73,9 @@ settings:
       accordion_item:
         weight: -17
         enabled: false
+      anchor:
+        weight: 24
+        enabled: true
       banner:
         weight: -20
         enabled: true

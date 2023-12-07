@@ -14,7 +14,6 @@ export function Client({ client }: ClientProps) {
   const { t } = useTranslation();
   const router = useRouter();
 
-  console.log(client)
   return (
     <Link 
     href={client.field_link.uri}

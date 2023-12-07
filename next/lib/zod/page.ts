@@ -19,6 +19,7 @@ import {
   SubheadingSchema,
   TrilogySnapshotSchema,
   VideoSchema,
+  AnchorSchema,
 } from "@/lib/zod/paragraph";
 
 import { MetatagsSchema } from "@/lib/zod/metatag";
@@ -46,6 +47,7 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   SimpleQuoteSchema,
   LogoWallSchema,
   TrilogySnapshotSchema,
+  AnchorSchema
 ]);
 
 export const PageSchema = z.object({
