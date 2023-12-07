@@ -32,7 +32,7 @@ export default function AllEventsPage({
 
   return (
     <>
-      <Meta title={t("all-events")} metatags={[]} />
+      <Meta title={"All Expert Talks"} metatags={[]} />
       <div ref={focusRef} tabIndex={-1} />
       <HeadingPage>All Expert Talks</HeadingPage>
       <ul className="mt-4">
