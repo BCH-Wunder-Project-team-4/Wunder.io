@@ -98,20 +98,15 @@ export function SingleEventPath({ event, ...props }: EventProps) {
       <div className="flex flex-col md:flex-row justify-between pt-4 gap-2">
         <div className="w-2/3 flex flex-col justify-evenly">
           <HeadingPage>{event.title}</HeadingPage>
-          {/* Event published info */}
-          {/* <div className="mb-4 text-scapaflow dark:text-graysuit">
-            <span>published on - </span>
-            <span>{formatDate(event.created, router.locale)}</span>
-          </div> */}
           <div className="my-2">
-            <h2 className="text-heading-sm mb-2">Date and time</h2>
+            <h2 className="text-heading-sm mb-4">Date and time</h2>
             <div className="flex flex-row gap-3">
               <CalendarIcon aria-hidden className="inline-block w-5 h-5" />
               <div>
-                <p>
+                <p className="mb-1">
                   {formatDate(event.field_event_date, router.locale)} {time}
                 </p>
-                <p className="pb-4">Duration: {event.field_event_duration}</p>
+                <p>Duration: {event.field_event_duration}</p>
               </div>
             </div>
           </div>
@@ -122,18 +117,18 @@ export function SingleEventPath({ event, ...props }: EventProps) {
       </div>
 
       <div className="py-4">
-        <h2 className="text-heading-sm mb-2">Location</h2>
+        <h2 className="text-heading-sm mb-4">Location</h2>
         <div className="flex flex-row gap-3 mb-2">
           <LocationIcon aria-hidden className="inline-block w-5 h-5" />
           <div className="w-full md:w-2/3">
-            <p>{event.field_event_location}</p>
+            <p className="mb-1">{event.field_event_location}</p>
             <p>{event.field_event_address}</p>
           </div>
         </div>
         <div className="w-full md:w-2/3">
           <p
             onClick={handleTextClick}
-            className="bg-primary-600 text-white cursor-pointer px-3 py-2 my-2 inline-block border border-primary-600 rounded-md"
+            className="bg-primary-600 text-white cursor-pointer px-3 py-2 my-4 inline-block border border-primary-600 rounded-md"
           >
             <LocationArrowIcon
               aria-hidden
@@ -146,16 +141,16 @@ export function SingleEventPath({ event, ...props }: EventProps) {
       </div>
       {event.field_event_description && (
         <div className="w-full md:w-2/3 py-4">
-          <h2 className="text-heading-sm mb-2">About this event</h2>
-          <p>{event.field_event_description}</p>
+          <h2 className="text-heading-sm mb-4">About this event</h2>
+          <p className="md:text-md">{event.field_event_description}</p>
         </div>
       )}
       {event.field_event_speakers.length > 0 && (
         <div className="w-full md:w-2/3 py-4">
-          <h2 className="text-heading-sm mb-2">Speakers</h2>
+          <h2 className="text-heading-sm mb-4">Speakers</h2>
           {event.field_event_speakers.map((speaker, index) => (
             <div key={index} className="py-2">
-              <p className="font-bold mb-2">
+              <p className="font-bold mb-4 md:text-md">
                 {speaker.field_event_speakers_name}
               </p>
               <div className="flex flex-col md:flex-row gap-4">
@@ -177,7 +172,9 @@ export function SingleEventPath({ event, ...props }: EventProps) {
                     className="w-24 h-auto object-cover rounded-md mb-2"
                   />
                 )}
-                <p>{speaker.field_event_speakers_description}</p>
+                <p className="md:text-md">
+                  {speaker.field_event_speakers_description}
+                </p>
               </div>
             </div>
           ))}

@@ -53,7 +53,11 @@ export function EventForm({ eventName }) {
     return (
       <StatusMessage level="success" className="mx-auto w-full max-w-3xl">
         <p className="mb-4">{t("form-thank-you-message")}</p>
-        <Button type="button" onClick={() => reset()}>
+        <Button
+          className="dark:hover:bg-steelgray dark:hover:border-steelgray dark:hover:text-white"
+          type="button"
+          onClick={() => reset()}
+        >
           {t("form-send-another-message")}
         </Button>
       </StatusMessage>
