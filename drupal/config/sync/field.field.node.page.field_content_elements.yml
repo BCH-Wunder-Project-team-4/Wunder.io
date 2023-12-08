@@ -17,13 +17,13 @@ dependencies:
     - paragraphs.paragraphs_type.infosection_b
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.listing_articles
+    - paragraphs.paragraphs_type.listing_events
+    - paragraphs.paragraphs_type.listing_experts_talks
     - paragraphs.paragraphs_type.logo_wall
     - paragraphs.paragraphs_type.scrolling_numbers
     - paragraphs.paragraphs_type.sectionbg
     - paragraphs.paragraphs_type.services
     - paragraphs.paragraphs_type.simple_quote
-    - paragraphs.paragraphs_type.sectionbg
-    - paragraphs.paragraphs_type.services
     - paragraphs.paragraphs_type.subheading
     - paragraphs.paragraphs_type.trilogy_snapshot
     - paragraphs.paragraphs_type.video
@@ -63,10 +63,12 @@ settings:
       infosection: infosection
       logo_wall: logo_wall
       infosection_b: infosection_b
-      trilogy_snapshot: trilogy_snapshot
       anchor: anchor
+      trilogy_snapshot: trilogy_snapshot
       services: services
       subheading: subheading
+      listing_events: listing_events
+      listing_experts_talks: listing_experts_talks
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -111,6 +113,12 @@ settings:
       listing_articles:
         weight: -13
         enabled: true
+      listing_events:
+        weight: 42
+        enabled: true
+      listing_experts_talks:
+        weight: 43
+        enabled: true
       logo_wall:
         weight: 22
         enabled: true
@@ -138,6 +146,9 @@ settings:
       video:
         weight: -14
         enabled: true
+      wunder_story:
+        weight: 54
+        enabled: false
       wunderpedia:
         weight: 13
         enabled: true

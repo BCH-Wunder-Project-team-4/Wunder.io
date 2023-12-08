@@ -13,6 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.listing_articles
+    - paragraphs.paragraphs_type.listing_events
     - paragraphs.paragraphs_type.listing_experts_talks
     - paragraphs.paragraphs_type.logo_wall
     - paragraphs.paragraphs_type.subheading
@@ -49,6 +50,7 @@ settings:
       listing_experts_talks: listing_experts_talks
       full_width_paragraph: full_width_paragraph
       subheading: subheading
+      listing_events: listing_events
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -56,6 +58,9 @@ settings:
         enabled: true
       accordion_item:
         weight: -12
+        enabled: false
+      anchor:
+        weight: 31
         enabled: false
       banner:
         weight: 25
@@ -90,6 +95,9 @@ settings:
       listing_articles:
         weight: 9
         enabled: true
+      listing_events:
+        weight: 42
+        enabled: true
       listing_experts_talks:
         weight: 25
         enabled: true
@@ -114,6 +122,9 @@ settings:
       subheading:
         weight: 40
         enabled: true
+      trilogy_snapshot:
+        weight: 51
+        enabled: false
       video:
         weight: -9
         enabled: true

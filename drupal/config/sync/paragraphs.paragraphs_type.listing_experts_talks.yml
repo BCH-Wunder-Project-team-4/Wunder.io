@@ -6,5 +6,5 @@ id: listing_experts_talks
 label: 'Listing: Experts talks'
 icon_uuid: null
 icon_default: null
-description: ''
+description: "\tRenders a listing of Experts talks in the frontend."
 behavior_plugins: {  }

@@ -1,5 +1,6 @@
 import {
   AccordionSchema,
+  AnchorSchema,
   BannerSchema,
   FileAttachmentsSchema,
   FormattedTextSchema,
@@ -10,6 +11,7 @@ import {
   InfosectionSchema,
   LinksSchema,
   ListingArticlesSchema,
+  ListingEventsSchema,
   ListingExpertTalksSchema,
   LogoWallSchema,
   ParagraphWunderpediaSchema,
@@ -20,7 +22,6 @@ import {
   SubheadingSchema,
   TrilogySnapshotSchema,
   VideoSchema,
-  AnchorSchema,
 } from "@/lib/zod/paragraph";
 
 import { DrupalNode } from "next-drupal";
@@ -36,6 +37,7 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   HeroSchema,
   ListingArticlesSchema,
   ListingExpertTalksSchema,
+  ListingEventsSchema,
   FileAttachmentsSchema,
   BannerSchema,
   ScrollingNumbersSchema,

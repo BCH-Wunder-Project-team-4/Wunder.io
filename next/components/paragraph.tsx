@@ -22,6 +22,7 @@ import { ParagraphTrilogySnapshot } from "./paragraph--trilogy_snapshot";
 import { ParagraphWunderpedia } from "./paragraph--wunderpedia";
 import { ParagraphWunderStory } from "./paragraph--wunderStory";
 import { ParagraphAnchor } from "./paragraph--anchor";
+import { ParagraphListingEvents } from "./paragraph--listing-events";
 
 // Use dynamic imports to defer loading a component until after initial page load: https://nextjs.org/docs/advanced-features/dynamic-import
 const ParagraphVideo = dynamic(() =>
@@ -61,6 +62,9 @@ export function Paragraph({ paragraph }: { paragraph: Paragraph }) {
     }
     case "paragraph--listing_experts_talks": {
       return <ParagraphListingExpertTalks paragraph={paragraph} />;
+    }
+    case "paragraph--listing_events": {
+      return <ParagraphListingEvents paragraph={paragraph} />;
     }
     case "paragraph--file_attachments": {
       return <ParagraphFileAttachments paragraph={paragraph} />;
