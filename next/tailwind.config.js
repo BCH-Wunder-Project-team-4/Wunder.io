@@ -27,6 +27,7 @@ module.exports = {
       fog: "#BAA2FF",
       bittersweet: "#FF7060",
       evergreen: "#0A6450",
+      martinique: "#2f2942",
 
       info: "#221f2d",
       success: "#007f6c",

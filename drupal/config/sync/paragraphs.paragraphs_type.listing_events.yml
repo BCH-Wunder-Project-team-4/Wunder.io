@@ -1,0 +1,10 @@
+uuid: ba02f80f-59c9-42ae-874d-4fd6474ce39b
+langcode: en
+status: true
+dependencies: {  }
+id: listing_events
+label: 'Listing: Events'
+icon_uuid: null
+icon_default: null
+description: "\tRenders a listing of events in the frontend."
+behavior_plugins: {  }

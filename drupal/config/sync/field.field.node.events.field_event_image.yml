@@ -13,7 +13,7 @@ entity_type: node
 bundle: events
 label: event_image
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -30,9 +30,9 @@ settings:
   title_field: false
   title_field_required: false
   default_image:
-    uuid: ''
+    uuid: 0482ed11-6be5-49b1-b815-5270abfc91a1
     alt: ''
     title: ''
-    width: null
-    height: null
+    width: 640
+    height: 640
 field_type: image

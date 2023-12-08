@@ -18,7 +18,7 @@ export function ExpertTalkTeaser({ expertTalk }: ExpertTalkTeaserProps) {
   return (
     <Link
       href={expertTalk.path.alias}
-      className="flex flex-col justify-between relative w-96 h-72 overflow-y-hidden border-finnishwinter dark:border-scapaflow border-2 p-5 "
+      className="flex flex-col justify-between relative w-96 h-72 overflow-y-hidden border-finnishwinter dark:border-scapaflow border-2 p-5 hover:shadow-md"
     >
       <div className="flex flex-row items-center">
 
