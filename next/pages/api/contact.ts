@@ -33,10 +33,13 @@ export default async function handler(
         method: "POST",
         body: JSON.stringify({
           webform_id: "contact",
-          name: body.name,
+          first_name: body.firstName,
+          last_name: body.lastName,
           email: body.email,
           message: body.message,
           subject: body.subject,
+          phone_number: body.phoneNumber,
+          
         }),
         headers: {
           "Content-Type": "application/json",

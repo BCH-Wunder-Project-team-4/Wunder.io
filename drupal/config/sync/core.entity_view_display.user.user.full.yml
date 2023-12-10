@@ -1,0 +1,22 @@
+uuid: 166dcf52-7a44-4830-8e4b-7e5a35d4763d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.full
+    - field.field.user.user.field_profile_picture
+  module:
+    - user
+id: user.user.full
+targetEntityType: user
+bundle: user
+mode: full
+content:
+  member_for:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  field_profile_picture: true
+  langcode: true

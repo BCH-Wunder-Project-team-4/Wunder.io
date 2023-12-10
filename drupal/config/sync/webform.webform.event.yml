@@ -17,6 +17,9 @@ elements: |-
     '#type': email
     '#title': Email
     '#required': true
+    '#required_error': 'please, provide your email address'
+    '#unique': true
+    '#unique_error': 'This email has already been used'
   name:
     '#type': textfield
     '#title': name

@@ -1,0 +1,22 @@
+uuid: 726d87d9-ceda-424c-8d33-4d17bd904d42
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.token
+    - field.field.user.user.field_profile_picture
+  module:
+    - user
+id: user.user.token
+targetEntityType: user
+bundle: user
+mode: token
+content:
+  member_for:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  field_profile_picture: true
+  langcode: true

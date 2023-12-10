@@ -1,0 +1,22 @@
+uuid: b134ad7b-5b37-45fd-b0a8-ca328dd467b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.field_profile_picture
+  module:
+    - user
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content:
+  member_for:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  field_profile_picture: true
+  langcode: true
