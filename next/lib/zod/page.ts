@@ -22,6 +22,7 @@ import {
   SubheadingSchema,
   TrilogySnapshotSchema,
   VideoSchema,
+  FrameSchema,
 } from "@/lib/zod/paragraph";
 
 import { DrupalNode } from "next-drupal";
@@ -51,7 +52,8 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   SimpleQuoteSchema,
   LogoWallSchema,
   TrilogySnapshotSchema,
-  AnchorSchema
+  AnchorSchema,
+  FrameSchema
 ]);
 
 export const PageSchema = z.object({

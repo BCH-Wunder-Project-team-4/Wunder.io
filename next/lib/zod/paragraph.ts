@@ -213,6 +213,7 @@ export const InfosectionSchema = z.object({
     })
     .nullable()
     .optional(),
+  field_frame: z.string(),
 });
 export const InfosectionBSchema = z.object({
   type: z.literal("paragraph--infosection_b"),
@@ -347,6 +348,31 @@ export const AnchorSchema = z.object({
   id: z.string(),
   field_section_id: z.string().nullable(),
 });
+export const FrameSchema = z.object({
+  type: z.literal("paragraph--frame"),
+  id: z.string(),
+  field_heading: z.string(),
+  field_formatted_text: z.object({
+    processed: z.string(),
+  }),
+  field_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+  field_dark_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+  field_frame: z.string(),
+});
 
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
@@ -373,6 +399,7 @@ export type LogoWall = z.infer<typeof LogoWallSchema>;
 export type TrilogySnapshot = z.infer<typeof TrilogySnapshotSchema>;
 export type Anchor = z.infer<typeof AnchorSchema>;
 export type WunderStory = z.infer<typeof WunderStorySchema>;
+export type Frame = z.infer<typeof FrameSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -399,4 +426,5 @@ export type Paragraph =
   | SimpleQuote
   | LogoWall
   | TrilogySnapshot
-  | Anchor;
+  | Anchor
+  | Frame;
