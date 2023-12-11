@@ -17,16 +17,17 @@ import { getCommonPageProps } from "@/lib/get-common-page-props";
 import { getLatestArticlesItems } from "@/lib/drupal/get-articles";
 import { useRef } from "react";
 import { useTranslation } from "next-i18next";
+import { buttonVariants } from "@/ui/button";
+import clsx from "clsx";
+import ArrowIcon from "@/styles/icons/arrow-down.svg";
 
 interface AllArticlesPageProps extends LayoutProps {
   articleTeasers: ArticleTeaserType[];
-  paginationProps: PaginationProps;
   languageLinks: LanguageLinks;
 }
 
 export default function AllArticlesPage({
   articleTeasers = [],
-  paginationProps,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation();
   const focusRef = useRef<HTMLDivElement>(null);
@@ -42,59 +43,27 @@ export default function AllArticlesPage({
           </li>
         ))}
       </ul>
-      <Pagination
-        focusRestoreRef={focusRef}
-        paginationProps={paginationProps}
-      />
+      <div>
+        <button className={clsx(
+          buttonVariants({ variant: "primary" }),
+          "text-base mr-4 mt-4 inline-flex px-5 py-3",
+        )}
+        >
+          {t("load-more")}
+          <ArrowIcon aria-hidden className="ml-3 h-6 w-6 -rotate-90" /></button>
+      </div>
     </>
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/require-await
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [
-      {
-        params: { page: ["1"] },
-      },
-    ],
-    fallback: "blocking",
-  };
-};
-
 export const getStaticProps: GetStaticProps<AllArticlesPageProps> = async (
   context,
 ) => {
-  // Get the page parameter:
-  const page = context.params?.page;
-
-  const currentPage = parseInt(Array.isArray(page) ? page[0] : page || "1");
-  const PAGE_SIZE = 6;
-
-  const { totalPages, articles } = await getLatestArticlesItems({
-    limit: PAGE_SIZE,
-    offset: currentPage ? PAGE_SIZE * (currentPage - 1) : 0,
-    locale: context.locale,
-  });
-
-  // Create pagination props.
-  const prevEnabled = currentPage > 1;
-  const nextEnabled = currentPage < totalPages;
-
-  // Create links for prev/next pages.
   const pageRoot = "/all-articles";
-  const prevPage = currentPage - 1;
-  const nextPage = currentPage + 1;
-  const prevPageHref =
-    currentPage === 2
-      ? pageRoot
-      : prevEnabled && [pageRoot, prevPage].join("/");
-  const nextPageHref = nextEnabled && [pageRoot, nextPage].join("/");
-
-  // Create language links for this page.
-  // Note: the links will always point to the first page, because we cannot guarantee that
-  // the other pages will exist in all languages.
   const languageLinks = createLanguageLinksForNextOnlyPage(pageRoot, context);
+  const { articles } = await getLatestArticlesItems({
+    locale: context.locale
+  });
 
   return {
     props: {
@@ -102,14 +71,6 @@ export const getStaticProps: GetStaticProps<AllArticlesPageProps> = async (
       articleTeasers: articles.map((teaser) =>
         validateAndCleanupArticleTeaser(teaser),
       ),
-      paginationProps: {
-        currentPage,
-        totalPages,
-        prevEnabled,
-        nextEnabled,
-        prevPageHref,
-        nextPageHref,
-      },
       languageLinks,
     },
     revalidate: 60,
