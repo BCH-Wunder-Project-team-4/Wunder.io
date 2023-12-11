@@ -5,10 +5,13 @@ import { MediaImage } from "@/components/media--image";
 import { Frame as FrameType } from "@/lib/zod/paragraph";
 
 export function ParagraphFrame({ paragraph }: { paragraph: FrameType }) {
+
+  console.log(paragraph)
+  const isLaptop = paragraph.field_frame === 'Laptop';
   return (
     <section id="hero" className="border-b border-primary-600 dark:border-fog pb-5">
-      <div className="mx-auto grid max-w-screen-xl lg:grid-cols-12  justify-center items-center">
-        <div className="mr-auto place-self-center px-8 py-8 lg:col-span-6  lg:py-16">
+      <div className="lg:grid lg:grid-cols-3 lg:gap-8 md:flex-col">
+        <div className="mr-auto place-self-center px-8 py-8 lg:col-span-1 lg:py-16">
           {paragraph.field_heading && (
             <h3 className="leading-none mb-4 max-w-2xl text-left text-heading-sm font-bold tracking-tight text-primary-600 dark:text-fog">
               {paragraph.field_heading}
@@ -22,27 +25,53 @@ export function ParagraphFrame({ paragraph }: { paragraph: FrameType }) {
             )}
           />
         </div>
-        <div className="lg:col-span-6 lg:mt-0 lg:flex-col">
-        <div className="relative mx-auto border-steelgray dark:border-scapaflow bg-steelgray border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]">
-          <div className="h-[156px] md:h-[278px] bg-white dark:bg-gray-800">
+        <div className="lg:col-span-2">
+        {isLaptop ? (
+        <div className="flex-none"> 
+            <div className="relative mx-auto border-steelgray dark:border-scapaflow bg-steelgray border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]">
+              <div className="h-[156px] md:h-[278px] bg-white dark:bg-gray-800">
+              <MediaImage
+                media={paragraph.field_image}
+                alt="site-banner"
+                priority
+                className="dark:hidden h-[156px] md:h-[278px] "
+              />
+              <MediaImage
+                media={paragraph.field_dark_image}
+                alt="site-banner"
+                priority
+                className="hidden dark:block h-[156px] md:h-[278px] "
+              />
+              </div>
+            </div>
+            <div className="relative mx-auto bg-scapaflow dark:bg-stone rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]">
+                <div className="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-steelgray dark:bg-scapaflow"></div>
+            </div>
+        </div>
+           ) : (
+        // mobile option:
+        <div className="relative mx-auto border-scapaflow dark:border-scapaflow bg-scapaflow border-[14px] rounded-[2.5rem] h-[600px] w-[300px]">
+        <div className="h-[32px] w-[3px] bg-scapaflow dark:bg-scapaflow absolute -start-[17px] top-[72px] rounded-s-lg"></div>
+        <div className="h-[46px] w-[3px] bg-scapaflow dark:bg-scapaflow absolute -start-[17px] top-[124px] rounded-s-lg"></div>
+        <div className="h-[46px] w-[3px] bg-scapaflow dark:bg-scapaflow absolute -start-[17px] top-[178px] rounded-s-lg"></div>
+        <div className="h-[64px] w-[3px] bg-scapaflow dark:bg-scapaflow absolute -end-[17px] top-[142px] rounded-e-lg"></div>
+        <div className="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-scapaflow">
           <MediaImage
             media={paragraph.field_image}
             alt="site-banner"
             priority
-            className="dark:hidden h-[156px] md:h-[278px] w-full"
+            className="dark:hidden h-full w-full"
           />
           <MediaImage
             media={paragraph.field_dark_image}
             alt="site-banner"
             priority
-            className="hidden dark:block h-[156px] md:h-[278px] w-full"
+            className="hidden dark:block h-full w-full"
           />
-          </div>
         </div>
-            <div className="relative mx-auto bg-scapaflow dark:bg-stone rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]">
-                <div className="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-steelgray dark:bg-scapaflow"></div>
-            </div>
         </div>
+         )}
+         </div>
       </div>
     </section>
   );

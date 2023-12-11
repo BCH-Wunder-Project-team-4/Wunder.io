@@ -212,8 +212,7 @@ export const InfosectionSchema = z.object({
       field_media_image: ImageShape.nullable(),
     })
     .nullable()
-    .optional(),
-  field_frame: z.string(),
+    .optional()
 });
 export const InfosectionBSchema = z.object({
   type: z.literal("paragraph--infosection_b"),
