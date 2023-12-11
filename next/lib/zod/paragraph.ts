@@ -371,6 +371,7 @@ export const FrameSchema = z.object({
     .nullable()
     .optional(),
   field_frame: z.string(),
+  field_image_position: z.string(),
 });
 
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
