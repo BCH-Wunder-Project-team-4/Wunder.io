@@ -6,5 +6,5 @@ id: article_body_text
 label: 'Article Body Text'
 icon_uuid: null
 icon_default: null
-description: 'Add long formatted text field for Articles'
+description: 'A paragraph for the main text content of Article.'
 behavior_plugins: {  }
