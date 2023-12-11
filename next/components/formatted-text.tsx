@@ -1,13 +1,12 @@
-import Image from "next/image";
-import Link from "next/link";
-import { HTMLAttributes } from "react";
-import {
+import parse, {
   DOMNode,
   domToReact,
   Element,
   HTMLReactParserOptions,
 } from "html-react-parser";
-import parse from "html-react-parser";
+import Image from "next/image";
+import Link from "next/link";
+import { HTMLAttributes } from "react";
 
 import { isRelative } from "@/lib/utils";
 
@@ -60,7 +59,19 @@ const options: HTMLReactParserOptions = {
       }
 
       case "p": {
-        return <p className="mb-2 text-steelgray dark:text-mischka">{domToReact(domNode.children, options)}</p>;
+        return (
+          <p className="mb-2 text-steelgray dark:text-mischka">
+            {domToReact(domNode.children, options)}
+          </p>
+        );
+      }
+
+      case "h3": {
+        return (
+          <h3 className="text-left text-primary-600 dark:text-fog text-heading-sm font-bold md:text-heading-md my-4">
+            {domToReact(domNode.children, options)}
+          </h3>
+        );
       }
 
       case "input": {
@@ -83,5 +94,5 @@ interface FormattedTextProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export function FormattedText({ html, ...props }: FormattedTextProps) {
-  return <div {...props} >{parse(html, options)}</div>;
+  return <div {...props}>{parse(html, options)}</div>;
 }
