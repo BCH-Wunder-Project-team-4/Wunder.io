@@ -1,0 +1,10 @@
+uuid: 920ebe23-a3fa-4629-a68c-e9964844489d
+langcode: en
+status: true
+dependencies: {  }
+id: article_body_text
+label: 'Article Body Text'
+icon_uuid: null
+icon_default: null
+description: 'Add long formatted text field for Articles'
+behavior_plugins: {  }

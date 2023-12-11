@@ -1,0 +1,31 @@
+uuid: 873f8b31-e236-4232-932c-1f8a63aa1105
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.article_body_text.field_formatted_text
+    - field.field.paragraph.article_body_text.field_heading
+    - paragraphs.paragraphs_type.article_body_text
+  module:
+    - text
+id: paragraph.article_body_text.default
+targetEntityType: paragraph
+bundle: article_body_text
+mode: default
+content:
+  field_formatted_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

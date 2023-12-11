@@ -6,11 +6,12 @@ dependencies:
     - field.storage.node.field_content_elements
     - node.type.article
     - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.article_body_text
     - paragraphs.paragraphs_type.banner
     - paragraphs.paragraphs_type.file_attachments
-    - paragraphs.paragraphs_type.formatted_text
-    - paragraphs.paragraphs_type.hero
     - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.infosection
+    - paragraphs.paragraphs_type.infosection_b
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.simple_quote
     - paragraphs.paragraphs_type.subheading
@@ -31,14 +32,15 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      hero: hero
-      formatted_text: formatted_text
       image: image
       links: links
       accordion: accordion
       video: video
       file_attachments: file_attachments
       banner: banner
+      article_body_text: article_body_text
+      infosection: infosection
+      infosection_b: infosection_b
       simple_quote: simple_quote
       subheading: subheading
     negate: 0
@@ -49,6 +51,12 @@ settings:
       accordion_item:
         weight: -12
         enabled: false
+      anchor:
+        weight: 32
+        enabled: false
+      article_body_text:
+        weight: 29
+        enabled: true
       banner:
         weight: 25
         enabled: true
@@ -60,27 +68,33 @@ settings:
         enabled: true
       formatted_text:
         weight: -14
-        enabled: true
+        enabled: false
       full_width_paragraph:
         weight: 29
         enabled: false
       hero:
         weight: -15
-        enabled: true
+        enabled: false
       image:
         weight: -13
         enabled: true
       infosection:
         weight: 32
-        enabled: false
+        enabled: true
       infosection_b:
         weight: 33
-        enabled: false
+        enabled: true
       links:
         weight: -11
         enabled: true
       listing_articles:
         weight: 9
+        enabled: false
+      listing_events:
+        weight: 44
+        enabled: false
+      listing_experts_talks:
+        weight: 45
         enabled: false
       logo_wall:
         weight: 36
@@ -103,9 +117,15 @@ settings:
       subheading:
         weight: 42
         enabled: true
+      trilogy_snapshot:
+        weight: 53
+        enabled: false
       video:
         weight: -9
         enabled: true
+      wunder_story:
+        weight: 55
+        enabled: false
       wunderpedia:
         weight: 44
         enabled: false
