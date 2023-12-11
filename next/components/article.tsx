@@ -31,7 +31,7 @@ export function Article({ article, ...props }: ArticleProps) {
         <div className="mb-4 text-xl">{article.field_excerpt}</div>
       )}
       {!article.field_excerpt && article.field_image && (
-        <figure>
+        <figure className="mb-4">
           <Image
             src={absoluteUrl(article.field_image.uri.url)}
             width={768}
@@ -49,13 +49,13 @@ export function Article({ article, ...props }: ArticleProps) {
         </figure>
       )}
       {article.field_image && article.field_excerpt && (
-        <div className="grid grid-rows-1 md:grid-cols-6 gap-4">
+        <div className="grid grid-rows-1 md:grid-cols-7 gap-2 mb-8 md:mb-12">
           {article.field_excerpt && (
-            <div className="mb-4 md:pr-6 text-xl md:col-start-2 md:col-span-3">
+            <div className="mb-4 text-lg lg:text-xl md:col-start-1 md:col-span-3">
               {article.field_excerpt}
             </div>
           )}
-          <figure className="md:col-start-5 md:col-span-2">
+          <figure className="md:col-start-5 md:col-span-3">
             <Image
               src={absoluteUrl(article.field_image.uri.url)}
               width={500}
@@ -73,9 +73,13 @@ export function Article({ article, ...props }: ArticleProps) {
           </figure>
         </div>
       )}
-      {article.field_content_elements?.map((paragraph) => (
-        <Paragraph key={paragraph.id} paragraph={paragraph} />
-      ))}
+      <div className="grid grid-rows-1 md:grid-cols-6 gap-2">
+        <div className="md:col-start-2 md:col-span-4">
+          {article.field_content_elements?.map((paragraph) => (
+            <Paragraph key={paragraph.id} paragraph={paragraph} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
