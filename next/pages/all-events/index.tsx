@@ -18,6 +18,7 @@ import { getLatestEventsItems } from "@/lib/drupal/get-events";
 import clsx from "clsx";
 import ArrowIcon from "@/styles/icons/arrow-down.svg";
 import { useRouter } from "next/router";
+import { Divider } from "@/ui/divider";
 
 interface AllEventsPageProps extends LayoutProps {
   eventTeasers: EventTeaserType[];
@@ -49,7 +50,7 @@ export default function AllEventsPage({
           
         ))}
       </ul>
-      <div className="border-b border-dotted border-x-graysuit my-5"></div>
+      <Divider className="max-w-4xl" />
       <div className="mt-10">
         <h1 className="text-left md:text-center lg:text-center text-heading-md font-bold">{t("More Events")}</h1>
         <div className="border-t border-secondary-600 mb-6 w-1/2 md:w-1/3 lg:w-1/3 md:mx-auto lg:mx-auto border-2">

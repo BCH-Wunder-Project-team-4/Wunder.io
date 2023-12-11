@@ -38,7 +38,7 @@ const RESOURCE_TYPES = ["node--article", "node--page", "node--job", "node--case"
 export default function CustomPage({
   resource,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  if (!resource) return null;
+  if (!resource) return null;  
   return (
     <>
       <Meta title={resource.title} metatags={resource.metatag} />

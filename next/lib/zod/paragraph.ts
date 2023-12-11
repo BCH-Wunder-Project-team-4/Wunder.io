@@ -9,13 +9,6 @@ export const FormattedTextSchema = z.object({
   field_heading: z.string().nullable(),
 });
 
-export const ListingArticlesSchema = z.object({
-  type: z.literal("paragraph--listing_articles"),
-  id: z.string(),
-  field_heading: z.string().nullable(),
-  field_limit: z.number(),
-});
-
 export const ImageShape = z.object({
   type: z.literal("file--file"),
   id: z.string(),
@@ -31,6 +24,13 @@ export const ImageShape = z.object({
     width: z.number(),
     height: z.number(),
   }),
+});
+
+export const ListingArticlesSchema = z.object({
+  type: z.literal("paragraph--listing_articles"),
+  id: z.string(),
+  field_heading: z.string().nullable(),
+  field_limit: z.number(),
 });
 
 export const DocumentShape = z.object({

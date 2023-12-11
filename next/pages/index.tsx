@@ -16,26 +16,26 @@ import {
   ArticleTeaser,
   validateAndCleanupArticleTeaser,
 } from "@/lib/zod/article-teaser";
-import { Frontpage, validateAndCleanupFrontpage } from "@/lib/zod/frontpage";
 
 import { Divider } from "@/ui/divider";
 import { validateAndCleanupEventTeaser } from "@/lib/zod/events-teaser";
 import { getLatestEventsItems } from "@/lib/drupal/get-events";
 import { Events } from "@/components/events/events";
+import { getLatestArticlesItems } from "@/lib/drupal/get-articles";
+import { Frontpage, validateAndCleanupFrontpage } from "@/lib/zod/frontpage";
 
 interface IndexPageProps extends LayoutProps {
   frontpage: Frontpage | null;
-  promotedArticleTeasers: ArticleTeaser[];
+  articles: ArticleTeaser[];
   eventsTeasers: any[];
 }
 
 export default function IndexPage({
   frontpage,
-  promotedArticleTeasers,
+  articles,
   eventsTeasers,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation();
-  console.log(promotedArticleTeasers);
 
   return (
     <>
@@ -46,12 +46,12 @@ export default function IndexPage({
         ))}
       </div>
       <Divider className="max-w-4xl" />
-      <ContactForm />
-      <Divider className="max-w-4xl" />
       <ArticleTeasers
-        articles={promotedArticleTeasers}
+        articles={articles}
         heading={t("promoted-articles")}
       />
+      <ContactForm />
+      <Divider className="max-w-4xl" />
       <Events events={eventsTeasers} heading={t("Coming events")}></Events>
 
       <ContactList />
@@ -73,19 +73,7 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async (
     )
   ).at(0);
 
-  const promotedArticleTeasers = await drupal.getResourceCollectionFromContext<
-    DrupalNode[]
-  >("node--article", context, {
-    params: {
-      "filter[status]": 1,
-      "filter[langcode]": context.locale,
-      "filter[promote]": 1,
-      "fields[node--article]": "title,path,field_image,uid,created, uid",
-      include: "field_image,uid",
-      sort: "-sticky,-created",
-      "page[limit]": 3,
-    },
-  });
+  const {articles} = await getLatestArticlesItems({limit:3, locale: context.locale})
 
   const { events } = await getLatestEventsItems({ limit: 3, locale: context.locale });
 
@@ -93,7 +81,7 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async (
     props: {
       ...(await getCommonPageProps(context)),
       frontpage: frontpage ? validateAndCleanupFrontpage(frontpage) : null,
-      promotedArticleTeasers: promotedArticleTeasers.map((teaser) =>
+      articles: articles.map((teaser) =>
       validateAndCleanupArticleTeaser(teaser),
       ),
       eventsTeasers: events.map((teaser) =>
