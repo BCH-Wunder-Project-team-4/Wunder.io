@@ -16,7 +16,7 @@ export function ParagraphFrame({ paragraph }: { paragraph: FrameType }) {
       className="border-b border-primary-600 dark:border-fog py-5"
     >
       <div className="lg:grid lg:grid-cols-3 lg:gap-8 md:flex-col">
-        <div className="lg:col-span-1">
+        <div className="lg:col-span-1 flex flex-col justify-center p-4">
           {paragraph.field_heading && (
             <h3 className="leading-none mb-4 text-left text-heading-sm font-bold tracking-tight text-primary-600 dark:text-fog">
               {paragraph.field_heading}
@@ -56,26 +56,26 @@ export function ParagraphFrame({ paragraph }: { paragraph: FrameType }) {
             </div>
           ) : isMobile ? (
             // mobile option:
-            <div className="relative mx-auto border-scapaflow dark:border-scapaflow bg-scapaflow border-[14px] rounded-[2.5rem] h-450px] w-[225px]">
-              <div className="h-[24px] w-[3px] bg-scapaflow dark:bg-scapaflow absolute -start-[17px] top-[54px] rounded-s-lg"></div>
-              <div className="h-[34.5px] w-[3px] bg-scapaflow dark:bg-scapaflow absolute -start-[17px] top-[93px] rounded-s-lg"></div>
-              <div className="h-[34.5px] w-[3px] bg-scapaflow dark:bg-scapaflow absolute -start-[17px] top-[133.5px] rounded-s-lg"></div>
-              <div className="h-[48px] w-[3px] bg-scapaflow dark:bg-scapaflow absolute -end-[17px] top-[106.5px] rounded-e-lg"></div>
-              <div className="rounded-[2rem] overflow-hidden bg-white dark:bg-scapaflow">
-                <MediaImage
-                  media={paragraph.field_image}
-                  alt="site-banner"
-                  priority
-                  className="dark:hidden h-full w-full"
-                />
-                <MediaImage
-                  media={paragraph.field_dark_image}
-                  alt="site-banner"
-                  priority
-                  className="hidden dark:block w-full"
-                />
-              </div>
+            <div className="relative mx-auto border-scapaflow dark:border-scapaflow bg-scapaflow border-[14px] rounded-[2.5rem] h-[450px] w-[254.17px]">
+            <div className="h-[24px] w-[3px] bg-scapaflow dark:bg-scapaflow absolute -start-[17px] top-[54px] rounded-s-lg"></div>
+            <div className="h-[34.5px] w-[3px] bg-scapaflow dark:bg-scapaflow absolute -start-[17px] top-[93px] rounded-s-lg"></div>
+            <div className="h-[34.5px] w-[3px] bg-scapaflow dark:bg-scapaflow absolute -start-[17px] top-[133.5px] rounded-s-lg"></div>
+            <div className="h-[48px] w-[3px] bg-scapaflow dark:bg-scapaflow absolute -end-[17px] top-[106.5px] rounded-e-lg"></div>
+            <div className="rounded-[2rem] overflow-hidden bg-white dark:bg-scapaflow h-full">
+              <MediaImage
+                media={paragraph.field_image}
+                alt="site-banner"
+                priority
+                className="dark:hidden h-full"
+              />
+              <MediaImage
+                media={paragraph.field_dark_image}
+                alt="site-banner"
+                priority
+                className="hidden dark:block h-full"
+              />
             </div>
+          </div>
           ) : isTablet ? (
             // tablet option:
             <div className="relative mx-auto border-scapaflow dark:border-scapaflow bg-scapaflow border-[14px] rounded-[2.5rem] h-[454px] max-w-[341px]">
@@ -137,23 +137,23 @@ export function ParagraphFrame({ paragraph }: { paragraph: FrameType }) {
           </div>
         ) : isMobile ? (
           // mobile option:
-          <div className="relative mx-auto border-scapaflow dark:border-scapaflow bg-scapaflow border-[14px] rounded-[2.5rem] h-450px] w-[225px]">
+          <div className="relative mx-auto border-scapaflow dark:border-scapaflow bg-scapaflow border-[14px] rounded-[2.5rem] h-[450px] w-[254.17px]">
             <div className="h-[24px] w-[3px] bg-scapaflow dark:bg-scapaflow absolute -start-[17px] top-[54px] rounded-s-lg"></div>
             <div className="h-[34.5px] w-[3px] bg-scapaflow dark:bg-scapaflow absolute -start-[17px] top-[93px] rounded-s-lg"></div>
             <div className="h-[34.5px] w-[3px] bg-scapaflow dark:bg-scapaflow absolute -start-[17px] top-[133.5px] rounded-s-lg"></div>
             <div className="h-[48px] w-[3px] bg-scapaflow dark:bg-scapaflow absolute -end-[17px] top-[106.5px] rounded-e-lg"></div>
-            <div className="rounded-[2rem] overflow-hidden bg-white dark:bg-scapaflow">
+            <div className="rounded-[2rem] overflow-hidden bg-white dark:bg-scapaflow h-full">
               <MediaImage
                 media={paragraph.field_image}
                 alt="site-banner"
                 priority
-                className="dark:hidden h-full w-full"
+                className="dark:hidden h-full"
               />
               <MediaImage
                 media={paragraph.field_dark_image}
                 alt="site-banner"
                 priority
-                className="hidden dark:block w-full"
+                className="hidden dark:block h-full"
               />
             </div>
           </div>
@@ -181,7 +181,7 @@ export function ParagraphFrame({ paragraph }: { paragraph: FrameType }) {
           </div>
         ) : null}
       </div>
-      <div className="lg:col-span-1">
+      <div className="lg:col-span-1 flex flex-col justify-center p-4">
         {paragraph.field_heading && (
           <h3 className="leading-none mb-4 mt-4 text-left text-heading-sm font-bold tracking-tight text-primary-600 dark:text-fog">
             {paragraph.field_heading}
