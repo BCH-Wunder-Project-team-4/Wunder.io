@@ -1,0 +1,19 @@
+uuid: 827f9a53-1bad-4469-847e-93389297d007
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_excerpt
+    - node.type.expert_talks
+id: node.expert_talks.field_excerpt
+field_name: field_excerpt
+entity_type: node
+bundle: expert_talks
+label: Excerpt
+description: 'Add an excerpt for this piece of content. It will also be used for search results and HTML meta tags.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

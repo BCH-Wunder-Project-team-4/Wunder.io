@@ -1,15 +1,15 @@
-uuid: 6126c0c7-718e-436b-9c88-43c99d56315e
+uuid: 7c6c88a5-bd9f-4bbd-ada6-f9f15abf8a0c
 langcode: en
 status: true
 dependencies:
   config:
-    - webform.webform.footer_newsletter
+    - webform.webform.careers_newsletter
   module:
     - views_send
     - webform
     - webform_views
-id: footer_newslater_email
-label: footer_newslater_email
+id: career_newsletter_emails
+label: career_newsletter_emails
 module: views
 description: ''
 tag: ''
@@ -22,7 +22,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: footer_newslater_email
+      title: career_newsletter_emails
       fields:
         views_send_bulk_form:
           id: views_send_bulk_form
@@ -32,7 +32,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: views_send_bulk_form
-          label: ''
+          label: 'Send e-mail'
           exclude: false
           alter:
             alter_text: false
@@ -65,7 +65,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -85,7 +85,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: webform_submission_field
-          label: ''
+          label: Email
           exclude: false
           alter:
             alter_text: false
@@ -118,7 +118,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -176,7 +176,7 @@ display:
           entity_field: webform_id
           plugin_id: bundle
           value:
-            footer_newsletter: footer_newsletter
+            careers_newsletter: careers_newsletter
       style:
         type: table
         options:
@@ -184,18 +184,10 @@ display:
           row_class: ''
           default_row_class: true
           columns:
-            views_send_bulk_form: views_send_bulk_form
-            webform_submission_value: webform_submission_value
+            webform_submission_bulk_form: webform_submission_bulk_form
           default: '-1'
           info:
-            views_send_bulk_form:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            webform_submission_value:
-              sortable: false
-              default_sort_order: asc
+            webform_submission_bulk_form:
               align: ''
               separator: ''
               empty_column: false
@@ -235,7 +227,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: footer-newslater-email
+      path: career-newsletter-emails
     cache_metadata:
       max-age: 0
       contexts:

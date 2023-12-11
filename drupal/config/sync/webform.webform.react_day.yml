@@ -1,4 +1,4 @@
-uuid: 0688c1b5-3e44-422d-b9d7-f754712857cf
+uuid: c6f13815-5a37-4488-9282-7565ec90dafe
 langcode: en
 status: open
 dependencies: {  }
@@ -8,25 +8,18 @@ close: null
 uid: 1
 template: false
 archive: false
-id: careers_newsletter
-title: Careers-Newsletter
-description: '<p>Form for users to subscribe to the Careers-newsletter</p>'
+id: react_day
+title: 'React Day'
+description: ''
 categories: {  }
 elements: |-
   email:
     '#type': email
     '#title': Email
-    '#placeholder': 'Your email'
     '#required': true
     '#required_error': 'please, provide your email address'
     '#unique': true
     '#unique_error': 'This email has already been used'
-  policy_checkbox:
-    '#type': checkbox
-    '#title': 'Policy Checkbox'
-    '#description': "<p>The user needs to agree to Wunder's privacy policy before signing up to receive newsletters</p>"
-    '#required': true
-    '#required_error': 'This field is required.'
 css: ''
 javascript: ''
 settings:

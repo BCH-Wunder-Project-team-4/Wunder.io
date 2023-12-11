@@ -1,0 +1,30 @@
+uuid: bbb810b3-2cc0-42ef-a551-7658577ccc31
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - node
+id: node.field_experts_photo
+field_name: field_experts_photo
+entity_type: node
+type: image
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  default_image:
+    uuid: b7cad600-191f-4de6-bd12-a3c824c53022
+    alt: 'Picture of Author'
+    title: Author
+    width: 640
+    height: 640
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
