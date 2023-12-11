@@ -29,9 +29,9 @@ export default function AllEventsPage({
 
   return (
     <>
-      <Meta title={"All Events"} metatags={[]} />
+      <Meta title={t("all-events")} metatags={[]} />
       <div ref={focusRef} tabIndex={-1} />
-      <HeadingPage>All Expert Talks</HeadingPage>
+      <HeadingPage>{t("all-events")}</HeadingPage>
       <ul className="mt-4">
         {eventTeasers?.map((event) => (
           <li key={event.id}>
