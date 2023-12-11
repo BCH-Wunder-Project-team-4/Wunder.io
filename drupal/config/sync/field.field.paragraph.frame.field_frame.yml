@@ -1,0 +1,21 @@
+uuid: 68f7a5b7-4796-4710-9732-7a70065d0534
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_frame
+    - paragraphs.paragraphs_type.frame
+  module:
+    - options
+id: paragraph.frame.field_frame
+field_name: field_frame
+entity_type: paragraph
+bundle: frame
+label: Frame
+description: 'Select the appropriate frame.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,19 +1,21 @@
-uuid: 3bb69233-0080-44cb-9f2c-e9bc99636343
+uuid: a4f6bcda-e8e5-4a3d-ab8f-a8f04c115896
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.infosection_b.field_dark_image
-    - field.field.paragraph.infosection_b.field_formatted_text
-    - field.field.paragraph.infosection_b.field_heading
-    - field.field.paragraph.infosection_b.field_image
-    - paragraphs.paragraphs_type.infosection_b
+    - field.field.paragraph.frame.field_dark_image
+    - field.field.paragraph.frame.field_formatted_text
+    - field.field.paragraph.frame.field_frame
+    - field.field.paragraph.frame.field_heading
+    - field.field.paragraph.frame.field_image
+    - field.field.paragraph.frame.field_image_position
+    - paragraphs.paragraphs_type.frame
   module:
     - media_library
     - text
-id: paragraph.infosection_b.default
+id: paragraph.frame.default
 targetEntityType: paragraph
-bundle: infosection_b
+bundle: frame
 mode: default
 content:
   field_dark_image:
@@ -31,6 +33,12 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_frame:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_heading:
     type: string_textfield
     weight: 0
@@ -45,6 +53,12 @@ content:
     region: content
     settings:
       media_types: {  }
+    third_party_settings: {  }
+  field_image_position:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true
