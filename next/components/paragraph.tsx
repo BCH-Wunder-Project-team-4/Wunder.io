@@ -10,8 +10,6 @@ import { ParagraphListingExpertTalks } from "@/components/paragraph--listing-exp
 import { ParagraphText } from "@/components/paragraph--text";
 import { Paragraph } from "@/lib/zod/paragraph";
 import { ParagraphBanner } from "./paragraph--banner";
-import { ParagraphInfosection } from "./paragraph--infosection";
-import { ParagraphInfosectionB } from "./paragraph--infosection_b";
 import { ParagraphLogoWall } from "./paragraph--logo-wall";
 import { ParagraphScrollingNumbers } from "./paragraph--scrolling-numbers";
 import { ParagraphSectionbg } from "./paragraph--sectionbg";
@@ -87,12 +85,6 @@ export function Paragraph({ paragraph }: { paragraph: Paragraph }) {
     }
     case "paragraph--services": {
       return <ParagraphServices paragraph={paragraph} />;
-    }
-    case "paragraph--infosection": {
-      return <ParagraphInfosection paragraph={paragraph} />;
-    }
-    case "paragraph--infosection_b": {
-      return <ParagraphInfosectionB paragraph={paragraph} />;
     }
     case "paragraph--subheading": {
       return <ParagraphSubheading paragraph={paragraph} />;

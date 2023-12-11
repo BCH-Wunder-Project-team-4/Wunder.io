@@ -190,55 +190,6 @@ export const ServicesSchema = z.object({
   field_heading: z.string().nullable(),
 });
 
-export const InfosectionSchema = z.object({
-  type: z.literal("paragraph--infosection"),
-  id: z.string(),
-  field_heading: z.string(),
-  field_formatted_text: z.object({
-    processed: z.string(),
-  }),
-  field_image: z
-    .object({
-      type: z.literal("media--image"),
-      id: z.string(),
-      field_media_image: ImageShape.nullable(),
-    })
-    .nullable()
-    .optional(),
-  field_dark_image: z
-    .object({
-      type: z.literal("media--image"),
-      id: z.string(),
-      field_media_image: ImageShape.nullable(),
-    })
-    .nullable()
-    .optional()
-});
-export const InfosectionBSchema = z.object({
-  type: z.literal("paragraph--infosection_b"),
-  id: z.string(),
-  field_heading: z.string(),
-  field_formatted_text: z.object({
-    processed: z.string(),
-  }),
-  field_image: z
-    .object({
-      type: z.literal("media--image"),
-      id: z.string(),
-      field_media_image: ImageShape.nullable(),
-    })
-    .nullable()
-    .optional(),
-  field_dark_image: z
-    .object({
-      type: z.literal("media--image"),
-      id: z.string(),
-      field_media_image: ImageShape.nullable(),
-    })
-    .nullable()
-    .optional(),
-});
-
 export const SubheadingSchema = z.object({
   type: z.literal("paragraph--subheading"),
   id: z.string(),
@@ -388,8 +339,6 @@ export type ListingEvents = z.infer<typeof ListingEventsSchema>;
 export type FileAttachments = z.infer<typeof FileAttachmentsSchema>;
 export type Banner = z.infer<typeof BannerSchema>;
 export type Services = z.infer<typeof ServicesSchema>;
-export type Infosection = z.infer<typeof InfosectionSchema>;
-export type InfosectionB = z.infer<typeof InfosectionBSchema>;
 export type Subheading = z.infer<typeof SubheadingSchema>;
 export type Sectionbg = z.infer<typeof SectionbgSchema>;
 export type FullWidthParagraph = z.infer<typeof FullWidthParagraphSchema>;
@@ -414,8 +363,6 @@ export type Paragraph =
   | ListingEvents
   | FileAttachments
   | Services
-  | Infosection
-  | InfosectionB
   | Subheading
   | Sectionbg
   | FullWidthParagraph
