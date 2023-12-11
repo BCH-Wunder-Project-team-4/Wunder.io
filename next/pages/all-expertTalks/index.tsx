@@ -16,9 +16,6 @@ import { getCommonPageProps } from "@/lib/get-common-page-props";
 import { getLatestExpertTalksItems } from "@/lib/drupal/get-expertTalks";
 import { useRef } from "react";
 import { useTranslation } from "next-i18next";
-import { buttonVariants } from "@/ui/button";
-import clsx from "clsx";
-import ArrowIcon from "@/styles/icons/arrow-down.svg";
 
 interface AllExpertTalksPageProps extends LayoutProps {
   expertTalkTeasers: ExpertTalkTeaserType[];
@@ -42,15 +39,6 @@ export default function AllExpertTalksPage({
           </li>
         ))}
       </ul>
-      <div>
-        <button className={clsx(
-          buttonVariants({ variant: "primary" }),
-          "text-base mr-4 mt-4 inline-flex px-5 py-3",
-        )}
-        >
-          {t("load-more")}
-          <ArrowIcon aria-hidden className="ml-3 h-6 w-6 -rotate-90" /></button>
-      </div>
     </>
   );
 }
