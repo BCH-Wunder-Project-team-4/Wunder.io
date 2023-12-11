@@ -12,7 +12,7 @@ field_name: field_formatted_text
 entity_type: paragraph
 bundle: article_body_text
 label: 'Formatted text'
-description: 'Add main text content for the article.'
+description: 'Add formatted text content for the article. Heading 2 and Heading 3 can be used for subheadings.'
 required: true
 translatable: false
 default_value: {  }

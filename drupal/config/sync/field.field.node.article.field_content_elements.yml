@@ -7,12 +7,12 @@ dependencies:
     - node.type.article
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.article_body_text
-    - paragraphs.paragraphs_type.banner
     - paragraphs.paragraphs_type.file_attachments
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.infosection
     - paragraphs.paragraphs_type.infosection_b
     - paragraphs.paragraphs_type.links
+    - paragraphs.paragraphs_type.listing_articles
     - paragraphs.paragraphs_type.simple_quote
     - paragraphs.paragraphs_type.subheading
     - paragraphs.paragraphs_type.video
@@ -36,8 +36,8 @@ settings:
       links: links
       accordion: accordion
       video: video
+      listing_articles: listing_articles
       file_attachments: file_attachments
-      banner: banner
       article_body_text: article_body_text
       infosection: infosection
       infosection_b: infosection_b
@@ -59,7 +59,7 @@ settings:
         enabled: true
       banner:
         weight: 25
-        enabled: true
+        enabled: false
       event_speakers_information:
         weight: 26
         enabled: false
@@ -89,7 +89,7 @@ settings:
         enabled: true
       listing_articles:
         weight: 9
-        enabled: false
+        enabled: true
       listing_events:
         weight: 44
         enabled: false
