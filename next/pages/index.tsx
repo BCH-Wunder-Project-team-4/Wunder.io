@@ -16,19 +16,21 @@ import { getLatestEventsItems } from "@/lib/drupal/get-events";
 import { getNodePageJsonApiParams } from "@/lib/drupal/get-node-page-json-api-params";
 import { useTranslation } from "next-i18next";
 import { validateAndCleanupEventTeaser } from "@/lib/zod/events-teaser";
+import { getLatestArticlesItems } from "@/lib/drupal/get-articles";
+import { ArticleTeasers } from "@/components/article-teasers";
 
 interface IndexPageProps extends LayoutProps {
   frontpage: Frontpage | null;
-  promotedArticleTeasers: ArticleTeaser[];
+  articles: ArticleTeaser[];
   promotedExpertTalkTeasers: ExpertTalkTeaser[];
   eventsTeasers: any[];
 }
 
 export default function IndexPage({
   frontpage,
+  articles
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation();
-
 
   return (
     <>
@@ -38,6 +40,10 @@ export default function IndexPage({
           <Paragraph paragraph={paragraph} key={paragraph.id} />
         ))}
       </div>
+      {/* <ArticleTeasers
+        articles={articles}
+        heading={t("promoted-articles")}
+      /> */}
     </>
   );
 }
@@ -55,19 +61,7 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async (
     )
   ).at(0);
 
-  const promotedArticleTeasers = await drupal.getResourceCollectionFromContext<
-    DrupalNode[]
-  >("node--article", context, {
-    params: {
-      "filter[status]": 1,
-      "filter[langcode]": context.locale,
-      "filter[promote]": 1,
-      "fields[node--article]": "title,path,field_image,uid,created",
-      include: "field_image,uid",
-      sort: "-sticky,-created",
-      "page[limit]": 3,
-    },
-  });
+  const {articles} = await getLatestArticlesItems({limit:3, locale: context.locale})
   const promotedExpertTalkTeasers = await drupal.getResourceCollectionFromContext<
     DrupalNode[]
   >("node--expert_talks", context, {
@@ -88,9 +82,8 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async (
     props: {
       ...(await getCommonPageProps(context)),
       frontpage: frontpage ? validateAndCleanupFrontpage(frontpage) : null,
-      promotedArticleTeasers: promotedArticleTeasers.map((teaser) =>
-        validateAndCleanupArticleTeaser(teaser),
-      ),
+      articles: articles.map((teaser) =>
+      validateAndCleanupArticleTeaser(teaser),),
       promotedExpertTalkTeasers: promotedExpertTalkTeasers.map((teaser) =>
         validateAndCleanupExpertTalkTeaser(teaser),
       ),
