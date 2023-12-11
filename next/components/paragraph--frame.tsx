@@ -13,19 +13,19 @@ export function ParagraphFrame({ paragraph }: { paragraph: FrameType }) {
   return (
     <section
       id="hero"
-      className="border-b border-primary-600 dark:border-fog pb-5"
+      className="border-b border-primary-600 dark:border-fog py-5"
     >
       <div className="lg:grid lg:grid-cols-3 lg:gap-8 md:flex-col">
-        <div className="mr-auto place-self-center px-8 py-8 lg:col-span-1 lg:py-16">
+        <div className="lg:col-span-1">
           {paragraph.field_heading && (
-            <h3 className="leading-none mb-4 max-w-2xl text-left text-heading-sm font-bold tracking-tight text-primary-600 dark:text-fog">
+            <h3 className="leading-none mb-4 text-left text-heading-sm font-bold tracking-tight text-primary-600 dark:text-fog">
               {paragraph.field_heading}
             </h3>
           )}
           <FormattedText
             html={paragraph.field_formatted_text.processed}
             className={clsx(
-              "mb-0 max-w-2xl text-left text-md/xl text-primary-600 sm:text-lg md:text-lg lg:mb-0 lg:text-lg",
+              "mb-0 max-w-2xl text-left text-primary-600 md:mb-4",
               paragraph.field_heading && "mt-4",
             )}
           />
@@ -108,7 +108,7 @@ export function ParagraphFrame({ paragraph }: { paragraph: FrameType }) {
   return (
     <section
     id="hero"
-    className="border-b border-primary-600 dark:border-fog pb-5"
+    className="border-b border-primary-600 dark:border-fog py-5"
   >
     <div className="lg:grid lg:grid-cols-3 lg:gap-8 md:flex-col">
       <div className="lg:col-span-2">
@@ -181,17 +181,17 @@ export function ParagraphFrame({ paragraph }: { paragraph: FrameType }) {
           </div>
         ) : null}
       </div>
-      <div className="mr-auto place-self-center px-8 py-8 lg:col-span-1 lg:py-16">
+      <div className="lg:col-span-1">
         {paragraph.field_heading && (
-          <h3 className="leading-none mb-4 max-w-2xl text-left text-heading-sm font-bold tracking-tight text-primary-600 dark:text-fog">
+          <h3 className="leading-none mb-4 mt-4 text-left text-heading-sm font-bold tracking-tight text-primary-600 dark:text-fog">
             {paragraph.field_heading}
           </h3>
         )}
         <FormattedText
           html={paragraph.field_formatted_text.processed}
           className={clsx(
-            "mb-0 max-w-2xl text-left text-md/xl text-primary-600 sm:text-lg md:text-lg lg:mb-0 lg:text-lg",
-            paragraph.field_heading && "mt-4",
+            "mb-0 max-w-2xl text-left text-primary-600",
+            paragraph.field_heading 
           )}
         />
       </div>
