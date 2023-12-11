@@ -1,7 +1,6 @@
 import {
   AccordionSchema,
   ArticleBodyTextSchema,
-  BannerSchema,
   FileAttachmentsSchema,
   ImageSchema,
   InfosectionBSchema,
@@ -25,7 +24,6 @@ const ArticleElementsSchema = z.discriminatedUnion("type", [
   AccordionSchema,
   ListingArticlesSchema,
   FileAttachmentsSchema,
-  BannerSchema,
   SimpleQuoteSchema,
   SubheadingSchema,
   ArticleBodyTextSchema,
