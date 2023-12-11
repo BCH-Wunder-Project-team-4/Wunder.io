@@ -1,9 +1,8 @@
 import {
   AccordionSchema,
+  ArticleBodyTextSchema,
   BannerSchema,
   FileAttachmentsSchema,
-  FormattedTextSchema,
-  HeroSchema,
   ImageSchema,
   LinksSchema,
   ListingArticlesSchema,
@@ -12,25 +11,23 @@ import {
   VideoSchema,
 } from "@/lib/zod/paragraph";
 
-import { DrupalNode } from "next-drupal";
-import { ImageShape } from "@/lib/zod/paragraph";
 import { MetatagsSchema } from "@/lib/zod/metatag";
+import { ImageShape } from "@/lib/zod/paragraph";
+import { DrupalNode } from "next-drupal";
 import { z } from "zod";
 
 const ArticleElementsSchema = z.discriminatedUnion("type", [
-  FormattedTextSchema,
   ImageSchema,
   VideoSchema,
   LinksSchema,
   AccordionSchema,
-  HeroSchema,
   ListingArticlesSchema,
   FileAttachmentsSchema,
   BannerSchema,
   SimpleQuoteSchema,
   SubheadingSchema,
+  ArticleBodyTextSchema,
 ]);
-
 
 export const ArticleSchema = z.object({
   type: z.literal("node--article"),

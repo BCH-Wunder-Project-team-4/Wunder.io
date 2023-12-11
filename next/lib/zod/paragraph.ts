@@ -1,4 +1,3 @@
-import { any } from "cypress/types/bluebird";
 import { z } from "zod";
 
 export const FormattedTextSchema = z.object({
@@ -348,6 +347,13 @@ export const AnchorSchema = z.object({
   field_section_id: z.string().nullable(),
 });
 
+export const ArticleBodyTextSchema = z.object({
+  type: z.literal("paragraph--article_body_text"),
+  id: z.string(),
+  field_heading: z.string().nullable(),
+  field_formatted_text: z.object({ processed: z.string() }),
+});
+
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
 export type Video = z.infer<typeof VideoSchema>;
@@ -373,6 +379,7 @@ export type LogoWall = z.infer<typeof LogoWallSchema>;
 export type TrilogySnapshot = z.infer<typeof TrilogySnapshotSchema>;
 export type Anchor = z.infer<typeof AnchorSchema>;
 export type WunderStory = z.infer<typeof WunderStorySchema>;
+export type ArticleBodyText = z.infer<typeof ArticleBodyTextSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -399,4 +406,5 @@ export type Paragraph =
   | SimpleQuote
   | LogoWall
   | TrilogySnapshot
-  | Anchor;
+  | Anchor
+  | ArticleBodyText;
