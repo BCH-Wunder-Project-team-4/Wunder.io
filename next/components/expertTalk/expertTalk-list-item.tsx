@@ -26,7 +26,7 @@ export function ExpertTalkListItem({ expertTalk }: ExpertTalkListItemProps) {
       <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold text-primary-600 dark:text-fog">
         {expertTalk.title}
       </h3>
-      <div className="mb-4 line-clamp-2 text-md text-scapaflow">
+      <div className="mb-4 line-clamp-2 text-md text-scapaflow dark:text-graysuit">
         {author && <>{t("posted-by", { author })} - </>}
       </div>
       <div className="flex flex-col items-start gap-4 sm:flex-row">
