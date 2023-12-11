@@ -27,31 +27,50 @@ export function Article({ article, ...props }: ArticleProps) {
         <span>{formatDate(article.created, router.locale)}</span>
         {/* Author picture can be added here */}
       </div>
-      {article.field_image && (
-        <div className="flex justify-end">
-          <div className="flex flex-col md:flex-row w-full md:w-3/4 gap-10">
-            {article.field_excerpt && (
-              <div className="my-4 text-xl w-full md:w-2/4">
-                {article.field_excerpt}
-              </div>
+      {!article.field_image && article.field_excerpt && (
+        <div className="mb-4 text-xl">{article.field_excerpt}</div>
+      )}
+      {!article.field_excerpt && article.field_image && (
+        <figure>
+          <Image
+            src={absoluteUrl(article.field_image.uri.url)}
+            width={768}
+            height={480}
+            style={{ width: 768, height: 480 }}
+            alt={article.field_image.resourceIdObjMeta.alt}
+            className="object-cover"
+            priority
+          />
+          {article.field_image.resourceIdObjMeta.title && (
+            <figcaption className="py-2 text-center text-sm text-scapaflow">
+              {article.field_image.resourceIdObjMeta.title}
+            </figcaption>
+          )}
+        </figure>
+      )}
+      {article.field_image && article.field_excerpt && (
+        <div className="grid grid-rows-1 md:grid-cols-6 gap-4">
+          {article.field_excerpt && (
+            <div className="mb-4 md:pr-6 text-xl md:col-start-2 md:col-span-3">
+              {article.field_excerpt}
+            </div>
+          )}
+          <figure className="md:col-start-5 md:col-span-2">
+            <Image
+              src={absoluteUrl(article.field_image.uri.url)}
+              width={500}
+              height={300}
+              style={{ width: 500, height: 300 }}
+              alt={article.field_image.resourceIdObjMeta.alt}
+              className="object-cover"
+              priority
+            />
+            {article.field_image.resourceIdObjMeta.title && (
+              <figcaption className="py-2 text-center text-sm text-scapaflow">
+                {article.field_image.resourceIdObjMeta.title}
+              </figcaption>
             )}
-            <figure className="w-full md:w-2/4">
-              <Image
-                src={absoluteUrl(article.field_image.uri.url)}
-                width={500}
-                height={300}
-                style={{ width: 500, height: 300 }}
-                alt={article.field_image.resourceIdObjMeta.alt}
-                className="object-cover"
-                priority
-              />
-              {article.field_image.resourceIdObjMeta.title && (
-                <figcaption className="py-2 text-center text-sm text-scapaflow">
-                  {article.field_image.resourceIdObjMeta.title}
-                </figcaption>
-              )}
-            </figure>
-          </div>
+          </figure>
         </div>
       )}
       {article.field_content_elements?.map((paragraph) => (

@@ -59,16 +59,20 @@ const options: HTMLReactParserOptions = {
       }
 
       case "p": {
+        return <p className="mb-4">{domToReact(domNode.children, options)}</p>;
+      }
+
+      case "h2": {
         return (
-          <p className="mb-2 text-steelgray dark:text-mischka">
+          <h2 className="text-left text-primary-600 dark:text-fog text-heading-sm font-bold md:text-heading-md my-4">
             {domToReact(domNode.children, options)}
-          </p>
+          </h2>
         );
       }
 
       case "h3": {
         return (
-          <h3 className="text-left text-primary-600 dark:text-fog text-heading-sm font-bold md:text-heading-md my-4">
+          <h3 className="text-left text-primary-600 dark:text-fog text-heading-xs font-bold md:text-heading-sm my-4">
             {domToReact(domNode.children, options)}
           </h3>
         );
