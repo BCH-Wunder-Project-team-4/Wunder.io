@@ -11,7 +11,7 @@ export function ParagraphArticleBodyText({
       {paragraph.field_formatted_text.processed && (
         <FormattedText
           html={paragraph.field_formatted_text.processed}
-          className="text-left text-md/xl dark:text-graysuit text-scapaflow sm:text-lg mt-4"
+          className="text-left text-md/xl sm:text-lg mt-4"
         />
       )}
     </>
