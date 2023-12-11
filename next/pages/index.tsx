@@ -6,10 +6,8 @@ import { ExpertTalkTeaser, validateAndCleanupExpertTalkTeaser } from "@/lib/zod/
 import { Frontpage, validateAndCleanupFrontpage } from "@/lib/zod/frontpage";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 
-import { Divider } from "@/ui/divider";
 import { DrupalNode } from "next-drupal";
 import { LayoutProps } from "@/components/layout";
-import { LogoStrip } from "@/components/logo-strip";
 import { Meta } from "@/components/meta";
 import { Paragraph } from "@/components/paragraph";
 import { drupal } from "@/lib/drupal/drupal-client";
@@ -28,9 +26,6 @@ interface IndexPageProps extends LayoutProps {
 
 export default function IndexPage({
   frontpage,
-  promotedArticleTeasers,
-  promotedExpertTalkTeasers,
-  eventsTeasers,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation();
 
@@ -43,8 +38,6 @@ export default function IndexPage({
           <Paragraph paragraph={paragraph} key={paragraph.id} />
         ))}
       </div>
-      <Divider className="max-w-4xl" />
-      <LogoStrip />
     </>
   );
 }
