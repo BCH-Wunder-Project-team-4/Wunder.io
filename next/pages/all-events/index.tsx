@@ -4,6 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import { HeadingPage } from "@/components/heading--page";
 import { LayoutProps } from "@/components/layout";
 import { Meta } from "@/components/meta";
+import { drupal } from "@/lib/drupal/drupal-client";
+import { DrupalNode } from "next-drupal";
+import { getNodePageJsonApiParams } from "@/lib/drupal/get-node-page-json-api-params";
 import {
   createLanguageLinksForNextOnlyPage,
   LanguageLinks,
@@ -18,11 +21,12 @@ import { useRouter } from "next/router";
 
 interface AllEventsPageProps extends LayoutProps {
   eventTeasers: EventTeaserType[];
+  latestEventTeasers: EventTeaserType[];
   languageLinks: LanguageLinks;
 }
 
 export default function AllEventsPage({
-  eventTeasers = []
+  eventTeasers = [], latestEventTeasers = []
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation();
   const router = useRouter();
@@ -32,8 +36,12 @@ export default function AllEventsPage({
     <>
       <Meta title={t("all-events")} metatags={[]} />
       <div ref={focusRef} tabIndex={-1} />
-      <HeadingPage>{t("all-events")}</HeadingPage>
-      <ul className="mt-4">
+      <div>
+        <h1 className="text-left md:text-center lg:text-center text-heading-md font-bold">{t("Latest Events")}</h1>
+        <div className="border-t border-solid border-secondary-600 mb-6 w-1/2 md:w-1/3 lg:w-1/3 md:mx-auto lg:mx-auto border-2">
+        </div>
+      </div>
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
         {eventTeasers?.map((event) => (
           <li key={event.id}>
             <EventListItem event={event} />
@@ -41,15 +49,20 @@ export default function AllEventsPage({
           
         ))}
       </ul>
-      {/* <div>
-        <button className={clsx(
-              buttonVariants({ variant: "primary" }),
-              "text-base mr-4 mt-4 inline-flex px-5 py-3",
-            )}
-          >
-            {t("load-more")}
-            <ArrowIcon aria-hidden className="ml-3 h-6 w-6 -rotate-90" /></button>
-      </div> */}
+      <div className="border-b border-dotted border-x-graysuit my-5"></div>
+      <div className="mt-10">
+        <h1 className="text-left md:text-center lg:text-center text-heading-md font-bold">{t("More Events")}</h1>
+        <div className="border-t border-secondary-600 mb-6 w-1/2 md:w-1/3 lg:w-1/3 md:mx-auto lg:mx-auto border-2">
+        </div>
+      </div>
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {latestEventTeasers?.map((event) => (
+          <li key={event.id}>
+            <EventListItem event={event} />
+          </li>
+          
+        ))}
+      </ul>
     </>
   );
 }
@@ -59,19 +72,22 @@ export default function AllEventsPage({
 export const getStaticProps: GetStaticProps<AllEventsPageProps> = async (
   context,
 ) => {
-  console.log("context", context);
-  
-  const pageRoot = "/contact";
+  const pageRoot = "/all-events";
   const languageLinks = createLanguageLinksForNextOnlyPage(pageRoot, context);
-  const { events } = await getLatestEventsItems({
-    locale: context.locale 
+  const { events } = await getLatestEventsItems({ limit: 3, locale: context.locale });
+  const latestEventsTeasers = await drupal.getResourceCollectionFromContext<DrupalNode[]>("node--events", context, {
+    params: getNodePageJsonApiParams("node--events").getQueryObject(),
   });
+  
 
 
   return {
     props: {
       ...(await getCommonPageProps(context)),
       eventTeasers: events.map((teaser) =>
+        validateAndCleanupEventTeaser(teaser),
+      ),
+      latestEventTeasers: latestEventsTeasers.map((teaser) =>
         validateAndCleanupEventTeaser(teaser),
       ),
       languageLinks,

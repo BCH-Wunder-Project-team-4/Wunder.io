@@ -6,6 +6,18 @@ export function formatDate(input: string, locale: string): string {
     year: "numeric",
   });
 }
+export function formatDateMonth(input: string, locale: string): string {
+  const date = new Date(input);
+  return date.toLocaleDateString(locale, {
+    month: "long",
+  });
+}
+export function formatDateDay(input: string, locale: string): string {
+  const date = new Date(input);
+  return date.toLocaleDateString(locale, {
+    day: "numeric",
+  });
+}
 
 export function formatDateComplete(input: string, locale: string): string {
   const date = new Date(input);
