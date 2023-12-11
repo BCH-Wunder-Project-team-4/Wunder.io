@@ -9,12 +9,12 @@ _core:
 id: expert_talks
 label: 'Expert talks'
 type: 'canonical_entities:node'
-pattern: 'expertTalks/[node:title]'
+pattern: 'all-expertTalks/[node:title]'
 selection_criteria:
-  26cba523-67bb-4a3d-8f79-f79015557cda:
+  4b2d92b7-e5d8-4a07-af70-6e213d00d628:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 26cba523-67bb-4a3d-8f79-f79015557cda
+    uuid: 4b2d92b7-e5d8-4a07-af70-6e213d00d628
     context_mapping:
       node: node
     bundles:
