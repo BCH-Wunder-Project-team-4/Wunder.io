@@ -1,14 +1,14 @@
-import { useTranslation } from "next-i18next";
-import React from "react";
 import clsx from "clsx";
 import { cva } from "cva";
+import { useTranslation } from "next-i18next";
+import React from "react";
 
 import Success from "@/styles/icons/checkmark.svg";
 import Error from "@/styles/icons/error.svg";
 import Warning from "@/styles/icons/warning.svg";
 
 export const variants = cva(
-  "text-md text-steelgray w-full relative py-6 px-16",
+  "text-md text-steelgray dark:text-mischka w-full relative py-6 px-16",
   {
     variants: {
       level: {

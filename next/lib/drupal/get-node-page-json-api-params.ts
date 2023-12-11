@@ -77,7 +77,8 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "field_content_elements.field_file_attachments.field_media_document",
       "field_content_elements.field_accordion_items",
       "field_content_elements.field_accordion_items.field_content_elements.field_image.field_media_image",
-      "field_content_elements.field_accordion_items.field_content_elements.field_video",]);
+      "field_content_elements.field_accordion_items.field_content_elements.field_video",
+    ]);
     apiParams.addFields(resourceType, [
       "title",
       "body",
@@ -89,7 +90,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "field_excerpt",
       "path",
       "sticky",
-      "field_content_elements"
+      "field_content_elements",
     ]);
   }
   if (resourceType === "node--expert_talks") {
@@ -125,7 +126,8 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "field_content_elements.field_file_attachments.field_media_document",
       "field_content_elements.field_accordion_items",
       "field_content_elements.field_accordion_items.field_content_elements.field_image.field_media_image",
-      "field_content_elements.field_accordion_items.field_content_elements.field_video",]);
+      "field_content_elements.field_accordion_items.field_content_elements.field_video",
+    ]);
     apiParams.addFields(resourceType, [
       "title",
       "body",
@@ -215,7 +217,12 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
     apiParams.addFields(resourceType, ["field_logo", "field_link"]);
   }
   if (resourceType === "node--events") {
-    apiParams.addInclude(["uid", "field_event_image", "field_event_speakers"]);
+    apiParams.addInclude([
+      "uid",
+      "field_event_image",
+      "field_event_speakers",
+      "field_event_speakers.field_event_speakers_image",
+    ]);
     apiParams.addFields(resourceType, [
       "title",
       "body",

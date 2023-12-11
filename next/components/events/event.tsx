@@ -14,7 +14,6 @@ export function EventTeaserComponent({ event }: EventTeaserProps) {
   const { t } = useTranslation();
   const router = useRouter();
   const date = formatDate(event.field_event_date, router.locale);
-  console.log(event);
 
   return (
     <Link
@@ -35,15 +34,12 @@ export function EventTeaserComponent({ event }: EventTeaserProps) {
           </div>
         </div>
       )}
-      <div className="p-4 h-28 flex flex-col justify-between" >
-
+      <div className="p-4 h-28 flex flex-col justify-between">
         <h3 className="py-2">{event.field_event_location}</h3>
         <h3 className=" line-clamp-2 text-heading-xs font-bold">
           {event.title}
         </h3>
       </div>
-
-
     </Link>
   );
 }
