@@ -4,6 +4,8 @@ import {
   BannerSchema,
   FileAttachmentsSchema,
   ImageSchema,
+  InfosectionBSchema,
+  InfosectionSchema,
   LinksSchema,
   ListingArticlesSchema,
   SimpleQuoteSchema,
@@ -27,6 +29,8 @@ const ArticleElementsSchema = z.discriminatedUnion("type", [
   SimpleQuoteSchema,
   SubheadingSchema,
   ArticleBodyTextSchema,
+  InfosectionSchema,
+  InfosectionBSchema,
 ]);
 
 export const ArticleSchema = z.object({

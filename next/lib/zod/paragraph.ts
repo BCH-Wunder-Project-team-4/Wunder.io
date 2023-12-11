@@ -350,7 +350,6 @@ export const AnchorSchema = z.object({
 export const ArticleBodyTextSchema = z.object({
   type: z.literal("paragraph--article_body_text"),
   id: z.string(),
-  field_heading: z.string().nullable(),
   field_formatted_text: z.object({ processed: z.string() }),
 });
 
