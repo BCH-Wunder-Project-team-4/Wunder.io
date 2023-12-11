@@ -43,15 +43,6 @@ export default function AllArticlesPage({
           </li>
         ))}
       </ul>
-      <div>
-        <button className={clsx(
-          buttonVariants({ variant: "primary" }),
-          "text-base mr-4 mt-4 inline-flex px-5 py-3",
-        )}
-        >
-          {t("load-more")}
-          <ArrowIcon aria-hidden className="ml-3 h-6 w-6 -rotate-90" /></button>
-      </div>
     </>
   );
 }
