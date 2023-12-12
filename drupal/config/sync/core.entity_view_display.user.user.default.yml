@@ -2,13 +2,27 @@ uuid: 6f526107-f305-48d7-b1ba-19fbe20d6d20
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.field.user.user.field_profile_picture
   module:
+    - image
     - user
 id: user.user.default
 targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_profile_picture:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 6
+    region: content
   member_for:
     settings: {  }
     third_party_settings: {  }
