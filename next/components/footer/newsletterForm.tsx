@@ -17,6 +17,7 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useState } from "react";
 
 type Inputs = {
   news: boolean;
@@ -36,6 +37,7 @@ const FormSchema = z.object({
 export const NewsletterForm = () => {
   const { t } = useTranslation()
   const router = useRouter();
+  const [submissionResponse, setSubmissionResponse] = useState(true);
   const {
     formState: { isSubmitSuccessful },
   } = useForm<Inputs>();
@@ -46,11 +48,6 @@ export const NewsletterForm = () => {
 
 
     if ((data.careers || data.events || data.news) && (data.terms) && (data.email)) {
-      toast({
-        variant: "success",
-        title: "Thank you for subscribing to our newsletter!",
-      })
-
       const response = await fetch(`/api/footer-newsletter`, {
         method: "POST",
         body: JSON.stringify({
@@ -67,8 +64,14 @@ export const NewsletterForm = () => {
       });
 
       if (!response.ok) {
-        alert("Error!");
-      }
+        setSubmissionResponse(false); 
+        alert("This email has already been submitted.");
+      } if(response.ok) {
+        setSubmissionResponse(true);
+        toast({
+          variant: "success",
+          title: "Thank you for subscribing to our newsletter!",
+        })}
 
     } else {
       toast({

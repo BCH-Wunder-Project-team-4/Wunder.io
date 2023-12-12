@@ -37,6 +37,7 @@ export default async function handler(
       if (result.ok) {
         res.status(200).end();
       } else {
+        const error = await result.json();
         res.status(result.status).end();
         throw new Error();
       }

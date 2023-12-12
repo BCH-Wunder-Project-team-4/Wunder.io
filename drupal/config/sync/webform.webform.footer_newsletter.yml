@@ -27,6 +27,9 @@ elements: |-
     '#title': Email
     '#placeholder': 'Your email'
     '#required': true
+    '#required_error': 'please, provide your email address'
+    '#unique': true
+    '#unique_error': 'This email has already been used'
   policy_checkbox:
     '#type': checkbox
     '#title': 'Policy Checkbox'

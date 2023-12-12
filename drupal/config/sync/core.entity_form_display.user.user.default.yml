@@ -2,7 +2,11 @@ uuid: d401a127-c212-4cd7-8177-956cc60243d1
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.field.user.user.field_profile_picture
+    - image.style.thumbnail
   module:
+    - image
     - path
     - user
 id: user.user.default
@@ -14,6 +18,14 @@ content:
     weight: 1
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_profile_picture:
+    type: image_image
+    weight: 5
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
   language:
     weight: 2

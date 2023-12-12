@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
+import { useState } from "react";
 
 type Inputs = {
   email: string;
@@ -16,6 +17,8 @@ type Inputs = {
 
 export function CareersNewsletterForm() {
   const router = useRouter();
+  const [submissionResponse, setSubmissionResponse] = useState(true);
+
   const { t } = useTranslation();
   const {
     register,
@@ -38,13 +41,17 @@ export function CareersNewsletterForm() {
     });
 
     if (!response.ok) {
-      alert("Error!");
+      alert("This email has already been submitted.");
+      setSubmissionResponse(false);              
+    }
+    if (response.ok) {
+      setSubmissionResponse(true);              
     }
   };
 
-  const onErrors = (errors) => console.error(errors);
+  const onErrors = (errors) => {alert(`email is ${errors.email.type}`)};
 
-  if (isSubmitSuccessful) {
+  if (isSubmitSuccessful && submissionResponse) {
     return (
       <StatusMessage level="success" className="mx-auto w-full max-w-3xl dark:text-mischka">
         <p className="mb-4">{t("Thank you for subscribing to our newsletter!")}</p>
