@@ -1,5 +1,5 @@
-import { DrupalJsonApiParams } from "drupal-jsonapi-params";
 import { env } from "@/env";
+import { DrupalJsonApiParams } from "drupal-jsonapi-params";
 
 export type ResourceType =
   | "node--frontpage"
@@ -96,10 +96,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
     ]);
   }
   if (resourceType === "node--expert_talks") {
-    apiParams.addInclude([
-      "field_image",
-      "uid",
-      "field_experts_photo"]);
+    apiParams.addInclude(["field_image", "uid", "field_experts_photo"]);
     apiParams.addFields(resourceType, [
       "title",
       "body",
