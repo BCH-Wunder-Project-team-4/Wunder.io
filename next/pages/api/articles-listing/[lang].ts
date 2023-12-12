@@ -1,10 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next";
+
 import { DrupalNode } from "next-drupal";
-
 import { drupal } from "@/lib/drupal/drupal-client";
-import { validateAndCleanupArticleTeaser } from "@/lib/zod/article-teaser";
-
 import siteConfig from "@/site.config";
+import { validateAndCleanupArticleTeaser } from "@/lib/zod/article-teaser";
 
 export default async function handler(
   req: NextApiRequest,
@@ -21,7 +20,7 @@ export default async function handler(
         params: {
           "filter[status]": 1,
           "filter[langcode]": languagePrefix,
-          "fields[node--article]": "title,path,field_image,uid,created,field_profile_picture",
+          "fields[node--article]": "title,path,field_image,uid,created,field_profile_picture,field_excerpt",
           include: "field_image,uid.field_profile_picture",
           sort: "-sticky,-created",
           "page[limit]": limit,

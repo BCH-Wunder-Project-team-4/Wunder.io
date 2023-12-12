@@ -18,7 +18,7 @@ export function EventTeaserComponent({ event }: EventTeaserProps) {
   return (
     <Link
       href={event.path.alias}
-      className="relative grid h-full max-w-sm rounded border border-primary-600 bg-transparent  transition-all hover:shadow-md"
+      className="flex flex-col justify-between relative h-76 overflow-y-hidden border-finnishwinter dark:border-scapaflow border-2 p-5  hover:shadow-primary-600 hover:shadow-lg dark:shadow-stone"
     >
       {event.field_event_image && (
         <div className="relative">
@@ -34,9 +34,9 @@ export function EventTeaserComponent({ event }: EventTeaserProps) {
           </div>
         </div>
       )}
-      <div className="p-4 h-28 flex flex-col justify-between">
+      <div className="h-20 flex flex-col justify-between">
         <h3 className="py-2">{event.field_event_location}</h3>
-        <h3 className=" line-clamp-2 text-heading-xs font-bold">
+        <h3 className=" text-lg font-bold text-primary-600 dark:text-fog tracking-tight line-clamp-1">
           {event.title}
         </h3>
       </div>
