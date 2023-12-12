@@ -189,55 +189,6 @@ export const ServicesSchema = z.object({
   field_heading: z.string().nullable(),
 });
 
-export const InfosectionSchema = z.object({
-  type: z.literal("paragraph--infosection"),
-  id: z.string(),
-  field_heading: z.string(),
-  field_formatted_text: z.object({
-    processed: z.string(),
-  }),
-  field_image: z
-    .object({
-      type: z.literal("media--image"),
-      id: z.string(),
-      field_media_image: ImageShape.nullable(),
-    })
-    .nullable()
-    .optional(),
-  field_dark_image: z
-    .object({
-      type: z.literal("media--image"),
-      id: z.string(),
-      field_media_image: ImageShape.nullable(),
-    })
-    .nullable()
-    .optional(),
-});
-export const InfosectionBSchema = z.object({
-  type: z.literal("paragraph--infosection_b"),
-  id: z.string(),
-  field_heading: z.string(),
-  field_formatted_text: z.object({
-    processed: z.string(),
-  }),
-  field_image: z
-    .object({
-      type: z.literal("media--image"),
-      id: z.string(),
-      field_media_image: ImageShape.nullable(),
-    })
-    .nullable()
-    .optional(),
-  field_dark_image: z
-    .object({
-      type: z.literal("media--image"),
-      id: z.string(),
-      field_media_image: ImageShape.nullable(),
-    })
-    .nullable()
-    .optional(),
-});
-
 export const SubheadingSchema = z.object({
   type: z.literal("paragraph--subheading"),
   id: z.string(),
@@ -346,6 +297,32 @@ export const AnchorSchema = z.object({
   id: z.string(),
   field_section_id: z.string().nullable(),
 });
+export const FrameSchema = z.object({
+  type: z.literal("paragraph--frame"),
+  id: z.string(),
+  field_heading: z.string().nullable().optional(),
+  field_formatted_text: z.object({
+    processed: z.string(),
+  }),
+  field_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+  field_dark_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+  field_frame: z.string(),
+  field_image_position: z.string().nullable().optional(),
+});
 
 export const ArticleBodyTextSchema = z.object({
   type: z.literal("paragraph--article_body_text"),
@@ -367,8 +344,6 @@ export type ListingEvents = z.infer<typeof ListingEventsSchema>;
 export type FileAttachments = z.infer<typeof FileAttachmentsSchema>;
 export type Banner = z.infer<typeof BannerSchema>;
 export type Services = z.infer<typeof ServicesSchema>;
-export type Infosection = z.infer<typeof InfosectionSchema>;
-export type InfosectionB = z.infer<typeof InfosectionBSchema>;
 export type Subheading = z.infer<typeof SubheadingSchema>;
 export type Sectionbg = z.infer<typeof SectionbgSchema>;
 export type FullWidthParagraph = z.infer<typeof FullWidthParagraphSchema>;
@@ -378,6 +353,7 @@ export type LogoWall = z.infer<typeof LogoWallSchema>;
 export type TrilogySnapshot = z.infer<typeof TrilogySnapshotSchema>;
 export type Anchor = z.infer<typeof AnchorSchema>;
 export type WunderStory = z.infer<typeof WunderStorySchema>;
+export type Frame = z.infer<typeof FrameSchema>;
 export type ArticleBodyText = z.infer<typeof ArticleBodyTextSchema>;
 
 export type Paragraph =
@@ -393,8 +369,6 @@ export type Paragraph =
   | ListingEvents
   | FileAttachments
   | Services
-  | Infosection
-  | InfosectionB
   | Subheading
   | Sectionbg
   | FullWidthParagraph
@@ -406,4 +380,5 @@ export type Paragraph =
   | LogoWall
   | TrilogySnapshot
   | Anchor
+  | Frame
   | ArticleBodyText;

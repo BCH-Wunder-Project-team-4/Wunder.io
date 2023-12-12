@@ -7,8 +7,6 @@ import {
   FullWidthParagraphSchema,
   HeroSchema,
   ImageSchema,
-  InfosectionBSchema,
-  InfosectionSchema,
   LinksSchema,
   ListingArticlesSchema,
   ListingEventsSchema,
@@ -22,6 +20,7 @@ import {
   SubheadingSchema,
   TrilogySnapshotSchema,
   VideoSchema,
+  FrameSchema,
 } from "@/lib/zod/paragraph";
 
 import { DrupalNode } from "next-drupal";
@@ -42,8 +41,6 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   BannerSchema,
   ScrollingNumbersSchema,
   ServicesSchema,
-  InfosectionSchema,
-  InfosectionBSchema,
   SubheadingSchema,
   SectionbgSchema,
   FullWidthParagraphSchema,
@@ -51,7 +48,8 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   SimpleQuoteSchema,
   LogoWallSchema,
   TrilogySnapshotSchema,
-  AnchorSchema
+  AnchorSchema,
+  FrameSchema
 ]);
 
 export const PageSchema = z.object({
