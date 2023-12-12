@@ -1,0 +1,22 @@
+uuid: 0b0ba89e-537a-49cd-8c38-0dd604e8d9e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_formatted_text
+    - paragraphs.paragraphs_type.article_body_text
+  module:
+    - text
+id: paragraph.article_body_text.field_formatted_text
+field_name: field_formatted_text
+entity_type: paragraph
+bundle: article_body_text
+label: 'Formatted text'
+description: 'Add formatted text content for the article. Heading 2 and Heading 3 can be used for subheadings.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long
