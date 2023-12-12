@@ -21,7 +21,7 @@ field_name: field_image
 entity_type: node
 bundle: article
 label: 'Main image'
-description: 'Set the main image. Appears as the teaser image and at the top of the article.'
+description: 'Set the main image. Appears as the teaser image and at the top of the article. Optimal with a 5:3 aspect ratio or a ratio close to it.'
 required: false
 translatable: true
 default_value: {  }
