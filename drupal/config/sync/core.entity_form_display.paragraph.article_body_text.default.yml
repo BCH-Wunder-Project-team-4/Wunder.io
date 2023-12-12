@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.article_body_text.field_formatted_text
+    - field.field.paragraph.article_body_text.field_heading
     - paragraphs.paragraphs_type.article_body_text
   module:
     - text
@@ -18,6 +19,14 @@ content:
     region: content
     settings:
       rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
 hidden:

@@ -1,4 +1,4 @@
-import { FormattedText } from "@/components/formatted-text";
+import { ArticleFormattedText } from "@/components/article-formatted-text";
 import { ArticleBodyText as ArticleBodyTextType } from "@/lib/zod/paragraph";
 
 export function ParagraphArticleBodyText({
@@ -8,8 +8,13 @@ export function ParagraphArticleBodyText({
 }) {
   return (
     <>
+      {paragraph.field_heading && (
+        <h2 className="text-left text-primary-600 dark:text-fog text-heading-md font-bold md:text-heading-lg mb-4">
+          {paragraph.field_heading}
+        </h2>
+      )}
       {paragraph.field_formatted_text.processed && (
-        <FormattedText
+        <ArticleFormattedText
           html={paragraph.field_formatted_text.processed}
           className="text-left text-md mt-4"
         />
