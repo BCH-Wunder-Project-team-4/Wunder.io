@@ -9,12 +9,9 @@ dependencies:
     - paragraphs.paragraphs_type.article_body_text
     - paragraphs.paragraphs_type.file_attachments
     - paragraphs.paragraphs_type.image
-    - paragraphs.paragraphs_type.infosection
-    - paragraphs.paragraphs_type.infosection_b
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.listing_articles
     - paragraphs.paragraphs_type.simple_quote
-    - paragraphs.paragraphs_type.subheading
     - paragraphs.paragraphs_type.video
   module:
     - entity_reference_revisions
@@ -39,10 +36,7 @@ settings:
       listing_articles: listing_articles
       file_attachments: file_attachments
       article_body_text: article_body_text
-      infosection: infosection
-      infosection_b: infosection_b
       simple_quote: simple_quote
-      subheading: subheading
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -80,10 +74,10 @@ settings:
         enabled: true
       infosection:
         weight: 32
-        enabled: true
+        enabled: false
       infosection_b:
         weight: 33
-        enabled: true
+        enabled: false
       links:
         weight: -11
         enabled: true
@@ -116,7 +110,7 @@ settings:
         enabled: true
       subheading:
         weight: 42
-        enabled: true
+        enabled: false
       trilogy_snapshot:
         weight: 53
         enabled: false

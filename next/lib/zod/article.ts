@@ -3,12 +3,9 @@ import {
   ArticleBodyTextSchema,
   FileAttachmentsSchema,
   ImageSchema,
-  InfosectionBSchema,
-  InfosectionSchema,
   LinksSchema,
   ListingArticlesSchema,
   SimpleQuoteSchema,
-  SubheadingSchema,
   VideoSchema,
 } from "@/lib/zod/paragraph";
 
@@ -25,10 +22,7 @@ const ArticleElementsSchema = z.discriminatedUnion("type", [
   ListingArticlesSchema,
   FileAttachmentsSchema,
   SimpleQuoteSchema,
-  SubheadingSchema,
   ArticleBodyTextSchema,
-  InfosectionSchema,
-  InfosectionBSchema,
 ]);
 
 export const ArticleSchema = z.object({
