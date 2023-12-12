@@ -10,11 +10,10 @@ dependencies:
     - paragraphs.paragraphs_type.banner
     - paragraphs.paragraphs_type.file_attachments
     - paragraphs.paragraphs_type.formatted_text
+    - paragraphs.paragraphs_type.frame
     - paragraphs.paragraphs_type.full_width_paragraph
     - paragraphs.paragraphs_type.hero
     - paragraphs.paragraphs_type.image
-    - paragraphs.paragraphs_type.infosection
-    - paragraphs.paragraphs_type.infosection_b
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.listing_articles
     - paragraphs.paragraphs_type.listing_events
@@ -60,13 +59,12 @@ settings:
       simple_quote: simple_quote
       full_width_paragraph: full_width_paragraph
       sectionbg: sectionbg
-      infosection: infosection
       logo_wall: logo_wall
-      infosection_b: infosection_b
       anchor: anchor
       trilogy_snapshot: trilogy_snapshot
       services: services
       subheading: subheading
+      frame: frame
       listing_events: listing_events
       listing_experts_talks: listing_experts_talks
     negate: 0
@@ -91,6 +89,9 @@ settings:
         enabled: true
       formatted_text:
         weight: -19
+        enabled: true
+      frame:
+        weight: 29
         enabled: true
       full_width_paragraph:
         weight: 15

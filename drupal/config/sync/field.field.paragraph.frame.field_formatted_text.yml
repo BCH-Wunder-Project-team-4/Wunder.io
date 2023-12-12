@@ -1,19 +1,19 @@
-uuid: 1cd1626d-5152-4258-83ed-4ed5585527b5
+uuid: 2b78ee9e-76bc-4f67-a467-b57f5a1cafd5
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_formatted_text
-    - paragraphs.paragraphs_type.infosection
+    - paragraphs.paragraphs_type.frame
   module:
     - text
-id: paragraph.infosection.field_formatted_text
+id: paragraph.frame.field_formatted_text
 field_name: field_formatted_text
 entity_type: paragraph
-bundle: infosection
+bundle: frame
 label: 'Formatted text'
-description: ''
-required: false
+description: 'Informational text that appears next to the device screenshot.'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

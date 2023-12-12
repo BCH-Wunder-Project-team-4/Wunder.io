@@ -1,0 +1,30 @@
+uuid: f175967c-0885-4d6a-8177-e0ee3ee8ca7a
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_frame
+field_name: field_frame
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Laptop
+      label: Laptop
+    -
+      value: Mobile
+      label: Mobile
+    -
+      value: Tablet
+      label: Tablet
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

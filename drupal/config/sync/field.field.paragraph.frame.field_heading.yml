@@ -1,17 +1,17 @@
-uuid: a8daed9a-a510-49e8-b842-c6e79c43b43e
+uuid: 50fc2a24-7f8c-4070-8987-5275c79990e6
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_heading
-    - paragraphs.paragraphs_type.infosection
-id: paragraph.infosection.field_heading
+    - paragraphs.paragraphs_type.frame
+id: paragraph.frame.field_heading
 field_name: field_heading
 entity_type: paragraph
-bundle: infosection
+bundle: frame
 label: Heading
-description: 'Heading for the whole accordion'
-required: true
+description: 'Title for the paragraph.'
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

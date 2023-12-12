@@ -1,18 +1,18 @@
-uuid: 13e9abdc-61c8-41dc-ba27-f672baff1a1b
+uuid: 97619890-55df-47b7-b3a8-b458f3281a56
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_image
     - media.type.image
-    - paragraphs.paragraphs_type.infosection
-id: paragraph.infosection.field_image
+    - paragraphs.paragraphs_type.frame
+id: paragraph.frame.field_image
 field_name: field_image
 entity_type: paragraph
-bundle: infosection
+bundle: frame
 label: 'Light mode screenshot'
-description: 'Set the laptop screenshot that will be shown in light mode.'
-required: false
+description: 'Set the screenshot.'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -25,5 +25,5 @@ settings:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: image
+    auto_create_bundle: ''
 field_type: entity_reference

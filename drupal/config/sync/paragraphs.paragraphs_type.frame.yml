@@ -1,0 +1,10 @@
+uuid: 8c5a0015-a4ab-4510-9b53-399343b5325f
+langcode: en
+status: true
+dependencies: {  }
+id: frame
+label: 'Device Frame'
+icon_uuid: null
+icon_default: null
+description: 'This paragraph lets you place a screenshot into a mockup device frame! Upload a screenshot, and select the appropriate device.'
+behavior_plugins: {  }

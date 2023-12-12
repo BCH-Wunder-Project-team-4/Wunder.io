@@ -10,8 +10,6 @@ import { ParagraphListingExpertTalks } from "@/components/paragraph--listing-exp
 import { ParagraphText } from "@/components/paragraph--text";
 import { Paragraph } from "@/lib/zod/paragraph";
 import { ParagraphBanner } from "./paragraph--banner";
-import { ParagraphInfosection } from "./paragraph--infosection";
-import { ParagraphInfosectionB } from "./paragraph--infosection_b";
 import { ParagraphLogoWall } from "./paragraph--logo-wall";
 import { ParagraphScrollingNumbers } from "./paragraph--scrolling-numbers";
 import { ParagraphSectionbg } from "./paragraph--sectionbg";
@@ -23,6 +21,7 @@ import { ParagraphWunderpedia } from "./paragraph--wunderpedia";
 import { ParagraphWunderStory } from "./paragraph--wunderStory";
 import { ParagraphAnchor } from "./paragraph--anchor";
 import { ParagraphListingEvents } from "./paragraph--listing-events";
+import { ParagraphFrame } from "./paragraph--frame";
 
 // Use dynamic imports to defer loading a component until after initial page load: https://nextjs.org/docs/advanced-features/dynamic-import
 const ParagraphVideo = dynamic(() =>
@@ -87,12 +86,6 @@ export function Paragraph({ paragraph }: { paragraph: Paragraph }) {
     case "paragraph--services": {
       return <ParagraphServices paragraph={paragraph} />;
     }
-    case "paragraph--infosection": {
-      return <ParagraphInfosection paragraph={paragraph} />;
-    }
-    case "paragraph--infosection_b": {
-      return <ParagraphInfosectionB paragraph={paragraph} />;
-    }
     case "paragraph--subheading": {
       return <ParagraphSubheading paragraph={paragraph} />;
     }
@@ -110,6 +103,9 @@ export function Paragraph({ paragraph }: { paragraph: Paragraph }) {
     }
     case "paragraph--anchor": {
       return <ParagraphAnchor paragraph={paragraph} />;
+    }
+    case "paragraph--frame": {
+      return <ParagraphFrame paragraph={paragraph} />;
     }
     default:
       return null;
