@@ -7,6 +7,7 @@ import parse, {
 import Image from "next/image";
 import Link from "next/link";
 import { HTMLAttributes } from "react";
+import ExternalLinkIcon from "styles/icons/external.svg";
 
 import { isRelative } from "@/lib/utils";
 
@@ -60,10 +61,11 @@ const options: HTMLReactParserOptions = {
             <Link
               href={href}
               target="_blank"
-              className="hyperlink underline"
+              className="underline text-primary-600 dark:text-fog"
               rel="noopener noreferrer"
             >
               {domToReact(domNode.children, options)}
+              <ExternalLinkIcon className="ml-1 inline-block h-[1em] w-[1em] text-primary-600 dark:text-fog" />
             </Link>
           );
         }
