@@ -20,21 +20,23 @@ export function Article({ article, ...props }: ArticleProps) {
       <HeadingPage>{article.title}</HeadingPage>
       <div className="mb-4 text-scapaflow dark:text-graysuit justify-start items-center">
         {article.uid?.display_name && (
-          <p>
-            <span>
-              {t("posted-by", { author: article.uid?.display_name })} -{" "}
-            </span>
-            <span>{formatDate(article.created, router.locale)}</span>
-          </p>
-          <div className="mx-2">
-            <Image
-              src={absoluteUrl(article.uid?.field_profile_picture?.uri.url)}
-              width={20}
-              height={20}
-              className="rounded-full"
-              alt={article.uid?.field_profile_picture?.resourceIdObjMeta.alt}
-            />
-          </div>
+          <>
+            <p>
+              <span>
+                {t("posted-by", { author: article.uid?.display_name })} -{" "}
+              </span>
+              <span>{formatDate(article.created, router.locale)}</span>
+            </p>
+            <div className="mx-2">
+              <Image
+                src={absoluteUrl(article.uid?.field_profile_picture?.uri.url)}
+                width={20}
+                height={20}
+                className="rounded-full"
+                alt={article.uid?.field_profile_picture?.resourceIdObjMeta.alt}
+              />
+            </div>
+          </>
         )}
         {/* Author picture can be added here */}
       </div>
