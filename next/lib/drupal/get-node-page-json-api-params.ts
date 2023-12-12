@@ -71,6 +71,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
     apiParams.addInclude([
       "field_image",
       "uid",
+      "uid.field_profile_picture",
       "field_content_elements",
       "field_content_elements.field_image.field_media_image",
       "field_content_elements.field_video",
@@ -83,6 +84,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "title",
       "body",
       "uid",
+      "field_profile_picture",
       "created",
       "field_image",
       "status",
