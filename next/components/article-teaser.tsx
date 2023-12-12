@@ -22,7 +22,7 @@ export function ArticleTeaser({ article }: ArticleTeaserProps) {
       href={article.path.alias}
       className="flex justify-center items-center "
     >
-      <div className="w-full ml-1 mr-1 flex flex-col justify-center items-center sm:w-96  relative">
+      <div className=" ml-1 mr-1 flex flex-col justify-center items-center w-96  relative">
 
         {article.field_image && (
 

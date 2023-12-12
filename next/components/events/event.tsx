@@ -18,7 +18,7 @@ export function EventTeaserComponent({ event }: EventTeaserProps) {
   return (
     <Link
       href={event.path.alias}
-      className="flex flex-col justify-between relative h-76 overflow-y-hidden border-finnishwinter dark:border-scapaflow border-2 p-5  hover:shadow-primary-600 hover:shadow-lg dark:shadow-stone"
+      className="flex flex-col justify-between relative h-76 overflow-y-hidden border-finnishwinter dark:border-scapaflow border-2 p-5 w-96 hover:shadow-primary-600 hover:shadow-lg dark:shadow-stone"
     >
       {event.field_event_image && (
         <div className="relative">

@@ -34,10 +34,10 @@ export function ExpertTalksListing({
   return (
     <>
       {isLoading && <LoadingSpinner />}
-      <ul className="mt-4 flex overflow-x-auto no-scrollbar">
+      <ul className=" flex overflow-x-auto no-scrollbar">
         {!isLoading &&
           data?.map((expertTalk: ExpertTalkTeaserType) => (
-            <li key={expertTalk.id} className="flex flex-nowrap lg:ml-20 md:ml-10 ml-5 mb-10 ">
+            <li key={expertTalk.id} className="flex flex-nowrap lg:ml-20 md:ml-10 ml-5 my-8 ">
               <ExpertTalkTeaser expertTalk={expertTalk} />
             </li>
           ))}

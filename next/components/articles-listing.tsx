@@ -33,7 +33,7 @@ export function ArticlesListing({
   return (
     <>
       {isLoading && <LoadingSpinner />}
-      <ul className="mt-4 grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 mb-10">
+      <ul className=" grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 my-8">
         {!isLoading &&
           data?.map((article: ArticleTeaserType) => (
             <li key={article.id}>
