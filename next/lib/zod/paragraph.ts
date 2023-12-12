@@ -301,7 +301,7 @@ export const AnchorSchema = z.object({
 export const FrameSchema = z.object({
   type: z.literal("paragraph--frame"),
   id: z.string(),
-  field_heading: z.string(),
+  field_heading: z.string().nullable().optional(),
   field_formatted_text: z.object({
     processed: z.string(),
   }),
@@ -322,7 +322,7 @@ export const FrameSchema = z.object({
     .nullable()
     .optional(),
   field_frame: z.string(),
-  field_image_position: z.string(),
+  field_image_position: z.string().nullable().optional(),
 });
 
 export type FormattedText = z.infer<typeof FormattedTextSchema>;

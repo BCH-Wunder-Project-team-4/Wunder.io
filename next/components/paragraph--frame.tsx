@@ -10,6 +10,7 @@ export function ParagraphFrame({ paragraph }: { paragraph: FrameType }) {
   const position = paragraph.field_image_position === "Right"
 
   if(position) {
+
   return (
     <section
       id="hero"
@@ -61,7 +62,7 @@ export function ParagraphFrame({ paragraph }: { paragraph: FrameType }) {
             <div className="h-[34.5px] w-[3px] bg-scapaflow dark:bg-scapaflow absolute -start-[17px] top-[93px] rounded-s-lg"></div>
             <div className="h-[34.5px] w-[3px] bg-scapaflow dark:bg-scapaflow absolute -start-[17px] top-[133.5px] rounded-s-lg"></div>
             <div className="h-[48px] w-[3px] bg-scapaflow dark:bg-scapaflow absolute -end-[17px] top-[106.5px] rounded-e-lg"></div>
-            <div className="rounded-[2rem] overflow-hidden bg-white dark:bg-scapaflow h-full">
+            <div className="rounded-[2rem] overflow-hidden bg-white dark:bg-scapaflow w-[272px] h-[572px]">
               <MediaImage
                 media={paragraph.field_image}
                 alt="site-banner"
