@@ -20,7 +20,7 @@
 
 @layer components {
   .hyperlink {
-    @apply flex items-center text-primary-600 visited:text-secondary-900 hover:underline;
+    @apply flex items-center text-primary-600 dark:text-fog hover:underline;
 
     &[href^="https://"]::after
     {

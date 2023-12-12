@@ -55,6 +55,19 @@ const options: HTMLReactParserOptions = {
             </Link>
           );
         }
+        if (href && !isRelative(href)) {
+          return (
+            <Link
+              href={href}
+              target="_blank"
+              className="hyperlink underline"
+              rel="noopener noreferrer"
+            >
+              {domToReact(domNode.children, options)}
+            </Link>
+          );
+        }
+
         break;
       }
 
