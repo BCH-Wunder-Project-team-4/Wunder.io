@@ -20,7 +20,7 @@ export const buttonVariants = cva(
           "disabled:!border-primary-200 disabled:!text-primary-200 disabled:!bg-white",
         ],
         tertiary: [
-          "bg-transparent text-primary-600 dark:text-fog border-transparent",
+          "bg-transparent text-primary-600 border-transparent",
           "hover:bg-primary-50 hover:text-primary-600 hover:border-transparent",
           "active:bg-primary-50 active:text-primary-600 active:border-transparent",
           "disabled:!border-transparent disabled:!text-primary-200",
@@ -33,14 +33,14 @@ export const buttonVariants = cva(
         ],
         accept: [
           "bg-evergreen border-evergreen text-white",
-          "hover:bg-white hover:text-primary-600",
-          "active:bg-white active:text-primary-600",
+          "hover:bg-white hover:text-evergreen",
+          "active:bg-white active:text-evergreen",
           "disabled:!border-primary-200 disabled:!text-white disabled:!bg-primary-200",
         ],
         decline: [
           "bg-hugs border-hugs text-white",
-          "hover:bg-white hover:text-primary-600",
-          "active:bg-white active:text-primary-600",
+          "hover:bg-white hover:text-hugs",
+          "active:bg-white active:text-hugs",
           "disabled:!border-primary-200 disabled:!text-white disabled:!bg-primary-200",
         ],
 

@@ -2,7 +2,6 @@ import Link from 'next/link'
 import Cookies from 'js-cookie'
 import { MouseEvent, useCallback, useEffect, useState } from 'react'
 import { Button } from '@/ui/button'
-import Chevron from "@/styles/icons/chevron-down.svg";
 
 const USER_CONSENT_COOKIE_KEY = 'cookie_consent_is_true'
 const USER_CONSENT_COOKIE_EXPIRE_DATE = 365
@@ -41,9 +40,12 @@ const CookieConsent = () => {
       data-modal-backdrop="static"
       className="fixed bottom-0 left-0 right-0 flex items-center justify-center z-50"
     >
-      <div className="relative p-2 w-full max-w-7xl text-center ">
-        <div className="relative dark:bg-martinique  bg-white rounded-lg shadow">
-          <div className="p-4 md:p-5 space-y-4">
+      <div className="relative p-2 w-full max-w-4xl text-center">
+        <div className="relative dark:bg-martinique  bg-white border dark:border-none border-fog rounded-lg shadow">
+        <div className="p-2 space-y-4 text-lg text-bold">
+          <h3>Cookies Notice</h3>
+        </div>
+          <div className="p-2 space-y-4">
             <p className="text-base leading-relaxed dark:text-mischka text-steelgray">
               We use services that use cookies to deliver a better user
               experience, and to analyze traffic. Learn more about the
@@ -58,14 +60,13 @@ const CookieConsent = () => {
             </p>
           </div>
           <div className="flex grid-row flex-wrap items-center justify-center gap-4 p-2 border-t border-fog rounded-b">
-            <Button
+            <button
               data-modal-hide="cookie-consent-modal"
               type="button"
-              size='sm'
-              variant='tertiary'
-            >
-              <Chevron className= "h-6 w-6" /> Preferences
-            </Button>
+              className='text-primary-600 dark:text-fog'
+            >Set preferences
+            </button>
+            or
             <Button
               data-modal-hide="cookie-consent-modal"
               type="button"
