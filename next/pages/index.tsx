@@ -6,18 +6,18 @@ import { ExpertTalkTeaser, validateAndCleanupExpertTalkTeaser } from "@/lib/zod/
 import { Frontpage, validateAndCleanupFrontpage } from "@/lib/zod/frontpage";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 
+import { ArticleTeasers } from "@/components/article-teasers";
 import { DrupalNode } from "next-drupal";
 import { LayoutProps } from "@/components/layout";
 import { Meta } from "@/components/meta";
 import { Paragraph } from "@/components/paragraph";
 import { drupal } from "@/lib/drupal/drupal-client";
 import { getCommonPageProps } from "@/lib/get-common-page-props";
+import { getLatestArticlesItems } from "@/lib/drupal/get-articles";
 import { getLatestEventsItems } from "@/lib/drupal/get-events";
 import { getNodePageJsonApiParams } from "@/lib/drupal/get-node-page-json-api-params";
 import { useTranslation } from "next-i18next";
 import { validateAndCleanupEventTeaser } from "@/lib/zod/events-teaser";
-import { getLatestArticlesItems } from "@/lib/drupal/get-articles";
-import { ArticleTeasers } from "@/components/article-teasers";
 
 interface IndexPageProps extends LayoutProps {
   frontpage: Frontpage | null;
@@ -61,7 +61,7 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async (
     )
   ).at(0);
 
-  const {articles} = await getLatestArticlesItems({limit:3, locale: context.locale})
+  const { articles } = await getLatestArticlesItems({ limit: 3, locale: context.locale })
   const promotedExpertTalkTeasers = await drupal.getResourceCollectionFromContext<
     DrupalNode[]
   >("node--expert_talks", context, {
@@ -69,7 +69,7 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async (
       "filter[status]": 1,
       "filter[langcode]": context.locale,
       "filter[promote]": 1,
-      "fields[node--expert_talks]": "title,path,field_image,uid,created,field_experts_photo,field_name,field_excerpt",
+      "fields[node--expert_talks]": "title,path,field_image,uid,created,field_experts_photo,field_name,field_excerpt,field_expert_job_title",
       include: "field_image,uid,field_experts_photo",
       sort: "-sticky,-created",
       "page[limit]": 3,
@@ -83,7 +83,7 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async (
       ...(await getCommonPageProps(context)),
       frontpage: frontpage ? validateAndCleanupFrontpage(frontpage) : null,
       articles: articles.map((teaser) =>
-      validateAndCleanupArticleTeaser(teaser),),
+        validateAndCleanupArticleTeaser(teaser),),
       promotedExpertTalkTeasers: promotedExpertTalkTeasers.map((teaser) =>
         validateAndCleanupExpertTalkTeaser(teaser),
       ),

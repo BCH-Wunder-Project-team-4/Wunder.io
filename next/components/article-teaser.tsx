@@ -22,7 +22,7 @@ export function ArticleTeaser({ article }: ArticleTeaserProps) {
       href={article.path.alias}
       className="flex justify-center items-center "
     >
-      <div className=" ml-1 mr-1 flex flex-col justify-center items-center w-96  relative">
+      <div className=" ml-1 mr-1 flex flex-col justify-center items-center w-96 hover:scale-105 transition-all relative">
 
         {article.field_image && (
 
@@ -33,6 +33,7 @@ export function ArticleTeaser({ article }: ArticleTeaserProps) {
             alt={article.field_image.resourceIdObjMeta.alt}
             className="relative object-cover w-43 h-64"
           />
+
 
         )}
         <div className=" flex flex-col justify-between text-info w-11/12 -mt-14 h-72 z-10 p-5 bg-[url('../public/notebookPaper.webp')] bg-cover shadow-md ">

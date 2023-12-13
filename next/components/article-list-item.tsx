@@ -20,10 +20,10 @@ export function ArticleListItem({ article }: ArticleListItemProps) {
     <Link
       href={article.path.alias}
       className={classNames(
-        "relative mb-4 grid h-full rounded p-4 rounded-b-md border dark:border-scapaflow border-finnishwinter dark:bg-steelgray bg-mischka  transition-all hover:shadow-md  ",
+        "flex flex-row flex-wrap justify-between relative w-80 h-96  border-finnishwinter dark:border-scapaflow border-2 p-5 dark:shadow-fog hover:shadow-lg hover:shadow-primary-100",
         article.sticky
-          ? "border-primary-100 bg-primary-50"
-          : "border-finnishwinter bg-mischka dark:bg-steelgray",
+          ? "border-primary-100 shadow-md shadow-primary-100 dark:shadow-fog "
+          : "border-finnishwinte dark:bg-steelgray",
       )}
     >
       <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold text-primary-600 dark:text-fog">

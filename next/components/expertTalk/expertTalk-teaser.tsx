@@ -11,14 +11,11 @@ interface ExpertTalkTeaserProps {
 
 export function ExpertTalkTeaser({ expertTalk }: ExpertTalkTeaserProps) {
   const { t } = useTranslation();
-  const author = expertTalk.uid?.display_name;
-  const router = useRouter();
-
 
   return (
     <Link
       href={expertTalk.path.alias}
-      className="flex flex-col justify-between relative w-96 h-72 overflow-y-hidden border-finnishwinter dark:border-scapaflow border-2 p-5 dark:shadow-stone hover:shadow-md"
+      className="flex flex-col justify-between relative w-96 h-72 overflow-y-hidden border-finnishwinter dark:border-scapaflow border-2 p-5 dark:shadow-stone hover:shadow-md hover:shadow-primary-100"
     >
       <div className="flex flex-row items-center">
 
