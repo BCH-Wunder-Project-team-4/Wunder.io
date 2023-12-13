@@ -37,22 +37,21 @@ const CookieConsent = () => {
   return (
     <div
       id="cookie-consent-modal"
-      data-modal-backdrop="static"
       className="fixed bottom-0 left-0 right-0 flex items-center justify-center z-50"
     >
-      <div className="relative p-2 w-full max-w-4xl text-center">
-        <div className="relative dark:bg-martinique  bg-white border dark:border-none border-fog rounded-lg shadow">
+      <div className="relative p-2 w-full max-w-9xl text-center">
+        <div className="relative bg-martinique rounded-lg shadow">
         <div className="p-2 space-y-4 text-lg text-bold">
-          <h3>Cookies Notice</h3>
+          <h3 className='text-mischka'>Cookies</h3>
         </div>
           <div className="p-2 space-y-4">
-            <p className="text-base leading-relaxed dark:text-mischka text-steelgray">
+            <p className="text-base leading-relaxed text-mischka">
               We use services that use cookies to deliver a better user
               experience, and to analyze traffic. Learn more about the
               services we use at our{' '}
               <Link
                 href="/privacy-policy"
-                className="dark:text-fog text-primary-600 underline hover:text-blue-800"
+                className="text-mellow underline hover:text-blue-800"
               >
                 privacy policy
               </Link>
@@ -63,10 +62,10 @@ const CookieConsent = () => {
             <button
               data-modal-hide="cookie-consent-modal"
               type="button"
-              className='text-primary-600 dark:text-fog'
+              className='text-fog'
             >Set preferences
             </button>
-            or
+            <p className='text-mischka'>or</p>
             <Button
               data-modal-hide="cookie-consent-modal"
               type="button"
