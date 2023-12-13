@@ -1,10 +1,31 @@
 import Link from 'next/link'
-import { MouseEvent } from 'react'
+import Cookies from 'js-cookie'
+import { MouseEvent, useCallback, useEffect, useState } from 'react'
+
+const USER_CONSENT_COOKIE_KEY = 'cookie_consent_is_true'
+const USER_CONSENT_COOKIE_EXPIRE_DATE = 365
 
 const CookieConsent = () => {
+  const [cookieConsentIsTrue, setCookieConsentIsTrue] = useState(true)
+
+  useEffect(() => {
+    const consentIsTrue = Cookies.get(USER_CONSENT_COOKIE_KEY) === 'true'
+    setCookieConsentIsTrue(consentIsTrue)
+  }, [])
+
   const onClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
-    console.log('remember that I accept')
+
+    if (!cookieConsentIsTrue) {
+      Cookies.set(USER_CONSENT_COOKIE_KEY, 'true', {
+        expires: USER_CONSENT_COOKIE_EXPIRE_DATE,
+      })
+      setCookieConsentIsTrue(true)
+    }
+  }
+
+  if (cookieConsentIsTrue) {
+    return null
   }
 
   return (
@@ -15,10 +36,10 @@ const CookieConsent = () => {
               This site uses services that use cookies to deliver better
               experience and analyze traffic. You can learn more about the
               services we use at our{' '}
-              <Link href="/privacy-policy">
-                <a className="text-sm underline hover:text-lightAccent">
-                  privacy policy
-                </a>
+              <Link 
+              href="/privacy-policy"
+              className='text-sm underline hover:text-lightAccent'>
+              privacy policy
               </Link>
               .
             </p>
