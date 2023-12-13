@@ -20,7 +20,7 @@ export const buttonVariants = cva(
           "disabled:!border-primary-200 disabled:!text-primary-200 disabled:!bg-white",
         ],
         tertiary: [
-          "bg-transparent text-primary-600 border-transparent",
+          "bg-transparent text-primary-600 dark:text-fog border-transparent",
           "hover:bg-primary-50 hover:text-primary-600 hover:border-transparent",
           "active:bg-primary-50 active:text-primary-600 active:border-transparent",
           "disabled:!border-transparent disabled:!text-primary-200",
@@ -31,6 +31,19 @@ export const buttonVariants = cva(
           "active:bg-primary-700 active:text-white",
           "disabled:!border-primary-200 disabled:!text-white disabled:!bg-primary-200",
         ],
+        accept: [
+          "bg-evergreen border-evergreen text-white",
+          "hover:bg-white hover:text-primary-600",
+          "active:bg-white active:text-primary-600",
+          "disabled:!border-primary-200 disabled:!text-white disabled:!bg-primary-200",
+        ],
+        decline: [
+          "bg-hugs border-hugs text-white",
+          "hover:bg-white hover:text-primary-600",
+          "active:bg-white active:text-primary-600",
+          "disabled:!border-primary-200 disabled:!text-white disabled:!bg-primary-200",
+        ],
+
       },
       size: {
         sm: "text-sm py-2 px-2.5",
@@ -43,7 +56,7 @@ export const buttonVariants = cva(
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "tertiary";
+  variant?: "primary" | "secondary" | "tertiary" | "accept" | "decline"
   size?: "sm" | "md" | "lg";
   children?: React.ReactNode;
   className?: string;

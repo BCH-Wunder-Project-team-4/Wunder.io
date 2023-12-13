@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Cookies from 'js-cookie'
 import { MouseEvent, useCallback, useEffect, useState } from 'react'
 import { Button } from '@/ui/button'
+import Chevron from "@/styles/icons/chevron-down.svg";
 
 const USER_CONSENT_COOKIE_KEY = 'cookie_consent_is_true'
 const USER_CONSENT_COOKIE_EXPIRE_DATE = 365
@@ -38,44 +39,52 @@ const CookieConsent = () => {
     <div
       id="cookie-consent-modal"
       data-modal-backdrop="static"
-      className="fixed top-0 right-0 bottom-0 left-0 flex items-center justify-center z-50 bg-opacity-15 bg-black backdrop-blur-sm "
+      className="fixed bottom-0 left-0 right-0 flex items-center justify-center z-50"
     >
-      <div className="relative p-4 w-full max-w-2xl text-center">
-        <div className="relative bg-steelgray rounded-lg shadow bg-opacity-95">
-          <div className="flex items-center justify-center p-4 md:p-5 border-b border-fog rounded-t">
-            <h3 className="text-xl font-semibold text-finnishwinter">
-              Cookie Consent
-            </h3>
-          </div>
+      <div className="relative p-2 w-full max-w-7xl text-center ">
+        <div className="relative dark:bg-martinique  bg-white rounded-lg shadow">
           <div className="p-4 md:p-5 space-y-4">
-            <p className="text-base leading-relaxed text-finnishwinter">
+            <p className="text-base leading-relaxed dark:text-mischka text-steelgray">
               We use services that use cookies to deliver a better user
-              experience, and to analyze traffic. You can learn more about the
+              experience, and to analyze traffic. Learn more about the
               services we use at our{' '}
               <Link
                 href="/privacy-policy"
-                className="text-fog underline hover:text-blue-800"
+                className="dark:text-fog text-primary-600 underline hover:text-blue-800"
               >
                 privacy policy
               </Link>
               {' '} page.
             </p>
           </div>
-          <div className="flex items-center justify-center gap-4 p-4 md:p-5 border-t border-fog rounded-b">
+          <div className="flex grid-row flex-wrap items-center justify-center gap-4 p-2 border-t border-fog rounded-b">
+            <Button
+              data-modal-hide="cookie-consent-modal"
+              type="button"
+              size='sm'
+              variant='tertiary'
+            >
+              <Chevron className= "h-6 w-6" /> Preferences
+            </Button>
             <Button
               data-modal-hide="cookie-consent-modal"
               type="button"
               onClick={onDecline}
-              className='bg-steelgray'
+              variant='decline'
+              size='sm'
+              className='bg-hugs'
             >
-              Decline
+              Decline all
             </Button>
             <Button
               data-modal-hide="cookie-consent-modal"
               type="button"
               onClick={onAccept}
+              variant='accept'
+              size='sm'
+              className='bg-evergreen'
             >
-              I accept
+              Accept all
             </Button>
           </div>
         </div>
