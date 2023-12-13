@@ -17,7 +17,6 @@ import { getNodePageJsonApiParams } from "@/lib/drupal/get-node-page-json-api-pa
 import { useTranslation } from "next-i18next";
 import { validateAndCleanupEventTeaser } from "@/lib/zod/events-teaser";
 import { getLatestArticlesItems } from "@/lib/drupal/get-articles";
-import { ArticleTeasers } from "@/components/article-teasers";
 
 interface IndexPageProps extends LayoutProps {
   frontpage: Frontpage | null;
@@ -27,8 +26,7 @@ interface IndexPageProps extends LayoutProps {
 }
 
 export default function IndexPage({
-  frontpage,
-  articles
+  frontpage
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation();
 
@@ -40,10 +38,6 @@ export default function IndexPage({
           <Paragraph paragraph={paragraph} key={paragraph.id} />
         ))}
       </div>
-      {/* <ArticleTeasers
-        articles={articles}
-        heading={t("promoted-articles")}
-      /> */}
     </>
   );
 }
