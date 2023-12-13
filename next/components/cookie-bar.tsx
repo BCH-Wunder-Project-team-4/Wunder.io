@@ -1,13 +1,15 @@
 import Link from 'next/link'
 import Cookies from 'js-cookie'
-import { MouseEvent, useCallback, useEffect, useState } from 'react'
+import { MouseEvent, useEffect, useState } from 'react'
 import { Button } from '@/ui/button'
+import { useTranslation } from 'react-i18next'
 
 const USER_CONSENT_COOKIE_KEY = 'cookie_consent_is_true'
 const USER_CONSENT_COOKIE_EXPIRE_DATE = 365
 
 const CookieConsent = () => {
   const [cookieConsentIsTrue, setCookieConsentIsTrue] = useState(true)
+  const { t } = useTranslation();
 
   useEffect(() => {
     const consentIsTrue = Cookies.get(USER_CONSENT_COOKIE_KEY) === 'true'
@@ -42,20 +44,17 @@ const CookieConsent = () => {
       <div className="relative p-2 w-full max-w-9xl text-center">
         <div className="relative bg-martinique rounded-lg shadow">
         <div className="p-2 space-y-4 text-lg text-bold">
-          <h3 className='text-mischka'>Cookies</h3>
+          <h3 className='text-mischka'>{t("cookies")}</h3>
         </div>
           <div className="p-2 space-y-4">
             <p className="text-base leading-relaxed text-mischka">
-              We use services that use cookies to deliver a better user
-              experience, and to analyze traffic. Learn more about the
-              services we use at our{' '}
+            {t("cookies-info")}
               <Link
                 href="/privacy-policy"
                 className="text-mellow underline hover:text-blue-800"
               >
-                privacy policy
+                {t("Privacy Policy")}
               </Link>
-              {' '} page.
             </p>
           </div>
           <div className="flex grid-row flex-wrap items-center justify-center gap-4 p-2 border-t border-fog rounded-b">
@@ -63,9 +62,9 @@ const CookieConsent = () => {
               data-modal-hide="cookie-consent-modal"
               type="button"
               className='text-fog'
-            >Set preferences
+            >{t("preferences")}
             </button>
-            <p className='text-mischka'>or</p>
+            <p className='text-mischka'>{t("or")}</p>
             <Button
               data-modal-hide="cookie-consent-modal"
               type="button"
@@ -74,7 +73,7 @@ const CookieConsent = () => {
               size='sm'
               className='bg-hugs'
             >
-              Decline all
+              {t("decline-all")}
             </Button>
             <Button
               data-modal-hide="cookie-consent-modal"
@@ -84,7 +83,7 @@ const CookieConsent = () => {
               size='sm'
               className='bg-evergreen'
             >
-              Accept all
+              {t("accept-all")}
             </Button>
           </div>
         </div>
@@ -92,6 +91,5 @@ const CookieConsent = () => {
     </div>
   )
 }
-
 
 export default CookieConsent

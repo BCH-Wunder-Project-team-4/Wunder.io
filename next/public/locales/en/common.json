@@ -109,6 +109,13 @@
   "footer-newsletter-terms": "I approve that Wunder processes my personal data according to its",
   "form-subscribe": "Subscribe",
   "all-events": "All events",
-  "all-expertTalks": "All expert talks"
+  "all-expertTalks": "All expert talks",
+  "cookies": "Cookies",
+  "cookies-info": "We use services that use cookies to deliver a better user experience, and to analyze traffic. Learn more about the services we use here: ",
+  "preferences": "Set preferences",
+  "accept-all": "Accept all",
+  "decline-all": "Decline all",
+  "or": "or"
+
 
 }
