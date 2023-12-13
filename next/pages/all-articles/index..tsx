@@ -32,7 +32,7 @@ export default function AllArticlesPage({
       <Meta title={t("all-articles")} metatags={[]} />
       <div ref={focusRef} tabIndex={-1} />
       <HeadingPage>{t("all-articles")}</HeadingPage>
-      <ul className="mt-4">
+      <ul className="mt-4 flex flex-row flex-wrap gap-16  justify-center lg:justify-start ">
         {articleTeasers?.map((article) => (
           <li key={article.id}>
             <ArticleListItem article={article} />
