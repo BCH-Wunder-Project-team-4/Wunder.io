@@ -3,6 +3,7 @@ import Cookies from 'js-cookie';
 import { MouseEvent, useEffect, useState } from 'react';
 import { Button } from '@/ui/button';
 import { useTranslation } from 'react-i18next';
+import Checkmark from "@/styles/icons/checkmark.svg";
 
 const USER_CONSENT_COOKIE_KEY = 'cookies_consent_is_true';
 const USER_CONSENT_COOKIE_EXPIRE_DATE = 365;
@@ -157,20 +158,14 @@ const CookieConsent = () => {
                         {t("cookie-preferences-info")}
                       </p>
                       <div className="flex items-center justify-center gap-4 p-2 rounded-b">
-                  <div className='flex gap-2 flex-wrap'>
-                  <div className="flex items-center justify-center gap-2">
-                    <label className="relative inline-flex items-center cursor-pointer">
-                      <input 
-                        type="checkbox"
-                        value=""
-                        className="sr-only peer"
-                        id="analyticsSwitch"
-                        onChange={() => setAnalyticsPreference((prev) => !prev)} checked disabled/>
-                      <div className="w-11 h-6 bg-stone rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                  <div className='flex gap-6 flex-wrap'>
+                  <div className="flex items-center justify-center">
+                    <Checkmark className="text-fog h-6 w-6"/>
+                    <label className="relative inline-flex items-center">
                       <span className="ms-3">{t("Necessary")}</span>
                     </label>
                   </div>
-                  <div className="flex items-center justify-center gap-2">
+                  <div className="flex items-center">
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input 
                         type="checkbox"
@@ -183,7 +178,7 @@ const CookieConsent = () => {
                       <span className="ms-3">{t("Analytics")}</span>
                     </label>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center">
                   <label className="relative inline-flex items-center cursor-pointer">
                       <input 
                         type="checkbox"
@@ -196,7 +191,7 @@ const CookieConsent = () => {
                       <span className="ms-3">{t("Advertisement")}</span>
                   </label>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center">
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input 
                         type="checkbox"
@@ -221,7 +216,7 @@ const CookieConsent = () => {
                         size='sm'
                         className='bg-evergreen'
                       >
-                        {t("preferences")}
+                        {t("save-preferences")}
                       </Button>
                     </div>
                   </div>
