@@ -6,12 +6,12 @@ const Map = ({ markers }) => {
   const customIcon = new Icon({
     iconUrl: "https://cdn-icons-png.flaticon.com/128/684/684908.png",
     iconSize: [38, 38],
-    // iconAnchor: [10, 41],
+    popupAnchor: [0, -15],
   });
 
   const eventZoom = 13;
   const center = markers[0].geocode;
-  const defaultHeight = "80vh";
+  const defaultHeight = "90vh";
   const eventMapHeight = "400px";
 
   return (
@@ -31,7 +31,9 @@ const Map = ({ markers }) => {
 
       {markers.map((marker, index) => (
         <Marker key={index} position={marker.geocode} icon={customIcon}>
-          <Popup>{marker.popUp}</Popup>
+          <Popup>
+            <div className="font-overpass text-md">{marker.popUp}</div>
+          </Popup>
         </Marker>
       ))}
     </MapContainer>
