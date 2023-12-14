@@ -9,7 +9,7 @@ id: node.events.field_event_duration
 field_name: field_event_duration
 entity_type: node
 bundle: events
-label: event_duration
+label: Duration
 description: ''
 required: true
 translatable: false
