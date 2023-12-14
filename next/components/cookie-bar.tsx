@@ -150,39 +150,66 @@ const CookieConsent = () => {
                 id="cookie-preferences-modal"
                 className="transition-opacity duration-300 border-t border-fog relative flex items-center justify-center z-50"
               >
-                <div className="relative p-2 w-full max-w-9xl text-center">
+                <div className="relative p-2 w-full max-w-9xl text-center text-mischka">
                   <div className="relative bg-martinique rounded-lg shadow backdrop-blur-sm opacity-95">
                     <div className="p-2 space-y-4">
                       <p className="text-base leading-relaxed text-mischka">
                         {t("cookie-preferences-info")}
                       </p>
                       <div className="flex items-center justify-center gap-4 p-2 rounded-b">
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="analyticsSwitch"
-                      checked={analyticsPreference}
-                      onChange={() => setAnalyticsPreference((prev) => !prev)}
-                    />
-                    <label htmlFor="analyticsSwitch">{t("Analytics")}</label>
+                  <div className='flex gap-2 flex-wrap'>
+                  <div className="flex items-center justify-center gap-2">
+                    <label className="relative inline-flex items-center cursor-pointer">
+                      <input 
+                        type="checkbox"
+                        value=""
+                        className="sr-only peer"
+                        id="analyticsSwitch"
+                        onChange={() => setAnalyticsPreference((prev) => !prev)} checked disabled/>
+                      <div className="w-11 h-6 bg-stone rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                      <span className="ms-3">{t("Necessary")}</span>
+                    </label>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <label className="relative inline-flex items-center cursor-pointer">
+                      <input 
+                        type="checkbox"
+                        value=""
+                        className="sr-only peer"
+                        id="analyticsSwitch"
+                        checked={analyticsPreference}
+                        onChange={() => setAnalyticsPreference((prev) => !prev)}/>
+                      <div className="w-11 h-6 bg-stone rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                      <span className="ms-3">{t("Analytics")}</span>
+                    </label>
                   </div>
                   <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="advertisementSwitch"
-                      checked={advertisementPreference}
-                      onChange={() => setAdvertisementPreference((prev) => !prev)}
-                    />
-                    <label htmlFor="advertisementSwitch">{t("Advertisement")}</label>
+                  <label className="relative inline-flex items-center cursor-pointer">
+                      <input 
+                        type="checkbox"
+                        value=""
+                        className="sr-only peer"
+                        id="advertisementSwitch"
+                        checked={advertisementPreference}
+                        onChange={() => setAdvertisementPreference((prev) => !prev)}/>
+                      <div className="w-11 h-6 bg-stone rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                      <span className="ms-3">{t("Advertisement")}</span>
+                  </label>
                   </div>
                   <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="functionalSwitch"
-                      checked={functionalPreference}
-                      onChange={() => setFunctionalPreference((prev) => !prev)}
-                    />
-                    <label htmlFor="functionalSwitch">{t("Functional")}</label>
+                    <label className="relative inline-flex items-center cursor-pointer">
+                      <input 
+                        type="checkbox"
+                        value=""
+                        className="sr-only peer"
+                        id="advertisementSwitch"
+                        checked={functionalPreference}
+                        onChange={() => setFunctionalPreference((prev) => !prev)}
+                      />
+                      <div className="w-11 h-6 bg-stone rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                      <span className="ms-3">{t("Functional")}</span>
+                  </label>
+                  </div>
                   </div>
                 </div>
               </div>
