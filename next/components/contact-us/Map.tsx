@@ -25,7 +25,7 @@ const Map = ({ markers }) => {
       scrollWheelZoom={false}
     >
       <TileLayer
-        attribution="basic"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
