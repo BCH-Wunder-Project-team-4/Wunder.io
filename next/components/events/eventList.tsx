@@ -1,18 +1,14 @@
+import { formatDateDay, formatDateMonth, formatDateYear } from "@/lib/utils";
+
+import ClockIcon from "@/styles/icons/clock.svg";
+import { EventTeaser } from "@/lib/zod/events-teaser";
+import Icon from "@/styles/icons/home.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { absoluteUrl } from "@/lib/drupal/absolute-url";
+import classNames from "classnames";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import classNames from "classnames";
-import ImageIcon from "@/styles/icons/image.svg";
-import clsx from "clsx";
-
-import ArrowIcon from "@/styles/icons/arrow-down.svg";
-
-import { buttonVariants } from "@/ui/button";
-
-import { absoluteUrl } from "@/lib/drupal/absolute-url";
-import { formatDate, formatDateDay, formatDateMonth } from "@/lib/utils";
-import { EventTeaser } from "@/lib/zod/events-teaser";
 
 interface EventListItemProps {
   event: EventTeaser;
@@ -21,60 +17,47 @@ interface EventListItemProps {
 export function EventListItem({ event }: EventListItemProps) {
   const { t } = useTranslation();
   const router = useRouter();
-  const month = formatDateMonth(event.created, router.locale);
-  const day = formatDateDay(event.created, router.locale);
+  const month: string = formatDateMonth(event.field_event_date, router.locale);
+  const day = formatDateDay(event.field_event_date, router.locale);
+  const year = formatDateYear(event.field_event_date, router.locale);
+  console.log("date", month, day, year);
+
   return (
-    <div
-      
+
+    <Link
+      href={event.path.alias}
       className={classNames(
-        "bg-primary border flex flex-col relative group",
+        "flex flex-col justify-between relative w-80 h-80  border-finnishwinter dark:border-scapaflow border-2  dark:shadow-fog hover:shadow-lg hover:shadow-primary-100",
         event.sticky
-          ? "border-primary-100 bg-primary-50"
-          : "border-finnishwinter bg-white",
+          ? "border-primary-100 shadow-md shadow-primary-100 dark:shadow-fog "
+          : "border-finnishwinte dark:bg-steelgray",
       )}
     >
-      <div className=" overflow-hidden">
+      <div className="flex flex-col">
         {event.field_event_image && (
           <Image
             src={absoluteUrl(event.field_event_image.uri.url)}
-            width={600}
-            height={440}
-            className="transition-transform duration-300 ease-in-out group-hover:scale-125"
+            width={300}
+            height={300}
+            className="relative object-cover w-80 h-56"
             alt={event.field_event_image.resourceIdObjMeta.alt}
           />
         )}
-        <div className="absolute top-2 left-2">
-        <div className=" bg-secondary-600 py-3 px-5 rounded-lg font-bold">
+        <div className=" flex flex-row justify-around items-center w-28 h-8 -mt-10 ml-2 z-20 bg-rose dark:text-steelgray  font-bold">
           <p className="text-center">{day}</p>
-          <p className="text-center">{month.substring(0,3)}</p>
-        </div>
+          <p className="text-center">{month.substring(0, 3)}</p>
+          <p className="text-center">{year}</p>
         </div>
       </div>
-      <div className=" bg-white h-52 flex flex-col justify-evenly items-baseline px-4">
-        <div className="flex justify-center items-center">
-          <div>
-         <p> <ImageIcon className="block h-4 w-4 text-primary-500 mr-2" /></p>
-          </div>
-          <div>
-            <p>{event.uid?.display_name}</p>
-          </div>
+      <div className="h-32 flex flex-col justify-evenly items-baseline p-4">
+        <div className="flex flex-row">
+          <p className="w-5 h-5"><Icon /></p>
+          <p className="pl-3">{event.field_event_location}</p>
         </div>
-      <h3 className="text-2xl font-bold">
-        {event.title}
-      </h3>
-      <div className="">
-      <Link
-            href={event.path.alias}
-            className={clsx(
-              buttonVariants({ variant: "primary" }),
-              "text-base mr-4 mt-4 inline-flex px-5 py-3",
-            )}
-          >
-            {t("Read More")}
-            <ArrowIcon aria-hidden className="ml-3 h-6 w-6 -rotate-90" />
-          </Link>
+        <h3 className="text-lg text-primary-600 line-clamp-1 font-bold h-8 py-2">
+          {event.title}
+        </h3>
       </div>
-      </div>
-    </div>
+    </Link>
   );
 }

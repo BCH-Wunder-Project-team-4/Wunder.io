@@ -9,6 +9,7 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { ArticleTeasers } from "@/components/article-teasers";
 import { DrupalNode } from "next-drupal";
 import { LayoutProps } from "@/components/layout";
+import { LogoWall } from "@/components/logo-wall";
 import { Meta } from "@/components/meta";
 import { Paragraph } from "@/components/paragraph";
 import { drupal } from "@/lib/drupal/drupal-client";
@@ -24,11 +25,12 @@ interface IndexPageProps extends LayoutProps {
   articles: ArticleTeaser[];
   promotedExpertTalkTeasers: ExpertTalkTeaser[];
   eventsTeasers: any[];
+  clients: DrupalNode[];
 }
 
 export default function IndexPage({
   frontpage,
-  articles
+  clients = [],
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation();
 
@@ -40,10 +42,7 @@ export default function IndexPage({
           <Paragraph paragraph={paragraph} key={paragraph.id} />
         ))}
       </div>
-      {/* <ArticleTeasers
-        articles={articles}
-        heading={t("promoted-articles")}
-      /> */}
+      <LogoWall clients={clients} />
     </>
   );
 }
@@ -77,7 +76,10 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async (
   });
 
   const { events } = await getLatestEventsItems({ limit: 3, locale: context.locale });
-
+  const clientsData = await drupal.getResourceCollectionFromContext<DrupalNode[]>("node--client", context,
+    {
+      params: getNodePageJsonApiParams("node--client").getQueryObject(),
+    });
   return {
     props: {
       ...(await getCommonPageProps(context)),
@@ -90,7 +92,10 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async (
       eventsTeasers: events.map((teaser) =>
         validateAndCleanupEventTeaser(teaser),
       ),
+      clients: clientsData,
+
     },
     revalidate: 60,
+
   };
 };
