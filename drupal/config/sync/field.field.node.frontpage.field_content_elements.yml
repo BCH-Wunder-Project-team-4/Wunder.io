@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_content_elements
     - node.type.frontpage
     - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.banner
     - paragraphs.paragraphs_type.file_attachments
     - paragraphs.paragraphs_type.formatted_text
     - paragraphs.paragraphs_type.full_width_paragraph
@@ -47,6 +48,7 @@ settings:
       file_attachments: file_attachments
       logo_wall: logo_wall
       wunder_story: wunder_story
+      banner: banner
       listing_experts_talks: listing_experts_talks
       full_width_paragraph: full_width_paragraph
       subheading: subheading
@@ -62,9 +64,12 @@ settings:
       anchor:
         weight: 31
         enabled: false
+      article_body_text:
+        weight: 31
+        enabled: false
       banner:
         weight: 25
-        enabled: false
+        enabled: true
       event_speakers_information:
         weight: 29
         enabled: false
@@ -74,6 +79,9 @@ settings:
       formatted_text:
         weight: -14
         enabled: true
+      frame:
+        weight: 36
+        enabled: false
       full_width_paragraph:
         weight: 28
         enabled: true
@@ -83,12 +91,6 @@ settings:
       image:
         weight: -13
         enabled: true
-      infosection:
-        weight: 31
-        enabled: false
-      infosection_b:
-        weight: 32
-        enabled: false
       links:
         weight: -11
         enabled: true
