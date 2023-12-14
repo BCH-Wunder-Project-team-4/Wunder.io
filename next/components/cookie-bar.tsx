@@ -1,26 +1,26 @@
-import Link from 'next/link'
-import Cookies from 'js-cookie'
-import { MouseEvent, useEffect, useState } from 'react'
-import { Button } from '@/ui/button'
-import { useTranslation } from 'react-i18next'
+import Link from 'next/link';
+import Cookies from 'js-cookie';
+import { MouseEvent, useEffect, useState } from 'react';
+import { Button } from '@/ui/button';
+import { useTranslation } from 'react-i18next';
 
-const USER_CONSENT_COOKIE_KEY = 'all_cookies_is_true'
-const USER_CONSENT_COOKIE_EXPIRE_DATE = 365
+const USER_CONSENT_COOKIE_KEY = 'all_cookies_is_true';
+const USER_CONSENT_COOKIE_EXPIRE_DATE = 365;
 
-const ADVERTISEMENT_COOKIES_KEY = 'advertisement_cookies'
-const ADVERTISEMENT_COOKIES_EXPIRE_DATE = 365
+const ADVERTISEMENT_COOKIES_KEY = 'advertisement_cookies';
+const ADVERTISEMENT_COOKIES_EXPIRE_DATE = 365;
 
-const ANALYTICS_COOKIES_KEY = 'analytics_cookies'
-const ANALYTICS_COOKIES_EXPIRE_DATE = 365
+const ANALYTICS_COOKIES_KEY = 'analytics_cookies';
+const ANALYTICS_COOKIES_EXPIRE_DATE = 365;
 
-const FUNCTIONAL_COOKIES_KEY = 'functional_cookies'
-const FUNCTIONAL_COOKIES_EXPIRE_DATE = 365
+const FUNCTIONAL_COOKIES_KEY = 'functional_cookies';
+const FUNCTIONAL_COOKIES_EXPIRE_DATE = 365;
 
-const USER_NECESSARY_COOKIE_KEY = 'necessary_cookies'
-const USER_NECESSARY_COOKIE_EXPIRE_DATE = 365
+const USER_NECESSARY_COOKIE_KEY = 'necessary_cookies';
+const USER_NECESSARY_COOKIE_EXPIRE_DATE = 365;
 
 const CookieConsent = () => {
-  const [cookieConsentIsTrue, setCookieConsentIsTrue] = useState(true)
+  const [cookieConsentIsTrue, setCookieConsentIsTrue] = useState(true);
   const [showPreferencesModal, setShowPreferencesModal] = useState(false);
   const [analyticsPreference, setAnalyticsPreference] = useState(true);
   const [advertisementPreference, setAdvertisementPreference] = useState(true);
@@ -28,12 +28,12 @@ const CookieConsent = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    const consentIsTrue = Cookies.get(USER_CONSENT_COOKIE_KEY) === 'true'
-    setCookieConsentIsTrue(consentIsTrue)
-  }, [])
+    const consentIsTrue = Cookies.get(USER_CONSENT_COOKIE_KEY) === 'true';
+    setCookieConsentIsTrue(consentIsTrue);
+  }, []);
 
   const onAccept = (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (!cookieConsentIsTrue) {
       Cookies.set(USER_CONSENT_COOKIE_KEY, 'true', {
@@ -49,9 +49,10 @@ const CookieConsent = () => {
         expires: FUNCTIONAL_COOKIES_EXPIRE_DATE,
       });
 
-      setCookieConsentIsTrue(true)
+      setCookieConsentIsTrue(true);
     }
-  } 
+  };
+  
   const onNecessary = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
@@ -84,8 +85,8 @@ const CookieConsent = () => {
     });
   };
 
-  if (Cookies.get(USER_CONSENT_COOKIE_KEY) === 'true' || Cookies.get(USER_NECESSARY_COOKIE_KEY) === 'true') {
-    return null
+  if (cookieConsentIsTrue || Cookies.get(USER_NECESSARY_COOKIE_KEY) === 'true') {
+    return null;
   }
 
   return (
