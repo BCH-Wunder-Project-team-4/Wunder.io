@@ -55,6 +55,10 @@ const CookieConsent = () => {
   const onAccept = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setShowPreferencesModal(false);
+
+    setAnalyticsPreference(true);
+    setAdvertisementPreference(true);
+    setFunctionalPreference(true);
     
     if (!cookieConsentIsTrue) {
       Cookies.set(USER_CONSENT_COOKIE_KEY, 'true', {
@@ -79,6 +83,9 @@ const CookieConsent = () => {
   const onNecessary = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setShowPreferencesModal(false);
+    setAnalyticsPreference(false);
+    setAdvertisementPreference(false);
+    setFunctionalPreference(false);
     Cookies.set(USER_CONSENT_COOKIE_KEY, 'true', {
       expires: USER_CONSENT_COOKIE_EXPIRE_DATE,
     });
@@ -199,7 +206,7 @@ const CookieConsent = () => {
                         type="checkbox"
                         value=""
                         className="sr-only peer"
-                        id="advertisementSwitch"
+                        id="functionalSwitch"
                         checked={functionalPreference}
                         onChange={() => setFunctionalPreference((prev) => !prev)}
                       />
