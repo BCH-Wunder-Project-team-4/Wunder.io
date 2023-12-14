@@ -4,7 +4,7 @@ import { MouseEvent, useEffect, useState } from 'react';
 import { Button } from '@/ui/button';
 import { useTranslation } from 'react-i18next';
 
-const USER_CONSENT_COOKIE_KEY = 'all_cookies_is_true';
+const USER_CONSENT_COOKIE_KEY = 'cookies_consent_is_true';
 const USER_CONSENT_COOKIE_EXPIRE_DATE = 365;
 
 const ADVERTISEMENT_COOKIES_KEY = 'advertisement_cookies';
@@ -19,22 +19,41 @@ const FUNCTIONAL_COOKIES_EXPIRE_DATE = 365;
 const USER_NECESSARY_COOKIE_KEY = 'necessary_cookies';
 const USER_NECESSARY_COOKIE_EXPIRE_DATE = 365;
 
+export const showCookieBar = () => {
+  Cookies.set(USER_CONSENT_COOKIE_KEY, 'false', {
+    expires: USER_CONSENT_COOKIE_EXPIRE_DATE,
+  });
+  Cookies.set(ADVERTISEMENT_COOKIES_KEY, 'false', {
+    expires: ADVERTISEMENT_COOKIES_EXPIRE_DATE,
+  });
+  Cookies.set(ANALYTICS_COOKIES_KEY, 'false', {
+    expires: ANALYTICS_COOKIES_EXPIRE_DATE,
+  });
+  Cookies.set(FUNCTIONAL_COOKIES_KEY, 'false', {
+    expires: FUNCTIONAL_COOKIES_EXPIRE_DATE,
+  });
+  const cookieConsentModal = document.getElementById('cookie-consent-modal');
+  if (cookieConsentModal) {
+    cookieConsentModal.style.display = 'flex';
+  }
+}
+
 const CookieConsent = () => {
   const [cookieConsentIsTrue, setCookieConsentIsTrue] = useState(true);
   const [showPreferencesModal, setShowPreferencesModal] = useState(false);
-  const [analyticsPreference, setAnalyticsPreference] = useState(true);
-  const [advertisementPreference, setAdvertisementPreference] = useState(true);
-  const [functionalPreference, setFunctionalPreference] = useState(true);
+  const [analyticsPreference, setAnalyticsPreference] = useState(false);
+  const [advertisementPreference, setAdvertisementPreference] = useState(false);
+  const [functionalPreference, setFunctionalPreference] = useState(false);
   const { t } = useTranslation();
-
+  
   useEffect(() => {
     const consentIsTrue = Cookies.get(USER_CONSENT_COOKIE_KEY) === 'true';
     setCookieConsentIsTrue(consentIsTrue);
   }, []);
-
+  
   const onAccept = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-
+    
     if (!cookieConsentIsTrue) {
       Cookies.set(USER_CONSENT_COOKIE_KEY, 'true', {
         expires: USER_CONSENT_COOKIE_EXPIRE_DATE,
@@ -48,29 +67,42 @@ const CookieConsent = () => {
       Cookies.set(FUNCTIONAL_COOKIES_KEY, 'true', {
         expires: FUNCTIONAL_COOKIES_EXPIRE_DATE,
       });
-
-      setCookieConsentIsTrue(true);
+      Cookies.set(USER_NECESSARY_COOKIE_KEY, 'true', {
+        expires: USER_NECESSARY_COOKIE_EXPIRE_DATE,
+      });
     }
+    document.getElementById('cookie-consent-modal').style.display = 'none';
   };
   
   const onNecessary = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-
+    Cookies.set(USER_CONSENT_COOKIE_KEY, 'true', {
+      expires: USER_CONSENT_COOKIE_EXPIRE_DATE,
+    });
+    Cookies.set(ADVERTISEMENT_COOKIES_KEY, 'false', {
+      expires: ADVERTISEMENT_COOKIES_EXPIRE_DATE,
+    });
+    Cookies.set(ANALYTICS_COOKIES_KEY, 'false', {
+      expires: ANALYTICS_COOKIES_EXPIRE_DATE,
+    });
+    Cookies.set(FUNCTIONAL_COOKIES_KEY, 'false', {
+      expires: FUNCTIONAL_COOKIES_EXPIRE_DATE,
+    });
     Cookies.set(USER_NECESSARY_COOKIE_KEY, 'true', {
       expires: USER_NECESSARY_COOKIE_EXPIRE_DATE,
     });
-
+    
     document.getElementById('cookie-consent-modal').style.display = 'none';
   };
-
+  
   const showPreferences = () => {
     setShowPreferencesModal(prevState => !prevState);
   };
-
+  
   const savePreferences = () => {
     setShowPreferencesModal(false);
     document.getElementById('cookie-consent-modal').style.display = 'none';
-
+    
     Cookies.set(USER_NECESSARY_COOKIE_KEY, 'true', {
       expires: USER_NECESSARY_COOKIE_EXPIRE_DATE,
     });
@@ -84,17 +116,17 @@ const CookieConsent = () => {
       expires: FUNCTIONAL_COOKIES_EXPIRE_DATE,
     });
   };
-
-  if (cookieConsentIsTrue || Cookies.get(USER_NECESSARY_COOKIE_KEY) === 'true') {
+  
+  if (cookieConsentIsTrue) {
     return null;
   }
-
+  
   return (
     <>
     <div
       id="cookie-consent-modal"
       className="fixed bottom-0 left-0 right-0 flex items-center justify-center z-50"
-    >
+      >
       <div className="transition-opacity duration-300 relative p-2 w-full max-w-9xl text-center">
         <div className="relative bg-martinique rounded-lg shadow">
         <div className="p-2 space-y-4 text-lg text-bold">
