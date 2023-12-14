@@ -30,7 +30,7 @@ export function EventListItem({ event }: EventListItemProps) {
         "flex flex-col justify-between relative w-80 h-80  border-finnishwinter dark:border-scapaflow border-2  dark:shadow-fog hover:shadow-lg hover:shadow-primary-100",
         event.sticky
           ? "border-primary-100 shadow-md shadow-primary-100 dark:shadow-fog "
-          : "border-finnishwinte dark:bg-steelgray",
+          : "border-finnishwinter dark:bg-steelgray",
       )}
     >
       <div className="flex flex-col">
@@ -43,7 +43,7 @@ export function EventListItem({ event }: EventListItemProps) {
             alt={event.field_event_image.resourceIdObjMeta.alt}
           />
         )}
-        <div className=" flex flex-row justify-around items-center w-28 h-8 -mt-10 ml-2 z-20 bg-rose dark:text-steelgray  font-bold">
+        <div className=" flex flex-row justify-around items-center w-32 px-2 h-8 -mt-10 ml-2 z-20 bg-rose dark:text-steelgray  font-bold rounded">
           <p className="text-center">{day}</p>
           <p className="text-center">{month.substring(0, 3)}</p>
           <p className="text-center">{year}</p>

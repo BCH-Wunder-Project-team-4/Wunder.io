@@ -23,7 +23,7 @@ export function ArticleListItem({ article }: ArticleListItemProps) {
         "flex flex-col justify-between h-96 w-80 border-finnishwinter dark:border-scapaflow border-2 p-5 hover:shadow-primary-100 hover:shadow-md dark:shadow-stone",
         article.sticky
           ? "border-primary-100 shadow-md shadow-primary-100 dark:shadow-fog "
-          : "border-finnishwinte dark:bg-steelgray",
+          : "border-finnishwinter dark:bg-steelgray",
       )}
     >
       <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold text-primary-600 dark:text-fog">{article.title}</h3>

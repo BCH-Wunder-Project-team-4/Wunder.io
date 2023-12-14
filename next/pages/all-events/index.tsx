@@ -51,11 +51,9 @@ export default function AllEventsPage({
       <Meta title={t("all-events")} metatags={[]} />
       <div ref={focusRef} tabIndex={-1} />
       <div>
-        <h1 className="text-left md:text-center lg:text-center text-heading-md font-bold">{t("Upcoming events")}</h1>
-        <div className="border-t border-solid border-rose mb-6 w-1/2 md:w-1/3 lg:w-1/3 md:mx-auto lg:mx-auto border-2">
-        </div>
+        <HeadingPage>{t("Upcoming events")}</HeadingPage>
       </div>
-      <ul className="flex flex-row flex-wrap gap-16 mx-auto ">
+      <ul className="mt-4 flex flex-row flex-wrap gap-16  justify-center lg:justify-start">
         {sortedEvents?.map((event) => (
           <li key={event.id}>
             <EventListItem event={event} />
@@ -65,11 +63,10 @@ export default function AllEventsPage({
       </ul>
       <Divider className="max-w-4xl" />
       <div className="mt-10">
-        <h1 className="text-left md:text-center lg:text-center text-heading-md font-bold">{t("All events")}</h1>
-        <div className="border-t border-rose mb-6 w-1/2 md:w-1/3 lg:w-1/3 md:mx-auto lg:mx-auto border-2">
-        </div>
+        <HeadingPage>{t("All events")}</HeadingPage>
+
       </div>
-      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <ul className="mt-4 flex flex-row flex-wrap gap-16  justify-center lg:justify-start">
         {latestEventTeasers?.map((event) => (
           <li key={event.id}>
             <EventListItem event={event} />

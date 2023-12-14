@@ -22,7 +22,7 @@ export function ExpertTalkListItem({ expertTalk }: ExpertTalkListItemProps) {
         "flex flex-col justify-between relative w-80 h-72  border-finnishwinter dark:border-scapaflow border-2 p-5 dark:shadow-fog hover:shadow-lg hover:shadow-primary-100",
         expertTalk.sticky
           ? "border-primary-100 shadow-md shadow-primary-100 dark:shadow-fog "
-          : "border-finnishwinte dark:bg-steelgray",
+          : "border-finnishwinter dark:bg-steelgray",
       )}
     >
       <div className="flex flex-row items-center">
