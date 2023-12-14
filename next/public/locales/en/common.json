@@ -116,7 +116,11 @@
   "accept-all": "Accept all",
   "necessary": "Necessary only",
   "cookie-preferences-info": "Set your preferences here. You can change them at any time by clicking on the Cookie Settings link in the footer! :)",
-  "save-preferences": "Save preferences"
+  "save-preferences": "Save preferences",
+  "Necessary": "Necessary",
+  "Analytics": "Analytics",
+  "Advertisement": "Advertisement",
+  "Functional": "Functional"
 
 
 }

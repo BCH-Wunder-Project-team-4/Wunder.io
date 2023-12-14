@@ -151,14 +151,14 @@ const CookieConsent = () => {
                 id="cookie-preferences-modal"
                 className="transition-opacity duration-300 border-t border-fog relative flex items-center justify-center z-50"
               >
-                <div className="relative p-2 w-full max-w-9xl text-center text-mischka">
+                <div className="relative p-2 sm:p-1 w-full max-w-9xl text-center text-mischka">
                   <div className="relative bg-martinique rounded-lg shadow backdrop-blur-sm opacity-95">
                     <div className="p-2 space-y-4">
                       <p className="text-base leading-relaxed text-mischka">
                         {t("cookie-preferences-info")}
                       </p>
                       <div className="flex items-center justify-center gap-4 p-2 rounded-b">
-                  <div className='flex gap-6 flex-wrap'>
+                  <div className='flex gap-6 sm:gap-2 flex-wrap'>
                   <div className="flex items-center justify-center">
                     <Checkmark className="text-fog h-6 w-6"/>
                     <label className="relative inline-flex items-center">
