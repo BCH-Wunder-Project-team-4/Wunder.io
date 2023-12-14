@@ -20,7 +20,6 @@ export function EventListItem({ event }: EventListItemProps) {
   const month: string = formatDateMonth(event.field_event_date, router.locale);
   const day = formatDateDay(event.field_event_date, router.locale);
   const year = formatDateYear(event.field_event_date, router.locale);
-  console.log("date", month, day, year);
 
   return (
 

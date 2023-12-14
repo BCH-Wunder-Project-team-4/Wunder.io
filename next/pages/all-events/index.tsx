@@ -32,7 +32,6 @@ export default function AllEventsPage({
   const focusRef = useRef<HTMLDivElement>(null);
 
   let sortedEvents = eventTeasers.filter((event) => event.field_event_date >= new Date().toISOString())
-  console.log(sortedEvents);
 
   sortedEvents = sortedEvents.sort(function (a, b) {
     if (a.field_event_date > b.field_event_date) {
