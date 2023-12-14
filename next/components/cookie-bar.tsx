@@ -102,7 +102,9 @@ const CookieConsent = () => {
   const savePreferences = () => {
     setShowPreferencesModal(false);
     document.getElementById('cookie-consent-modal').style.display = 'none';
-    
+    Cookies.set(USER_CONSENT_COOKIE_KEY, 'true', {
+      expires: USER_CONSENT_COOKIE_EXPIRE_DATE,
+    });
     Cookies.set(USER_NECESSARY_COOKIE_KEY, 'true', {
       expires: USER_NECESSARY_COOKIE_EXPIRE_DATE,
     });
@@ -130,10 +132,11 @@ const CookieConsent = () => {
       <div className="transition-opacity duration-300 relative p-2 w-full max-w-9xl text-center">
         <div className="relative bg-martinique rounded-lg shadow">
         <div className="p-2 space-y-4 text-lg text-bold">
-          <h3 className='text-mischka'>{t("Cookies")}</h3>
+          <h3 className='text-mischka'>{t("cookies")}</h3>
         </div>
           <div className="p-2 space-y-4">
             <p className="text-base leading-relaxed text-mischka">
+            {t("cookies-info")}
               <Link
                 href="/privacy-policy"
                 className="text-mellow underline hover:text-blue-800"
@@ -191,7 +194,7 @@ const CookieConsent = () => {
                         size='sm'
                         className='bg-evergreen'
                       >
-                        {t("save-preferences")}
+                        {t("preferences")}
                       </Button>
                     </div>
                   </div>
@@ -204,7 +207,7 @@ const CookieConsent = () => {
               type="button"
               className='text-fog underline'
               onClick={showPreferences}
-            >Set preferences
+            >{t("preferences")}
             </button>
             <Button
               data-modal-hide="cookie-consent-modal"
@@ -214,7 +217,7 @@ const CookieConsent = () => {
               size='sm'
               className='bg-martinique'
             >
-              {t("Necessary")}
+              {t("necessary")}
             </Button>
             <Button
               data-modal-hide="cookie-consent-modal"
@@ -224,7 +227,7 @@ const CookieConsent = () => {
               size='sm'
               className='bg-evergreen'
             >
-              {t("Accept-all")}
+              {t("accept-all")}
             </Button>
           </div>
         </div>

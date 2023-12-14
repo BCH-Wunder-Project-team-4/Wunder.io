@@ -118,8 +118,9 @@ export const FooterLinks = () => {
           })}
         <li>
         <button
-        onClick={showCookieBar}>
-          Cookie settings
+        onClick={showCookieBar}
+        className="py-1">
+          <p>{t("Cookie Settings")}</p>
         </button>
         </li>
         </ul>
