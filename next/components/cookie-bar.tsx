@@ -54,6 +54,7 @@ const CookieConsent = () => {
   
   const onAccept = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    setShowPreferencesModal(false);
     
     if (!cookieConsentIsTrue) {
       Cookies.set(USER_CONSENT_COOKIE_KEY, 'true', {
@@ -77,6 +78,7 @@ const CookieConsent = () => {
   
   const onNecessary = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    setShowPreferencesModal(false);
     Cookies.set(USER_CONSENT_COOKIE_KEY, 'true', {
       expires: USER_CONSENT_COOKIE_EXPIRE_DATE,
     });
@@ -149,7 +151,7 @@ const CookieConsent = () => {
             {showPreferencesModal && (
               <div
                 id="cookie-preferences-modal"
-                className="transition-opacity duration-300 border-t border-fog relative flex items-center justify-center z-50"
+                className="transition-transform border-t border-fog relative flex items-center justify-center z-50"
               >
                 <div className="relative p-2 sm:p-1 w-full max-w-9xl text-center text-mischka">
                   <div className="relative bg-martinique rounded-lg shadow backdrop-blur-sm opacity-95">
@@ -158,7 +160,7 @@ const CookieConsent = () => {
                         {t("cookie-preferences-info")}
                       </p>
                       <div className="flex items-center justify-center gap-4 p-2 rounded-b">
-                  <div className='flex gap-6 sm:gap-2 flex-wrap'>
+                  <div className='flex lg:gap-6 gap-2 flex-wrap'>
                   <div className="flex items-center justify-center">
                     <Checkmark className="text-fog h-6 w-6"/>
                     <label className="relative inline-flex items-center">
@@ -214,7 +216,6 @@ const CookieConsent = () => {
                         onClick={savePreferences}
                         variant='accept'
                         size='sm'
-                        className='bg-evergreen'
                       >
                         {t("save-preferences")}
                       </Button>

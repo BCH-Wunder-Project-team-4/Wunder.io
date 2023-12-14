@@ -39,7 +39,6 @@ export const buttonVariants = cva(
         ],
         decline: [
           "bg-martinique text-fog",
-          
         ],
 
       },
