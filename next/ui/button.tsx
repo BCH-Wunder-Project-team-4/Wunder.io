@@ -38,10 +38,8 @@ export const buttonVariants = cva(
           "disabled:!border-primary-200 disabled:!text-white disabled:!bg-primary-200",
         ],
         decline: [
-          "bg-hugs border-hugs text-white",
-          "hover:bg-white hover:text-hugs",
-          "active:bg-white active:text-hugs",
-          "disabled:!border-primary-200 disabled:!text-white disabled:!bg-primary-200",
+          "bg-martinique text-fog",
+          
         ],
 
       },
