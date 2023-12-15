@@ -53,7 +53,7 @@ export function EventListItem({ event }: EventListItemProps) {
           <p className="w-5 h-5"><Icon /></p>
           <p className="pl-3">{event.field_event_location}</p>
         </div>
-        <h3 className="text-lg text-primary-600 line-clamp-1 font-bold h-8 py-2">
+        <h3 className="text-lg  dark:text-fog text-primary-600 line-clamp-1 font-bold h-8 py-2">
           {event.title}
         </h3>
       </div>
