@@ -121,7 +121,9 @@
   "Necessary": "Necessary",
   "Analytics": "Analytics",
   "Advertisement": "Advertisement",
-  "Functional": "Functional"
+  "Functional": "Functional",
+  "Cookie Settings Refresh": " page, if settings don't open",
+  "Reload": "Refresh"
 
 
 }
