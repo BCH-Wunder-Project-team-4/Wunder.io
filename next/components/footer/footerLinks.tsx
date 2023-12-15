@@ -126,7 +126,6 @@ export const FooterLinks = () => {
         className="py-1">
           <p>{t("Cookie Settings")}</p>
         </button>
-            <p className="text-finnishwinter font-light text-xs">{'- '}<button className="text-mellow"onClick={reload}>{t("Reload")}</button>{t("Cookie Settings Refresh")}</p>
         </li>
         </ul>
       </div>

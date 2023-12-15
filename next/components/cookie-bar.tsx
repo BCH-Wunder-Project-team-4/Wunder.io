@@ -33,10 +33,8 @@ export const showCookieBar = () => {
   Cookies.set(FUNCTIONAL_COOKIES_KEY, 'false', {
     expires: FUNCTIONAL_COOKIES_EXPIRE_DATE,
   });
-  const cookieConsentModal = document.getElementById('cookie-consent-modal');
-  if (cookieConsentModal) {
-    cookieConsentModal.style.display = 'flex';
-  }
+
+  window.location.reload();
 }
 
 const CookieConsent = () => {
