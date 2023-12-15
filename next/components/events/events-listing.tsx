@@ -33,10 +33,10 @@ export function EventsListing({
   return (
     <>
       {isLoading && <LoadingSpinner />}
-      <ul className=" grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 my-8">
+      <ul className=" grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-10">
         {!isLoading &&
           data?.map((event: EventTeaserType) => (
-            <li key={event.id} className="flex flex-row justify-center">
+            <li key={event.id} className="flex flex-row justify-center my-8">
               <EventTeaserComponent event={event} />
             </li>
           ))}
