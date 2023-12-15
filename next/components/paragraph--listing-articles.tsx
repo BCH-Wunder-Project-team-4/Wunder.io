@@ -8,13 +8,15 @@ export function ParagraphListingArticles({
   paragraph: ListingArticles;
 }) {
   return (
-    <>
+    <div className="my-10 max-w-full">
+
       {
         paragraph.field_heading && (
           <HeadingParagraph>{paragraph.field_heading}</HeadingParagraph>
         )
       }
       < ArticlesListing listingId={paragraph.id} limit={paragraph.field_limit} />
-    </>
+    </div>
+
   );
 }

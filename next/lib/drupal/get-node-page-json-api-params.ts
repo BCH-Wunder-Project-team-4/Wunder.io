@@ -1,5 +1,5 @@
-import { env } from "@/env";
 import { DrupalJsonApiParams } from "drupal-jsonapi-params";
+import { env } from "@/env";
 
 export type ResourceType =
   | "node--frontpage"
@@ -110,7 +110,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "path",
       "sticky",
       "field_name",
-      "field_experts_position",
+      "field_expert_job_title",
     ]);
   }
   if (resourceType === "node--job") {

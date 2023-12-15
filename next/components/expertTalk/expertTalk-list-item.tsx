@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { absoluteUrl } from "@/lib/drupal/absolute-url";
 import classNames from "classnames";
-import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 
 interface ExpertTalkListItemProps {
@@ -12,35 +11,37 @@ interface ExpertTalkListItemProps {
 
 export function ExpertTalkListItem({ expertTalk }: ExpertTalkListItemProps) {
   const { t } = useTranslation();
-  const author = expertTalk.uid?.display_name;
+  const author = expertTalk;
+
+
+
   return (
     <Link
       href={expertTalk.path.alias}
       className={classNames(
-        "relative mb-4 grid h-full rounded p-4 rounded-b-md border dark:border-scapaflow border-finnishwinter dark:bg-steelgray bg-mischka  transition-all hover:shadow-md  ",
+        "flex flex-col justify-between relative w-80 h-72  border-finnishwinter dark:border-scapaflow border-2 p-5 dark:shadow-scapaflow hover:shadow-lg hover:shadow-primary-100",
         expertTalk.sticky
-          ? "border-primary-100 bg-primary-50"
-          : "border-finnishwinter bg-mischka dark:bg-steelgray",
+          ? "border-primary-100 shadow-md shadow-primary-100 dark:shadow-fog "
+          : "border-finnishwinter dark:bg-steelgray",
       )}
     >
-      <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold text-primary-600 dark:text-fog">
-        {expertTalk.title}
-      </h3>
-      <div className="mb-4 line-clamp-2 text-md text-scapaflow dark:text-graysuit">
-        {author && <>{t("posted-by", { author })} - </>}
-      </div>
-      <div className="flex flex-col items-start gap-4 sm:flex-row">
+      <div className="flex flex-row items-center">
         {expertTalk.field_image && (
           <Image
-            src={absoluteUrl(expertTalk.field_image.uri.url)}
-            width={500}
+            src={absoluteUrl(expertTalk.field_experts_photo.uri.url)}
+            width={300}
             height={300}
-            className="w-full sm:w-40"
-            alt={expertTalk.field_image.resourceIdObjMeta.alt}
+            className="h-20 w-20 object-cover rounded-full "
+            alt={expertTalk.field_experts_photo.resourceIdObjMeta.alt}
           />
         )}
-        <p>{expertTalk.field_excerpt}</p>
+        <div className="flex flex-col py-2 px-5">
+          <p className="font-bold text-md">{expertTalk.field_name}</p>
+          <p className="italic text-stone dark:text-finnishwinter">{expertTalk.field_expert_job_title}</p>
+        </div>
       </div>
+      <p className="text-lg font-bold line-clamp-2 text-primary-600 dark:text-fog">{expertTalk.title}</p>
+      <p className="line-clamp-3">{expertTalk.field_excerpt}</p>
     </Link>
   );
 }

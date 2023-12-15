@@ -19,7 +19,7 @@ export function ParagraphHero({ paragraph }: { paragraph: HeroType }) {
             </h1>
           )}
           <FormattedText
-            html={paragraph.field_formatted_text.processed}
+            html={paragraph.field_formatted_text?.processed ? paragraph.field_formatted_text?.processed : ""}
             className={clsx(
               "mb-6 max-w-2xl text-left text-md/xl text-primary-600 sm:text-lg md:text-lg lg:mb-8 lg:text-xl",
               paragraph.field_heading && "mt-4",
@@ -39,18 +39,7 @@ export function ParagraphHero({ paragraph }: { paragraph: HeroType }) {
               </Link>
             )}
 
-            {paragraph.field_secondary_link && (
-              <Link
-                href={paragraph.field_secondary_link.full_url}
-                className={clsx(
-                  buttonVariants({ variant: "secondary" }),
-                  "text-base mt-3 inline-flex px-5 py-3 sm:mt-0",
-                )}
-              >
-                {paragraph.field_secondary_link.title}
-                <ArrowIcon aria-hidden className="ml-3 h-6 w-6 -rotate-90" />
-              </Link>
-            )}
+
           </div>
         </div>
         <div className="col-span-6">
