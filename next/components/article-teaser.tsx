@@ -16,34 +16,47 @@ export function ArticleTeaser({ article }: ArticleTeaserProps) {
   const router = useRouter();
   const date = formatDate(article.created, router.locale);
 
+
   return (
     <Link
       href={article.path.alias}
-      className="relative grid grid-rows-1 h-full pb-20 rounded-b-md border-1 dark:border-scapaflow border-primary-600 dark:bg-steelgray bg-mischka  transition-all hover:shadow-md  "
+      className="flex justify-center items-center "
     >
-      {article.field_image && (
-        <div className="relative">
+      <div className=" ml-1 mr-1 flex flex-col justify-center items-center w-96 hover:scale-105 transition-all relative">
+
+        {article.field_image && (
+
           <Image
             src={absoluteUrl(article.field_image.uri.url)}
             width={384}
             height={384}
             alt={article.field_image.resourceIdObjMeta.alt}
-            className="max-w-full object-cover w-fit-content h-80 "
+            className="relative object-cover w-43 h-64"
           />
-          <div className="absolute inset-0 bg-primary-400 opacity-50 hover:bg-transparent"></div>
-        </div>
-      )}
-      <div className="text-white w-full bg-primary-600 opacity-80 absolute mt-64 px-5 p-1 rounded-b-md ">
-        <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold ">
-          {article.title}
-        </h3>
-        <div className=" line-clamp-2  text-md m-4 ">
-          <h4 className="">{author && <>{t("posted-by", { author })} </>}</h4>
-          <h4 className="bg-hugs rounded-l-3xl rounded-r-3xl px-3 py-1 max-w-fit ">{date}</h4>
+
+
+        )}
+        <div className=" flex flex-col justify-between text-info w-11/12 -mt-14 h-72 z-10 p-5 bg-[url('../public/notebookPaper.webp')] bg-cover shadow-md ">
+          <div className="w-10 h-10 self-center -mt-8 mb-1 bg-cover  bg-[url('../public/pin.webp')] "></div>
+          <h3 className=" line-clamp-2 text-heading-xs font-bold text-primary-600 ">
+            {article.title}
+          </h3>
+          <hr className="h-px my-2 bg-graysuit border-0 dark:bg-gray-700"></hr>
+          <div className="h-24">
+            <p className="line-clamp-4 text-scapaflow italic">{article.field_excerpt}</p>
+          </div>
+
+          <hr className="h-px my-2 bg-graysuit border-0 dark:bg-gray-700"></hr>
+          <div className="flex flex-row justify-between text-xs">
+            <p >{author && <>{t("posted-by", { author })} </>}</p>
+            <p >{date}</p>
+          </div>
+
         </div>
       </div>
 
 
-    </Link>
+
+    </Link >
   );
 }

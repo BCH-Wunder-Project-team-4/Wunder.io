@@ -6,12 +6,16 @@ dependencies:
     - field.storage.node.field_content_elements
     - node.type.case
     - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.banner
     - paragraphs.paragraphs_type.file_attachments
     - paragraphs.paragraphs_type.formatted_text
+    - paragraphs.paragraphs_type.frame
     - paragraphs.paragraphs_type.hero
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.listing_articles
+    - paragraphs.paragraphs_type.simple_quote
+    - paragraphs.paragraphs_type.subheading
     - paragraphs.paragraphs_type.video
   module:
     - entity_reference_revisions
@@ -37,6 +41,10 @@ settings:
       video: video
       listing_articles: listing_articles
       file_attachments: file_attachments
+      banner: banner
+      frame: frame
+      simple_quote: simple_quote
+      subheading: subheading
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -45,12 +53,30 @@ settings:
       accordion_item:
         weight: -12
         enabled: false
+      anchor:
+        weight: 30
+        enabled: false
+      article_body_text:
+        weight: 31
+        enabled: false
+      banner:
+        weight: 32
+        enabled: true
+      event_speakers_information:
+        weight: 33
+        enabled: false
       file_attachments:
         weight: 10
         enabled: true
       formatted_text:
         weight: -14
         enabled: true
+      frame:
+        weight: 36
+        enabled: true
+      full_width_paragraph:
+        weight: 37
+        enabled: false
       hero:
         weight: -15
         enabled: true
@@ -63,7 +89,43 @@ settings:
       listing_articles:
         weight: 9
         enabled: true
+      listing_events:
+        weight: 42
+        enabled: false
+      listing_experts_talks:
+        weight: 43
+        enabled: false
+      logo_wall:
+        weight: 44
+        enabled: false
+      scrolling_numbers:
+        weight: 45
+        enabled: false
+      scrolling_numbers_item:
+        weight: 46
+        enabled: false
+      sectionbg:
+        weight: 47
+        enabled: false
+      services:
+        weight: 48
+        enabled: false
+      simple_quote:
+        weight: 49
+        enabled: true
+      subheading:
+        weight: 50
+        enabled: true
+      trilogy_snapshot:
+        weight: 51
+        enabled: false
       video:
         weight: -9
         enabled: true
+      wunder_story:
+        weight: 54
+        enabled: false
+      wunderpedia:
+        weight: 53
+        enabled: false
 field_type: entity_reference_revisions
