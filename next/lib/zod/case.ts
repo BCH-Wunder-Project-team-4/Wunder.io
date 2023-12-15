@@ -2,10 +2,12 @@ import {
   AccordionSchema,
   FileAttachmentsSchema,
   FormattedTextSchema,
+  FrameSchema,
   HeroSchema,
   ImageSchema,
   ImageShape,
   LinksSchema,
+  SimpleQuoteSchema,
   VideoSchema,
 } from "@/lib/zod/paragraph";
 
@@ -21,6 +23,8 @@ const CaseElementsSchema = z.discriminatedUnion("type", [
   AccordionSchema,
   HeroSchema,
   FileAttachmentsSchema,
+  FrameSchema,
+  SimpleQuoteSchema
 ]);
 
 

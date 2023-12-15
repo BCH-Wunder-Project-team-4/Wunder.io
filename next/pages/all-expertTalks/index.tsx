@@ -32,7 +32,7 @@ export default function AllExpertTalksPage({
       <Meta title={t("all-expertTalks")} metatags={[]} />
       <div ref={focusRef} tabIndex={-1} />
       <HeadingPage>{t("all-expertTalks")}</HeadingPage>
-      <ul className="mt-4">
+      <ul className="mt-4 flex flex-row flex-wrap gap-5 justify-center lg:justify-start " >
         {expertTalkTeasers?.map((expertTalk) => (
           <li key={expertTalk.id}>
             <ExpertTalkListItem expertTalk={expertTalk} />

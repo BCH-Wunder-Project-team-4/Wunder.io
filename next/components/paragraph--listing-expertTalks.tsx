@@ -8,12 +8,16 @@ export function ParagraphListingExpertTalks({
   paragraph: ListingExpertTalks;
 }) {
   return (
-    <>
-      {paragraph.field_heading && (
-        <HeadingParagraph>{paragraph.field_heading}</HeadingParagraph>
-      )}
+    <div className="my-10 max-w-5xl">
+
+      {
+        paragraph.field_heading && (
+          <HeadingParagraph>{paragraph.field_heading}</HeadingParagraph>
+        )
+      }
       <ExpertTalksListing listingId={paragraph.id} limit={paragraph.field_limit} />
-    </>
+    </div>
+
   );
 }
 

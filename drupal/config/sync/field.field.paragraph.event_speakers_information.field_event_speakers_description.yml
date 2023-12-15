@@ -9,7 +9,7 @@ id: paragraph.event_speakers_information.field_event_speakers_description
 field_name: field_event_speakers_description
 entity_type: paragraph
 bundle: event_speakers_information
-label: event_speakers_description
+label: 'Event Speaker Description'
 description: ''
 required: false
 translatable: false
