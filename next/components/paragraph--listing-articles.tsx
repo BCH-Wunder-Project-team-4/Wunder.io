@@ -8,7 +8,9 @@ export function ParagraphListingArticles({
   paragraph: ListingArticles;
 }) {
   return (
-    <div className="my-10 max-w-full">
+    <>
+
+
 
       {
         paragraph.field_heading && (
@@ -16,7 +18,7 @@ export function ParagraphListingArticles({
         )
       }
       < ArticlesListing listingId={paragraph.id} limit={paragraph.field_limit} />
-    </div>
+    </>
 
   );
 }

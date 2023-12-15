@@ -8,7 +8,7 @@ export function ParagraphListingExpertTalks({
   paragraph: ListingExpertTalks;
 }) {
   return (
-    <div className="my-10 max-w-5xl">
+    <>
 
       {
         paragraph.field_heading && (
@@ -16,7 +16,7 @@ export function ParagraphListingExpertTalks({
         )
       }
       <ExpertTalksListing listingId={paragraph.id} limit={paragraph.field_limit} />
-    </div>
+    </>
 
   );
 }
