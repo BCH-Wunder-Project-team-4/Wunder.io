@@ -19,7 +19,7 @@ export function ExpertTalkListItem({ expertTalk }: ExpertTalkListItemProps) {
     <Link
       href={expertTalk.path.alias}
       className={classNames(
-        "flex flex-col justify-between relative w-80 h-72  border-finnishwinter dark:border-scapaflow border-2 p-5 dark:shadow-fog hover:shadow-lg hover:shadow-primary-100",
+        "flex flex-col justify-between relative w-80 h-72  border-finnishwinter dark:border-scapaflow border-2 p-5 dark:shadow-scapaflow hover:shadow-lg hover:shadow-primary-100",
         expertTalk.sticky
           ? "border-primary-100 shadow-md shadow-primary-100 dark:shadow-fog "
           : "border-finnishwinter dark:bg-steelgray",

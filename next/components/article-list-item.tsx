@@ -20,7 +20,7 @@ export function ArticleListItem({ article }: ArticleListItemProps) {
     <Link
       href={article.path.alias}
       className={classNames(
-        "flex flex-col justify-between h-96 w-80 border-finnishwinter dark:border-scapaflow border-2 p-5 hover:shadow-primary-100 hover:shadow-md dark:shadow-stone",
+        "flex flex-col justify-between h-96 w-80 border-finnishwinter dark:border-scapaflow border-2 p-5 hover:shadow-primary-100 hover:shadow-lg dark:shadow-stone",
         article.sticky
           ? "border-primary-100 shadow-md shadow-primary-100 dark:shadow-fog "
           : "border-finnishwinter dark:bg-steelgray",
@@ -38,8 +38,8 @@ export function ArticleListItem({ article }: ArticleListItemProps) {
       )}
 
       <p className=" line-clamp-4 h-24">{article.field_excerpt}</p>
-      <div className="flex flex-row justify-between text-xs text-scapaflow">
-        {author && <p>{t("posted-by", { author })} - </p>}
+      <div className="flex flex-row justify-between text-xs text-scapaflow dark:text-graysuit">
+        {author && <p>{t("posted-by", { author })} </p>}
         <div className=" line-clamp-2 text-xs text-scapaflow dark:text-graysuit">{date}</div>
       </div>
     </Link>

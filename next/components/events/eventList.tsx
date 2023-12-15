@@ -17,7 +17,7 @@ interface EventListItemProps {
 export function EventListItem({ event }: EventListItemProps) {
   const { t } = useTranslation();
   const router = useRouter();
-  const month: string = formatDateMonth(event.field_event_date, router.locale);
+  const month = formatDateMonth(event.field_event_date, router.locale);
   const day = formatDateDay(event.field_event_date, router.locale);
   const year = formatDateYear(event.field_event_date, router.locale);
 
@@ -26,7 +26,7 @@ export function EventListItem({ event }: EventListItemProps) {
     <Link
       href={event.path.alias}
       className={classNames(
-        "flex flex-col justify-between relative w-80 h-80  border-finnishwinter dark:border-scapaflow border-2  dark:shadow-fog hover:shadow-lg hover:shadow-primary-100",
+        "flex flex-col justify-between relative w-80 h-80  border-finnishwinter dark:border-scapaflow border-2  dark:shadow-scapaflow  hover:shadow-lg hover:shadow-primary-100",
         event.sticky
           ? "border-primary-100 shadow-md shadow-primary-100 dark:shadow-fog "
           : "border-finnishwinter dark:bg-steelgray",

@@ -1,8 +1,11 @@
+import { formatDate, formatDateDay, formatDateMonth, formatDateYear } from "@/lib/utils";
+
 import { EventTeaser } from "@/lib/zod/events-teaser";
+import Icon from "@/styles/icons/home.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { absoluteUrl } from "@/lib/drupal/absolute-url";
-import { formatDate } from "@/lib/utils";
+import classNames from "classnames";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 
@@ -13,30 +16,42 @@ interface EventTeaserProps {
 export function EventTeaserComponent({ event }: EventTeaserProps) {
   const { t } = useTranslation();
   const router = useRouter();
-  const date = formatDate(event.field_event_date, router.locale);
+  const month = formatDateMonth(event.field_event_date, router.locale);
+  const day = formatDateDay(event.field_event_date, router.locale);
+  const year = formatDateYear(event.field_event_date, router.locale);
 
   return (
     <Link
       href={event.path.alias}
-      className="flex flex-col justify-between relative h-76 overflow-y-hidden border-finnishwinter dark:border-scapaflow border-2 p-5 w-96 hover:shadow-primary-100 hover:shadow-md dark:shadow-stone"
+      className={classNames(
+        "flex flex-col justify-between relative w-80 h-80  border-finnishwinter dark:border-scapaflow border-2  dark:shadow-scapaflow  hover:shadow-lg hover:shadow-primary-100",
+        event.sticky
+          ? "border-primary-100 shadow-md shadow-primary-100 dark:shadow-fog "
+          : "border-finnishwinter dark:bg-steelgray",
+      )}
     >
-      {event.field_event_image && (
-        <div className="relative">
+      <div className="flex flex-col">
+        {event.field_event_image && (
           <Image
             src={absoluteUrl(event.field_event_image.uri.url)}
-            width={384}
-            height={240}
+            width={300}
+            height={300}
+            className="relative object-cover w-80 h-56"
             alt={event.field_event_image.resourceIdObjMeta.alt}
-            className="object-cover max-h-56"
           />
-          <div className="absolute bottom-2 bg-martinique max-w-fit p-1 ml-4 line-clamp-2 text-md text-mellow">
-            <h4>{date}</h4>
-          </div>
+        )}
+        <div className=" flex flex-row justify-around items-center w-32 px-2 h-8 -mt-10 ml-2 z-20 bg-rose dark:text-steelgray  font-bold rounded">
+          <p className="text-center">{day}</p>
+          <p className="text-center">{month.substring(0, 3)}</p>
+          <p className="text-center">{year}</p>
         </div>
-      )}
-      <div className="h-20 flex flex-col justify-between">
-        <h3 className="py-2">{event.field_event_location}</h3>
-        <h3 className=" text-lg font-bold text-primary-600 dark:text-fog tracking-tight line-clamp-1">
+      </div>
+      <div className="h-32 flex flex-col justify-evenly items-baseline p-4">
+        <div className="flex flex-row">
+          <p className="w-5 h-5"><Icon /></p>
+          <p className="pl-3">{event.field_event_location}</p>
+        </div>
+        <h3 className="text-lg dark:text-fog text-primary-600 line-clamp-1 font-bold h-8 py-2">
           {event.title}
         </h3>
       </div>
