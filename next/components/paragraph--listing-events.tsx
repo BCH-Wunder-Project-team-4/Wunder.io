@@ -8,7 +8,7 @@ export function ParagraphListingEvents({
   paragraph: ListingEvents;
 }) {
   return (
-    <div className="my-10 max-w-full">
+    <>
 
       {
         paragraph.field_heading && (
@@ -16,7 +16,7 @@ export function ParagraphListingEvents({
         )
       }
       < EventsListing listingId={paragraph.id} limit={paragraph.field_limit} />
-    </div>
+    </>
 
   );
 }
