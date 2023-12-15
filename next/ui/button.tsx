@@ -33,8 +33,6 @@ export const buttonVariants = cva(
         ],
         accept: [
           "bg-evergreen border-evergreen text-white",
-          "hover:bg-white hover:text-evergreen",
-          "active:bg-white active:text-evergreen",
           "disabled:!border-primary-200 disabled:!text-white disabled:!bg-primary-200",
         ],
         decline: [
