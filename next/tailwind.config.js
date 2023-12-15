@@ -12,6 +12,7 @@ module.exports = {
       transparent: "transparent",
       current: "currentColor",
 
+      black:"#000000",
       steelgray: "#221f2d",
       scapaflow: "#555161",
       stone: "#767283",

@@ -31,6 +31,14 @@ export const buttonVariants = cva(
           "active:bg-primary-700 active:text-white",
           "disabled:!border-primary-200 disabled:!text-white disabled:!bg-primary-200",
         ],
+        accept: [
+          "bg-evergreen border-evergreen text-white",
+          "disabled:!border-primary-200 disabled:!text-white disabled:!bg-primary-200",
+        ],
+        decline: [
+          "bg-martinique text-fog",
+        ],
+
       },
       size: {
         sm: "text-sm py-2 px-2.5",
@@ -43,7 +51,7 @@ export const buttonVariants = cva(
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "tertiary";
+  variant?: "primary" | "secondary" | "tertiary" | "accept" | "decline"
   size?: "sm" | "md" | "lg";
   children?: React.ReactNode;
   className?: string;
