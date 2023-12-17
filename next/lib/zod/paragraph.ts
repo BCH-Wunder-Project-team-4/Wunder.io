@@ -77,13 +77,13 @@ export const EmployeeContactDetailsShape = z.object({
   field_phone: z.string(),
   field_position: z.string(),
   field_image: z
-  .object({
-    type: z.literal("media--image"),
-    id: z.string(),
-    field_media_image: ImageShape.nullable(),
-  })
-  .nullable()
-  .optional(),
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
 });
 
 export const ImageSchema = z.object({
@@ -169,7 +169,9 @@ export const HeroSchema = z.object({
   type: z.literal("paragraph--hero"),
   id: z.string(),
   field_heading: z.string(),
-  field_formatted_text: z.object({ processed: z.string().optional() }).nullable(),
+  field_formatted_text: z
+    .object({ processed: z.string().optional() })
+    .nullable(),
   field_image: z
     .object({
       type: z.literal("media--image"),
@@ -179,7 +181,6 @@ export const HeroSchema = z.object({
     .nullable()
     .optional(),
   field_primary_link: LinkShape.nullable().optional(),
-
 });
 
 export const BannerSchema = z.object({
@@ -285,7 +286,7 @@ export const ContactDetailsSchema = z.object({
   type: z.literal("paragraph--contact_details"),
   id: z.string(),
   field_heading: z.string().optional().nullable(),
-  field_contact_details: z.array(EmployeeContactDetailsShape),
+  field_contact_data: z.array(EmployeeContactDetailsShape),
 });
 
 export const SimpleQuoteSchema = z.object({
