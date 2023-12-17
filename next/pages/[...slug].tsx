@@ -21,6 +21,7 @@ import {
 } from "@/lib/contexts/language-links-context";
 import { Page as PageType, validateAndCleanupPage } from "@/lib/zod/page";
 import { Service as ServiceType, validateAndCleanupService } from "@/lib/zod/service";
+import { AboutWunderSubpage as AboutWunderSubpageType, validateAndCleanupAboutWunderSubpage } from "@/lib/zod/about-wunder-subpage";
 
 import { Article } from "@/components/article";
 import { Case } from "@/components/cases/case";
@@ -30,12 +31,13 @@ import { Meta } from "@/components/meta";
 import { Page } from "@/components/page";
 import { ResourceType } from "@/lib/drupal/get-node-page-json-api-params";
 import { Service } from "@/components/offering/service";
+import { AboutWunderSubpage } from "@/components/about-wunder-subpage";
 import { SingleEventPath } from "@/components/events/singleEventPath";
 import { drupal } from "@/lib/drupal/drupal-client";
 import { getNodePageJsonApiParams } from "@/lib/drupal/get-node-page-json-api-params";
 import { getNodeTranslatedVersions } from "@/lib/drupal/get-node-translated-versions";
 
-const RESOURCE_TYPES = ["node--article", "node--page", "node--job", "node--case", "node--events", "node--service", "node--expert_talks"];
+const RESOURCE_TYPES = ["node--article", "node--page", "node--job", "node--case", "node--events", "node--service", "node--expert_talks", "node--about_wunder_subpage"];
 
 export default function CustomPage({
   resource,
@@ -52,6 +54,7 @@ export default function CustomPage({
       {resource.type === "node--events" && <SingleEventPath event={resource} />}
       {resource.type === "node--expert_talks" && <ExpertTalk expertTalk={resource} />}
       {resource.type === "node--service" && <Service service={resource} />}
+      {resource.type === "node--about_wunder_subpage" && <AboutWunderSubpage about_wunder_subpage={resource} />}
     </>
   );
 }
@@ -65,7 +68,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 };
 
 interface PageProps extends CommonPageProps {
-  resource: PageType | ArticleType | JobType | CaseType | EventType | ServiceType | ExpertTalkType;
+  resource: PageType | ArticleType | JobType | CaseType | EventType | ServiceType | ExpertTalkType | AboutWunderSubpageType;
   languageLinks: LanguageLinks;
 }
 
@@ -150,7 +153,9 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
                 ? validateAndCleanupEvent(resource)
                 : type === "node--service"
                   ? validateAndCleanupService(resource)
-                  : null;
+                  : type === "node--about_wunder_subpage"
+                    ? validateAndCleanupAboutWunderSubpage(resource)
+                    : null;
 
 
 
