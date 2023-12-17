@@ -277,6 +277,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
         "field_content_elements.field_accordion_items.field_content_elements.field_file_attachments.field_media_document",
         "field_content_elements.field_scrolling_numbers_items",
         "field_content_elements.field_trilogy_images.field_media_image",
+        "field_content_elements.field_contact_data",
       ])
       .addFields("node--about_wunder_subpage", [
         "title",

@@ -70,6 +70,22 @@ export const ScrollingNumberShape = z.object({
   field_description: z.string(),
 });
 
+export const EmployeeContactDetailsShape = z.object({
+  type: z.literal("paragraph--employee_contact_details"),
+  field_name: z.string(),
+  field_email: z.string().email(),
+  field_phone: z.string(),
+  field_position: z.string(),
+  field_image: z
+  .object({
+    type: z.literal("media--image"),
+    id: z.string(),
+    field_media_image: ImageShape.nullable(),
+  })
+  .nullable()
+  .optional(),
+});
+
 export const ImageSchema = z.object({
   type: z.literal("paragraph--image"),
   id: z.string(),
@@ -263,6 +279,13 @@ export const ScrollingNumbersSchema = z.object({
   id: z.string(),
   field_heading: z.string(),
   field_scrolling_numbers_items: z.array(ScrollingNumberShape),
+});
+
+export const ContactDetailsSchema = z.object({
+  type: z.literal("paragraph--contact_details"),
+  id: z.string(),
+  field_heading: z.string().optional().nullable(),
+  field_contact_details: z.array(EmployeeContactDetailsShape),
 });
 
 export const SimpleQuoteSchema = z.object({
