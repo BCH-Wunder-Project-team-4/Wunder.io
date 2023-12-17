@@ -1,0 +1,133 @@
+uuid: 1a8988d9-e1b3-427e-8345-58aea17aa7e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_elements
+    - node.type.about_wunder_subpage
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.anchor
+    - paragraphs.paragraphs_type.banner
+    - paragraphs.paragraphs_type.formatted_text
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.links
+    - paragraphs.paragraphs_type.logo_wall
+    - paragraphs.paragraphs_type.scrolling_numbers
+    - paragraphs.paragraphs_type.sectionbg
+    - paragraphs.paragraphs_type.simple_quote
+    - paragraphs.paragraphs_type.subheading
+    - paragraphs.paragraphs_type.trilogy_snapshot
+    - paragraphs.paragraphs_type.video
+  module:
+    - entity_reference_revisions
+id: node.about_wunder_subpage.field_content_elements
+field_name: field_content_elements
+entity_type: node
+bundle: about_wunder_subpage
+label: 'Content elements'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      formatted_text: formatted_text
+      image: image
+      links: links
+      accordion: accordion
+      video: video
+      banner: banner
+      anchor: anchor
+      logo_wall: logo_wall
+      scrolling_numbers: scrolling_numbers
+      sectionbg: sectionbg
+      simple_quote: simple_quote
+      subheading: subheading
+      trilogy_snapshot: trilogy_snapshot
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: -10
+        enabled: true
+      accordion_item:
+        weight: -12
+        enabled: false
+      anchor:
+        weight: 32
+        enabled: true
+      article_body_text:
+        weight: 29
+        enabled: false
+      banner:
+        weight: 25
+        enabled: true
+      event_speakers_information:
+        weight: 26
+        enabled: false
+      file_attachments:
+        weight: 10
+        enabled: false
+      formatted_text:
+        weight: -14
+        enabled: true
+      frame:
+        weight: 36
+        enabled: false
+      full_width_paragraph:
+        weight: 29
+        enabled: false
+      hero:
+        weight: -15
+        enabled: false
+      image:
+        weight: -13
+        enabled: true
+      links:
+        weight: -11
+        enabled: true
+      listing_articles:
+        weight: 9
+        enabled: false
+      listing_events:
+        weight: 44
+        enabled: false
+      listing_experts_talks:
+        weight: 45
+        enabled: false
+      logo_wall:
+        weight: 36
+        enabled: true
+      scrolling_numbers:
+        weight: 37
+        enabled: true
+      scrolling_numbers_item:
+        weight: 38
+        enabled: false
+      sectionbg:
+        weight: 39
+        enabled: true
+      services:
+        weight: 40
+        enabled: false
+      simple_quote:
+        weight: 41
+        enabled: true
+      subheading:
+        weight: 42
+        enabled: true
+      trilogy_snapshot:
+        weight: 53
+        enabled: true
+      video:
+        weight: -9
+        enabled: true
+      wunder_story:
+        weight: 55
+        enabled: false
+      wunderpedia:
+        weight: 44
+        enabled: false
+field_type: entity_reference_revisions
