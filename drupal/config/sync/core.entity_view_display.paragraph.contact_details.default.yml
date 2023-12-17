@@ -1,0 +1,33 @@
+uuid: a37887b5-de23-4eac-9919-e639f2438fd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_details.field_contact_data
+    - field.field.paragraph.contact_details.field_heading
+    - paragraphs.paragraphs_type.contact_details
+  module:
+    - entity_reference_revisions
+id: paragraph.contact_details.default
+targetEntityType: paragraph
+bundle: contact_details
+mode: default
+content:
+  field_contact_data:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

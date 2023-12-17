@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.anchor
     - paragraphs.paragraphs_type.banner
+    - paragraphs.paragraphs_type.contact_details
     - paragraphs.paragraphs_type.formatted_text
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.links
@@ -40,6 +41,7 @@ settings:
       accordion: accordion
       video: video
       banner: banner
+      contact_details: contact_details
       anchor: anchor
       logo_wall: logo_wall
       scrolling_numbers: scrolling_numbers
@@ -64,6 +66,12 @@ settings:
       banner:
         weight: 25
         enabled: true
+      contact_details:
+        weight: 30
+        enabled: true
+      employee_contact_details:
+        weight: 36
+        enabled: false
       event_speakers_information:
         weight: 26
         enabled: false

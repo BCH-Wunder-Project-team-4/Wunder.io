@@ -1,0 +1,10 @@
+uuid: a3de571b-6c3e-4825-af18-74e98b39900f
+langcode: en
+status: true
+dependencies: {  }
+id: contact_details
+label: 'Contact Details'
+icon_uuid: null
+icon_default: null
+description: 'Use this paragraph to add a contact info section.'
+behavior_plugins: {  }
