@@ -1,9 +1,8 @@
+import { absoluteUrl } from "@/lib/drupal/absolute-url";
 import { ExpertTalkTeaser as ExpertTalkTeaserType } from "@/lib/zod/expertTalk-teaser";
+import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import Link from "next/link";
-import { absoluteUrl } from "@/lib/drupal/absolute-url";
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
 
 interface ExpertTalkTeaserProps {
   expertTalk: ExpertTalkTeaserType;
@@ -33,7 +32,7 @@ export function ExpertTalkTeaser({ expertTalk }: ExpertTalkTeaserProps) {
         <div className="flex flex-col py-2 px-5">
 
           <p className="font-bold text-md">{expertTalk.field_name}</p>
-          <p className="italic text-stone dark:text-finnishwinter">{expertTalk.field_expert_job_title}</p>
+          <p className="italic text-scapaflow dark:text-finnishwinter">{expertTalk.field_expert_job_title}</p>
         </div>
       </div>
       <p className="text-lg font-bold line-clamp-2 text-primary-600 dark:text-fog">{expertTalk.title}</p>
