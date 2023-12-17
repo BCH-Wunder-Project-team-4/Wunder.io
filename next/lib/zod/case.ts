@@ -7,8 +7,9 @@ import {
   ImageSchema,
   ImageShape,
   LinksSchema,
+  ScrollingNumbersSchema,
   SimpleQuoteSchema,
-  VideoSchema,
+  VideoSchema
 } from "@/lib/zod/paragraph";
 
 import { DrupalNode } from "next-drupal";
@@ -24,7 +25,9 @@ const CaseElementsSchema = z.discriminatedUnion("type", [
   HeroSchema,
   FileAttachmentsSchema,
   FrameSchema,
-  SimpleQuoteSchema
+  SimpleQuoteSchema,
+  ScrollingNumbersSchema,
+
 ]);
 
 
