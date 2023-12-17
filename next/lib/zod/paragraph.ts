@@ -379,6 +379,7 @@ export type Anchor = z.infer<typeof AnchorSchema>;
 export type WunderStory = z.infer<typeof WunderStorySchema>;
 export type Frame = z.infer<typeof FrameSchema>;
 export type ArticleBodyText = z.infer<typeof ArticleBodyTextSchema>;
+export type ContactDetails = z.infer<typeof ContactDetailsSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -405,4 +406,5 @@ export type Paragraph =
   | TrilogySnapshot
   | Anchor
   | Frame
-  | ArticleBodyText;
+  | ArticleBodyText
+  | ContactDetails;
