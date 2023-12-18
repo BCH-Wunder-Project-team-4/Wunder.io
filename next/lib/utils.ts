@@ -18,6 +18,12 @@ export function formatDateDay(input: string, locale: string): string {
     day: "numeric",
   });
 }
+export function formatDateYear(input: string, locale: string): string {
+  const date = new Date(input);
+  return date.toLocaleDateString(locale, {
+    year: "numeric",
+  });
+}
 export function formatDateComplete(input: string, locale: string): string {
   const date = new Date(input);
   return date.toLocaleDateString(locale, {

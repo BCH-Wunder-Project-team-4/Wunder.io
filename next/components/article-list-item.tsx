@@ -20,30 +20,27 @@ export function ArticleListItem({ article }: ArticleListItemProps) {
     <Link
       href={article.path.alias}
       className={classNames(
-        "relative mb-4 grid h-full rounded p-4 rounded-b-md border dark:border-scapaflow border-finnishwinter dark:bg-steelgray bg-mischka  transition-all hover:shadow-md  ",
+        "flex flex-col justify-between h-96 w-80 border-finnishwinter dark:border-scapaflow border-2 p-5 hover:shadow-primary-100 hover:shadow-lg dark:shadow-stone",
         article.sticky
-          ? "border-primary-100 bg-primary-50"
-          : "border-finnishwinter bg-mischka dark:bg-steelgray",
+          ? "border-primary-100 shadow-md shadow-primary-100 dark:shadow-fog "
+          : "border-finnishwinter dark:bg-steelgray",
       )}
     >
-      <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold text-primary-600 dark:text-fog">
-        {article.title}
-      </h3>
-      <div className="mb-4 line-clamp-2 text-md text-scapaflow dark:text-graysuit">
-        {author && <>{t("posted-by", { author })} - </>}
-        {date}
-      </div>
-      <div className="flex flex-col items-start gap-4 sm:flex-row">
-        {article.field_image && (
-          <Image
-            src={absoluteUrl(article.field_image.uri.url)}
-            width={500}
-            height={300}
-            className="w-full sm:w-40"
-            alt={article.field_image.resourceIdObjMeta.alt}
-          />
-        )}
-        <p>{article.field_excerpt}</p>
+      <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold text-primary-600 dark:text-fog">{article.title}</h3>
+      {article.field_image && (
+        <Image
+          src={absoluteUrl(article.field_image.uri.url)}
+          width={300}
+          height={300}
+          className="w-full h-40 object-cover"
+          alt={article.field_image.resourceIdObjMeta.alt}
+        />
+      )}
+
+      <p className=" line-clamp-4 h-24">{article.field_excerpt}</p>
+      <div className="flex flex-row justify-between text-xs text-scapaflow dark:text-graysuit">
+        {author && <p>{t("posted-by", { author })} </p>}
+        <div className=" line-clamp-2 text-xs text-scapaflow dark:text-graysuit">{date}</div>
       </div>
     </Link>
   );

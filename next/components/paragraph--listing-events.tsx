@@ -9,6 +9,7 @@ export function ParagraphListingEvents({
 }) {
   return (
     <>
+
       {
         paragraph.field_heading && (
           <HeadingParagraph>{paragraph.field_heading}</HeadingParagraph>
@@ -16,5 +17,6 @@ export function ParagraphListingEvents({
       }
       < EventsListing listingId={paragraph.id} limit={paragraph.field_limit} />
     </>
+
   );
 }

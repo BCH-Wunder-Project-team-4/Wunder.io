@@ -13,6 +13,7 @@ import clsx from "clsx";
 import { useTranslation } from "next-i18next";
 import Breadcrumb from "./breadcrumb";
 import Chevron from "@/styles/icons/chevron-right.svg";
+import CookieConsent from "./cookie-bar";
 
 export interface LayoutProps {
   menus: {
@@ -56,6 +57,7 @@ export function Layout({ menus, children }: LayoutProps) {
         </main>
         <Toaster />
         <Footer />
+        <CookieConsent />
       </div>
       <PreviewBanner isVisible={isPreviewVisible} />
     </>

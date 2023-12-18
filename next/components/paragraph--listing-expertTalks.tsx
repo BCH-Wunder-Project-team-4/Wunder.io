@@ -9,11 +9,15 @@ export function ParagraphListingExpertTalks({
 }) {
   return (
     <>
-      {paragraph.field_heading && (
-        <HeadingParagraph>{paragraph.field_heading}</HeadingParagraph>
-      )}
+
+      {
+        paragraph.field_heading && (
+          <HeadingParagraph>{paragraph.field_heading}</HeadingParagraph>
+        )
+      }
       <ExpertTalksListing listingId={paragraph.id} limit={paragraph.field_limit} />
     </>
+
   );
 }
 

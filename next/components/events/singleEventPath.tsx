@@ -56,7 +56,7 @@ export function SingleEventPath({ event, ...props }: EventProps) {
             width={event.field_event_image.resourceIdObjMeta.width}
             height={event.field_event_image.resourceIdObjMeta.height}
             priority
-            className="w-full h-[300px] object-cover rounded-md"
+            className="w-full h-[400px] object-cover rounded-md"
           />
         )}
         <div className="absolute bottom-0 left-0 right-0 p-4 text-white bg-primary-600 opacity-70 rounded-b-md">

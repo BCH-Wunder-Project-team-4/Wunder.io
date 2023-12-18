@@ -109,5 +109,17 @@
   "footer-newsletter-terms": "Hyväksyn, että Wunder käsittelee henkilökohtaisia tietojani sen ",
   "form-subsribe": "Tilaa",
   "all-events": "Kaikki tapahtumat",
-  "all-expertTalks": "Kaikki asiantuntijapuheet"
+  "all-expertTalks": "Kaikki asiantuntijapuheet",
+  "Upcoming events": "Tulevat tapahtumat",
+  "cookies": "Evästeet",
+  "cookies-info": "Käytämme evästeitä käyttäviä palveluita tarjotaksemme paremman käyttökokemuksen ja analysoidaksemme liikennettä. Lue lisää käyttämistämme palveluista täältä: ",
+  "preferences": "Määritä asetukset",
+  "accept-all": "Hyväksy kaikki",
+  "necessary": "Vain välttämättömät",
+  "cookie-preferences-info": "Evästeasetukset. Voit muuttaa niitä milloin tahansa sivun alhaalla evästeasetuksista :)",
+  "save-preferences": "Tallenna asetukset",
+  "Necessary": "Välttämättömät",
+  "Analytics": "Analytiikka",
+  "Advertisement": "Mainonta",
+  "Functional": "Toiminnalliset"
 }

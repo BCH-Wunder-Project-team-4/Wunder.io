@@ -153,7 +153,7 @@ export const HeroSchema = z.object({
   type: z.literal("paragraph--hero"),
   id: z.string(),
   field_heading: z.string(),
-  field_formatted_text: z.object({ processed: z.string() }),
+  field_formatted_text: z.object({ processed: z.string().optional() }).nullable(),
   field_image: z
     .object({
       type: z.literal("media--image"),
@@ -163,7 +163,7 @@ export const HeroSchema = z.object({
     .nullable()
     .optional(),
   field_primary_link: LinkShape.nullable().optional(),
-  field_secondary_link: LinkShape.nullable().optional(),
+
 });
 
 export const BannerSchema = z.object({

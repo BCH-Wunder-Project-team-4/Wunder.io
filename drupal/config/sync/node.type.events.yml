@@ -8,9 +8,9 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: events
+name: Event
 type: events
-description: 'Use the events content type to add a new event to the all-events page.'
+description: 'Use Event for creating even content.'
 help: ''
 new_revision: true
 preview_mode: 1

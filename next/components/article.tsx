@@ -1,11 +1,11 @@
+import { Article as ArticleType } from "@/lib/zod/article";
 import { HeadingPage } from "@/components/heading--page";
+import Image from "next/image";
+import { Paragraph } from "./paragraph";
 import { absoluteUrl } from "@/lib/drupal/absolute-url";
 import { formatDate } from "@/lib/utils";
-import { Article as ArticleType } from "@/lib/zod/article";
-import { useTranslation } from "next-i18next";
-import Image from "next/image";
 import { useRouter } from "next/router";
-import { Paragraph } from "./paragraph";
+import { useTranslation } from "next-i18next";
 
 interface ArticleProps {
   article: ArticleType;

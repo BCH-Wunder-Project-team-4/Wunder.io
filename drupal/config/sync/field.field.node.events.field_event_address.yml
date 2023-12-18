@@ -9,7 +9,7 @@ id: node.events.field_event_address
 field_name: field_event_address
 entity_type: node
 bundle: events
-label: event_address
+label: Address
 description: ''
 required: true
 translatable: false

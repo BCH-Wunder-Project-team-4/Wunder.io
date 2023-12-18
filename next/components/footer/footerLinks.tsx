@@ -1,10 +1,15 @@
 import Link from "next/link"
 import { useTranslation } from "next-i18next";
+import { showCookieBar } from "../cookie-bar";
 
 interface TableLinks {
   id: number;
   name: string;
   url: string;
+}
+
+const reload = () => {
+  window.location.reload();
 }
 
 const companyLinks: TableLinks[] = [
@@ -78,12 +83,7 @@ const legalLinks: TableLinks[] = [
     id: 4,
     name: "Accessibility",
     url: "/accessibility",
-  },
-  {
-    id: 5,
-    name: "Cookie Settings",
-    url: "/coockie-settings",
-  },
+  }
 ]
 
 export const FooterLinks = () => {
@@ -120,6 +120,13 @@ export const FooterLinks = () => {
               <li key={link.id} className="py-1" role="listitem"><Link href={link.url}>{t(`${link.name}`)}</Link></li>
             )
           })}
+        <li>
+        <button
+        onClick={showCookieBar}
+        className="py-1">
+          <p>{t("Cookie Settings")}</p>
+        </button>
+        </li>
         </ul>
       </div>
     </div>

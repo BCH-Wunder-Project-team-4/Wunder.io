@@ -1,37 +1,43 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import { Icon, LatLngTuple } from 'leaflet';
+import { Icon } from "leaflet";
+import "leaflet/dist/leaflet.css";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
-const Map = ({markers}) => {
+const Map = ({ markers }) => {
+  const customIcon = new Icon({
+    iconUrl: "https://cdn-icons-png.flaticon.com/128/684/684908.png",
+    iconSize: [38, 38],
+    popupAnchor: [0, -15],
+  });
 
-    
-
-    const customIcon = new Icon({
-        iconUrl: 'https://cdn-icons-png.flaticon.com/128/149/149060.png',
-        iconSize: [38, 38],
-        // iconAnchor: [10, 41],
-    })
+  const eventZoom = 13;
+  const center = markers[0].geocode;
+  const defaultHeight = "90vh";
+  const eventMapHeight = "400px";
 
   return (
-    
-  <MapContainer style={{height : '50vh', zIndex:1}} center={[58.52, 24.40]} zoom={4} scrollWheelZoom={false}>
-    <TileLayer
-      attribution='basic'
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    />
-    {
-        markers.map((marker, index) => (
-              <Marker key={index} position={marker.geocode} icon={customIcon}>
-                <Popup className=' font-bold m-2'>
-                    {marker.popUp}
-                </Popup>
-            </Marker>
-        ))
-    }
-  </MapContainer>
-)
-}
+    <MapContainer
+      style={{
+        height: markers.length === 1 ? eventMapHeight : defaultHeight,
+        zIndex: 1,
+      }}
+      center={center}
+      zoom={markers.length === 1 ? eventZoom : 6}
+      scrollWheelZoom={false}
+    >
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+
+      {markers.map((marker, index) => (
+        <Marker key={index} position={marker.geocode} icon={customIcon}>
+          <Popup>
+            <div className="font-overpass text-md">{marker.popUp}</div>
+          </Popup>
+        </Marker>
+      ))}
+    </MapContainer>
+  );
+};
 
 export default Map;
-
-
