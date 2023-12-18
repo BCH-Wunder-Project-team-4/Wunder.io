@@ -73,8 +73,8 @@ export const ScrollingNumberShape = z.object({
 export const EmployeeContactDetailsShape = z.object({
   type: z.literal("paragraph--employee_contact_details"),
   field_name: z.string(),
-  field_email: z.string().email(),
-  field_phone: z.string(),
+  field_email: z.string().email().nullable().optional(),
+  field_phone: z.string().nullable().optional(),
   field_position: z.string(),
   field_image: z
     .object({
