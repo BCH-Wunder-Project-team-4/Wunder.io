@@ -4,13 +4,10 @@ import { useRef } from "react";
 import { drupal } from "@/lib/drupal/drupal-client";
 import { DrupalNode } from "next-drupal";
 import { getNodePageJsonApiParams } from "@/lib/drupal/get-node-page-json-api-params";
-
-import { HeadingPage } from "@/components/heading--page";
 import { LayoutProps } from "@/components/layout";
 import { Meta } from "@/components/meta";
 import {
-  createLanguageLinksForNextOnlyPage,
-  LanguageLinks,
+  createLanguageLinksForNextOnlyPage
 } from "@/lib/contexts/language-links-context";
 
 import { getCommonPageProps } from "@/lib/get-common-page-props"
