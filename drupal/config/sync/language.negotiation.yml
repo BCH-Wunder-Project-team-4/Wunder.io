@@ -5,8 +5,10 @@ url:
   prefixes:
     en: en
     fi: fi
-    sv: sv
+    et: et
+    lv: lv
   domains:
     en: ''
     fi: ''
-    sv: ''
+    et: ''
+    lv: ''

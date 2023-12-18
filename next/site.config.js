@@ -20,7 +20,7 @@ const siteConfig = {
       name: "Eesti",
       path: "/et",
       langcode: "et",
-    },
+    }
   },
 };
 
