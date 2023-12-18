@@ -1,0 +1,29 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Apstiprināt
+          reset_button_label: Attīrīt
+          exposed_sorts_label: 'Kārtot pēc'
+          sort_desc_label: Dilst.
+      pager:
+        options:
+          expose:
+            items_per_page_options_all_label: '- Visi -'
+          tags:
+            previous: '‹ iepriekšējā'
+            next: 'nākamā ›'
+            first: '« pirmā'
+            last: 'pēdējā »'
+      fields:
+        sent_date:
+          label: Datums
+        subject:
+          label: Temats
+        header_from:
+          label: 'No'
+        header_to:
+          label: Kam
+  page_1:
+    display_title: Lapa
