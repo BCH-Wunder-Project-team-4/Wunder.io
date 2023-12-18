@@ -1,17 +1,17 @@
-uuid: b339df3e-b4b6-433a-9226-55b1c1d7fe52
+uuid: 218d581a-8819-419c-a3bc-e9fd19765a41
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_formatted_text
+    - field.storage.paragraph.field_texts
     - paragraphs.paragraphs_type.formatted_text
   module:
     - text
-id: paragraph.formatted_text.field_formatted_text
-field_name: field_formatted_text
+id: paragraph.formatted_text.field_texts
+field_name: field_texts
 entity_type: paragraph
 bundle: formatted_text
-label: 'Formatted text'
+label: Texts
 description: ''
 required: false
 translatable: false

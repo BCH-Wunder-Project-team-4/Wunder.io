@@ -9,7 +9,7 @@ id: node.events.field_event_geocode_latitude
 field_name: field_event_geocode_latitude
 entity_type: node
 bundle: events
-label: event_geocode_latitude
+label: 'Geocode Latitude'
 description: ''
 required: true
 translatable: false
