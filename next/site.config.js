@@ -11,10 +11,15 @@ const siteConfig = {
       path: "/fi",
       langcode: "fi",
     },
-    sv: {
-      name: "Svenska",
-      path: "/sv",
-      langcode: "sv",
+    lv: {
+      name: "Latviešu",
+      path: "/lv",
+      langcode: "lv",
+    },
+    et: {
+      name: "Eesti",
+      path: "/et",
+      langcode: "et",
     },
   },
 };
