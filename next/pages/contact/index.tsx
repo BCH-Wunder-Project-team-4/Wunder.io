@@ -26,7 +26,6 @@ export default function ContactPage({contact_us
 }:InferGetStaticPropsType<typeof getStaticProps>){
   const { t } = useTranslation();
   const focusRef = useRef<HTMLDivElement>(null);
-  console.log(contact_us);
   
   return (
     <>

@@ -8,7 +8,7 @@ return (
     <div className="w-1/2">
     <HeadingParagraph>{paragraph.field_heading}</HeadingParagraph>
     </div>
-    <div className="w-1/2">
+    <div className="w-full md:w-1/2 lg:w-1/2">
     <FormattedText
           html={paragraph.field_formatted_text.processed}
           className={clsx(
