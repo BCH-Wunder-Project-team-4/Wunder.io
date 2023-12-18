@@ -3,6 +3,8 @@ import { DrupalJsonApiParams } from "drupal-jsonapi-params";
 
 export type ResourceType =
   | "node--frontpage"
+  | "node--contact_us"
+  | "node--frontpage"
   | "node--page"
   | "node--article"
   | "node--job"
@@ -62,6 +64,25 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       .addFields("node--frontpage", [
         "title",
         "field_content_elements",
+        "metatag",
+      ]);
+  }
+  if (resourceType === "node--contact_us") {
+    apiParams
+      .addInclude([
+        "field_contact_content_elements",
+        "field_contact_content_elements.field_employees_content_elements",
+        "field_contact_content_elements.field_offices_content_elements",
+        "field_contact_content_elements.field_image.field_media_image",
+        "field_contact_content_elements.field_employees_content_elements.field_image.field_media_image",
+        "field_contact_invoicing"
+      ])
+      // Only published frontpages:
+      .addFilter("status", "1")
+      .addFields("node--contact_us", [
+        "title",
+        "field_contact_content_elements",
+        "field_contact_invoicing",
         "metatag",
       ]);
   }
@@ -201,6 +222,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       "field_office_address_one",
       "field_office_address_two",
       "field_office_email",
+      "field_office_city",
       "field_office_country",
       "field_office_geocode_latitude",
       "field_office_geocode_longitude",

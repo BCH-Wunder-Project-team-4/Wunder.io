@@ -15,6 +15,7 @@ export const OfficeBaseSchema = z.object({
   field_office_email: z.string().optional().nullable(),
   field_office_address_one: z.string().optional().nullable(),
   field_office_address_two: z.string().optional().nullable(),
+  field_office_city: z.string().optional().nullable(),
   field_office_country: z.string().optional().nullable(),
   field_office_geocode_latitude: z.number().optional().nullable(),
   field_office_geocode_longitude: z.number().optional().nullable(),

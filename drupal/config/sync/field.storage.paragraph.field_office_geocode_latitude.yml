@@ -1,0 +1,18 @@
+uuid: b7ac1910-3581-4561-afd2-5dd21f989c70
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_office_geocode_latitude
+field_name: field_office_geocode_latitude
+entity_type: paragraph
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,11 @@
+uuid: d7ff4b43-ce9e-4f71-a735-04ae7bfb6b1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.contact_us
+id: node.contact_us
+target_entity_type_id: node
+target_bundle: contact_us
+default_langcode: site_default
+language_alterable: false

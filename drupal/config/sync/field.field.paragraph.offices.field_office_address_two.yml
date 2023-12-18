@@ -1,0 +1,19 @@
+uuid: 07c3c397-7d22-41e1-8f4e-160586de3afa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_office_address_two
+    - paragraphs.paragraphs_type.offices
+id: paragraph.offices.field_office_address_two
+field_name: field_office_address_two
+entity_type: paragraph
+bundle: offices
+label: office_address_two
+description: 'office pin code and city. for ex: Helsinki 00100'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

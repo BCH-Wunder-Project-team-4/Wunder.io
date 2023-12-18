@@ -330,6 +330,50 @@ export const ArticleBodyTextSchema = z.object({
   field_heading: z.string().nullable().optional(),
   field_formatted_text: z.object({ processed: z.string() }),
 });
+export const ContactBodySchema = z.object({
+  type: z.literal("paragraph--contact_body"),
+  id: z.string(),
+  field_contact_greeting: z.string(),
+});
+export const OfficeSchema = z.object({
+  type: z.literal("paragraph--offices"),
+  id: z.string(),
+  field_office_email: z.string().optional().nullable(),
+  field_office_address_one: z.string().optional().nullable(),
+  field_office_address_two: z.string().optional().nullable(),
+  field_office_city: z.string().optional().nullable(),
+  field_office_country: z.string().optional().nullable(),
+  field_office_geocode_latitude: z.number().optional().nullable(),
+  field_office_geocode_longitude: z.number().optional().nullable(),
+});
+export const OfficesSchema = z.object({
+  type: z.literal("paragraph--all_offices"),
+  id: z.string(),
+  field_offices_content_elements: z.array(OfficeSchema),
+});
+
+export const EmployeeSchema = z.object({
+  type: z.literal("paragraph--employees"),
+  id: z.string(),
+  field_excerpt: z.string().optional().nullable(),
+  field_employee_email: z.string().optional().nullable(),
+  field_employee_phone: z.string().optional().nullable(),
+  field_employee_name: z.string().optional().nullable(),
+  field_employee_position: z.string().optional().nullable(),
+  field_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+});
+export const EmployeesSchema = z.object({
+  type: z.literal("paragraph--all_employees"),
+  id: z.string(),
+  field_employees_content_elements: z.array(EmployeeSchema),
+});
 
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
@@ -356,6 +400,11 @@ export type Anchor = z.infer<typeof AnchorSchema>;
 export type WunderStory = z.infer<typeof WunderStorySchema>;
 export type Frame = z.infer<typeof FrameSchema>;
 export type ArticleBodyText = z.infer<typeof ArticleBodyTextSchema>;
+export type Office = z.infer<typeof OfficeSchema>;
+export type Employee = z.infer<typeof EmployeeSchema>;
+export type Offices = z.infer<typeof OfficesSchema>;
+export type Employees = z.infer<typeof EmployeesSchema>;
+export type ContactBody = z.infer<typeof ContactBodySchema>;
 
 export type Paragraph =
   | FormattedText
@@ -382,4 +431,9 @@ export type Paragraph =
   | TrilogySnapshot
   | Anchor
   | Frame
-  | ArticleBodyText;
+  | ArticleBodyText
+  | Office
+  | Employee
+  | Offices
+  | Employees
+  | ContactBody;

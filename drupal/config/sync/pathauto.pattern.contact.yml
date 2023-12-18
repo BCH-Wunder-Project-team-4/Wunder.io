@@ -1,0 +1,22 @@
+uuid: 4082b93f-5308-4476-9339-d9f13706270d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: contact
+label: contact
+type: 'canonical_entities:node'
+pattern: '/contact-[language:langcode]'
+selection_criteria:
+  c4648150-cfeb-4054-b554-bd55934a8217:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: c4648150-cfeb-4054-b554-bd55934a8217
+    context_mapping:
+      node: node
+    bundles:
+      contact_us: contact_us
+selection_logic: and
+weight: -5
+relationships: {  }

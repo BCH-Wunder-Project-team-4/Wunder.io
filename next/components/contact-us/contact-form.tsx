@@ -8,10 +8,12 @@ import { StatusMessage } from "@/ui/status-message";
 import { Textarea } from "@/ui/textarea";
 
 type Inputs = {
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   subject: string;
   message: string;
+  phoneNumber: number;
 };
 
 export function ContactForm() {
@@ -28,10 +30,12 @@ export function ContactForm() {
     const response = await fetch(`/api/contact`, {
       method: "POST",
       body: JSON.stringify({
-        name: data.name,
+        first_name: data.firstName,
+        last_name: data.lastName,
         email: data.email,
         message: data.message,
         subject: data.subject,
+        phone_number: data.phoneNumber,
       }),
       // This will record the submission with the right language:
       headers: {
@@ -66,25 +70,25 @@ export function ContactForm() {
         <>
           <div className="flex justify-between">
           <div className="w-1/2">
-            <Label htmlFor="name"></Label>
+            <Label htmlFor="firstName"></Label>
             <input
               className="border w-11/12 p-1"
               type="text"
-              id="name"
+              id="firstName"
               placeholder="first name"
-              {...register("name", {
+              {...register("firstName", {
                 required: true,
               })}
             />
           </div>
           <div className="w-1/2">
-            <Label htmlFor="name"></Label>
+            <Label htmlFor="lastName"></Label>
             <input
               className="border w-11/12 p-1 float-right"
               type="text"
-              id="name"
+              id="lastName"
               placeholder="last name"
-              {...register("name", {
+              {...register("lastName", {
                 required: true,
               })}
             />
@@ -104,13 +108,13 @@ export function ContactForm() {
             />
           </div>
           <div className="w-1/2">
-            <Label htmlFor="email"></Label>
+            <Label htmlFor="phoneNumber"></Label>
             <input
               className="border w-11/12 p-1 float-right"
-              type="email"
-              id="email"
+              type="number"
+              id="phoneNumber"
               placeholder="phone"
-              {...register("email", {
+              {...register("phoneNumber", {
                 required: true,
               })}
             />
@@ -122,7 +126,7 @@ export function ContactForm() {
               className="border w-full p-1"
               type="text"
               id="subject"
-              placeholder="company"
+              placeholder="subject"
               {...register("subject", {
                 required: true,
               })}

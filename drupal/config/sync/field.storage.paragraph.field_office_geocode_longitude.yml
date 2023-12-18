@@ -1,0 +1,18 @@
+uuid: 35434f90-845f-455f-83dc-685b7ee7cfbc
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_office_geocode_longitude
+field_name: field_office_geocode_longitude
+entity_type: paragraph
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
