@@ -1,5 +1,7 @@
 # 🚀 Next.js for Drupal multilingual template by Wunder
 
+This is for testing site
+
 This is a starter template created by [Wunder](https://www.wunder.io) for a decoupled website using the open-source [Next.js for Drupal](https://next-drupal.org/) project by [Chapter Three](https://www.chapterthree.com) and contributors.
 
 ## 🪂 Check out the running demo at https://next-drupal-starterkit.dev.wdr.io !
@@ -140,9 +142,9 @@ The `frontpage` and `page` content types are configured to use the popular [Para
 
 The template includes the setup to allow users to log into the Drupal backend from the Next.js frontend, using [Next-Auth](https://next-auth.js.org/).
 
-* As an example, only registered users are allowed to post to the drupal `contact` webform, and parts of the interface in the frontend are available only for logged-in users.
-* Some test users are imported as part of the content migration (check the `users.csv' file for the credentials).
-* New users can be created on the frontend using a simple registration form. Drupal will assign them the correct role, and will send them an email with the link to set their password.
+- As an example, only registered users are allowed to post to the drupal `contact` webform, and parts of the interface in the frontend are available only for logged-in users.
+- Some test users are imported as part of the content migration (check the `users.csv' file for the credentials).
+- New users can be created on the frontend using a simple registration form. Drupal will assign them the correct role, and will send them an email with the link to set their password.
 
 ### Typescript
 
@@ -176,7 +178,7 @@ The template includes example tests to be run with Cypress. The Lando setup incl
 
 #### Running tests locally inside Lando on the command line
 
-To run the Cypress tests inside Lando: 
+To run the Cypress tests inside Lando:
 
 1. make sure the backend is running
 2. run `lando npm run build` to build the frontend
@@ -187,7 +189,7 @@ A video of the run will be recorded, and it will be available at `next/cypress/v
 
 #### Using the Cypress application
 
-If you want to run the visual Cypress application, you will need to run cypress outside of Lando, on your host computer. For this to work: 
+If you want to run the visual Cypress application, you will need to run cypress outside of Lando, on your host computer. For this to work:
 
 1. ensure you are using the correct node version, matching what we use inside Lando (see the `.lando.yml` file for details)
 2. ensure your machine has the correct dependencies installed (see the [Cypress docs](https://docs.cypress.io/guides/getting-started/installing-cypress#System-requirements) for details)
@@ -209,17 +211,20 @@ lando composer update drupal/core-composer-scaffold drupal/core-recommended drup
 ```
 
 After updating core with composer run also updb and if there are database updates export them with the second command
+
 ```bash
 lando drush updb
 lando drush cex
 ```
 
 Update separate modules by running the following command:
+
 ```bash
 lando composer update 'drupal/twig_tweak' -W
 ```
 
 And for major version updates:
+
 ```bash
 lando composer require 'drupal/twig_tweak:^3.2' -W
 ```
