@@ -9,7 +9,7 @@ id: node.events.field_event_location
 field_name: field_event_location
 entity_type: node
 bundle: events
-label: Location
+label: event_location
 description: ''
 required: true
 translatable: false

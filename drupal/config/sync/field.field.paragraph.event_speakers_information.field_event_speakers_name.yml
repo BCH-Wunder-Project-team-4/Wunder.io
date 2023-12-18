@@ -9,9 +9,9 @@ id: paragraph.event_speakers_information.field_event_speakers_name
 field_name: field_event_speakers_name
 entity_type: paragraph
 bundle: event_speakers_information
-label: 'Event Speaker Name'
+label: event_speakers_name
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

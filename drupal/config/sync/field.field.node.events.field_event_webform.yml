@@ -11,7 +11,7 @@ id: node.events.field_event_webform
 field_name: field_event_webform
 entity_type: node
 bundle: events
-label: 'Event Webform'
+label: event_webform
 description: "<ul>\r\n<li>Please, First create webform with the same name as event title</li>\r\n<li>Then, create an email field with key name email inside webform</li>\r\n<li>In the form validation, check email as requireed and give required message as 'please, provide your email address'</li>\r\n<li>In the form validation, check email as unique and give unique message as 'This email has already been used'</li>\r\n</ul>"
 required: true
 translatable: false

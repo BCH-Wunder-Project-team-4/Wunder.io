@@ -11,7 +11,7 @@ id: paragraph.event_speakers_information.field_event_speakers_image
 field_name: field_event_speakers_image
 entity_type: paragraph
 bundle: event_speakers_information
-label: 'Event Speaker Image'
+label: event_speakers_image
 description: ''
 required: false
 translatable: false

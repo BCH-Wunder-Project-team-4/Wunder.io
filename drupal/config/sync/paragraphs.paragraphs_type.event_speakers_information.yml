@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: event_speakers_information
-label: 'Event Speaker Information'
+label: event_speakers_information
 icon_uuid: null
 icon_default: null
 description: ''
