@@ -33,7 +33,9 @@
 /web/sites/*/settings.local.php
 
 # Ignore Drupal's file directory
-/web/sites/*/files/
+/web/sites/*/files/*
+!/web/sites/*/files/2023-11/
+!/web/sites/*/files/2023-12/
 
 # Ignore testing directories.
 /web/sites/simpletest

@@ -278,7 +278,7 @@ export const ParagraphWunderpediaSchema = z.object({
 export const ScrollingNumbersSchema = z.object({
   type: z.literal("paragraph--scrolling_numbers"),
   id: z.string(),
-  field_heading: z.string(),
+  field_heading: z.string().nullable(),
   field_scrolling_numbers_items: z.array(ScrollingNumberShape),
 });
 
