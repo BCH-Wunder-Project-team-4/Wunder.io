@@ -355,6 +355,24 @@ export const ArticleBodyTextSchema = z.object({
   field_formatted_text: z.object({ processed: z.string() }),
 });
 
+export const TextAndImageSchema = z.object({
+  type: z.literal("paragraph--text_and_image"),
+  id: z.string(),
+  field_heading: z.string(),
+  field_text: z.string(),
+  field_primary_link: LinkShape.nullable().optional(),
+  field_link_type: z.string().nullable().optional(),
+  field_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+  field_image_position: z.string().nullable().optional(),
+});
+
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
 export type Video = z.infer<typeof VideoSchema>;
@@ -381,6 +399,7 @@ export type WunderStory = z.infer<typeof WunderStorySchema>;
 export type Frame = z.infer<typeof FrameSchema>;
 export type ArticleBodyText = z.infer<typeof ArticleBodyTextSchema>;
 export type ContactDetails = z.infer<typeof ContactDetailsSchema>;
+export type TextAndImage = z.infer<typeof TextAndImageSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -408,4 +427,5 @@ export type Paragraph =
   | Anchor
   | Frame
   | ArticleBodyText
-  | ContactDetails;
+  | ContactDetails
+  | TextAndImage;

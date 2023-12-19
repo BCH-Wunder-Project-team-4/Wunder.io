@@ -21,6 +21,7 @@ import {
   TrilogySnapshotSchema,
   VideoSchema,
   FrameSchema,
+  TextAndImageSchema,
 } from "@/lib/zod/paragraph";
 
 import { DrupalNode } from "next-drupal";
@@ -49,7 +50,8 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   LogoWallSchema,
   TrilogySnapshotSchema,
   AnchorSchema,
-  FrameSchema
+  FrameSchema,
+  TextAndImageSchema,
 ]);
 
 export const PageSchema = z.object({

@@ -13,6 +13,7 @@ import {
   TrilogySnapshotSchema,
   VideoSchema,
   ContactDetailsSchema,
+  TextAndImageSchema,
 } from "@/lib/zod/paragraph";
 
 import { DrupalNode } from "next-drupal";
@@ -34,6 +35,7 @@ const AboutWunderSubpageElementsSchema = z.discriminatedUnion("type", [
   TrilogySnapshotSchema,
   AnchorSchema,
   ContactDetailsSchema,
+  TextAndImageSchema,
 ]);
 
 export const AboutWunderSubpageSchema = z.object({
@@ -79,7 +81,9 @@ export function validateAndCleanupAboutWunderSubpage(
     };
   } catch (error) {
     const { name = "ZodError", issues = [] } = error;
-    console.log(JSON.stringify({ name, issues, about_wunder_subpage }, null, 2));
+    console.log(
+      JSON.stringify({ name, issues, about_wunder_subpage }, null, 2),
+    );
     return null;
   }
 }
