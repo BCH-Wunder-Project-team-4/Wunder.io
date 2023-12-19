@@ -27,7 +27,7 @@ const ScrollToTop = () => {
 
   return (
     <div 
-    className={`z-50 fixed ${'bottom-16 right-5 md:bottom-8 md:right-12'} ${isVisible ? 'opacity-100' : 'opacity-0'}  duration-300 transition-all ease-in-out bg-primary-600 hover:bg-primary-500 active:bg-primary-400 border-[1px] border-finnishwinter rounded-[8px] p-1.5 cursor-pointer`}
+    className={`z-50 fixed ${'bottom-16 right-5 md:bottom-16 md:right-12'} ${isVisible ? 'opacity-100' : 'opacity-0'}  duration-300 transition-all ease-in-out bg-primary-600 hover:bg-primary-500 active:bg-primary-400 border-[1px] border-finnishwinter rounded-[8px] p-1.5 cursor-pointer`}
     onClick={scrollToTop}>
       {isVisible && (
         <Chevron className="h-8 w-8 text-mischka rotate-180" />
