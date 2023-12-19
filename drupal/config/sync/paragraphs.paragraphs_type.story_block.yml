@@ -1,0 +1,10 @@
+uuid: 4bd46165-6030-43e2-bc04-332f0edd41ee
+langcode: en
+status: true
+dependencies: {  }
+id: story_block
+label: 'Story Block'
+icon_uuid: null
+icon_default: null
+description: 'Add a <em>Story Block</em> paragraph which contains smaller story components.'
+behavior_plugins: {  }

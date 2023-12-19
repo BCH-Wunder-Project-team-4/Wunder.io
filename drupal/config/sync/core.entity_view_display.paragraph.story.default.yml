@@ -1,0 +1,29 @@
+uuid: 6efdd08b-5e03-41e4-9d45-5964361400b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.story.field_heading
+    - field.field.paragraph.story.field_text
+    - paragraphs.paragraphs_type.story
+id: paragraph.story.default
+targetEntityType: paragraph
+bundle: story
+mode: default
+content:
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_text:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden: {  }

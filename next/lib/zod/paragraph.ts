@@ -95,6 +95,12 @@ export const OfficeInfoItemShape = z.object({
   field_email: z.string().email().nullable().optional(),
 });
 
+export const StoryShape = z.object({
+  type: z.literal("paragraph--story"),
+  field_heading: z.string(),
+  field_text: z.string(),
+});
+
 export const ImageSchema = z.object({
   type: z.literal("paragraph--image"),
   id: z.string(),
@@ -391,6 +397,14 @@ export const OfficeDetailsSchema = z.object({
   field_office_info_items: z.array(OfficeInfoItemShape),
 });
 
+export const StoryBlockSchema = z.object({
+  type: z.literal("paragraph--story_block"),
+  id: z.string(),
+  field_heading: z.string().nullable().optional(),
+  field_text: z.string().nullable().optional(),
+  field_story_items: z.array(StoryShape),
+});
+
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
 export type Video = z.infer<typeof VideoSchema>;
@@ -419,6 +433,7 @@ export type ArticleBodyText = z.infer<typeof ArticleBodyTextSchema>;
 export type ContactDetails = z.infer<typeof ContactDetailsSchema>;
 export type TextAndImage = z.infer<typeof TextAndImageSchema>;
 export type OfficeDetails = z.infer<typeof OfficeDetailsSchema>;
+export type StoryBlock = z.infer<typeof StoryBlockSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -448,4 +463,5 @@ export type Paragraph =
   | ArticleBodyText
   | ContactDetails
   | TextAndImage
-  | OfficeDetails;
+  | OfficeDetails
+  | StoryBlock;

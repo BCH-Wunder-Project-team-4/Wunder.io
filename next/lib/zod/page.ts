@@ -22,6 +22,7 @@ import {
   VideoSchema,
   FrameSchema,
   TextAndImageSchema,
+  StoryBlockSchema,
 } from "@/lib/zod/paragraph";
 
 import { DrupalNode } from "next-drupal";
@@ -52,6 +53,7 @@ const PageElementsSchema = z.discriminatedUnion("type", [
   AnchorSchema,
   FrameSchema,
   TextAndImageSchema,
+  StoryBlockSchema,
 ]);
 
 export const PageSchema = z.object({

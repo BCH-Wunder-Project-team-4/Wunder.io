@@ -23,6 +23,7 @@ dependencies:
     - paragraphs.paragraphs_type.sectionbg
     - paragraphs.paragraphs_type.services
     - paragraphs.paragraphs_type.simple_quote
+    - paragraphs.paragraphs_type.story_block
     - paragraphs.paragraphs_type.subheading
     - paragraphs.paragraphs_type.text_and_image
     - paragraphs.paragraphs_type.trilogy_snapshot
@@ -69,6 +70,7 @@ settings:
       text_and_image: text_and_image
       listing_events: listing_events
       listing_experts_talks: listing_experts_talks
+      story_block: story_block
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -128,6 +130,12 @@ settings:
       logo_wall:
         weight: 22
         enabled: true
+      office_details:
+        weight: 55
+        enabled: false
+      office_info:
+        weight: 56
+        enabled: false
       scrolling_numbers:
         weight: 12
         enabled: true
@@ -142,6 +150,12 @@ settings:
         enabled: true
       simple_quote:
         weight: 14
+        enabled: true
+      story:
+        weight: 35
+        enabled: false
+      story_block:
+        weight: 62
         enabled: true
       subheading:
         weight: 27

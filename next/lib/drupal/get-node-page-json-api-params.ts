@@ -36,6 +36,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
         "field_content_elements.field_scrolling_numbers_items",
         "field_content_elements.field_dark_image.field_media_image",
         "field_content_elements.field_trilogy_images.field_media_image",
+        "field_content_elements.field_story_items",
       ])
       .addFields("node--page", [
         "title",
