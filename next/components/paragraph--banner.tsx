@@ -5,10 +5,15 @@ import Link from "next/link";
 import { MediaImage } from "@/components/media--image";
 import { Banner as BannerType } from "@/lib/zod/paragraph";
 import ArrowIcon from "@/styles/icons/arrow-down.svg";
+import ExternalLinkIcon from "@/styles/icons/external.svg";
 
 import { buttonVariants } from "@/ui/button";
 
 export function ParagraphBanner({ paragraph }: { paragraph: BannerType }) {
+  const isExternalLink = (url) => {
+    return url.startsWith("http://") || url.startsWith("https://");
+  };
+
   return (
     <section id="banner" className="mb-6">
       <div className="mx-auto grid max-w-screen-xl lg:grid-cols-12">
@@ -22,7 +27,10 @@ export function ParagraphBanner({ paragraph }: { paragraph: BannerType }) {
               }
             >
               {paragraph.field_slogan && (
-                <RoundedStickIcon className="inline-block h-5 w-5 mr-1 mb-1 text-hugs" />
+                <RoundedStickIcon
+                  aria-hidden
+                  className="inline-block h-5 w-5 mr-1 mb-1 text-hugs"
+                />
               )}
               {paragraph.field_heading}
             </h1>
@@ -41,13 +49,27 @@ export function ParagraphBanner({ paragraph }: { paragraph: BannerType }) {
             {paragraph.field_primary_link && (
               <Link
                 href={paragraph.field_primary_link.full_url}
+                target={
+                  isExternalLink(paragraph.field_primary_link.full_url)
+                    ? "_blank"
+                    : undefined
+                }
+                rel={
+                  isExternalLink(paragraph.field_primary_link.full_url)
+                    ? "noopener noreferrer"
+                    : undefined
+                }
                 className={clsx(
                   buttonVariants({ variant: "banner_cta" }),
                   "text-base mr-4 inline-flex px-5 py-3",
                 )}
               >
                 {paragraph.field_primary_link.title}
-                <ArrowIcon aria-hidden className="ml-3 h-6 w-6 -rotate-90" />
+                {isExternalLink(paragraph.field_primary_link.full_url) ? (
+                  <ExternalLinkIcon aria-hidden className="ml-3 h-6 w-6" />
+                ) : (
+                  <ArrowIcon aria-hidden className="ml-3 h-6 w-6 -rotate-90" />
+                )}
               </Link>
             )}
           </div>
