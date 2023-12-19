@@ -121,5 +121,10 @@
   "Necessary": "Välttämättömät",
   "Analytics": "Analytiikka",
   "Advertisement": "Mainonta",
-  "Functional": "Toiminnalliset"
+  "Functional": "Toiminnalliset",
+  "all-countries": "Kaikki maat",
+  "all-offices": "Toimistot",
+  "all-industries": "Teollisuudet",
+  "all-solutions": "Ratkaisut",
+  "all-technologies": "Teknologiat"
 }
