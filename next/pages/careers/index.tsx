@@ -77,11 +77,11 @@ export default function AllJobsPage({
           ))}
         </select>
         </div>
-        <ul className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+        <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
           {filteredJobs.map((job, index) => (
             <JobListItem key={index} job={job} />
           ))}
-        </ul>
+        </div>
       </div>
       <HeadingPage>{t("careers-subscribe")}</HeadingPage>
       <div className="flex flex-col sm:flex-row">
