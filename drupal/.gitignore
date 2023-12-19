@@ -36,6 +36,7 @@
 /web/sites/*/files/*
 !/web/sites/*/files/2023-11/
 !/web/sites/*/files/2023-12/
+!/web/sites/*/files/inline-images/
 
 # Ignore testing directories.
 /web/sites/simpletest
