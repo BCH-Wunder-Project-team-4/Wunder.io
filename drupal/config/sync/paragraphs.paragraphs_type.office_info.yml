@@ -1,0 +1,10 @@
+uuid: 0bf7be6a-ba90-46e1-b709-b7296418e581
+langcode: en
+status: true
+dependencies: {  }
+id: office_info
+label: 'Office Info'
+icon_uuid: null
+icon_default: null
+description: 'Add office info.'
+behavior_plugins: {  }

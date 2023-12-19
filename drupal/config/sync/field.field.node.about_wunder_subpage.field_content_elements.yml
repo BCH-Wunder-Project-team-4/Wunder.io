@@ -13,6 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.logo_wall
+    - paragraphs.paragraphs_type.office_details
     - paragraphs.paragraphs_type.scrolling_numbers
     - paragraphs.paragraphs_type.sectionbg
     - paragraphs.paragraphs_type.simple_quote
@@ -44,6 +45,7 @@ settings:
       banner: banner
       contact_details: contact_details
       text_and_image: text_and_image
+      office_details: office_details
       anchor: anchor
       logo_wall: logo_wall
       scrolling_numbers: scrolling_numbers
@@ -109,6 +111,9 @@ settings:
         enabled: false
       logo_wall:
         weight: 36
+        enabled: true
+      office_details:
+        weight: 32
         enabled: true
       scrolling_numbers:
         weight: 37

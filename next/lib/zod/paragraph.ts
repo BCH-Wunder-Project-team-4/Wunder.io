@@ -86,6 +86,15 @@ export const EmployeeContactDetailsShape = z.object({
     .optional(),
 });
 
+export const OfficeInfoItemShape = z.object({
+  type: z.literal("paragraph--office_info"),
+  field_name: z.string(),
+  field_address_line_one: z.string(),
+  field_address_line_two: z.string(),
+  field_office_info_country: z.string(),
+  field_email: z.string().email().nullable().optional(),
+});
+
 export const ImageSchema = z.object({
   type: z.literal("paragraph--image"),
   id: z.string(),
@@ -374,6 +383,13 @@ export const TextAndImageSchema = z.object({
   field_image_position: z.string().nullable().optional(),
 });
 
+export const OfficeDetailsSchema = z.object({
+  type: z.literal("paragraph--office_details"),
+  id: z.string(),
+  field_heading: z.string().nullable().optional(),
+  field_office_info_items: z.array(OfficeInfoItemShape),
+});
+
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
 export type Video = z.infer<typeof VideoSchema>;
@@ -401,6 +417,7 @@ export type Frame = z.infer<typeof FrameSchema>;
 export type ArticleBodyText = z.infer<typeof ArticleBodyTextSchema>;
 export type ContactDetails = z.infer<typeof ContactDetailsSchema>;
 export type TextAndImage = z.infer<typeof TextAndImageSchema>;
+export type OfficeDetails = z.infer<typeof OfficeDetailsSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -429,4 +446,5 @@ export type Paragraph =
   | Frame
   | ArticleBodyText
   | ContactDetails
-  | TextAndImage;
+  | TextAndImage
+  | OfficeDetails;

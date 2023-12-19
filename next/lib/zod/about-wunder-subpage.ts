@@ -14,6 +14,7 @@ import {
   VideoSchema,
   ContactDetailsSchema,
   TextAndImageSchema,
+  OfficeDetailsSchema,
 } from "@/lib/zod/paragraph";
 
 import { DrupalNode } from "next-drupal";
@@ -36,6 +37,7 @@ const AboutWunderSubpageElementsSchema = z.discriminatedUnion("type", [
   AnchorSchema,
   ContactDetailsSchema,
   TextAndImageSchema,
+  OfficeDetailsSchema,
 ]);
 
 export const AboutWunderSubpageSchema = z.object({
