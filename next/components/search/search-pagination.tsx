@@ -1,10 +1,8 @@
-import { useTranslation } from "next-i18next";
+import Arrow from "@/styles/icons/arrow-down.svg";
+import { Button } from "@/ui/button";
 import { Paging } from "@elastic/react-search-ui";
 import clsx from "clsx";
-
-import Arrow from "@/styles/icons/arrow-down.svg";
-
-import { Button } from "@/ui/button";
+import { useTranslation } from "next-i18next";
 
 /**
  * Pagination component. To be used within the context of @elastic/react-search-ui.
