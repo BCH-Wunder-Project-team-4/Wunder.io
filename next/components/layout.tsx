@@ -14,6 +14,7 @@ import { useTranslation } from "next-i18next";
 import Breadcrumb from "./breadcrumb";
 import Chevron from "@/styles/icons/chevron-right.svg";
 import CookieConsent from "./cookie-bar";
+import ScrollToTop from "./scroll-to-top";
 
 export interface LayoutProps {
   menus: {
@@ -58,6 +59,7 @@ export function Layout({ menus, children }: LayoutProps) {
         <Toaster />
         <Footer />
         <CookieConsent />
+        <ScrollToTop />
       </div>
       <PreviewBanner isVisible={isPreviewVisible} />
     </>
