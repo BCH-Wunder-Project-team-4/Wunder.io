@@ -40,7 +40,7 @@ export function ParagraphContactDetails({
             <h3 className="font-bold text-md mt-2 mb-1">
               {contact.field_name}
             </h3>
-            <p className="text-xs mb-1 uppercase text-scapaflow dark:text-finnishwinter">
+            <p className="text-xs mb-1 uppercase text-scapaflow dark:text-finnishwinter tracking-widest">
               {contact.field_position}
             </p>
             {contact.field_email && (
