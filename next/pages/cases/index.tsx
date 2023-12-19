@@ -87,11 +87,11 @@ export default function CasesPage({
           ))}
         </select>
         </div>
-        <ul className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+        <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
           {filteredCases.map((caseItem, index) => (
             <CaseTeaser key={index} caseItem={caseItem} />
           ))}
-        </ul>
+        </div>
         <LogoWall clients={clients} />
       </div>
     </div>
