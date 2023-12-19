@@ -25,7 +25,7 @@ export function CaseTeaser({ caseItem }: CaseTeaserProps) {
         </div>
         )}
       </div>
-        <p className="text-stone">{caseItem.field_date}</p>
+        <p className="dark:text-graysuit text-scapaflow">{caseItem.field_date}</p>
         <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold">
           {caseItem.title}
         </h3>

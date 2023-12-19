@@ -62,13 +62,15 @@ export default function AllJobsPage({
         <FormattedText html={t("careers-intro")} className="text-center" />
         <HeadingPage>{t("careers-positions")}</HeadingPage>
         <div className="gap-2 flex flex-wrap items-center">
-        <select className="text-primary-600 dark:text-fog p-1 border rounded bg-mischka dark:bg-steelgray w-32" onChange={e => setChosenCountry(e.target.value)}>
+        <select className="text-primary-600 dark:text-fog p-1 border rounded bg-mischka dark:bg-steelgray w-32" onChange={e => setChosenCountry(e.target.value)}
+        aria-label={t("all-countries")}>
           <option value="all">{t("all-countries")}</option>
           {countries.map((country) => (
             <option key={country} value={country}>{country}</option>
           ))}
         </select>
-        <select className="text-primary-600 dark:text-fog p-1 border rounded bg-mischka dark:bg-steelgray w-32" onChange={e => setChosenOffice(e.target.value)}>
+        <select className="text-primary-600 dark:text-fog p-1 border rounded bg-mischka dark:bg-steelgray w-32" onChange={e => setChosenOffice(e.target.value)}
+        aria-label={t("all-offices")}>
           <option value="all">{t("all-offices")}</option>
           {offices.map((office) => (
             <option key={office} value={office}>{office}</option>
