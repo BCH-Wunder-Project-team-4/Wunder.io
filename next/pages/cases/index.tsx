@@ -72,7 +72,7 @@ export default function CasesPage({
             <option key={industry} value={industry}>{industry}</option>
           ))}
         </select>
-        <select className="appearance-none text-primary-600 dark:text-fog p-1 border rounded bg-mischka dark:bg-steelgray w-32" onChange={e => setChosenSolution(e.target.value)}
+        <select className="text-primary-600 dark:text-fog p-1 border rounded bg-mischka dark:bg-steelgray w-32" onChange={e => setChosenSolution(e.target.value)}
         aria-label={t("all-solution")}>
           <option value="all">{t("all-solutions")}</option>
           {solutions.map((solution) => (
