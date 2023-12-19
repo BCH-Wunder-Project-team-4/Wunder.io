@@ -10,7 +10,7 @@ export function ParagraphWunderpedia({ paragraph }: { paragraph: ParagraphWunder
 
   return (
     <div>
-      <h2 className=" text-primary-600 text-heading-xl font-bold mb-12 dark:text-fog">{paragraph.field_heading ? paragraph.field_heading : ""}</h2>
+      <h2 className=" text-primary-600 sm:text-heading-xl text-heading-lg font-bold mb-12 dark:text-fog ">{paragraph.field_heading ? paragraph.field_heading : ""}</h2>
       <div className="border-b-2 border-b-graysuit ">
         <div
           className="flex flex-col md:flex-row justify-around align-middle pb-10">
