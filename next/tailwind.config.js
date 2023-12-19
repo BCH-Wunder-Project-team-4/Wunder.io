@@ -12,7 +12,7 @@ module.exports = {
       transparent: "transparent",
       current: "currentColor",
 
-      black:"#000000",
+      black: "#000000",
       steelgray: "#221f2d",
       scapaflow: "#555161",
       stone: "#767283",
@@ -77,6 +77,7 @@ module.exports = {
       "heading-lg": ["3.1rem", { lineHeight: "1.25" }],
       "heading-xl": ["3.8rem", { lineHeight: "1.25" }],
       "heading-2xl": ["4.75rem", { lineHeight: "1.25" }],
+      "heading-5xl": ["14rem", { lineHeight: "1.25" }],
     },
     fontWeight: {
       light: "300",

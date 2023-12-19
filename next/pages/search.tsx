@@ -1,6 +1,7 @@
-import { GetStaticProps } from "next";
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
+import {
+  CommonPageProps,
+  getCommonPageProps,
+} from "@/lib/get-common-page-props";
 import {
   ErrorBoundary,
   Facet,
@@ -10,23 +11,22 @@ import {
   SearchProvider,
   WithSearch,
 } from "@elastic/react-search-ui";
-import { SearchDriverOptions } from "@elastic/search-ui";
 
+import { GetStaticProps } from "next";
 import { HeadingPage } from "@/components/heading--page";
 import { Meta } from "@/components/meta";
-import { SearchBoxInput } from "@/components/search/search-box-input";
 import { MultiCheckboxFacet } from "@/components/search/search-multicheckbox-facet";
 import { Pagination } from "@/components/search/search-pagination";
 import { PagingInfoView } from "@/components/search/search-paging-info";
+import { SearchBoxInput } from "@/components/search/search-box-input";
+import { SearchDriverOptions } from "@elastic/search-ui";
 import { SearchResult } from "@/components/search/search-result";
-import {
-  CommonPageProps,
-  getCommonPageProps,
-} from "@/lib/get-common-page-props";
 import { buildRequest } from "@/lib/search-ui-helpers/buildRequest";
 import { buildState } from "@/lib/search-ui-helpers/buildState";
 import { runRequest } from "@/lib/search-ui-helpers/runRequest";
 import { useNextRouting } from "@/lib/search-ui-helpers/useNextRouting";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
 export default function SearchPage() {
   const { t } = useTranslation();
@@ -53,7 +53,13 @@ export default function SearchPage() {
     <>
       <Meta title={t("search")} metatags={[]} />
 
-      <HeadingPage>{t("search")}</HeadingPage>
+      <div className="flex flex-col md:-mb-32">
+        <p className=" md:text-heading-5xl text-heading-2xl  font-bold italic text-primary-100 dark:text-scapaflow"> {t("search")}</p>
+        <p className=" md:-mt-72  md:text-heading-5xl text-heading-2xl -mt-24 font-bold italic md:-ml-5 -ml-3 text-primary-600 dark:text-fog ">
+          {t("search")}
+        </p>
+
+      </div>
 
       <SearchProvider config={combinedConfig}>
         <WithSearch
@@ -70,9 +76,9 @@ export default function SearchPage() {
                 // Here we specify our own custom
                 // component to render the search bar:
                 inputView={SearchBoxInput}
-                className="my-8 rounded bg-primary-100 sm:my-16 sm:py-16"
+                className="my-8 rounded sm:mb-16 sm:pb-16 md:py-16 "
               />
-              <div className="flex justify-end">
+              <div className="flex justify-end dark:text-fog">
                 {wasSearched && results.length > 0 && (
                   <PagingInfo view={PagingInfoView} />
                 )}
@@ -80,7 +86,7 @@ export default function SearchPage() {
               <div className="flex flex-col md:flex-row">
                 <aside className="mr-2 w-56">
                   {wasSearched && results.length > 0 && (
-                    <div className="py-2" aria-label={t("filter-search")}>
+                    <div className="py-2 " aria-label={t("filter-search")}>
                       <Facet
                         view={MultiCheckboxFacet}
                         field="tags"
