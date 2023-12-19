@@ -66,7 +66,7 @@ export function ExpertTalk({ expertTalk, ...props }: ExpertTalkProps) {
 
       {expertTalk.body?.processed && (
         <FormattedText
-          className={expertTalk.body.processed.length > 700 ? "mt-4 text-md/xl text-steelgray dark:text-mischka sm:text-lg columns-2" : "mt-4 text-md/xl text-steelgray dark:text-mischka sm:text-lg"}
+          className={expertTalk.body.processed.length > 700 ? "mt-4 text-md/xl text-steelgray dark:text-mischka sm:text-lg md:columns-2 columns-1" : "mt-4 text-md/xl text-steelgray dark:text-mischka sm:text-lg"}
           html={expertTalk.body?.processed}
         />
       )}
