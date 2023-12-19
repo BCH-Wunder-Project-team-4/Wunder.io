@@ -286,6 +286,7 @@ export const ContactDetailsSchema = z.object({
   type: z.literal("paragraph--contact_details"),
   id: z.string(),
   field_heading: z.string().optional().nullable(),
+  field_text: z.string().optional().nullable(),
   field_contact_data: z.array(EmployeeContactDetailsShape),
 });
 

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.contact_details.field_contact_data
     - field.field.paragraph.contact_details.field_heading
+    - field.field.paragraph.contact_details.field_text
     - paragraphs.paragraphs_type.contact_details
   module:
     - entity_reference_revisions
@@ -29,5 +30,12 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_text:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
     region: content
 hidden: {  }
