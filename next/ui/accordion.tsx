@@ -13,7 +13,7 @@ interface AccordionProps {
 }
 export function Accordion({ heading, items }: AccordionProps) {
   return (
-    <div className="relative h-full rounded border border-finnishwinter bg-white p-4 transition-all hover:shadow-md">
+    <div className="relative h-full rounded border border-finnishwinter dark:border-stone bg-white dark:bg-scapaflow p-4 transition-all hover:shadow-md">
       {heading && (
         <h2 className="mb-4 text-heading-sm font-bold md:text-heading-md">
           {heading}
@@ -23,19 +23,19 @@ export function Accordion({ heading, items }: AccordionProps) {
         {items?.map((item) => (
           <AccordionUI.Item key={item.id} value={item.id}>
             <AccordionUI.Header>
-              <AccordionUI.Trigger className="group flex w-full flex-row items-center justify-between gap-1 rounded border border-finnishwinter bg-white p-6 text-md text-steelgray aria-expanded:rounded-b-none aria-expanded:bg-mischka md:gap-1.5 md:text-lg">
+              <AccordionUI.Trigger className="group flex w-full flex-row items-center justify-between gap-1 rounded border border-finnishwinter dark:border-stone bg-white dark:bg-scapaflow p-6 text-md text-steelgray dark:text-mischka aria-expanded:rounded-b-none aria-expanded:bg-mischka dark:aria-expanded:bg-steelgray md:gap-1.5 md:text-lg">
                 <ListIcon
                   aria-hidden
-                  className="h-6 w-6 shrink-0 text-primary-600"
+                  className="h-6 w-6 shrink-0 text-primary-600 dark:text-fog"
                 />
                 <span className="mx-5 grow text-left">{item.heading}</span>
                 <ChevronIcon
                   aria-hidden
-                  className="h-6 w-6 shrink-0 text-primary-600 group-aria-expanded:rotate-180"
+                  className="h-6 w-6 shrink-0 text-primary-600 dark:text-fog group-aria-expanded:rotate-180"
                 />
               </AccordionUI.Trigger>
             </AccordionUI.Header>
-            <AccordionUI.Content className="rounded-b border border-t-0 border-finnishwinter bg-white p-6 text-md">
+            <AccordionUI.Content className="rounded-b border border-t-0 border-finnishwinter dark:border-stone bg-white dark:bg-scapaflow p-6 text-md">
               {item.content}
             </AccordionUI.Content>
           </AccordionUI.Item>
