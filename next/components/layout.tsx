@@ -14,6 +14,7 @@ import { useTranslation } from "next-i18next";
 import Breadcrumb from "./breadcrumb";
 import Chevron from "@/styles/icons/chevron-right.svg";
 import CookieConsent from "./cookie-bar";
+import ScrollToTop from "./scroll-to-top";
 
 export interface LayoutProps {
   menus: {
@@ -43,9 +44,7 @@ export function Layout({ menus, children }: LayoutProps) {
           <div className="mx-auto max-w-6xl px-6 py-8">
           <Breadcrumb
           homeElement={'Home'}
-          separator={<span>
-            <Chevron className="w-6 h-6" />
-              </span>}
+          separator={<li><Chevron className="w-6 h-6"/></li>}
           activeClasses='text-primary-600 dark:text-primary-200'
           containerClasses='flex pb-4' 
           listClasses='hover:underline mx-2'
@@ -58,6 +57,7 @@ export function Layout({ menus, children }: LayoutProps) {
         <Toaster />
         <Footer />
         <CookieConsent />
+        <ScrollToTop />
       </div>
       <PreviewBanner isVisible={isPreviewVisible} />
     </>

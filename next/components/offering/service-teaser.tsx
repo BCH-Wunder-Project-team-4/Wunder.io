@@ -19,7 +19,7 @@ export function ServiceTeaser({ service }: ServiceTeaserProps) {
       <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold  text-primary-600 dark:text-fog underline">
         {service.title}
       </h3>
-      <FormattedText className="text-stone dark:text-graysuit" html={service.field_excerpt}/>
+      <FormattedText className="text-steelgray dark:text-graysuit" html={service.field_excerpt}/>
     </Link>
   );
 }
