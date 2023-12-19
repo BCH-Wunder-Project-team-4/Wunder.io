@@ -1,0 +1,19 @@
+uuid: a777223a-d458-4466-9579-3bd7ae596e70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.office_details
+id: paragraph.office_details.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: office_details
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

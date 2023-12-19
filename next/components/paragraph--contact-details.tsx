@@ -21,13 +21,16 @@ export function ParagraphContactDetails({
         </h2>
       )}
       {paragraph.field_text && (
-        <p className="mb-6 max-w-2xl text-left text-md/xl mt-4 text-steelgray dark:text-mischka">
+        <p className="mb-8 max-w-2xl text-left text-md/xl mt-4 text-steelgray dark:text-mischka">
           {paragraph.field_text}
         </p>
       )}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
         {paragraph.field_contact_data.map((contact) => (
-          <div className="text-left dark:text-mischka" key={contact.field_name}>
+          <div
+            className="text-left text-steelgray dark:text-mischka"
+            key={contact.field_name}
+          >
             <MediaImage
               media={contact.field_image}
               alt="contact-image"

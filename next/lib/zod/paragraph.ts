@@ -387,6 +387,7 @@ export const OfficeDetailsSchema = z.object({
   type: z.literal("paragraph--office_details"),
   id: z.string(),
   field_heading: z.string().nullable().optional(),
+  field_text: z.string().nullable().optional(),
   field_office_info_items: z.array(OfficeInfoItemShape),
 });
 
