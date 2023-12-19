@@ -33,7 +33,7 @@ export function ParagraphTrilogySnapshot({
           {paragraph.field_primary_link && (
             <Link
               href={paragraph.field_primary_link.full_url}
-              className="dark:text-fog text-primary-600 text-base inline-flex hover:underline mt-2"
+              className="dark:text-fog text-primary-600 text-base inline-flex hover:underline mt-2 text-md/xl"
             >
               {paragraph.field_primary_link.title}
             </Link>
