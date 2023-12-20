@@ -1,0 +1,22 @@
+uuid: 6bb5a20a-67a7-482b-8728-c9c720e388ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.contact_body
+id: paragraph.contact_body.status
+field_name: status
+entity_type: paragraph
+bundle: contact_body
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

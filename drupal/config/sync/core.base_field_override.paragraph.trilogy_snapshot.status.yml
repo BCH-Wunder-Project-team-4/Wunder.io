@@ -1,0 +1,22 @@
+uuid: e9d03b5c-9db2-42c4-bd04-3acbcc91802b
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.trilogy_snapshot
+id: paragraph.trilogy_snapshot.status
+field_name: status
+entity_type: paragraph
+bundle: trilogy_snapshot
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

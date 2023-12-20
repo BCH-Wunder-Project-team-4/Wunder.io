@@ -1,18 +1,18 @@
-uuid: 0510c234-8ae0-4c17-b72a-d7ee130bcc0e
+uuid: 14f0974d-1b75-4f7e-a135-82877d9fa7c0
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.events
+    - paragraphs.paragraphs_type.offices
   module:
     - content_translation
 third_party_settings:
   content_translation:
-    enabled: true
+    enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: node.events
-target_entity_type_id: node
-target_bundle: events
+id: paragraph.offices
+target_entity_type_id: paragraph
+target_bundle: offices
 default_langcode: site_default
 language_alterable: false

@@ -1,0 +1,18 @@
+uuid: 512263df-250f-4116-97f8-22c2cbb2e0fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.trilogy_snapshot
+id: paragraph.trilogy_snapshot.created
+field_name: created
+entity_type: paragraph
+bundle: trilogy_snapshot
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

@@ -1,18 +1,18 @@
-uuid: 0510c234-8ae0-4c17-b72a-d7ee130bcc0e
+uuid: 100f2c4d-3a6c-4bac-9999-ba2ab3ac0be0
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.events
+    - paragraphs.paragraphs_type.scrolling_numbers_item
   module:
     - content_translation
 third_party_settings:
   content_translation:
-    enabled: true
+    enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: node.events
-target_entity_type_id: node
-target_bundle: events
+id: paragraph.scrolling_numbers_item
+target_entity_type_id: paragraph
+target_bundle: scrolling_numbers_item
 default_langcode: site_default
 language_alterable: false

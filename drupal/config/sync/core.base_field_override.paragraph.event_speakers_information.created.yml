@@ -1,0 +1,18 @@
+uuid: 53dc48af-08a5-48f2-ae5a-08c6976a6943
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.event_speakers_information
+id: paragraph.event_speakers_information.created
+field_name: created
+entity_type: paragraph
+bundle: event_speakers_information
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

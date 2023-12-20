@@ -1,0 +1,22 @@
+uuid: 8fc349a9-8330-41b3-97e1-1a0d1e809abd
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.simple_quote
+id: paragraph.simple_quote.status
+field_name: status
+entity_type: paragraph
+bundle: simple_quote
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

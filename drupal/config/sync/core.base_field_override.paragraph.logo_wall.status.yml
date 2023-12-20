@@ -1,0 +1,22 @@
+uuid: 8e87f24c-0902-4180-ad22-878245400efd
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.logo_wall
+id: paragraph.logo_wall.status
+field_name: status
+entity_type: paragraph
+bundle: logo_wall
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

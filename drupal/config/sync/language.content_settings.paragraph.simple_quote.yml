@@ -1,18 +1,18 @@
-uuid: 0510c234-8ae0-4c17-b72a-d7ee130bcc0e
+uuid: c357c192-8df3-4dc2-870d-a9fc9a103409
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.events
+    - paragraphs.paragraphs_type.simple_quote
   module:
     - content_translation
 third_party_settings:
   content_translation:
-    enabled: true
+    enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: node.events
-target_entity_type_id: node
-target_bundle: events
+id: paragraph.simple_quote
+target_entity_type_id: paragraph
+target_bundle: simple_quote
 default_langcode: site_default
 language_alterable: false

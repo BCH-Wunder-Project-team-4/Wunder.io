@@ -1,0 +1,18 @@
+uuid: c4958ceb-3ab7-452a-b66b-7d3edc8a8ec3
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.wunderpedia
+id: paragraph.wunderpedia.created
+field_name: created
+entity_type: paragraph
+bundle: wunderpedia
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

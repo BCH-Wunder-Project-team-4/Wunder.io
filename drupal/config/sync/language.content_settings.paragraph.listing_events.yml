@@ -1,9 +1,9 @@
-uuid: 0510c234-8ae0-4c17-b72a-d7ee130bcc0e
+uuid: eeb7660e-9a05-4c88-89e4-58746b15b5db
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.events
+    - paragraphs.paragraphs_type.listing_events
   module:
     - content_translation
 third_party_settings:
@@ -11,8 +11,8 @@ third_party_settings:
     enabled: true
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: node.events
-target_entity_type_id: node
-target_bundle: events
+id: paragraph.listing_events
+target_entity_type_id: paragraph
+target_bundle: listing_events
 default_langcode: site_default
-language_alterable: false
+language_alterable: true
