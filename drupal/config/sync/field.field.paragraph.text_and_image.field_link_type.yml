@@ -1,0 +1,23 @@
+uuid: 447264cd-0657-4b99-ac73-554d083f491a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link_type
+    - paragraphs.paragraphs_type.text_and_image
+  module:
+    - options
+id: paragraph.text_and_image.field_link_type
+field_name: field_link_type
+entity_type: paragraph
+bundle: text_and_image
+label: 'Link Type'
+description: 'Select the corresponding link type for the primary link. This will affect the outlook of the link.'
+required: false
+translatable: false
+default_value:
+  -
+    value: Internal
+default_value_callback: ''
+settings: {  }
+field_type: list_string

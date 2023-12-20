@@ -1,0 +1,115 @@
+uuid: 5e4ae48d-3f00-4d94-baf1-8c818d6561ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contact_data
+    - paragraphs.paragraphs_type.contact_details
+    - paragraphs.paragraphs_type.employee_contact_details
+  module:
+    - entity_reference_revisions
+id: paragraph.contact_details.field_contact_data
+field_name: field_contact_data
+entity_type: paragraph
+bundle: contact_details
+label: 'Contact Data'
+description: 'Add contact information.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      employee_contact_details: employee_contact_details
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 31
+        enabled: false
+      accordion_item:
+        weight: 32
+        enabled: false
+      anchor:
+        weight: 33
+        enabled: false
+      article_body_text:
+        weight: 34
+        enabled: false
+      banner:
+        weight: 35
+        enabled: false
+      contact_details:
+        weight: 30
+        enabled: false
+      employee_contact_details:
+        weight: 36
+        enabled: true
+      event_speakers_information:
+        weight: 37
+        enabled: false
+      file_attachments:
+        weight: 38
+        enabled: false
+      formatted_text:
+        weight: 39
+        enabled: false
+      frame:
+        weight: 40
+        enabled: false
+      full_width_paragraph:
+        weight: 41
+        enabled: false
+      hero:
+        weight: 42
+        enabled: false
+      image:
+        weight: 43
+        enabled: false
+      links:
+        weight: 44
+        enabled: false
+      listing_articles:
+        weight: 45
+        enabled: false
+      listing_events:
+        weight: 46
+        enabled: false
+      listing_experts_talks:
+        weight: 47
+        enabled: false
+      logo_wall:
+        weight: 48
+        enabled: false
+      scrolling_numbers:
+        weight: 49
+        enabled: false
+      scrolling_numbers_item:
+        weight: 50
+        enabled: false
+      sectionbg:
+        weight: 51
+        enabled: false
+      services:
+        weight: 52
+        enabled: false
+      simple_quote:
+        weight: 53
+        enabled: false
+      subheading:
+        weight: 54
+        enabled: false
+      trilogy_snapshot:
+        weight: 55
+        enabled: false
+      video:
+        weight: 56
+        enabled: false
+      wunder_story:
+        weight: 58
+        enabled: false
+      wunderpedia:
+        weight: 57
+        enabled: false
+field_type: entity_reference_revisions

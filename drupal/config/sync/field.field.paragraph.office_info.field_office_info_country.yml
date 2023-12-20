@@ -1,0 +1,19 @@
+uuid: bf06e8b5-8085-434b-a0b6-4ee7594019ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_office_info_country
+    - paragraphs.paragraphs_type.office_info
+id: paragraph.office_info.field_office_info_country
+field_name: field_office_info_country
+entity_type: paragraph
+bundle: office_info
+label: 'Office Info Country'
+description: 'Add country for office'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

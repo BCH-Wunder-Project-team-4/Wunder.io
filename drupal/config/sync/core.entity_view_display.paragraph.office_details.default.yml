@@ -1,0 +1,41 @@
+uuid: c81f805c-e970-47b9-995a-3913b9ba15e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.office_details.field_heading
+    - field.field.paragraph.office_details.field_office_info_items
+    - field.field.paragraph.office_details.field_text
+    - paragraphs.paragraphs_type.office_details
+  module:
+    - entity_reference_revisions
+id: paragraph.office_details.default
+targetEntityType: paragraph
+bundle: office_details
+mode: default
+content:
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_office_info_items:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_text:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden: {  }

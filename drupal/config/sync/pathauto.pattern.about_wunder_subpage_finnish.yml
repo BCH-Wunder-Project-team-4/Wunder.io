@@ -1,0 +1,33 @@
+uuid: 91ea659a-e42d-454c-8d1b-ba2b5fa1b60a
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: about_wunder_subpage_finnish
+label: 'About Wunder Subpage Finnish'
+type: 'canonical_entities:node'
+pattern: 'wunder/[node:title]'
+selection_criteria:
+  1cb9cea4-eb68-456b-9cc3-3bb7722a1329:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 1cb9cea4-eb68-456b-9cc3-3bb7722a1329
+    context_mapping:
+      node: node
+    bundles:
+      about_wunder_subpage: about_wunder_subpage
+  70b342c1-4c3c-4529-b723-ba67528f2e07:
+    id: language
+    negate: false
+    uuid: 70b342c1-4c3c-4529-b723-ba67528f2e07
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      fi: fi
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

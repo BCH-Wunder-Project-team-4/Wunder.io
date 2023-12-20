@@ -1,0 +1,33 @@
+uuid: 0c0cf292-49b9-49ca-9ea5-c20311bf1a56
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: about_wunder_subpage
+label: 'About Wunder Subpage'
+type: 'canonical_entities:node'
+pattern: 'about-wunder/[node:title]'
+selection_criteria:
+  359d5e47-c113-4321-81c0-38eae59bb6ce:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 359d5e47-c113-4321-81c0-38eae59bb6ce
+    context_mapping:
+      node: node
+    bundles:
+      about_wunder_subpage: about_wunder_subpage
+  3c0437c1-1001-4574-b35f-e69518f9d204:
+    id: language
+    negate: false
+    uuid: 3c0437c1-1001-4574-b35f-e69518f9d204
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      en: en
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

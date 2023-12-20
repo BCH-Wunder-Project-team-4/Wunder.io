@@ -23,6 +23,10 @@ import { ParagraphTrilogySnapshot } from "./paragraph--trilogy_snapshot";
 import { ParagraphWunderpedia } from "./paragraph--wunderpedia";
 import { ParagraphWunderStory } from "./paragraph--wunderStory";
 import { ParagraphFrame } from "./paragraph--frame";
+import { ParagraphContactDetails } from "./paragraph--contact-details";
+import { ParagraphTextAndImage } from "./paragraph--text-and-image";
+import { ParagraphOfficeDetails } from "./paragraph--office-details";
+import { ParagraphStoryBlock } from "./paragraph--story-block";
 import { ParagraphEmployees } from "./contact-us/paragraph--employees";
 import { ParagraphOffices } from "./contact-us/paragraph--offices";
 import { ParagraphContactBody } from "./contact-us/paragraph-contactBody";
@@ -116,6 +120,18 @@ export function Paragraph({ paragraph }: { paragraph: Paragraph }) {
     }
     case "paragraph--article_body_text": {
       return <ParagraphArticleBodyText paragraph={paragraph} />;
+    }
+    case "paragraph--contact_details": {
+      return <ParagraphContactDetails paragraph={paragraph} />;
+    }
+    case "paragraph--text_and_image": {
+      return <ParagraphTextAndImage paragraph={paragraph} />;
+    }
+    case "paragraph--office_details": {
+      return <ParagraphOfficeDetails paragraph={paragraph} />;
+    }
+    case "paragraph--story_block": {
+      return <ParagraphStoryBlock paragraph={paragraph} />;
     }
     case "paragraph--all_employees": {
       return <ParagraphEmployees paragraph={paragraph} />;

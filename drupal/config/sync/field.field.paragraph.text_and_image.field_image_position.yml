@@ -1,0 +1,23 @@
+uuid: 910b3ee4-e54d-440f-a64f-84fe2ba43e7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_position
+    - paragraphs.paragraphs_type.text_and_image
+  module:
+    - options
+id: paragraph.text_and_image.field_image_position
+field_name: field_image_position
+entity_type: paragraph
+bundle: text_and_image
+label: 'Image position'
+description: 'Adjust the image position to right or left'
+required: false
+translatable: false
+default_value:
+  -
+    value: Right
+default_value_callback: ''
+settings: {  }
+field_type: list_string

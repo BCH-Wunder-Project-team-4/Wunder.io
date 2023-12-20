@@ -1,0 +1,19 @@
+uuid: 8ac19c24-e0af-4952-a6b0-3725949b9d28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_excerpt
+    - node.type.about_wunder_subpage
+id: node.about_wunder_subpage.field_excerpt
+field_name: field_excerpt
+entity_type: node
+bundle: about_wunder_subpage
+label: Excerpt
+description: 'Add an excerpt for this piece of content. It will also be used for search results and HTML meta tags.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

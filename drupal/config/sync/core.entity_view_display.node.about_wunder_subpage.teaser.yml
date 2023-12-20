@@ -1,0 +1,39 @@
+uuid: a67b720a-658d-4616-abb8-09cf71c6a732
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.about_wunder_subpage.field_content_elements
+    - field.field.node.about_wunder_subpage.field_excerpt
+    - field.field.node.about_wunder_subpage.field_image
+    - image.style.medium
+    - node.type.about_wunder_subpage
+  module:
+    - image
+    - user
+id: node.about_wunder_subpage.teaser
+targetEntityType: node
+bundle: about_wunder_subpage
+mode: teaser
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_content_elements: true
+  field_excerpt: true
+  langcode: true
