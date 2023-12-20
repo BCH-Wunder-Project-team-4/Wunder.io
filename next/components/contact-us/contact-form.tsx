@@ -1,11 +1,11 @@
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
-import { useForm } from "react-hook-form";
-
 import { Button } from "@/ui/button";
+import { Input } from "@/ui/careers-form-input";
 import { Label } from "@/ui/label";
 import { StatusMessage } from "@/ui/status-message";
 import { Textarea } from "@/ui/textarea";
+import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
 type Inputs = {
   firstName: string;
@@ -26,7 +26,7 @@ export function ContactForm() {
     formState: { isSubmitSuccessful },
   } = useForm<Inputs>();
 
-  const onSubmit = async (data: Inputs) => { 
+  const onSubmit = async (data: Inputs) => {
     const response = await fetch(`/api/contact`, {
       method: "POST",
       body: JSON.stringify({
@@ -44,7 +44,7 @@ export function ContactForm() {
     });
 
     if (!response.ok) {
-      alert("Error!");    
+      alert("Error!");
     }
   };
 
@@ -64,15 +64,15 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit, onErrors)}
-      className="mx-auto mb-4 flex max-w-3xl flex-col gap-5 rounded border border-finnishwinter bg-white p-4 shadow-md transition-all hover:shadow-md"
+      className="mx-auto mb-4 flex max-w-3xl flex-col gap-5  p-4  transition-all"
     >
-      
-        <>
-          <div className="flex justify-between">
+
+      <>
+        <div className="flex justify-between gap-4">
           <div className="w-1/2">
             <Label htmlFor="firstName"></Label>
-            <input
-              className="border w-11/12 p-1"
+
+            <Input
               type="text"
               id="firstName"
               placeholder="First Name"
@@ -83,8 +83,8 @@ export function ContactForm() {
           </div>
           <div className="w-1/2">
             <Label htmlFor="lastName"></Label>
-            <input
-              className="border w-11/12 p-1 float-right"
+
+            <Input
               type="text"
               id="lastName"
               placeholder="Last Name"
@@ -93,12 +93,12 @@ export function ContactForm() {
               })}
             />
           </div>
-          </div>
-          <div className="flex justify-between">
+        </div>
+        <div className="flex justify-between gap-4">
           <div className="w-1/2">
             <Label htmlFor="email"></Label>
-            <input
-              className="border w-11/12 p-1"
+
+            <Input
               type="email"
               id="email"
               placeholder="Email"
@@ -109,8 +109,8 @@ export function ContactForm() {
           </div>
           <div className="w-1/2">
             <Label htmlFor="phoneNumber"></Label>
-            <input
-              className="border w-11/12 p-1 float-right"
+
+            <Input
               type="number"
               id="phoneNumber"
               placeholder="Phone"
@@ -119,32 +119,32 @@ export function ContactForm() {
               })}
             />
           </div>
-          </div>
-          <div>
-            <Label htmlFor="subject"></Label>
-            <input
-              className="border w-full p-1"
-              type="text"
-              id="subject"
-              placeholder="Subject"
-              {...register("subject", {
-                required: true,
-              })}
-            />
-          </div>
-          <div>
-            <Label htmlFor="message"></Label>
-            <Textarea
-              id="message"
-              placeholder="Write Something ..."
-              {...register("message", {
-                required: true,
-              })}
-            />
-          </div>
+        </div>
+        <div>
+          <Label htmlFor="subject"></Label>
 
-          <Button type="submit">{t("form-submit")}</Button>
-        </>
+          <Input
+            type="text"
+            id="subject"
+            placeholder="Subject"
+            {...register("subject", {
+              required: true,
+            })}
+          />
+        </div>
+        <div>
+          <Label htmlFor="message"></Label>
+          <Textarea
+            id="message"
+            placeholder="Write Something ..."
+            {...register("message", {
+              required: true,
+            })}
+          />
+        </div>
+
+        <Button type="submit">{t("form-submit")}</Button>
+      </>
     </form>
   );
 }
