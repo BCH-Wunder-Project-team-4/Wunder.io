@@ -22,11 +22,14 @@ export function ParagraphStoryBlock({
         </p>
       )}
       {paragraph.field_story_items && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {paragraph.field_story_items.map((story) => (
-            <div key={story.field_heading}>
-              <h3>{story.field_heading}</h3>
-              <p>{story.field_text}</p>
+            <div
+              key={story.field_heading}
+              className="text-steelgray dark:text-mischka border-2 border-finnishwinter dark:border-scapaflow p-4 rounded"
+            >
+              <h3 className="font-bold text-lg mb-4">{story.field_heading}</h3>
+              <p className="text-md">{story.field_text}</p>
             </div>
           ))}
         </div>
