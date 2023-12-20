@@ -1,12 +1,10 @@
-import Link from "next/link";
-import { useTranslation } from "next-i18next";
-import clsx from "clsx";
-
 import ArrowIcon from "@/styles/icons/arrow-down.svg";
-
-import { buttonVariants } from "@/ui/button";
 import { EventTeaserComponent } from "./event";
-import { EventTeaser as EventTeaserType} from "@/lib/zod/events-teaser";
+import { EventTeaser as EventTeaserType } from "@/lib/zod/events-teaser";
+import Link from "next/link";
+import { buttonVariants } from "@/ui/button";
+import clsx from "clsx";
+import { useTranslation } from "next-i18next";
 
 interface LatestEventsProps {
   events?: EventTeaserType[];
@@ -17,7 +15,7 @@ export function Events({ events, heading }: LatestEventsProps) {
   const { t } = useTranslation();
   return (
     <>
-      <h2 className="text-heading-sm font-bold md:text-heading-md">
+      <h2 className="text-heading-sm font-bold md:text-heading-md" >
         {heading}
       </h2>
       <ul className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">

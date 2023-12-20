@@ -1,32 +1,29 @@
+import { ContactUs, validateAndCleanupContactUs } from "@/lib/zod/contact_us";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { useTranslation } from "next-i18next";
-import { useRef } from "react";
-import { drupal } from "@/lib/drupal/drupal-client";
+
 import { DrupalNode } from "next-drupal";
-import { getNodePageJsonApiParams } from "@/lib/drupal/get-node-page-json-api-params";
+import { Invoice } from "@/components/contact-us/invoicing";
 import { LayoutProps } from "@/components/layout";
 import { Meta } from "@/components/meta";
+import { Paragraph } from "@/components/paragraph";
 import {
   createLanguageLinksForNextOnlyPage
 } from "@/lib/contexts/language-links-context";
-
+import { drupal } from "@/lib/drupal/drupal-client";
 import { getCommonPageProps } from "@/lib/get-common-page-props"
-import { Invoice } from "@/components/contact-us/invoicing";
-import { Paragraph } from "@/components/paragraph";
-import { ContactUs, validateAndCleanupContactUs } from "@/lib/zod/contact_us";
-
-
-
+import { getNodePageJsonApiParams } from "@/lib/drupal/get-node-page-json-api-params";
+import { useRef } from "react";
+import { useTranslation } from "next-i18next";
 
 interface ContactPageProps extends LayoutProps {
   contact_us: ContactUs;
 }
 
-export default function ContactPage({contact_us
-}:InferGetStaticPropsType<typeof getStaticProps>){
+export default function ContactPage({ contact_us
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation();
   const focusRef = useRef<HTMLDivElement>(null);
-  
+
   return (
     <>
       <Meta title={t("Contact")} metatags={[]} />
@@ -35,9 +32,9 @@ export default function ContactPage({contact_us
         {contact_us?.field_contact_content_elements?.map((paragraph) => (
           <Paragraph paragraph={paragraph} key={paragraph.id} />
         ))}
-      </div>  
+      </div>
       <div>
-        {contact_us?.field_contact_invoicing?.map((paragraph)=>(
+        {contact_us?.field_contact_invoicing?.map((paragraph) => (
           <Invoice paragraph={paragraph}></Invoice>
         ))}
       </div>

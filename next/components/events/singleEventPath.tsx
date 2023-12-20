@@ -1,19 +1,18 @@
-import { useTranslation } from "next-i18next";
-import { useRouter } from "next/router";
-
-import { HeadingPage } from "@/components/heading--page";
-import { absoluteUrl } from "@/lib/drupal/absolute-url";
-import { formatDate } from "@/lib/utils";
-import { Event } from "@/lib/zod/events";
 import CalendarIcon from "@/styles/icons/calendar.svg";
+import { Event } from "@/lib/zod/events";
+import { EventForm } from "./event-form";
+import { HeadingPage } from "@/components/heading--page";
+import Image from "next/image";
+import { LatLngTuple } from "leaflet";
 import LocationArrowIcon from "@/styles/icons/location-arrow.svg";
 import LocationIcon from "@/styles/icons/location.svg";
-import PresenterIcon from "@/styles/icons/presenter.svg";
-import { LatLngTuple } from "leaflet";
-import Image from "next/image";
-import { useState } from "react";
 import { LocationMap } from "../contact-us/dynamicMap";
-import { EventForm } from "./event-form";
+import PresenterIcon from "@/styles/icons/presenter.svg";
+import { absoluteUrl } from "@/lib/drupal/absolute-url";
+import { formatDate } from "@/lib/utils";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { useTranslation } from "next-i18next";
 
 interface EventProps {
   event: Event;
@@ -48,7 +47,7 @@ export function SingleEventPath({ event, ...props }: EventProps) {
 
   return (
     <div {...props}>
-      <div className="relative w-full h-[400px] bg-evergreen rounded-md">
+      <div className="relative w-full h-[400px] bg-evergreen rounded-md" data-aos="fade">
         {event.field_event_image && (
           <Image
             src={absoluteUrl(event.field_event_image?.uri.url)}
@@ -86,8 +85,8 @@ export function SingleEventPath({ event, ...props }: EventProps) {
                   index < array.length - 2
                     ? speaker.field_event_speakers_name + ", "
                     : index === array.length - 2
-                    ? speaker.field_event_speakers_name + " and "
-                    : speaker.field_event_speakers_name,
+                      ? speaker.field_event_speakers_name + " and "
+                      : speaker.field_event_speakers_name,
                 )
                 .join("")}
             </p>
@@ -96,7 +95,7 @@ export function SingleEventPath({ event, ...props }: EventProps) {
       </div>
 
       <div className="flex flex-col md:flex-row justify-between pt-4 gap-2">
-        <div className="w-2/3 flex flex-col justify-evenly">
+        <div className="w-2/3 flex flex-col justify-evenly" data-aos="fade">
           <HeadingPage>{event.title}</HeadingPage>
           <div className="my-2">
             <h2 className="text-heading-sm mb-4">Date and time</h2>
@@ -111,12 +110,12 @@ export function SingleEventPath({ event, ...props }: EventProps) {
             </div>
           </div>
         </div>
-        <div className="w-full md:w-1/3 my-2 md:my-0">
+        <div className="w-full md:w-1/3 my-2 md:my-0" data-aos="fade">
           <EventForm eventName={event.title}></EventForm>
         </div>
       </div>
 
-      <div className="py-4">
+      <div className="py-4" data-aos="fade">
         <h2 className="text-heading-sm mb-4">Location</h2>
         <div className="flex flex-row gap-3 mb-2">
           <LocationIcon aria-hidden className="inline-block w-5 h-5" />
@@ -140,13 +139,13 @@ export function SingleEventPath({ event, ...props }: EventProps) {
         </div>
       </div>
       {event.field_event_description && (
-        <div className="w-full md:w-2/3 py-4">
+        <div className="w-full md:w-2/3 py-4" data-aos="fade">
           <h2 className="text-heading-sm mb-4">About this event</h2>
           <p className="md:text-md">{event.field_event_description}</p>
         </div>
       )}
       {event.field_event_speakers.length > 0 && (
-        <div className="w-full md:w-2/3 py-4">
+        <div className="w-full md:w-2/3 py-4" data-aos="fade">
           <h2 className="text-heading-sm mb-4">Speakers</h2>
           {event.field_event_speakers.map((speaker, index) => (
             <div key={index} className="py-2">

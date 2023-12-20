@@ -9,7 +9,7 @@ import clsx from "clsx";
 export function ParagraphWunderStory({ paragraph }: { paragraph: WunderStoryType }) {
 
   return (
-    <div className=" flex flex-col items-center pt-5 pb-10">
+    <div className=" flex flex-col items-center pt-5 pb-10" data-aos="fade">
       <div className="w-fit ">
         <WunderIcon className="w-36 text-primary-600 dark:text-fog" />
       </div>

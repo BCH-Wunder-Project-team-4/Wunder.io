@@ -19,7 +19,7 @@ export function Job({ job, ...props }: JobProps) {
     <div {...props}>
       <HeadingPage>{job.title}</HeadingPage>
       {job.field_excerpt && (
-        <div className="my-4 text-xl">{job.field_excerpt}</div>
+        <div className="my-4 text-xl" data-aos="fade">{job.field_excerpt}</div>
       )}
       {job.field_image && (
         <figure>
@@ -31,6 +31,7 @@ export function Job({ job, ...props }: JobProps) {
             alt={job.field_image.resourceIdObjMeta.alt}
             className="object-cover"
             priority
+            data-aos="fade"
           />
           {job.field_image.resourceIdObjMeta.title && (
             <figcaption className="py-2 text-center text-sm text-scapaflow">
@@ -43,10 +44,13 @@ export function Job({ job, ...props }: JobProps) {
         <FormattedText
           className="mt-4 text-md/xl text-scapaflow sm:text-lg"
           html={job.body?.processed}
+          data-aos="fade"
         />
       )}
-        {job.field_content_elements?.map((paragraph) => (
-        <Paragraph key={paragraph.id} paragraph={paragraph} />
+      {job.field_content_elements?.map((paragraph) => (
+        <div data-aos="fade">
+          <Paragraph key={paragraph.id} paragraph={paragraph} />
+        </div>
       ))}
     </div>
   );

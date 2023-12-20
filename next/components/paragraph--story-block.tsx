@@ -12,12 +12,13 @@ export function ParagraphStoryBlock({
           className={
             "leading-none max-w-2xl text-left text-heading-sm font-bold tracking-tight text-primary-600 dark:text-fog md:text-heading-md mb-4"
           }
+          data-aos="fade"
         >
           {paragraph.field_heading}
         </h2>
       )}
       {paragraph.field_text && (
-        <p className="mb-8 max-w-2xl text-left text-md/xl mt-4 text-steelgray dark:text-mischka">
+        <p className="mb-8 max-w-2xl text-left text-md/xl mt-4 text-steelgray dark:text-mischka" data-aos="fade">
           {paragraph.field_text}
         </p>
       )}
@@ -27,6 +28,7 @@ export function ParagraphStoryBlock({
             <div
               key={story.field_heading}
               className="text-steelgray dark:text-mischka border-2 border-finnishwinter dark:border-scapaflow p-4 rounded"
+              data-aos="fade"
             >
               <h3 className="font-bold text-lg mb-4">{story.field_heading}</h3>
               <p className="text-md">{story.field_text}</p>

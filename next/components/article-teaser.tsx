@@ -20,7 +20,8 @@ export function ArticleTeaser({ article }: ArticleTeaserProps) {
   return (
     <Link
       href={article.path.alias}
-      className="flex justify-center items-center "
+      className="flex justify-center items-center"
+      data-aos="fade"
     >
       <div className=" ml-1 mr-1 flex flex-col justify-center items-center w-96 hover:scale-105 transition-all relative">
 

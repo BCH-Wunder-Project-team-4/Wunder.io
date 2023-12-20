@@ -1,11 +1,11 @@
-import { useTranslation } from "next-i18next";
-
-import { absoluteUrl } from "@/lib/drupal/absolute-url";
 import { formatFileSizeInBytes, getFileType } from "@/lib/utils";
+
 import { FileAttachments } from "@/lib/zod/paragraph";
 import ListIcon from "@/styles/icons/list.svg";
 import PdfIcon from "@/styles/icons/pdf.svg";
 import TextIcon from "@/styles/icons/text-doc.svg";
+import { absoluteUrl } from "@/lib/drupal/absolute-url";
+import { useTranslation } from "next-i18next";
 
 interface MediaFileAttachmentsProps {
   mediaItems: FileAttachments["field_file_attachments"];
@@ -62,6 +62,7 @@ export function MediaFileAttachments({
         {...props}
         className="list-inside space-y-2"
         aria-label={t("downloadable-files")}
+        data-aos="fade"
       >
         {mediaItems.map((mediaItem) => (
           <li

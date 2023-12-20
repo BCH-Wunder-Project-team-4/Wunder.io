@@ -1,20 +1,22 @@
 import "@/styles/globals.css";
+import "aos/dist/aos.css";
 
-import { AppProps } from "next/app";
-import { Session } from "next-auth";
-import { SessionProvider } from "next-auth/react";
-import { appWithTranslation } from "next-i18next";
-import React, { useState } from "react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
-import { Layout } from "@/components/layout";
 import {
   LanguageLinks,
   LanguageLinksProvider,
 } from "@/lib/contexts/language-links-context";
-import { CommonPageProps } from "@/lib/get-common-page-props";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import React, { useEffect, useState } from "react";
 import { inter, overpass } from "@/styles/fonts";
+
+import AOS from "aos";
+import { AppProps } from "next/app";
+import { CommonPageProps } from "@/lib/get-common-page-props";
+import { Layout } from "@/components/layout";
+import { Session } from "next-auth";
+import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "next-themes";
+import { appWithTranslation } from "next-i18next";
 
 interface PageProps extends CommonPageProps {
   languageLinks?: LanguageLinks;
@@ -24,8 +26,15 @@ interface PageProps extends CommonPageProps {
 function App({ Component, pageProps }: AppProps<PageProps>) {
   const [queryClient] = useState(() => new QueryClient());
   const { menus, languageLinks, session, ...restPageProps } = pageProps;
-  
-  
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000
+    });
+  }, []);
+
+
+
   return (
     <ThemeProvider attribute="class">
       <SessionProvider session={session}>

@@ -14,7 +14,7 @@ export function ParagraphHero({ paragraph }: { paragraph: HeroType }) {
       <div className="mx-auto grid max-w-screen-xl grid-cols-1 sm:grid-cols-12">
         <div className="mr-auto place-self-center px-8 py-8 sm:col-span-6  lg:py-16">
           {paragraph.field_heading && (
-            <h1 className="leading-none mb-4 max-w-2xl text-left text-heading-md font-bold tracking-tight text-primary-600 md:text-heading-lg">
+            <h1 className="leading-none mb-4 max-w-2xl text-left text-heading-md font-bold tracking-tight text-primary-600 md:text-heading-lg" data-aos="fade">
               {paragraph.field_heading}
             </h1>
           )}
@@ -24,6 +24,7 @@ export function ParagraphHero({ paragraph }: { paragraph: HeroType }) {
               "mb-6 max-w-2xl text-left text-md/xl text-primary-600 sm:text-lg md:text-lg lg:mb-8 lg:text-xl",
               paragraph.field_heading && "mt-4",
             )}
+            data-aos="fade"
           />
           <div className="gap-4 sm:text-left">
             {paragraph.field_primary_link && (
@@ -33,6 +34,7 @@ export function ParagraphHero({ paragraph }: { paragraph: HeroType }) {
                   buttonVariants({ variant: "primary" }),
                   "text-base mr-4 inline-flex px-5 py-3 my-3",
                 )}
+                data-aos="fade"
               >
                 {paragraph.field_primary_link.title}
                 <ArrowIcon aria-hidden className="ml-3 h-6 w-6 -rotate-90" />

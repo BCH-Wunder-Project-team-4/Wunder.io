@@ -1,6 +1,5 @@
-import YouTube from "react-youtube";
-
 import { Video } from "@/lib/zod/paragraph";
+import YouTube from "react-youtube";
 
 interface MediaVideoProps {
   media: Video["field_video"];
@@ -22,6 +21,7 @@ export function MediaVideo({ media }: MediaVideoProps) {
       className="aspect-h-9 aspect-w-16"
       videoId={videoId}
       opts={options}
+      data-aos="fade"
     />
   );
 }

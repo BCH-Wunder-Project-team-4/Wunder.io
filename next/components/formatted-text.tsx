@@ -1,16 +1,15 @@
 import parse, {
   DOMNode,
-  domToReact,
   Element,
   HTMLReactParserOptions,
+  domToReact,
 } from "html-react-parser";
+
+import { HTMLAttributes } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { HTMLAttributes } from "react";
-
-import { isRelative } from "@/lib/utils";
-
 import { env } from "@/env";
+import { isRelative } from "@/lib/utils";
 
 const isElement = (domNode: DOMNode): domNode is Element =>
   domNode.type === "tag";
@@ -39,7 +38,9 @@ const options: HTMLReactParserOptions = {
               height={numberHeight}
               alt={alt}
               className="max-w-full object-cover"
+              data-aos="fade"
             />
+
           );
         }
         break;

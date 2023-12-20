@@ -25,6 +25,7 @@ export function ArticleListItem({ article }: ArticleListItemProps) {
           ? "border-primary-100 shadow-md shadow-primary-100 dark:shadow-fog "
           : "border-finnishwinter dark:bg-steelgray",
       )}
+      data-aos="fade"
     >
       <h3 className="mb-2 line-clamp-2 text-heading-xs font-bold text-primary-600 dark:text-fog">{article.title}</h3>
       {article.field_image && (

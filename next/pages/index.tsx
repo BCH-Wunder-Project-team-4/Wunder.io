@@ -6,7 +6,6 @@ import { ExpertTalkTeaser, validateAndCleanupExpertTalkTeaser } from "@/lib/zod/
 import { Frontpage, validateAndCleanupFrontpage } from "@/lib/zod/frontpage";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 
-import { ArticleTeasers } from "@/components/article-teasers";
 import { DrupalNode } from "next-drupal";
 import { LayoutProps } from "@/components/layout";
 import { LogoWall } from "@/components/logo-wall";
