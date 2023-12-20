@@ -9,7 +9,9 @@ export function Case({ caseNode }: CaseProps) {
   return (
     <div className="grid gap-4">
       {caseNode.field_content_elements?.map((paragraph) => (
-        <Paragraph key={paragraph.id} paragraph={paragraph} />
+        <div data-aos="fade">
+          <Paragraph key={paragraph.id} paragraph={paragraph} />
+        </div>
       ))}
     </div>
   );

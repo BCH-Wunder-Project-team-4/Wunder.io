@@ -35,7 +35,7 @@ export function Article({ article, ...props }: ArticleProps) {
                 />
               )}
               <span data-aos="fade">
-                {t("posted-by", { author: article.uid?.display_name })}
+                {t("posted-by", { author: article.uid?.display_name })}{" "}
               </span>
               <span>{formatDate(article.created, router.locale)}</span>
             </p>
