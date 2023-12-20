@@ -18,17 +18,23 @@ export function ParagraphTextAndImage({
     return (
       <section
         id="text-and-image"
-        className="my-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16"
+        className={`my-6 grid ${
+          paragraph.field_image ? "md:grid-cols-2" : "grid-cols-1"
+        } gap-6 md:gap-8 lg:gap-12 xl:gap-16`}
       >
         <div>
           <h2
             className={
               "leading-none max-w-2xl text-left text-heading-sm font-bold tracking-tight text-primary-600 dark:text-fog md:text-heading-md"
-            } data-aos="fade"
+            }
+            data-aos="fade"
           >
             {paragraph.field_heading}
           </h2>
-          <p className="mb-4 max-w-2xl text-left text-md/xl mt-4 text-steelgray dark:text-mischka" data-aos="fade">
+          <p
+            className="mb-4 max-w-2xl text-left text-md/xl mt-4 text-steelgray dark:text-mischka"
+            data-aos="fade"
+          >
             {paragraph.field_text}
           </p>
           <div className="gap-4 sm:text-left">
@@ -79,7 +85,9 @@ export function ParagraphTextAndImage({
     return (
       <section
         id="text-and-image"
-        className="my-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16"
+        className={`my-6 grid ${
+          paragraph.field_image ? "md:grid-cols-2" : "grid-cols-1"
+        } gap-6 md:gap-8 lg:gap-12 xl:gap-16`}
       >
         {paragraph.field_image && (
           <div className="flex items-center lg:items-start">
@@ -101,7 +109,10 @@ export function ParagraphTextAndImage({
           >
             {paragraph.field_heading}
           </h2>
-          <p className="mb-4 max-w-2xl text-left text-md/xl mt-4 text-steelgray dark:text-mischka" data-aos="fade">
+          <p
+            className="mb-4 max-w-2xl text-left text-md/xl mt-4 text-steelgray dark:text-mischka"
+            data-aos="fade"
+          >
             {paragraph.field_text}
           </p>
           <div className="gap-4 sm:text-left" data-aos="fade">
