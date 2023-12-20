@@ -1,0 +1,41 @@
+uuid: 0d260627-916c-4793-8bfc-66bbd3aada47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.contact_us.field_contact_content_elements
+    - field.field.node.contact_us.field_contact_invoicing
+    - node.type.contact_us
+  module:
+    - entity_reference_revisions
+    - user
+id: node.contact_us.default
+targetEntityType: node
+bundle: contact_us
+mode: default
+content:
+  field_contact_content_elements:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_contact_invoicing:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

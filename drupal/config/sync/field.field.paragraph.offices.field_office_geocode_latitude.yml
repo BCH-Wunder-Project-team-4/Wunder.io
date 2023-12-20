@@ -1,0 +1,23 @@
+uuid: a9116326-14d7-40c5-9f16-f98b02232381
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_office_geocode_latitude
+    - paragraphs.paragraphs_type.offices
+id: paragraph.offices.field_office_geocode_latitude
+field_name: field_office_geocode_latitude
+entity_type: paragraph
+bundle: offices
+label: office_geocode_latitude
+description: 'latitude is a float number. ex: 12.23'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

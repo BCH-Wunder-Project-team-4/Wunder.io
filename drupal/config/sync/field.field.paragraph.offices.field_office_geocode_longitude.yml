@@ -1,0 +1,23 @@
+uuid: 1023a29b-2d82-492e-b93f-c92f556166a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_office_geocode_longitude
+    - paragraphs.paragraphs_type.offices
+id: paragraph.offices.field_office_geocode_longitude
+field_name: field_office_geocode_longitude
+entity_type: paragraph
+bundle: offices
+label: office_geocode_longitude
+description: 'give a float number. ex: 12.23'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

@@ -1,0 +1,23 @@
+uuid: 1a006576-c19c-4ad2-bdaa-8414ac457ef7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_body.field_contact_greeting
+    - paragraphs.paragraphs_type.contact_body
+id: paragraph.contact_body.default
+targetEntityType: paragraph
+bundle: contact_body
+mode: default
+content:
+  field_contact_greeting:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

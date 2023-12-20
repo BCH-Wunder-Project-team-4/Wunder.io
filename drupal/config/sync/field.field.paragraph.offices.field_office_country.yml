@@ -1,0 +1,19 @@
+uuid: 046e1047-6ab3-435a-a600-f13d30cec4ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_office_country
+    - paragraphs.paragraphs_type.offices
+id: paragraph.offices.field_office_country
+field_name: field_office_country
+entity_type: paragraph
+bundle: offices
+label: office_country
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

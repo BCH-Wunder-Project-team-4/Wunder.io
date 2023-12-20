@@ -1,0 +1,24 @@
+uuid: 9d59d080-2fa2-4e5d-96ab-5c72d273f7af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.all_employees.field_employees_content_elements
+    - paragraphs.paragraphs_type.all_employees
+  module:
+    - entity_reference_revisions
+id: paragraph.all_employees.default
+targetEntityType: paragraph
+bundle: all_employees
+mode: default
+content:
+  field_employees_content_elements:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

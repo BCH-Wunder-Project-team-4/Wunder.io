@@ -27,6 +27,11 @@ import { ParagraphContactDetails } from "./paragraph--contact-details";
 import { ParagraphTextAndImage } from "./paragraph--text-and-image";
 import { ParagraphOfficeDetails } from "./paragraph--office-details";
 import { ParagraphStoryBlock } from "./paragraph--story-block";
+import { ParagraphEmployees } from "./contact-us/paragraph--employees";
+import { ParagraphOffices } from "./contact-us/paragraph--offices";
+import { ParagraphContactBody } from "./contact-us/paragraph-contactBody";
+import { ParagraphOfficeItem } from "./contact-us/paragraph--officeItem";
+import { ParagraphEmployeeItem } from "./contact-us/paragraph--employeeItem";
 
 // Use dynamic imports to defer loading a component until after initial page load: https://nextjs.org/docs/advanced-features/dynamic-import
 const ParagraphVideo = dynamic(() =>
@@ -41,6 +46,7 @@ export function Paragraph({ paragraph }: { paragraph: Paragraph }) {
   if (!paragraph) {
     return null;
   }
+  
 
   switch (paragraph.type) {
     case "paragraph--formatted_text": {
@@ -126,6 +132,21 @@ export function Paragraph({ paragraph }: { paragraph: Paragraph }) {
     }
     case "paragraph--story_block": {
       return <ParagraphStoryBlock paragraph={paragraph} />;
+    }
+    case "paragraph--all_employees": {
+      return <ParagraphEmployees paragraph={paragraph} />;
+    }
+    case "paragraph--employees": {
+      return <ParagraphEmployeeItem paragraph={paragraph} />;
+    }
+    case "paragraph--all_offices": {
+      return <ParagraphOffices paragraph={paragraph} />;
+    }
+    case "paragraph--offices": {
+      return <ParagraphOfficeItem paragraph={paragraph}/>;
+    }
+    case "paragraph--contact_body": {
+      return <ParagraphContactBody paragraph={paragraph} />;
     }
     default:
       return null;

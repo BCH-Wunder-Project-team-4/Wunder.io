@@ -1,0 +1,10 @@
+uuid: 25cbadf3-640d-428a-9344-73d5402159df
+langcode: en
+status: true
+dependencies: {  }
+id: contact_body
+label: contact_body
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
