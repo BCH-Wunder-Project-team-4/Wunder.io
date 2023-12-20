@@ -1,0 +1,59 @@
+uuid: 53d3c0d0-94a2-4844-a3db-bab448d78d89
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.office_info.field_address_line_one
+    - field.field.paragraph.office_info.field_address_line_two
+    - field.field.paragraph.office_info.field_email
+    - field.field.paragraph.office_info.field_name
+    - field.field.paragraph.office_info.field_office_info_country
+    - paragraphs.paragraphs_type.office_info
+id: paragraph.office_info.default
+targetEntityType: paragraph
+bundle: office_info
+mode: default
+content:
+  field_address_line_one:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_address_line_two:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_email:
+    type: email_default
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_office_info_country:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

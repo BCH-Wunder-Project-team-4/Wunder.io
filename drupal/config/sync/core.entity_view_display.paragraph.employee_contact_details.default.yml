@@ -1,0 +1,55 @@
+uuid: 77dd9d60-9360-4608-ba2f-e11775b21758
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.employee_contact_details.field_email
+    - field.field.paragraph.employee_contact_details.field_image
+    - field.field.paragraph.employee_contact_details.field_name
+    - field.field.paragraph.employee_contact_details.field_phone
+    - field.field.paragraph.employee_contact_details.field_position
+    - paragraphs.paragraphs_type.employee_contact_details
+id: paragraph.employee_contact_details.default
+targetEntityType: paragraph
+bundle: employee_contact_details
+mode: default
+content:
+  field_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_phone:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_position:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden: {  }

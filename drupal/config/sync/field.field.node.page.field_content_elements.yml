@@ -23,7 +23,9 @@ dependencies:
     - paragraphs.paragraphs_type.sectionbg
     - paragraphs.paragraphs_type.services
     - paragraphs.paragraphs_type.simple_quote
+    - paragraphs.paragraphs_type.story_block
     - paragraphs.paragraphs_type.subheading
+    - paragraphs.paragraphs_type.text_and_image
     - paragraphs.paragraphs_type.trilogy_snapshot
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.wunderpedia
@@ -65,8 +67,10 @@ settings:
       services: services
       subheading: subheading
       frame: frame
+      text_and_image: text_and_image
       listing_events: listing_events
       listing_experts_talks: listing_experts_talks
+      story_block: story_block
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -78,9 +82,18 @@ settings:
       anchor:
         weight: 24
         enabled: true
+      article_body_text:
+        weight: 35
+        enabled: false
       banner:
         weight: -20
         enabled: true
+      contact_details:
+        weight: 37
+        enabled: false
+      employee_contact_details:
+        weight: 38
+        enabled: false
       event_speakers_information:
         weight: 28
         enabled: false
@@ -102,12 +115,6 @@ settings:
       image:
         weight: -18
         enabled: true
-      infosection:
-        weight: 22
-        enabled: true
-      infosection_b:
-        weight: 23
-        enabled: true
       links:
         weight: -15
         enabled: true
@@ -123,6 +130,12 @@ settings:
       logo_wall:
         weight: 22
         enabled: true
+      office_details:
+        weight: 55
+        enabled: false
+      office_info:
+        weight: 56
+        enabled: false
       scrolling_numbers:
         weight: 12
         enabled: true
@@ -138,8 +151,17 @@ settings:
       simple_quote:
         weight: 14
         enabled: true
+      story:
+        weight: 35
+        enabled: false
+      story_block:
+        weight: 62
+        enabled: true
       subheading:
         weight: 27
+        enabled: true
+      text_and_image:
+        weight: 31
         enabled: true
       trilogy_snapshot:
         weight: 24

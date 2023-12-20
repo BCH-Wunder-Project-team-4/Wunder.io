@@ -1,0 +1,10 @@
+uuid: 80e80f22-5e55-41d0-9ed8-57edb0a8b2c3
+langcode: en
+status: true
+dependencies: {  }
+id: text_and_image
+label: 'Text and Image'
+icon_uuid: null
+icon_default: null
+description: 'Add a text and image paragraph where the image position can be switched to left or right.'
+behavior_plugins: {  }

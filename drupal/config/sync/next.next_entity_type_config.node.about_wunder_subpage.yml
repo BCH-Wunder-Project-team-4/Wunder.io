@@ -1,0 +1,13 @@
+uuid: c094ae77-50a4-44ac-9c06-c71ca4fc8559
+langcode: en
+status: true
+dependencies: {  }
+id: node.about_wunder_subpage
+site_resolver: site_selector
+configuration:
+  sites:
+    frontend: frontend
+revalidator: path
+revalidator_configuration:
+  revalidate_page: true
+  additional_paths: ''

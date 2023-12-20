@@ -1,0 +1,19 @@
+uuid: 68125727-4429-4020-ad9a-f493f59a9cb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_email
+    - paragraphs.paragraphs_type.employee_contact_details
+id: paragraph.employee_contact_details.field_email
+field_name: field_email
+entity_type: paragraph
+bundle: employee_contact_details
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

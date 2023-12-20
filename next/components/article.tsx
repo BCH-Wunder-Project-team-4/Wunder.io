@@ -72,9 +72,9 @@ export function Article({ article, ...props }: ArticleProps) {
           <figure className="md:col-start-5 md:col-span-3">
             <Image
               src={absoluteUrl(article.field_image.uri.url)}
-              width={500}
-              height={300}
-              style={{ width: 500, height: 300 }}
+              width={600}
+              height={375}
+              style={{ width: 600, height: 375 }}
               alt={article.field_image.resourceIdObjMeta.alt}
               className="object-cover"
               priority

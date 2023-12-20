@@ -1,0 +1,10 @@
+uuid: 615277fb-33b7-4051-9526-7701038c3081
+langcode: en
+status: true
+dependencies: {  }
+id: office_details
+label: 'Office Details'
+icon_uuid: null
+icon_default: null
+description: 'Paragraph for adding office details.'
+behavior_plugins: {  }

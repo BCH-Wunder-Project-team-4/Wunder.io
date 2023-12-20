@@ -1,0 +1,16 @@
+uuid: a3747deb-6664-48d2-b00e-13925b84856d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.about_wunder_subpage
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.about_wunder_subpage
+target_entity_type_id: node
+target_bundle: about_wunder_subpage
+default_langcode: site_default
+language_alterable: true

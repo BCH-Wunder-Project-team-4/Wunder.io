@@ -1,0 +1,53 @@
+uuid: bca40d1e-04dd-4729-be74-997aab8e4d9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.about_wunder_subpage.field_content_elements
+    - field.field.node.about_wunder_subpage.field_excerpt
+    - field.field.node.about_wunder_subpage.field_image
+    - image.style.wide
+    - node.type.about_wunder_subpage
+  module:
+    - entity_reference_revisions
+    - image
+    - user
+id: node.about_wunder_subpage.default
+targetEntityType: node
+bundle: about_wunder_subpage
+mode: default
+content:
+  field_content_elements:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_excerpt:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

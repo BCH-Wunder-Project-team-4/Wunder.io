@@ -70,6 +70,37 @@ export const ScrollingNumberShape = z.object({
   field_description: z.string(),
 });
 
+export const EmployeeContactDetailsShape = z.object({
+  type: z.literal("paragraph--employee_contact_details"),
+  field_name: z.string(),
+  field_email: z.string().email().nullable().optional(),
+  field_phone: z.string().nullable().optional(),
+  field_position: z.string(),
+  field_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+});
+
+export const OfficeInfoItemShape = z.object({
+  type: z.literal("paragraph--office_info"),
+  field_name: z.string(),
+  field_address_line_one: z.string(),
+  field_address_line_two: z.string(),
+  field_office_info_country: z.string(),
+  field_email: z.string().email().nullable().optional(),
+});
+
+export const StoryShape = z.object({
+  type: z.literal("paragraph--story"),
+  field_heading: z.string(),
+  field_text: z.string(),
+});
+
 export const ImageSchema = z.object({
   type: z.literal("paragraph--image"),
   id: z.string(),
@@ -153,7 +184,9 @@ export const HeroSchema = z.object({
   type: z.literal("paragraph--hero"),
   id: z.string(),
   field_heading: z.string(),
-  field_formatted_text: z.object({ processed: z.string().optional() }).nullable(),
+  field_formatted_text: z
+    .object({ processed: z.string().optional() })
+    .nullable(),
   field_image: z
     .object({
       type: z.literal("media--image"),
@@ -163,7 +196,6 @@ export const HeroSchema = z.object({
     .nullable()
     .optional(),
   field_primary_link: LinkShape.nullable().optional(),
-
 });
 
 export const BannerSchema = z.object({
@@ -265,6 +297,14 @@ export const ScrollingNumbersSchema = z.object({
   field_scrolling_numbers_items: z.array(ScrollingNumberShape),
 });
 
+export const ContactDetailsSchema = z.object({
+  type: z.literal("paragraph--contact_details"),
+  id: z.string(),
+  field_heading: z.string().optional().nullable(),
+  field_text: z.string().optional().nullable(),
+  field_contact_data: z.array(EmployeeContactDetailsShape),
+});
+
 export const SimpleQuoteSchema = z.object({
   type: z.literal("paragraph--simple_quote"),
   id: z.string(),
@@ -331,6 +371,40 @@ export const ArticleBodyTextSchema = z.object({
   field_formatted_text: z.object({ processed: z.string() }),
 });
 
+export const TextAndImageSchema = z.object({
+  type: z.literal("paragraph--text_and_image"),
+  id: z.string(),
+  field_heading: z.string(),
+  field_text: z.string(),
+  field_primary_link: LinkShape.nullable().optional(),
+  field_link_type: z.string().nullable().optional(),
+  field_image: z
+    .object({
+      type: z.literal("media--image"),
+      id: z.string(),
+      field_media_image: ImageShape.nullable(),
+    })
+    .nullable()
+    .optional(),
+  field_image_position: z.string().nullable().optional(),
+});
+
+export const OfficeDetailsSchema = z.object({
+  type: z.literal("paragraph--office_details"),
+  id: z.string(),
+  field_heading: z.string().nullable().optional(),
+  field_text: z.string().nullable().optional(),
+  field_office_info_items: z.array(OfficeInfoItemShape),
+});
+
+export const StoryBlockSchema = z.object({
+  type: z.literal("paragraph--story_block"),
+  id: z.string(),
+  field_heading: z.string().nullable().optional(),
+  field_text: z.string().nullable().optional(),
+  field_story_items: z.array(StoryShape),
+});
+
 export type FormattedText = z.infer<typeof FormattedTextSchema>;
 export type Image = z.infer<typeof ImageSchema>;
 export type Video = z.infer<typeof VideoSchema>;
@@ -356,6 +430,10 @@ export type Anchor = z.infer<typeof AnchorSchema>;
 export type WunderStory = z.infer<typeof WunderStorySchema>;
 export type Frame = z.infer<typeof FrameSchema>;
 export type ArticleBodyText = z.infer<typeof ArticleBodyTextSchema>;
+export type ContactDetails = z.infer<typeof ContactDetailsSchema>;
+export type TextAndImage = z.infer<typeof TextAndImageSchema>;
+export type OfficeDetails = z.infer<typeof OfficeDetailsSchema>;
+export type StoryBlock = z.infer<typeof StoryBlockSchema>;
 
 export type Paragraph =
   | FormattedText
@@ -382,4 +460,8 @@ export type Paragraph =
   | TrilogySnapshot
   | Anchor
   | Frame
-  | ArticleBodyText;
+  | ArticleBodyText
+  | ContactDetails
+  | TextAndImage
+  | OfficeDetails
+  | StoryBlock;

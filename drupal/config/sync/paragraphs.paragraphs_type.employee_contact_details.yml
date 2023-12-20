@@ -1,0 +1,10 @@
+uuid: 4bec50d2-c716-40eb-8854-044b9df9e968
+langcode: en
+status: true
+dependencies: {  }
+id: employee_contact_details
+label: 'Employee Contact Details'
+icon_uuid: null
+icon_default: null
+description: 'Add contact information for an employee.'
+behavior_plugins: {  }

@@ -66,6 +66,14 @@ const options: HTMLReactParserOptions = {
         );
       }
 
+      case "ul": {
+        return (
+          <ul className="list-disc text-steelgray dark:text-mischka ml-6 mb-2">
+            {domToReact(domNode.children, options)}
+          </ul>
+        );
+      }
+
       case "input": {
         if (domNode.attribs.value === "") {
           delete domNode.attribs.value;

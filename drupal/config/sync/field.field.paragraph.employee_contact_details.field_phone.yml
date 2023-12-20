@@ -1,0 +1,21 @@
+uuid: 264753e4-a020-424b-869c-db12cccb620e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_phone
+    - paragraphs.paragraphs_type.employee_contact_details
+  module:
+    - telephone
+id: paragraph.employee_contact_details.field_phone
+field_name: field_phone
+entity_type: paragraph
+bundle: employee_contact_details
+label: Phone
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

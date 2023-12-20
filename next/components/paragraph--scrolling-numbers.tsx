@@ -33,8 +33,14 @@ export function ParagraphScrollingNumbers({
   };
 
   return (
-    <section id="scrolling_numbers" className="mb-6">
-      <HeadingParagraph>{paragraph.field_heading}</HeadingParagraph>
+    <section id="scrolling_numbers" className="my-6">
+      <h2
+        className={
+          "leading-none max-w-2xl text-left text-heading-sm font-bold tracking-tight text-primary-600 dark:text-fog md:text-heading-md"
+        }
+      >
+        {paragraph.field_heading}
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 bg-primary-600 py-8 px-4 rounded-md mt-6">
         {paragraph.field_scrolling_numbers_items.map((item, index) => (
           <div key={index} className="flex flex-col items-center">
