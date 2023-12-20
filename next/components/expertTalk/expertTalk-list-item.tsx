@@ -1,9 +1,9 @@
-import { absoluteUrl } from "@/lib/drupal/absolute-url";
 import { ExpertTalkTeaser } from "@/lib/zod/expertTalk-teaser";
-import classNames from "classnames";
-import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import Link from "next/link";
+import { absoluteUrl } from "@/lib/drupal/absolute-url";
+import classNames from "classnames";
+import { useTranslation } from "next-i18next";
 
 interface ExpertTalkListItemProps {
   expertTalk: ExpertTalkTeaser;
@@ -24,6 +24,7 @@ export function ExpertTalkListItem({ expertTalk }: ExpertTalkListItemProps) {
           ? "border-primary-100 shadow-md shadow-primary-100 dark:shadow-fog "
           : "border-finnishwinter dark:bg-steelgray",
       )}
+      data-aos="fade"
     >
       <div className="flex flex-row items-center">
         {expertTalk.field_image && (

@@ -15,24 +15,28 @@ export function FullWidthParagraph({ paragraph }: { paragraph: FullWidthParagrap
           media={paragraph.field_images[0]}
           alt="site-banner"
           priority
+          data-aos="fade"
         />
         <MediaImage
           className={clsx(css.secondImage)}
           media={paragraph.field_images[1]}
           alt="site-banner"
           priority
+          data-aos="fade"
         />
         <MediaImage
           className={clsx(css.thirdImage)}
           media={paragraph.field_images[2]}
           alt="site-banner"
           priority
+          data-aos="fade"
         />
         <MediaImage
           className={clsx(css.forthImage)}
           media={paragraph.field_images[3]}
           alt="site-banner"
           priority
+          data-aos="fade"
         />
 
 
@@ -42,6 +46,7 @@ export function FullWidthParagraph({ paragraph }: { paragraph: FullWidthParagrap
             className={clsx(
               "max-w-2xl text-primary-600 sm:text-md md:text-md lg:mb-8 xl:text-lg 2xl:text-xl text-left md:text-right "
             )}
+            data-aos="fade"
           />
         </div>
         <div className={clsx(css.secondText)}>
@@ -50,6 +55,7 @@ export function FullWidthParagraph({ paragraph }: { paragraph: FullWidthParagrap
             className={clsx(
               "max-w-2xl text-left  text-primary-600  md:text-md lg:mb-8 xl:text-lg 2xl:text-xl mt-4 ",
             )}
+            data-aos="fade"
           />
         </div>
         <div className={clsx(css.thirdText, "flex justify-end")}>
@@ -58,6 +64,7 @@ export function FullWidthParagraph({ paragraph }: { paragraph: FullWidthParagrap
             className={clsx(
               "max-w-2xl text-left md:text-right  text-primary-600 md:text-md lg:mb-8 xl:text-lg 2xl:text-xl",
             )}
+            data-aos="fade"
           />
         </div>
 

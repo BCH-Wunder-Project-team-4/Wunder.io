@@ -68,7 +68,7 @@ export function ContactForm() {
     >
 
       <>
-        <div className="flex justify-between gap-4">
+        <div className="flex justify-between gap-4" data-aos="fade" >
           <div className="w-1/2">
             <Label htmlFor="firstName"></Label>
 
@@ -94,7 +94,7 @@ export function ContactForm() {
             />
           </div>
         </div>
-        <div className="flex justify-between gap-4">
+        <div className="flex justify-between gap-4" data-aos="fade">
           <div className="w-1/2">
             <Label htmlFor="email"></Label>
 
@@ -120,8 +120,8 @@ export function ContactForm() {
             />
           </div>
         </div>
-        <div>
-          <Label htmlFor="subject"></Label>
+        <div data-aos="fade">
+          <Label htmlFor="subject" ></Label>
 
           <Input
             type="text"
@@ -132,7 +132,7 @@ export function ContactForm() {
             })}
           />
         </div>
-        <div>
+        <div data-aos="fade">
           <Label htmlFor="message"></Label>
           <Textarea
             id="message"
@@ -143,7 +143,7 @@ export function ContactForm() {
           />
         </div>
 
-        <Button type="submit">{t("form-submit")}</Button>
+        <Button type="submit" data-aos="fade">{t("form-submit")}</Button>
       </>
     </form>
   );

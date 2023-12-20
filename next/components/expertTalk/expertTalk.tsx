@@ -17,7 +17,7 @@ export function ExpertTalk({ expertTalk, ...props }: ExpertTalkProps) {
     <article {...props}>
       <HeadingPage>{expertTalk.title}</HeadingPage>
 
-      <div className="flex flex-row items-center my-5">
+      <div className="flex flex-row items-center my-5" data-aos="fade">
 
         {expertTalk.field_image && (
 
@@ -27,6 +27,7 @@ export function ExpertTalk({ expertTalk, ...props }: ExpertTalkProps) {
             height={300}
             alt={expertTalk.field_experts_photo.resourceIdObjMeta.alt}
             className="h-20 w-20 object-cover rounded-full "
+
           />
 
         )}
@@ -40,11 +41,11 @@ export function ExpertTalk({ expertTalk, ...props }: ExpertTalkProps) {
 
         {expertTalk.field_excerpt && (
           <div className="my-4 text-xl md:w-1/2 pr-10  ">
-            <h2 className="first-letter:float-left first-letter:text-heading-xl md:first-letter:text-heading-2xl first-letter:px-4 first-letter:text-primary-600 dark:first-letter:text-fog">{expertTalk.field_excerpt}</h2> </div>
+            <h2 className="first-letter:float-left first-letter:text-heading-xl md:first-letter:text-heading-2xl first-letter:px-4 first-letter:text-primary-600 dark:first-letter:text-fog" data-aos="fade">{expertTalk.field_excerpt}</h2> </div>
         )}
 
         {expertTalk.field_image && (
-          <figure>
+          <figure data-aos="fade">
             <Image
               src={absoluteUrl(expertTalk.field_image.uri.url)}
               width={768}
@@ -68,6 +69,7 @@ export function ExpertTalk({ expertTalk, ...props }: ExpertTalkProps) {
         <FormattedText
           className={expertTalk.body.processed.length > 700 ? "mt-4 text-md/xl text-steelgray dark:text-mischka sm:text-lg md:columns-2 columns-1" : "mt-4 text-md/xl text-steelgray dark:text-mischka sm:text-lg"}
           html={expertTalk.body?.processed}
+          data-aos="fade"
         />
       )}
     </article>

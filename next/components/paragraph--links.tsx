@@ -1,7 +1,6 @@
-import Link from "next/link";
-
-import { Links } from "@/lib/zod/paragraph";
 import ArrowIcon from "@/styles/icons/arrow-down.svg";
+import Link from "next/link";
+import { Links } from "@/lib/zod/paragraph";
 
 export function ParagraphLinks({ paragraph }: { paragraph: Links }) {
   if (!paragraph.field_links?.length) return null;
@@ -14,6 +13,7 @@ export function ParagraphLinks({ paragraph }: { paragraph: Links }) {
           role="listitem"
           href={link.full_url}
           className="relative min-h-[6em] cursor-pointer rounded border border-finnishwinter bg-primary-100 p-8 text-lg text-steelgray hover:bg-primary-200"
+          data-aos="fade"
         >
           {link.title}
           <ArrowIcon

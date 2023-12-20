@@ -1,10 +1,9 @@
+import { Client } from "@/components/logo-wall/client";
+import { Client as ClientType } from "@/lib/zod/client";
+import { LoadingSpinner } from "@/components/loading-spinner";
+import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import { useQuery } from "@tanstack/react-query";
-
-import { Client } from "@/components/logo-wall/client";
-import { LoadingSpinner } from "@/components/loading-spinner";
-import { Client as ClientType } from "@/lib/zod/client";
 
 export function ClientsListing({
   listingId,
@@ -35,7 +34,7 @@ export function ClientsListing({
       <ul className="flex flex-wrap justify-center items-center">
         {!isLoading &&
           data?.map((client: ClientType) => (
-            <li key={client.id}>
+            <li key={client.id} >
               <Client client={client} />
             </li>
           ))}

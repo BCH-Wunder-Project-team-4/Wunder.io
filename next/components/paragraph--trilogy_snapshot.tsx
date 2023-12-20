@@ -1,8 +1,8 @@
 import { FormattedText } from "@/components/formatted-text";
+import Link from "next/link";
 import { MediaImage } from "@/components/media--image";
 import { TrilogySnapshot as TrilogySnapshotType } from "@/lib/zod/paragraph";
 import clsx from "clsx";
-import Link from "next/link";
 
 export function ParagraphTrilogySnapshot({
   paragraph,
@@ -19,6 +19,7 @@ export function ParagraphTrilogySnapshot({
           className={
             "leading-none max-w-2xl text-left text-heading-sm font-bold tracking-tight text-primary-600 dark:text-fog md:text-heading-md"
           }
+          data-aos="fade"
         >
           {paragraph.field_heading}
         </h2>
@@ -28,8 +29,9 @@ export function ParagraphTrilogySnapshot({
             "mb-0 max-w-2xl text-left text-md/xl",
             paragraph.field_heading && "mt-4",
           )}
+          data-aos="fade"
         />
-        <div className="gap-4 sm:text-left">
+        <div className="gap-4 sm:text-left" data-aos="fade">
           {paragraph.field_primary_link && (
             <Link
               href={paragraph.field_primary_link.full_url}
@@ -40,7 +42,7 @@ export function ParagraphTrilogySnapshot({
           )}
         </div>
       </div>
-      <div className="grid grid-cols-3 md:grid-rows-[60px_minmax(120px,_1fr)_100px] grid-flow-col justify-items-center items-center">
+      <div className="grid grid-cols-3 md:grid-rows-[60px_minmax(120px,_1fr)_100px] grid-flow-col justify-items-center items-center" data-aos="fade">
         <MediaImage
           className="md:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px] row-span-2 row-start-2"
           media={paragraph.field_trilogy_images[0]}
