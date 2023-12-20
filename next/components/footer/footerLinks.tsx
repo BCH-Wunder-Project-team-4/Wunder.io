@@ -31,12 +31,12 @@ const companyLinks: TableLinks[] = [
   {
     id: 4,
     name: "About Wunder",
-    url: "/about",
+    url: "/about-wunder",
   },
   {
     id: 5,
     name: "Contact us",
-    url: "/Contact",
+    url: "/contact",
   },
 ];
 
