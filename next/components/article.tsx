@@ -17,8 +17,11 @@ export function Article({ article, ...props }: ArticleProps) {
 
   return (
     <div className="grid gap-4">
-      <HeadingPage >{article.title}</HeadingPage>
-      <div className="mb-4 text-scapaflow dark:text-graysuit justify-start items-center" data-aos="fade">
+      <HeadingPage>{article.title}</HeadingPage>
+      <div
+        className="mb-4 text-scapaflow dark:text-graysuit justify-start items-center"
+        data-aos="fade"
+      >
         {article.uid?.display_name && (
           <>
             <p>
@@ -43,7 +46,9 @@ export function Article({ article, ...props }: ArticleProps) {
         )}
       </div>
       {!article.field_image && article.field_excerpt && (
-        <div className="mb-4 text-xl" data-aos="fade">{article.field_excerpt}</div>
+        <div className="mb-4 text-xl" data-aos="fade">
+          {article.field_excerpt}
+        </div>
       )}
       {!article.field_excerpt && article.field_image && (
         <figure className="mb-4" data-aos="fade">
@@ -55,7 +60,6 @@ export function Article({ article, ...props }: ArticleProps) {
             alt={article.field_image.resourceIdObjMeta.alt}
             className="object-cover"
             priority
-
           />
           {article.field_image.resourceIdObjMeta.title && (
             <figcaption className="py-2 text-center text-sm text-scapaflow">
@@ -65,9 +69,15 @@ export function Article({ article, ...props }: ArticleProps) {
         </figure>
       )}
       {article.field_image && article.field_excerpt && (
-        <div className="grid grid-rows-1 md:grid-cols-7 gap-2 mb-8 md:mb-12" data-aos="fade">
+        <div
+          className="grid grid-rows-1 md:grid-cols-7 gap-2 mb-8 md:mb-12 items-center"
+          data-aos="fade"
+        >
           {article.field_excerpt && (
-            <div className="mb-4 text-lg lg:text-xl md:col-start-1 md:col-span-3" data-aos="fade">
+            <div
+              className="mb-4 text-lg lg:text-xl md:col-start-1 md:col-span-3"
+              data-aos="fade"
+            >
               {article.field_excerpt}
             </div>
           )}

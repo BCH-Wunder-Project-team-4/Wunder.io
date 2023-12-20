@@ -11,7 +11,6 @@ interface MainMenuFullProps {
 export function MainMenuFull({ menu }: MainMenuFullProps) {
   // State to track the visibility of submenus
   const [visibleSubmenu, setVisibleSubmenu] = useState<string | null>(null);
-  const [activeSubitemId, setActiveSubitemId] = useState<string | null>(null);
 
   const handleMouseEnter = (itemId: string) => {
     setVisibleSubmenu(itemId);
@@ -49,7 +48,6 @@ export function MainMenuFull({ menu }: MainMenuFullProps) {
                 href={item.url}
                 onClick={() => {
                   setVisibleSubmenu(item.id);
-                  setActiveSubitemId(null);
                 }}
               >
                 <div className="flex flex-row items-center w-full mt-2 text-base text-left bg-transparent rounded-lg md:w-auto md:block md:mt-0 md:ml-4 focus:outline-none hover:underline">
@@ -73,18 +71,15 @@ export function MainMenuFull({ menu }: MainMenuFullProps) {
                     visibleSubmenu === item.id ? "block" : "hidden"
                   } bg-primary-500`}
                 >
-                  <div className="px-4 pt-2 pb-4 bg-primary-600 text-white shadow-lg w-50">
+                  <div className="px-4 pt-2 pb-4 bg-primary-600 text-white shadow-lg w-[150px]">
                     <ul className="grid grid-cols-1 gap-4">
                       {item.items.map((subitem) => (
                         <li key={subitem.id}>
                           <Link
                             href={subitem.url}
-                            className={`hover:underline block pb-1 ${
-                              activeSubitemId === subitem.id ? "underline" : ""
-                            }`}
+                            className="hover:underline block pb-1"
                             onClick={() => {
                               setVisibleSubmenu(null);
-                              setActiveSubitemId(subitem.id);
                             }}
                           >
                             {subitem.title}
