@@ -101,7 +101,7 @@ export function ContactForm() {
               className="border w-11/12 p-1"
               type="email"
               id="email"
-              placeholder="email"
+              placeholder="Email"
               {...register("email", {
                 required: true,
               })}
