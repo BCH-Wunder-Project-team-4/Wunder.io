@@ -32,7 +32,7 @@ export function ParagraphTextAndImage({
             {paragraph.field_heading}
           </h2>
           <p
-            className="mb-4 max-w-2xl text-left text-md/xl mt-4 text-steelgray dark:text-mischka"
+            className="mb-6 max-w-2xl text-left text-md/xl mt-4 text-steelgray dark:text-mischka"
             data-aos="fade"
           >
             {paragraph.field_text}
@@ -110,7 +110,7 @@ export function ParagraphTextAndImage({
             {paragraph.field_heading}
           </h2>
           <p
-            className="mb-4 max-w-2xl text-left text-md/xl mt-4 text-steelgray dark:text-mischka"
+            className="mb-6 max-w-2xl text-left text-md/xl mt-4 text-steelgray dark:text-mischka"
             data-aos="fade"
           >
             {paragraph.field_text}

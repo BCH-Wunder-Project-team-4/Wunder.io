@@ -28,7 +28,7 @@ export function ParagraphTrilogySnapshot({
         <FormattedText
           html={paragraph.field_formatted_text.processed}
           className={clsx(
-            "mb-0 max-w-2xl text-left text-md/xl",
+            "mb-4 max-w-2xl text-left text-md/xl",
             paragraph.field_heading && "mt-4",
           )}
           data-aos="fade"
