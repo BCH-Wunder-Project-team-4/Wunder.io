@@ -3,6 +3,8 @@ import Link from "next/link";
 import { MediaImage } from "@/components/media--image";
 import { TrilogySnapshot as TrilogySnapshotType } from "@/lib/zod/paragraph";
 import clsx from "clsx";
+import { buttonVariants } from "@/ui/button";
+import ArrowIcon from "@/styles/icons/arrow-down.svg";
 
 export function ParagraphTrilogySnapshot({
   paragraph,
@@ -35,14 +37,22 @@ export function ParagraphTrilogySnapshot({
           {paragraph.field_primary_link && (
             <Link
               href={paragraph.field_primary_link.full_url}
-              className="dark:text-fog text-primary-600 text-base inline-flex hover:underline mt-2 text-md/xl"
+              className={clsx(
+                buttonVariants({ variant: "secondary" }),
+                "text-base mr-4 inline-flex px-5 py-3 my-3",
+              )}
+              data-aos="fade"
             >
               {paragraph.field_primary_link.title}
+              <ArrowIcon aria-hidden className="ml-3 h-6 w-6 -rotate-90" />
             </Link>
           )}
         </div>
       </div>
-      <div className="grid grid-cols-3 md:grid-rows-[60px_minmax(120px,_1fr)_100px] grid-flow-col justify-items-center items-center" data-aos="fade">
+      <div
+        className="grid grid-cols-3 md:grid-rows-[60px_minmax(120px,_1fr)_100px] grid-flow-col justify-items-center items-center"
+        data-aos="fade"
+      >
         <MediaImage
           className="md:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,rgba(0,0,0,0.3)_0px_3px_7px_-3px] row-span-2 row-start-2"
           media={paragraph.field_trilogy_images[0]}
