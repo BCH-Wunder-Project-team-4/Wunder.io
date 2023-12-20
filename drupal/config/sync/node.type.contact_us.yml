@@ -1,0 +1,19 @@
+uuid: a696ddfd-1f54-4ee5-97d4-ff78ad7c8f73
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - admin
+      - main
+    parent: 'main:'
+name: contact_us
+type: contact_us
+description: 'Represents the contact of the site. Only one content of this type can be created.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

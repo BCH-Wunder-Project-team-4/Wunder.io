@@ -17,12 +17,7 @@ id: contact
 title: Contact
 description: 'Basic email contact webform.'
 categories: {  }
-elements: |
-  name:
-    '#title': 'Your Name'
-    '#type': textfield
-    '#required': true
-    '#default_value': '[current-user:display-name]'
+elements: |-
   email:
     '#title': 'Your Email'
     '#type': email
@@ -38,6 +33,17 @@ elements: |
     '#type': textarea
     '#required': true
     '#test': 'Please ignore this email.'
+  first_name:
+    '#type': textfield
+    '#title': 'First Name'
+    '#required': true
+  last_name:
+    '#type': textfield
+    '#title': 'Last Name'
+    '#required': true
+  phone_number:
+    '#type': textfield
+    '#title': 'Phone Number'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'

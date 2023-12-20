@@ -1,0 +1,21 @@
+uuid: d8bb87f0-fe2f-4019-aaef-f4d2660ac4cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_body.field_contact_greeting
+    - paragraphs.paragraphs_type.contact_body
+id: paragraph.contact_body.default
+targetEntityType: paragraph
+bundle: contact_body
+mode: default
+content:
+  field_contact_greeting:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

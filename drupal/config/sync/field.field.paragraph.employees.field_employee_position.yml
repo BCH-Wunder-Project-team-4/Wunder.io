@@ -1,0 +1,19 @@
+uuid: 763d9dfd-ddf4-42a4-9c13-cf593413e36a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_employee_position
+    - paragraphs.paragraphs_type.employees
+id: paragraph.employees.field_employee_position
+field_name: field_employee_position
+entity_type: paragraph
+bundle: employees
+label: employee_position
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
