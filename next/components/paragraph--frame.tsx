@@ -14,7 +14,7 @@ export function ParagraphFrame({ paragraph }: { paragraph: FrameType }) {
   return (
     <section
       id="hero"
-      className="border-b border-primary-600 dark:border-fog py-5"
+      className="py-5"
     >
       <div className="lg:grid lg:grid-cols-3 lg:gap-8 md:flex-col">
         <div className="lg:col-span-1 flex flex-col justify-center p-4">
@@ -26,12 +26,12 @@ export function ParagraphFrame({ paragraph }: { paragraph: FrameType }) {
           <FormattedText
             html={paragraph.field_formatted_text.processed}
             className={clsx(
-              "mb-0 max-w-2xl text-left text-primary-600 md:mb-4",
+              "mb-0 max-w-2xl text-left text-lg text-primary-600",
               paragraph.field_heading && "mt-4",
             )}
           />
         </div>
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-2 flex items-center justify-center">
           {isLaptop ? (
             // laptop option:
             <div className="flex-none">
@@ -51,7 +51,7 @@ export function ParagraphFrame({ paragraph }: { paragraph: FrameType }) {
                   />
                 </div>
               </div>
-              <div className="relative mx-auto bg-scapaflow dark:bg-stone rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]">
+              <div className="relative mx-auto bg-scapaflow dark:bg-stone rounded-b-xl rounded-t-sm h-[17px] min-w-[351px] md:h-[21px] md:min-w-[597px]">
                 <div className="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-steelgray dark:bg-scapaflow"></div>
               </div>
             </div>
@@ -109,10 +109,10 @@ export function ParagraphFrame({ paragraph }: { paragraph: FrameType }) {
   return (
     <section
     id="hero"
-    className="border-b border-primary-600 dark:border-fog py-5"
+    className="py-5"
   >
     <div className="lg:grid lg:grid-cols-3 lg:gap-8 md:flex-col">
-      <div className="lg:col-span-2">
+      <div className="lg:col-span-2 flex items-center justify-center">
         {isLaptop ? (
           // laptop option:
           <div className="flex-none">
@@ -132,7 +132,7 @@ export function ParagraphFrame({ paragraph }: { paragraph: FrameType }) {
                 />
               </div>
             </div>
-            <div className="relative mx-auto bg-scapaflow dark:bg-stone rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]">
+            <div className="relative mx-auto bg-scapaflow dark:bg-stone rounded-b-xl rounded-t-sm h-[17px] min-w-[351px] md:h-[21px] md:min-w-[597px]">
               <div className="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-steelgray dark:bg-scapaflow"></div>
             </div>
           </div>
@@ -191,7 +191,7 @@ export function ParagraphFrame({ paragraph }: { paragraph: FrameType }) {
         <FormattedText
           html={paragraph.field_formatted_text.processed}
           className={clsx(
-            "mb-0 max-w-2xl text-left text-primary-600",
+            "mb-0 max-w-2xl text-left text-lg text-primary-600 md:mb-4",
             paragraph.field_heading 
           )}
         />
