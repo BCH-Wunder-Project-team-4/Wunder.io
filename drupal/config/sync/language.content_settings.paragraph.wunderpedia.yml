@@ -1,0 +1,18 @@
+uuid: 644d5ad1-9ef1-49ad-8663-f06c51e15773
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.wunderpedia
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.wunderpedia
+target_entity_type_id: paragraph
+target_bundle: wunderpedia
+default_langcode: site_default
+language_alterable: false

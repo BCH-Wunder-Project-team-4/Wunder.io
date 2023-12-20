@@ -12,7 +12,7 @@ bundle: banner
 label: Slogan
 description: 'Add a slogan, e.g. "Shaping the digital experience".'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

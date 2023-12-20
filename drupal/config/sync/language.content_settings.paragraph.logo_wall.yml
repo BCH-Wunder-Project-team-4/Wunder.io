@@ -1,0 +1,18 @@
+uuid: 51cc330c-adea-47ee-b4b4-ef720e7d9841
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.logo_wall
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.logo_wall
+target_entity_type_id: paragraph
+target_bundle: logo_wall
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,18 @@
+uuid: bb21b5c3-a185-4f64-bba8-1f96942aeb39
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.wunder_story
+id: paragraph.wunder_story.created
+field_name: created
+entity_type: paragraph
+bundle: wunder_story
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

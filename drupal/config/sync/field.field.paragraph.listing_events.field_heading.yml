@@ -12,7 +12,7 @@ bundle: listing_events
 label: Heading
 description: 'Heading for the whole accordion'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

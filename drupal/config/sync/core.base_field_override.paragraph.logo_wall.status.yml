@@ -1,0 +1,22 @@
+uuid: 13b4e2d6-1e71-4bd3-a38d-c79713c719e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.logo_wall
+id: paragraph.logo_wall.status
+field_name: status
+entity_type: paragraph
+bundle: logo_wall
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
