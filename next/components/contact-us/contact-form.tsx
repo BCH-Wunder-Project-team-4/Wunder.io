@@ -75,7 +75,7 @@ export function ContactForm() {
               className="border w-11/12 p-1"
               type="text"
               id="firstName"
-              placeholder="first name"
+              placeholder="First Name"
               {...register("firstName", {
                 required: true,
               })}
@@ -87,7 +87,7 @@ export function ContactForm() {
               className="border w-11/12 p-1 float-right"
               type="text"
               id="lastName"
-              placeholder="last name"
+              placeholder="Last Name"
               {...register("lastName", {
                 required: true,
               })}
@@ -113,7 +113,7 @@ export function ContactForm() {
               className="border w-11/12 p-1 float-right"
               type="number"
               id="phoneNumber"
-              placeholder="phone"
+              placeholder="Phone"
               {...register("phoneNumber", {
                 required: true,
               })}
@@ -126,7 +126,7 @@ export function ContactForm() {
               className="border w-full p-1"
               type="text"
               id="subject"
-              placeholder="subject"
+              placeholder="Subject"
               {...register("subject", {
                 required: true,
               })}
@@ -136,7 +136,7 @@ export function ContactForm() {
             <Label htmlFor="message"></Label>
             <Textarea
               id="message"
-              placeholder="write something ..."
+              placeholder="Write Something ..."
               {...register("message", {
                 required: true,
               })}
