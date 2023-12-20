@@ -1,0 +1,18 @@
+uuid: fc7d41ce-debd-4c8e-b315-6f160873cc43
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.scrolling_numbers_item
+id: paragraph.scrolling_numbers_item.created
+field_name: created
+entity_type: paragraph
+bundle: scrolling_numbers_item
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

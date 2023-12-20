@@ -1,0 +1,18 @@
+uuid: 607207e5-9979-455c-a396-f820d24fd2c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.listing_experts_talks
+id: paragraph.listing_experts_talks.created
+field_name: created
+entity_type: paragraph
+bundle: listing_experts_talks
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

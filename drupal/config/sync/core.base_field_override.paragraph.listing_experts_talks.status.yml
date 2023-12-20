@@ -1,0 +1,22 @@
+uuid: a50b053a-c8e6-4954-a442-33a917c32b63
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.listing_experts_talks
+id: paragraph.listing_experts_talks.status
+field_name: status
+entity_type: paragraph
+bundle: listing_experts_talks
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,18 @@
+uuid: e8aff32c-bb68-493e-a4bf-20b1dcf30f62
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.simple_quote
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.simple_quote
+target_entity_type_id: paragraph
+target_bundle: simple_quote
+default_langcode: site_default
+language_alterable: false

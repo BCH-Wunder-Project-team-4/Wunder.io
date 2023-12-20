@@ -12,7 +12,7 @@ bundle: banner
 label: Ingress
 description: 'Add short and catchy text of what the following content is about.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

@@ -14,7 +14,7 @@ bundle: wunder_story
 label: 'Formatted text'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
