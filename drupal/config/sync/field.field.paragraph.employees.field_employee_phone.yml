@@ -1,0 +1,19 @@
+uuid: b318df33-30b6-488b-8dd5-a11dcd445a57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_employee_phone
+    - paragraphs.paragraphs_type.employees
+id: paragraph.employees.field_employee_phone
+field_name: field_employee_phone
+entity_type: paragraph
+bundle: employees
+label: employee_phone
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,35 @@
+uuid: 72313d80-4304-46a1-8f94-a1e271ce0d0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.all_employees.field_employees_content_elements
+    - paragraphs.paragraphs_type.all_employees
+  module:
+    - paragraphs
+id: paragraph.all_employees.default
+targetEntityType: paragraph
+bundle: all_employees
+mode: default
+content:
+  field_employees_content_elements:
+    type: paragraphs
+    weight: 0
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

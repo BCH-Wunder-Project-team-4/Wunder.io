@@ -1,0 +1,25 @@
+uuid: b579960a-93b9-4f00-baef-7cf3340e7fa1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.contact_us.field_contact_content_elements
+    - field.field.node.contact_us.field_contact_invoicing
+    - node.type.contact_us
+  module:
+    - user
+id: node.contact_us.teaser
+targetEntityType: node
+bundle: contact_us
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_contact_content_elements: true
+  field_contact_invoicing: true
+  langcode: true

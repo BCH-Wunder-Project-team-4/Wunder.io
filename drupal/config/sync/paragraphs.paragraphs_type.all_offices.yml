@@ -1,0 +1,10 @@
+uuid: 0b43e134-9b28-4851-a40d-18798285a224
+langcode: en
+status: true
+dependencies: {  }
+id: all_offices
+label: all_offices
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

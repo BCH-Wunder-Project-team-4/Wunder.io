@@ -1,0 +1,19 @@
+uuid: 7d7a91aa-343e-445d-8688-54c6fa89a3c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_office_city
+    - paragraphs.paragraphs_type.offices
+id: paragraph.offices.field_office_city
+field_name: field_office_city
+entity_type: paragraph
+bundle: offices
+label: office_city
+description: 'city of the office'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,121 @@
+uuid: 665498ff-2190-4475-a56d-4f7da67deaf3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_employees_content_elements
+    - paragraphs.paragraphs_type.all_employees
+    - paragraphs.paragraphs_type.employees
+  module:
+    - entity_reference_revisions
+id: paragraph.all_employees.field_employees_content_elements
+field_name: field_employees_content_elements
+entity_type: paragraph
+bundle: all_employees
+label: employees_content_elements
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      employees: employees
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 33
+        enabled: false
+      accordion_item:
+        weight: 34
+        enabled: false
+      all_employees:
+        weight: 32
+        enabled: false
+      anchor:
+        weight: 35
+        enabled: false
+      article_body_text:
+        weight: 36
+        enabled: false
+      banner:
+        weight: 37
+        enabled: false
+      contact_body:
+        weight: 38
+        enabled: false
+      employees:
+        weight: 39
+        enabled: true
+      event_speakers_information:
+        weight: 40
+        enabled: false
+      file_attachments:
+        weight: 41
+        enabled: false
+      formatted_text:
+        weight: 42
+        enabled: false
+      frame:
+        weight: 43
+        enabled: false
+      full_width_paragraph:
+        weight: 44
+        enabled: false
+      hero:
+        weight: 45
+        enabled: false
+      image:
+        weight: 46
+        enabled: false
+      links:
+        weight: 47
+        enabled: false
+      listing_articles:
+        weight: 48
+        enabled: false
+      listing_events:
+        weight: 49
+        enabled: false
+      listing_experts_talks:
+        weight: 50
+        enabled: false
+      logo_wall:
+        weight: 51
+        enabled: false
+      offices:
+        weight: 52
+        enabled: false
+      scrolling_numbers:
+        weight: 53
+        enabled: false
+      scrolling_numbers_item:
+        weight: 54
+        enabled: false
+      sectionbg:
+        weight: 55
+        enabled: false
+      services:
+        weight: 56
+        enabled: false
+      simple_quote:
+        weight: 57
+        enabled: false
+      subheading:
+        weight: 58
+        enabled: false
+      trilogy_snapshot:
+        weight: 59
+        enabled: false
+      video:
+        weight: 60
+        enabled: false
+      wunder_story:
+        weight: 62
+        enabled: false
+      wunderpedia:
+        weight: 61
+        enabled: false
+field_type: entity_reference_revisions

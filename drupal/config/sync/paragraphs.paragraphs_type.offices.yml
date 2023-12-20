@@ -1,0 +1,10 @@
+uuid: 095b5ebc-eaaa-4c90-be2f-5ef2845ef1a9
+langcode: en
+status: true
+dependencies: {  }
+id: offices
+label: offices
+icon_uuid: null
+icon_default: null
+description: 'wunder branches details will be here'
+behavior_plugins: {  }
