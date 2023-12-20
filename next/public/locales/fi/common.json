@@ -29,7 +29,7 @@
   "Page not found": "Sivua ei löydy",
   "The page you are looking for does not exist.": "Hakemaasi sivua ei löydy.",
   "Go back to the homepage?": "Palaa etusivulle?",
-  "meta-site-name": "Next-drupal wunder mallisivusto",
+  "meta-site-name": "Muotoilemme digitaalista kokemusta",
   "meta-site-description": "Esimerkkisivusto, joka esittelee next-drupalin käyttöä monikielisessä sivustossa.",
   "filter-search": "Suodata hakua",
   "form-description": "Tämä yhteydenottolomake lähetetään oletusarvoiseen yhteydenottolomakkeeseen Drupal-puolella.",
@@ -97,7 +97,7 @@
   "Careers": "Urat",
   "About Wunder": "Wunder",
   "Contact us": "Ota yhteyttä",
-  "News & Events": "Uutiset ja tapahtumat",
+  "Insights": "Oivallukset",
   "Blog": "Blogi",
   "Wunderpedia": "Wunderpedia",
   "Wunderway": "Wunderway",
@@ -131,5 +131,10 @@
   "All events": "Kaikki tapahtumat",
   "View all events": "Kaikki tapahtumat",
   "All expert talks": "Asiantuntijapuheet",
-  "View all articles": "Kaikki artikkelit"
+  "View all articles": "Kaikki artikkelit",
+  "Send us a message": "Lähetä meille viesti",
+  "We'd love to hear from you": "Kuulisimme mielellämme sinusta",
+  "Follow Us": "Seuraa meitä",
+  "Connect with various social media platforms": "Yhdistä eri sosiaalisen median alustoihin",
+  "Do you want to hear more about Wunder? Contact us": "Haluatko kuulla lisää Wunderista? Ota yhteyttä"
 }
