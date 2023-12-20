@@ -1,4 +1,4 @@
-uuid: dd41da17-d70d-4803-9dee-6e1dddd5e638
+uuid: eeb7660e-9a05-4c88-89e4-58746b15b5db
 langcode: en
 status: true
 dependencies:
@@ -8,11 +8,11 @@ dependencies:
     - content_translation
 third_party_settings:
   content_translation:
-    enabled: false
+    enabled: true
     bundle_settings:
       untranslatable_fields_hide: '0'
 id: paragraph.listing_events
 target_entity_type_id: paragraph
 target_bundle: listing_events
 default_langcode: site_default
-language_alterable: false
+language_alterable: true
