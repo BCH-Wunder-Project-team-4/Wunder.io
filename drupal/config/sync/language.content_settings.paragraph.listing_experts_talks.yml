@@ -1,4 +1,4 @@
-uuid: 06c0baa0-3859-424b-8565-cb7e811038c2
+uuid: a1168aa7-fe8f-47be-9654-4372057878e4
 langcode: en
 status: true
 dependencies:
@@ -8,11 +8,11 @@ dependencies:
     - content_translation
 third_party_settings:
   content_translation:
-    enabled: false
+    enabled: true
     bundle_settings:
       untranslatable_fields_hide: '0'
 id: paragraph.listing_experts_talks
 target_entity_type_id: paragraph
 target_bundle: listing_experts_talks
 default_langcode: site_default
-language_alterable: false
+language_alterable: true
