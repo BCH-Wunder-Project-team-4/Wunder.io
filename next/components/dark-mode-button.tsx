@@ -16,7 +16,8 @@ const ThemeButton = () => {
     return (
       <button
         onClick={() => theme == "dark" ? setTheme('light') : setTheme("dark")}
-        className=' text-white text-2xl md:text-4xl rounded-lg'>
+        className=' text-white text-2xl md:text-4xl rounded-lg'
+        aria-label="Dark mode button">
         {theme === 'dark' ? (
         <FiSun className='w-5 h-5' />
         ) : (

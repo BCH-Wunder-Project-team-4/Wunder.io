@@ -80,6 +80,7 @@ export function CareersNewsletterForm() {
           <Checkbox
             required
             id="policy_checkbox"
+            aria-label="Checkbox for accepting privacy policy"
             {...register("policy_checkbox", {
               required: true,
             })}
