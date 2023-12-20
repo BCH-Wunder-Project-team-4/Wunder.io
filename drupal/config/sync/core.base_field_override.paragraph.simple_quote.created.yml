@@ -1,0 +1,18 @@
+uuid: dbd41fc5-0cfb-4cc9-a281-dfd74f2508fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.simple_quote
+id: paragraph.simple_quote.created
+field_name: created
+entity_type: paragraph
+bundle: simple_quote
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

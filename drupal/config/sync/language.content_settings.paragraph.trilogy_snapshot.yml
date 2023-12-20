@@ -1,0 +1,18 @@
+uuid: bfe350a8-c7a9-45ad-9efa-4346fab5e43a
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.trilogy_snapshot
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.trilogy_snapshot
+target_entity_type_id: paragraph
+target_bundle: trilogy_snapshot
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,22 @@
+uuid: 43d8a6a5-1000-461c-a466-456898428973
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.wunder_story
+id: paragraph.wunder_story.status
+field_name: status
+entity_type: paragraph
+bundle: wunder_story
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

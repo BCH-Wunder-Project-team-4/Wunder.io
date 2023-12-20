@@ -1,0 +1,22 @@
+uuid: 16ecdfa5-8612-4390-8020-37ec1b867e7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.offices
+id: paragraph.offices.status
+field_name: status
+entity_type: paragraph
+bundle: offices
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

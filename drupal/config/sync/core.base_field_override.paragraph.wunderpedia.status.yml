@@ -1,0 +1,22 @@
+uuid: 3df9f8ed-15f0-43f0-9f8b-185371ed90a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.wunderpedia
+id: paragraph.wunderpedia.status
+field_name: status
+entity_type: paragraph
+bundle: wunderpedia
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,22 @@
+uuid: f139e7d0-fdf8-4bcd-998d-0586e90928c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.sectionbg
+id: paragraph.sectionbg.status
+field_name: status
+entity_type: paragraph
+bundle: sectionbg
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

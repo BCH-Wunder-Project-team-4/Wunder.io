@@ -1,0 +1,22 @@
+uuid: 90ea2e71-ac7d-485b-832e-f69eb0069662
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.employee_contact_details
+id: paragraph.employee_contact_details.status
+field_name: status
+entity_type: paragraph
+bundle: employee_contact_details
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

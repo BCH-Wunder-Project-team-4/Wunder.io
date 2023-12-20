@@ -1,0 +1,18 @@
+uuid: 611bcfe3-c796-4f55-8a71-c1160eeed62b
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.scrolling_numbers
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.scrolling_numbers
+target_entity_type_id: paragraph
+target_bundle: scrolling_numbers
+default_langcode: site_default
+language_alterable: false

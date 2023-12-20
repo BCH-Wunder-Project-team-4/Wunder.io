@@ -1,0 +1,22 @@
+uuid: 2ec04077-03c1-4ed2-b259-db15b29eba14
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.scrolling_numbers
+id: paragraph.scrolling_numbers.status
+field_name: status
+entity_type: paragraph
+bundle: scrolling_numbers
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
