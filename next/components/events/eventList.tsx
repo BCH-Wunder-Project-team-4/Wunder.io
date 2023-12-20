@@ -31,6 +31,7 @@ export function EventListItem({ event }: EventListItemProps) {
           ? "border-primary-100 shadow-md shadow-primary-100 dark:shadow-fog "
           : "border-finnishwinter dark:bg-steelgray",
       )}
+      data-aos="fade"
     >
       <div className="flex flex-col">
         {event.field_event_image && (

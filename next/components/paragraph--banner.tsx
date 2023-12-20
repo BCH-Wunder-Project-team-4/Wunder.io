@@ -1,13 +1,11 @@
-import RoundedStickIcon from "@/styles/icons/rounded-stick.svg";
-import clsx from "clsx";
-import Link from "next/link";
-
-import { MediaImage } from "@/components/media--image";
-import { Banner as BannerType } from "@/lib/zod/paragraph";
 import ArrowIcon from "@/styles/icons/arrow-down.svg";
+import { Banner as BannerType } from "@/lib/zod/paragraph";
 import ExternalLinkIcon from "@/styles/icons/external.svg";
-
+import Link from "next/link";
+import { MediaImage } from "@/components/media--image";
+import RoundedStickIcon from "@/styles/icons/rounded-stick.svg";
 import { buttonVariants } from "@/ui/button";
+import clsx from "clsx";
 
 export function ParagraphBanner({ paragraph }: { paragraph: BannerType }) {
   const isExternalLink = (url) => {
@@ -17,7 +15,7 @@ export function ParagraphBanner({ paragraph }: { paragraph: BannerType }) {
   return (
     <section id="banner" className="mb-6">
       <div className="mx-auto grid max-w-screen-xl lg:grid-cols-12">
-        <div className="mr-auto place-self-center md:px-0 lg:pr-8 lg:pl-0 sm py-8 lg:col-span-6 lg:py-16">
+        <div className="mr-auto place-self-center md:px-0 lg:pr-8 lg:pl-0 sm py-8 lg:col-span-6 lg:py-16" data-aos="fade">
           {paragraph.field_heading && (
             <h1
               className={
@@ -80,6 +78,7 @@ export function ParagraphBanner({ paragraph }: { paragraph: BannerType }) {
               media={paragraph.field_image}
               alt="page-banner"
               priority
+              data-aos="fade"
             />
           )}
         </div>

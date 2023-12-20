@@ -1,10 +1,10 @@
-import { MediaImage } from "@/components/media--image";
-import { TextAndImage as TextAndImageType } from "@/lib/zod/paragraph";
-import clsx from "clsx";
-import Link from "next/link";
-import { buttonVariants } from "@/ui/button";
 import ArrowIcon from "@/styles/icons/arrow-down.svg";
 import ExternalLinkIcon from "@/styles/icons/external.svg";
+import Link from "next/link";
+import { MediaImage } from "@/components/media--image";
+import { TextAndImage as TextAndImageType } from "@/lib/zod/paragraph";
+import { buttonVariants } from "@/ui/button";
+import clsx from "clsx";
 
 export function ParagraphTextAndImage({
   paragraph,
@@ -24,11 +24,11 @@ export function ParagraphTextAndImage({
           <h2
             className={
               "leading-none max-w-2xl text-left text-heading-sm font-bold tracking-tight text-primary-600 dark:text-fog md:text-heading-md"
-            }
+            } data-aos="fade"
           >
             {paragraph.field_heading}
           </h2>
-          <p className="mb-4 max-w-2xl text-left text-md/xl mt-4 text-steelgray dark:text-mischka">
+          <p className="mb-4 max-w-2xl text-left text-md/xl mt-4 text-steelgray dark:text-mischka" data-aos="fade">
             {paragraph.field_text}
           </p>
           <div className="gap-4 sm:text-left">
@@ -49,6 +49,7 @@ export function ParagraphTextAndImage({
                   buttonVariants({ variant: "secondary" }),
                   "text-base mr-4 inline-flex px-5 py-3",
                 )}
+                data-aos="fade"
               >
                 {paragraph.field_primary_link.title}
                 {paragraph.field_link_type === "External" && (
@@ -67,6 +68,7 @@ export function ParagraphTextAndImage({
             media={paragraph.field_image}
             alt="site-image"
             priority
+            data-aos="fade"
           />
         </div>
       </section>
@@ -83,6 +85,7 @@ export function ParagraphTextAndImage({
             media={paragraph.field_image}
             alt="site-image"
             priority
+            data-aos="fade"
           />
         </div>
         <div>
@@ -90,13 +93,14 @@ export function ParagraphTextAndImage({
             className={
               "leading-none max-w-2xl text-left text-heading-sm font-bold tracking-tight text-primary-600 dark:text-fog md:text-heading-md"
             }
+            data-aos="fade"
           >
             {paragraph.field_heading}
           </h2>
-          <p className="mb-4 max-w-2xl text-left text-md/xl mt-4 text-steelgray dark:text-mischka">
+          <p className="mb-4 max-w-2xl text-left text-md/xl mt-4 text-steelgray dark:text-mischka" data-aos="fade">
             {paragraph.field_text}
           </p>
-          <div className="gap-4 sm:text-left">
+          <div className="gap-4 sm:text-left" data-aos="fade">
             {paragraph.field_primary_link && (
               <Link
                 href={paragraph.field_primary_link.full_url}

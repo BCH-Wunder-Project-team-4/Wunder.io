@@ -36,7 +36,7 @@ export function EventsListing({
       <ul className=" grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-10">
         {!isLoading &&
           data?.map((event: EventTeaserType) => (
-            <li key={event.id} className="flex flex-row justify-center my-8">
+            <li key={event.id} className="flex flex-row justify-center my-8" data-aos="fade">
               <EventTeaserComponent event={event} />
             </li>
           ))}

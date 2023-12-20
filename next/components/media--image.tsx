@@ -1,7 +1,7 @@
 import NextImage, { ImageProps } from "next/image";
 
-import { absoluteUrl } from "@/lib/drupal/absolute-url";
 import { Image } from "@/lib/zod/paragraph";
+import { absoluteUrl } from "@/lib/drupal/absolute-url";
 
 interface MediaImageProps extends Partial<ImageProps> {
   media: Image["field_image"];
@@ -28,6 +28,7 @@ export function MediaImage({
       title={image.resourceIdObjMeta.title}
       className="h-auto max-w-full object-cover"
       {...props}
+      data-aos="fade"
     />
   );
 }

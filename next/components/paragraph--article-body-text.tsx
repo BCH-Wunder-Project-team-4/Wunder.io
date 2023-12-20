@@ -1,5 +1,5 @@
-import { ArticleFormattedText } from "@/components/article-formatted-text";
 import { ArticleBodyText as ArticleBodyTextType } from "@/lib/zod/paragraph";
+import { ArticleFormattedText } from "@/components/article-formatted-text";
 
 export function ParagraphArticleBodyText({
   paragraph,
@@ -17,6 +17,7 @@ export function ParagraphArticleBodyText({
         <ArticleFormattedText
           html={paragraph.field_formatted_text.processed}
           className="text-left text-md mt-4"
+          data-aos="fade"
         />
       )}
     </>

@@ -9,7 +9,10 @@ export function Service({ service }: ServiceProps) {
   return (
     <div className="grid gap-4">
       {service.field_content_elements?.map((paragraph) => (
-        <Paragraph key={paragraph.id} paragraph={paragraph} />
+        <div data-aos="fade">
+
+          <Paragraph key={paragraph.id} paragraph={paragraph} />
+        </div>
       ))}
     </div>
   );

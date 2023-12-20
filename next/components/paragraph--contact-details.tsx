@@ -10,7 +10,7 @@ export function ParagraphContactDetails({
   if (!paragraph.field_contact_data?.length) return null;
 
   return (
-    <section id="contact_details" className="my-4">
+    <section id="contact_details" className="my-4" data-aos="fade">
       {paragraph.field_heading && (
         <h2
           className={
@@ -30,6 +30,7 @@ export function ParagraphContactDetails({
           <div
             className="text-left text-steelgray dark:text-mischka"
             key={contact.field_name}
+            data-aos="fade"
           >
             <MediaImage
               media={contact.field_image}
