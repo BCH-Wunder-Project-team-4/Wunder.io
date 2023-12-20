@@ -1,4 +1,4 @@
-uuid: fea257e7-fcd2-49ba-ba39-f48f6a6ccd5f
+uuid: badce63f-9456-4dda-ae94-5d5ea665c0b0
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ bundle: contact_body
 label: 'Authored on'
 description: 'The time that the Paragraph was created.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

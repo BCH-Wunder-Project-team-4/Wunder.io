@@ -1,4 +1,4 @@
-uuid: 6c5461f8-8265-4728-badd-0bafcd48c59b
+uuid: 43d8a6a5-1000-461c-a466-456898428973
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ bundle: wunder_story
 label: Published
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: 1

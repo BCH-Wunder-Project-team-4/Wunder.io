@@ -1,4 +1,4 @@
-uuid: 98bb4f45-9e97-46e9-ab1c-1d1af42a1172
+uuid: 11daf7c7-c1ed-49c3-b42c-d7fd009a833b
 langcode: en
 status: true
 dependencies:
@@ -8,11 +8,11 @@ dependencies:
     - content_translation
 third_party_settings:
   content_translation:
-    enabled: false
+    enabled: true
     bundle_settings:
       untranslatable_fields_hide: '0'
 id: paragraph.banner
 target_entity_type_id: paragraph
 target_bundle: banner
 default_langcode: site_default
-language_alterable: false
+language_alterable: true

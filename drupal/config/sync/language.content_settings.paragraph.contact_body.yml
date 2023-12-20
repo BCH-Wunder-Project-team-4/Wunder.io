@@ -1,4 +1,4 @@
-uuid: c9956fd2-6fff-4509-a018-6601d7705751
+uuid: f7f13527-c958-41b1-a56b-272c02b0f8ef
 langcode: en
 status: true
 dependencies:
@@ -8,11 +8,11 @@ dependencies:
     - content_translation
 third_party_settings:
   content_translation:
-    enabled: false
+    enabled: true
     bundle_settings:
       untranslatable_fields_hide: '0'
 id: paragraph.contact_body
 target_entity_type_id: paragraph
 target_bundle: contact_body
 default_langcode: site_default
-language_alterable: false
+language_alterable: true

@@ -12,7 +12,7 @@ bundle: banner
 label: Heading
 description: 'Add a main heading, e.g. "About us".'
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

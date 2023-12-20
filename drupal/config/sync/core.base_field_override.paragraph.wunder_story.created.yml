@@ -1,4 +1,4 @@
-uuid: c2e952bd-4fe4-49af-9e91-5d1bd9188416
+uuid: bb21b5c3-a185-4f64-bba8-1f96942aeb39
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ bundle: wunder_story
 label: 'Authored on'
 description: 'The time that the Paragraph was created.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

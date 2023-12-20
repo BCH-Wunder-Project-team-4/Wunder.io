@@ -1,4 +1,4 @@
-uuid: 6bb5a20a-67a7-482b-8728-c9c720e388ea
+uuid: 3b9ae422-f613-4dc3-84ad-a316c99f5d78
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ bundle: contact_body
 label: Published
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: 1

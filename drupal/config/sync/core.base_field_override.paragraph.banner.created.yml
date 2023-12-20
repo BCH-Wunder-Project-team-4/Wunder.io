@@ -1,4 +1,4 @@
-uuid: f4a847bf-de61-4937-85f7-9809a4b51be3
+uuid: 34b0a5a1-0c1b-4c23-b1e8-61d2f4f9d453
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ bundle: banner
 label: 'Authored on'
 description: 'The time that the Paragraph was created.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
