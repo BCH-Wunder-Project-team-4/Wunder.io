@@ -43,23 +43,18 @@ const companyLinks: TableLinks[] = [
 const resourcesLinks: TableLinks[] = [
   {
     id: 1,
-    name: "News & Events",
-    url: "/news",
+    name: "Insights",
+    url: "/insights",
   },
   {
     id: 2,
-    name: "Blog",
-    url: "/blog",
-  },
-  {
-    id: 3,
     name: "Wunderpedia",
     url: "/wunderpedia",
   },
   {
-    id: 4,
+    id: 3,
     name: "Wunderway",
-    url: "/wunderway",
+    url: "/wunderpedia/wunderway",
   },
 ];
 

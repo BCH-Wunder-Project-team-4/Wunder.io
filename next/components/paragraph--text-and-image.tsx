@@ -61,14 +61,16 @@ export function ParagraphTextAndImage({
             )}
           </div>
         </div>
-        <div className="flex items-center lg:items-start">
-          <MediaImage
-            className="object-cover lg:w-5/6 lg:h-6/6"
-            media={paragraph.field_image}
-            alt="site-image"
-            priority
-          />
-        </div>
+        {paragraph.field_image && (
+          <div className="flex items-center lg:items-start">
+            <MediaImage
+              className="object-cover lg:w-5/6 lg:h-6/6"
+              media={paragraph.field_image}
+              alt="site-image"
+              priority
+            />
+          </div>
+        )}
       </section>
     );
   } else {
@@ -77,14 +79,16 @@ export function ParagraphTextAndImage({
         id="text-and-image"
         className="my-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16"
       >
-        <div className="flex items-center lg:items-start">
-          <MediaImage
-            className="object-cover lg:w-5/6 lg:h-6/6"
-            media={paragraph.field_image}
-            alt="site-image"
-            priority
-          />
-        </div>
+        {paragraph.field_image && (
+          <div className="flex items-center lg:items-start">
+            <MediaImage
+              className="object-cover lg:w-5/6 lg:h-6/6"
+              media={paragraph.field_image}
+              alt="site-image"
+              priority
+            />
+          </div>
+        )}
         <div>
           <h2
             className={
