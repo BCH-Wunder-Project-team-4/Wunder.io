@@ -92,8 +92,8 @@ export function Article({ article, ...props }: ArticleProps) {
       <div className="grid grid-rows-1 md:grid-cols-6 gap-2">
         <div className="md:col-start-2 md:col-span-4">
           {article.field_content_elements?.map((paragraph) => (
-            <div data-aos="fade">
-              <Paragraph key={paragraph.id} paragraph={paragraph} />
+            <div data-aos="fade" key={paragraph.id}>
+              <Paragraph paragraph={paragraph} />
             </div>
           ))}
         </div>

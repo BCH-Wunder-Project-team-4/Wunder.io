@@ -35,6 +35,7 @@ export const CaseSchema = z.object({
   type: z.literal("node--case"),
   id: z.string(),
   title: z.string(),
+  field_excerpt: z.string().optional().nullable(),
   field_image: ImageShape.nullable().default(null),
   field_date: z.string(),
   field_industry: z.array(z.object({

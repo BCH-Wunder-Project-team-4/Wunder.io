@@ -185,6 +185,7 @@ export function getNodePageJsonApiParams(resourceType: ResourceType) {
       ])
       .addFields("node--case", [
         "title",
+        "field_excerpt",
         "field_industry",
         "field_solution",
         "field_technology",
