@@ -10,6 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { env } from "@/env";
 import { isRelative } from "@/lib/utils";
+import ExternalLinkIcon from "styles/icons/external.svg";
 
 const isElement = (domNode: DOMNode): domNode is Element =>
   domNode.type === "tag";
@@ -40,7 +41,6 @@ const options: HTMLReactParserOptions = {
               className="max-w-full object-cover"
               data-aos="fade"
             />
-
           );
         }
         break;
@@ -56,6 +56,20 @@ const options: HTMLReactParserOptions = {
             </Link>
           );
         }
+        if (href && !isRelative(href)) {
+          return (
+            <Link
+              href={href}
+              target="_blank"
+              className="underline text-primary-600 dark:text-fog"
+              rel="noopener noreferrer"
+            >
+              {domToReact(domNode.children, options)}
+              <ExternalLinkIcon className="ml-1 inline-block h-[1em] w-[1em] text-primary-600 dark:text-fog" />
+            </Link>
+          );
+        }
+
         break;
       }
 

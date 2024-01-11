@@ -6,11 +6,9 @@ import { Invoice } from "@/components/contact-us/invoicing";
 import { LayoutProps } from "@/components/layout";
 import { Meta } from "@/components/meta";
 import { Paragraph } from "@/components/paragraph";
-import {
-  createLanguageLinksForNextOnlyPage
-} from "@/lib/contexts/language-links-context";
+import { createLanguageLinksForNextOnlyPage } from "@/lib/contexts/language-links-context";
 import { drupal } from "@/lib/drupal/drupal-client";
-import { getCommonPageProps } from "@/lib/get-common-page-props"
+import { getCommonPageProps } from "@/lib/get-common-page-props";
 import { getNodePageJsonApiParams } from "@/lib/drupal/get-node-page-json-api-params";
 import { useRef } from "react";
 import { useTranslation } from "next-i18next";
@@ -19,7 +17,8 @@ interface ContactPageProps extends LayoutProps {
   contact_us: ContactUs;
 }
 
-export default function ContactPage({ contact_us
+export default function ContactPage({
+  contact_us,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation();
   const focusRef = useRef<HTMLDivElement>(null);
@@ -35,14 +34,16 @@ export default function ContactPage({ contact_us
       </div>
       <div>
         {contact_us?.field_contact_invoicing?.map((paragraph) => (
-          <Invoice paragraph={paragraph}></Invoice>
+          <Invoice key={paragraph.id} paragraph={paragraph}></Invoice>
         ))}
       </div>
     </>
   );
 }
 
-export const getStaticProps: GetStaticProps<ContactPageProps> = async (context) => {
+export const getStaticProps: GetStaticProps<ContactPageProps> = async (
+  context,
+) => {
   const pageRoot = "/contact";
   const languageLinks = createLanguageLinksForNextOnlyPage(pageRoot, context);
   const contact_us = (
@@ -54,10 +55,14 @@ export const getStaticProps: GetStaticProps<ContactPageProps> = async (context) 
       },
     )
   ).at(0);
-  const employeeTeasers = await drupal.getResourceCollectionFromContext<DrupalNode[]>("node--employee", context, {
+  const employeeTeasers = await drupal.getResourceCollectionFromContext<
+    DrupalNode[]
+  >("node--employee", context, {
     params: getNodePageJsonApiParams("node--employee").getQueryObject(),
   });
-  const officeTeasers = await drupal.getResourceCollectionFromContext<DrupalNode[]>("node--office", context, {
+  const officeTeasers = await drupal.getResourceCollectionFromContext<
+    DrupalNode[]
+  >("node--office", context, {
     params: getNodePageJsonApiParams("node--office").getQueryObject(),
   });
 
@@ -69,4 +74,4 @@ export const getStaticProps: GetStaticProps<ContactPageProps> = async (context) 
     },
     revalidate: 60,
   };
-}
+};
